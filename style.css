@@ -1,0 +1,331 @@
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+@keyframes appLinkTyphoon{
+    0%{-webkit-transform:rotate(0);transform:rotate(0)}
+    100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg)}
+    }
+.eva-disease {
+    display: table;
+    border: 2px solid #55ad70;  
+    width: 95%;
+    margin: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    background: #edfded;
+}
+.eva-disease_text::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-image: url(https://s.yimg.jp/images/weather/pc/v2/img/crisismap/spr_refugeMap.png);
+    background-size: 130px;
+    background-position: -29px 0;
+    position: absolute;
+    left: 20px;
+}
+.eva-disease{
+    text-align: center;
+}
+.content_menu, .lifeline{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.emer{
+    display: flex;
+    justify-content: center;
+    background-color: #6fb9ef;
+    background-image: linear-gradient(-45deg,#5db0e9 25%,transparent 25%,transparent 50%,#5db0e9 50%,#5db0e9 75%,transparent 75%,transparent);
+    background-size: 32px 32px;
+}
+.emer2{
+    display: flex;
+    justify-content: center;
+    background-color: #DDDDFF;
+    background-image: linear-gradient(-45deg,#D0D0F0 25%,transparent 25%,transparent 50%,#D0D0F0 50%,#D0D0F0 75%,transparent 75%,transparent);
+    background-size: 32px 32px;
+}
+.lifeline a, .content_menu a{
+    margin:10px;
+}
+.bosai_box{
+    display: flex;
+    width: 110px;
+    height: 100px;
+    border-style: solid;
+    border-width: 2px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 1s;
+    flex-direction: column;
+}
+.bosai_box h4{
+    padding:0px;
+}
+.bosai_top_box{
+    display: flex;
+    width: 120px;
+    height: 120px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:rgb(100,100,100);
+    margin: 20px;
+    position: relative;
+    align-items: center;
+    justify-content: center;  
+    margin:-15px 0px;
+    background-color:white;
+}
+.bosai_content{
+    width:735.600px;
+    margin:auto;
+    background-color: white;
+}
+.bosai_top_box:hover{
+    background-color: rgb(255, 231, 186 );
+}
+.go_to_your:hover{
+    background-color: rgb(134, 158, 255);
+    color:black;
+}
+.bosai_box:hover{
+    transform: scale(1.03);
+    background-color: rgba(255, 231, 186);
+}
+.go_to_your{
+    display: flex;
+    width: 242px;
+    height: 111px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:rgb(100,100,100);
+    margin: 20px;
+    position: relative;
+    align-items: center;
+    justify-content: center;  
+    margin:-15px 0px;
+    background-color: blue;
+    color:white;
+}
+.bosai_box img{
+    width : 50px;
+    height: 50px;
+}
+.box{
+    width:500px;
+    border-style: solid;
+    border-width:2px;
+    margin:20px;
+    position: relative;
+    animation: fadeInUp 1s;
+}
+.emergency .box{
+    width:700px;
+    height:150px;
+    border-style: solid;
+    border-width:2px;
+    margin:20px;
+    position: relative;
+    animation: fadeInUp 1s;
+}
+.emergency .box h2{
+    text-align: center;
+    padding-left:7px;
+}
+.box h2, .box p{
+    text-align: left;
+    padding-left:7px;
+}
+.box:hover{
+    transform: scale(1.03);
+    background-color: rgba(255, 231, 186, 0.631);
+}
+.fir_title{
+    display: flex;
+    height: 400px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#D8D8D8 65%, #FFFFFF);
+}
+.prepare_fir_title{
+    display: flex;
+    height: 150px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #5db0e9   ;
+}
+.fir_title h1, .prepare_fir_title h1{
+    font-size: 45px;
+    width:500px;
+    text-align:center;
+    border-style: solid;
+    border-width: 0px 0px 6px;
+    border-color: orange;
+}
+.no-emergency{
+    height:300px;
+}
+.prepare_content{
+    height:50px;
+    background: #5db0e9;
+}
+.warning{
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 0px 0px 10px 10px;
+    margin:auto;
+    margin-bottom:30px;
+    width:600px;
+    background-color: rgb(220,220,220);
+}
+.warning h3{
+    padding:5px;
+    background-color: black;
+    color:yellow;
+    margin:-1px;
+    font-size:15px;
+}
+.warning h4{
+    font-size:13px;
+    text-align: left;
+    padding:5px;
+}
+.warning p{
+    padding:3px;
+    font-size:11px;
+}
+.scroll marquee{
+    padding:5px 0px;
+}
+.typhoon_info{
+    width:95%;
+    margin:auto;
+    border:2px solid blue;
+    background-color: #f3f4f9;
+}
+.typhoon_imoji span{
+    background:#2a63ac;
+    color: #fff;
+    display: block;
+    text-align: center;
+    margin: 2px 5px;
+    border-radius: 24px;
+    position: relative;
+}
+.typhoon_imoji span::before {
+    content: "";
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    background-image: url(https://s.yimg.jp/images/weather/typhoon/ico_typhoon-white.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    animation: appLinkTyphoon 1.5s ease infinite;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+}
+.typhoon_info_box{
+    padding: 0px 5px;   
+}
+.typhoon_info_box p{
+    font-size:17px;
+}
+.hot_info{
+    width:95%;
+    margin:auto;
+    border:2px solid red;
+    background-color: #f3f4f9;   
+}
+.hot_imoji{
+    background:#ac2a2a;
+    color: #fff;
+    display: block;
+    text-align: center;
+    margin: 2px 5px;
+    border-radius: 24px;
+    position: relative;
+}
+.hot_imoticon{
+    position: absolute;
+    right: 30px;
+    font-size: 24px;
+    color: white;
+    display: none;
+}
+.typhoon_info_box_text_img img{
+    width:90%;
+}
+.typhoon_info_box_text_img{
+    display: flex;
+    justify-content: center;
+}
+@keyframes appLinkTyphoon{
+    0%{-webkit-transform:rotate(0);transform:rotate(0)}
+    100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg)}
+}
+.typhoon_two{
+    display: flex;
+    justify-content: space-around;
+}
+.typhoon_krjp{
+    width:47%;
+}
+.typhoon_krjp h4{
+    padding: 5px 0px;
+    border-bottom:solid 2px gray;
+}
+.typhoon_krjp p{
+    padding: 3px 0px;
+    width:150px;
+}
+.typhoon_krjp div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media screen and (max-width : 911px) {
+    .emergency .box{
+        width:300px;
+    }
+    .box{
+        width:500px;
+        height:170px;
+        border-style: solid;
+        border-width:2px;
+        margin:20px;
+        position: relative;
+        animation: fadeInUp 1s;
+    }
+    .bosai_box{
+        width:120px;
+    }
+    .warning{
+        width:90%;
+    }
+    .bosai_content{
+        width:100%;
+        margin:auto;
+    }
+    .eva-disease_text{
+        padding-left:50px;
+    }
+}
