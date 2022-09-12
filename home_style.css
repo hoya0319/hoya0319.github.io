@@ -1,0 +1,218 @@
+.mainBanner{
+    height: 100vh;
+    width:100vw;
+    text-align:center;
+    background: url(./banner.png);
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    background-color: #D8D8D8;
+}
+.mainBanner h1{
+    font-size:50px;
+    width:50%;
+    left:25%;
+    position: absolute;
+    top:35%;
+    /* background-color: rgba(0, 0, 0, 0.561); */
+    color:orange;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+.content div{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.mainBanner i{
+    position:absolute;
+    width:100%;
+    text-align: center;
+    font-size:40px;
+    color:orange;
+    bottom:5%;
+    right:0%;
+}
+.message{
+    display: flex;
+    height: 30vh;
+    background: linear-gradient(#D8D8D8 50%, #FFFFFF);
+    justify-content: center;
+    align-items: center;
+    /* border-style: solid;
+    border-width: 1px 0px 1px 0px; */
+}
+.message h1{
+    text-align: center;
+}
+.symbol{
+    margin-top:100%;
+    text-align: center;
+}
+#down-border{
+    border-style: solid;
+    padding:14px 0px 14px;
+    border-width: 0px 0px 2px;
+}
+.mind{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.mind img{
+    width:65%;
+}
+.choose{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+}
+.choose_box{
+    width: 30%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.choose_box:hover{
+    transform: scale(1.05);
+    border-style: solid;
+    border-width: 1px;
+}
+.choose_box img{
+    width:80%;
+}
+.choose_box p{
+    padding-top:10px;
+}
+.more{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.more i{
+    font-size: 28px;
+}
+.nerv_mess{
+    display: none;
+}
+#check-btn { 
+    display: none; 
+}
+#check-btn:checked ~ .menubars { 
+    display: block; 
+} 
+.nerv{
+    width:85%;
+    margin: auto;
+}
+.nerv_mess{
+    display: none;
+}
+.iframe_area{
+    position:relative;
+    width:100%;
+    padding-bottom: 39.375%;
+    display:flex;
+    justify-content: center;
+}
+.iframe_area iframe{
+    position:absolute;
+    width: 70%;
+    height: 100%;
+}
+.out_link p{
+    text-align: center;
+}
+.out_link span:hover{
+    cursor:pointer;
+}
+/* .link_button {
+	background-color:#ffffff;
+	border-radius:8px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 55px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.link_button:hover {
+	background-color:#ff7700;
+}
+.link_button:active {
+	position:relative;
+	top:1px;
+} */
+.clock{
+    display: flex;
+}
+
+@media screen and (max-width : 845px) {
+    .mainBanner h1{
+        top:25%;
+        font-size:40px;
+    }
+    .mainBanner i{
+        font-size:20px;
+    }
+    .choose {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height:auto;
+    }
+    .choose_box img{
+        width:200px;
+    }
+    .choose_box{
+        width: 70%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .iframe_area{
+        position:relative;
+        width:100%;
+        padding-bottom: 56.25%;
+        display:flex;
+        justify-content: center;
+    }
+    .iframe_area iframe{
+        position:absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .mind img{
+        width:100%;
+    }
+}
+@media screen and (max-width : 500px){
+    .mainBanner h1{
+        top:25%;
+        font-size:35px;
+    }
+    .mainBanner i{
+        font-size:20px;
+    }
+}
+@media screen and (max-width : 400px){
+    .mainBanner h1{
+        top:20%;
+        font-size:30px;
+        width:80%;
+        left:10%;
+    }
+    .mainBanner i{
+        font-size:20px;
+    }
+}
