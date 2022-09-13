@@ -129,7 +129,7 @@ a:hover{
     /* background-color: rgb(225, 225, 225); */
 }
 .navbar_menu li{
-    padding: 10px 20px;
+    padding: 11px 12px;
     font-size:17px;
 }
 .navbar_menu li:hover{
@@ -281,7 +281,7 @@ li, ol{
     color:#05c;
     font-weight: 700;
 }
-@media screen and (max-width : 911px) {
+@media screen and (max-width : 800px) {
     .content{
         width:90%;
         margin:auto;
@@ -299,7 +299,7 @@ li, ol{
         width:100%;     
         margin:0px;
         padding:0px;
-        margin-top:-5px;
+        margin-top: -7px;
         background-color: rgb(255, 255, 255);
     }
     .navbar img{
@@ -308,6 +308,7 @@ li, ol{
     .navbar_menu li{
         width:100px;
         text-align: center;
+        padding: 6.5px 12px;
     }
     .navbarBtn{
         display: block;
@@ -326,21 +327,18 @@ li, ol{
         font-size:28px;
         text-align: center;
         padding:10px 0px 10px;
-        font-weight: 700;
     }
     h2{
         margin:0px;
         font-size:23px;
         text-align: center;
         padding:10px 0px 10px;
-        font-weight: 700;
     }
     h3{
         margin:0px;
         font-size:21px;
         text-align: center;
-        padding:10px 0px 10px;
-        font-weight: 500;
+        padding:10px 0px 10px;  
     }
     h4{
         margin:0px;
