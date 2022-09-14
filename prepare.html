@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keyword" content="호야, 지진, 재난, 재난방송, 지진방송, 일본지진, 호야 재난방송, 호야 지진방송, 일본, 태풍, 정전, 수도, 응급, 재해 지식, 해일, 쓰나미, 화산, 분화, 화산폭발, 열사병, 일사병, 열중증, 폭설, 내수범람, 하천홍수, 홍수, 폭염, 수해, 침수, 지진동, 진도, 규모, 기압, 풍속, 태풍, 기상, 기상특보, 기상경보, 경보, 주의보, 난카이트로프, 난카이 트로프, 거대지진, 거대 지진, 특설 페이지, M 스케일, mscale, 토사재해, 산사태, 기상, 날씨, 기상특보, 피난, 코로나, 감염, 대피, 피난소, 태풍정보, 정보, 레이더, 비, 산사태, 하천 수위, 수위">
-    <meta name="description" content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
+    <meta name="keyword"
+        content="호야, 지진, 재난, 재난방송, 지진방송, 일본지진, 호야 재난방송, 호야 지진방송, 일본, 태풍, 정전, 수도, 응급, 재해 지식, 해일, 쓰나미, 화산, 분화, 화산폭발, 열사병, 일사병, 열중증, 폭설, 내수범람, 하천홍수, 홍수, 폭염, 수해, 침수, 지진동, 진도, 규모, 기압, 풍속, 태풍, 기상, 기상특보, 기상경보, 경보, 주의보, 난카이트로프, 난카이 트로프, 거대지진, 거대 지진, 특설 페이지, M 스케일, mscale, 토사재해, 산사태, 기상, 날씨, 기상특보, 피난, 코로나, 감염, 대피, 피난소, 태풍정보, 정보, 레이더, 비, 산사태, 하천 수위, 수위">
+    <meta name="description"
+        content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
     <meta name="author" content="호야">
     <meta property="robots" content="index, follow">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -15,28 +18,32 @@
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="./main.js" defer></script>
     <script src="./notice.js" defer></script>
-    <script src="./typhoon.js" defer></script>
+    <script type="text/javascript" src="./api.js"></script>
+    <!-- <script src="./typhoon.js" defer type="module"></script> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="icon" href="./호야.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800&display=swap');
-        .scroll{
-            position:fixed;
+
+        .scroll {
+            position: fixed;
             top: 60px;
-            width:100%;
+            width: 100%;
             display: flex;
             z-index: 1;
             border-style: solid;
             border-width: 0px 0px 2px 0px;
             border-color: black;
         }
-        body{
-            background-color:#F0EFF5;
+
+        body {
+            background-color: #F0EFF5;
         }
     </style>
 </head>
+
 <body>
     <script>
         AOS.init();
@@ -48,13 +55,27 @@
             </a>
         </div>
         <ul class="navbar_menu">
-            <a href="./index.html"><li>홈</li></a>
-            <a href="./intro.html"><li>채널소개</li></a>
-            <a href="./broadcast.html"><li>방송안내</li></a>
-            <a href="./resource.html"><li>자료실</li></a>
-            <a href="./prepare.html"><li>방재</li></a>
-            <a href="./special.html"><li>스페셜</li></a>
-            <a href="./emergency.html"><li>특설페이지</li></a>
+            <a href="./index.html">
+                <li>홈</li>
+            </a>
+            <a href="./intro.html">
+                <li>채널소개</li>
+            </a>
+            <a href="./broadcast.html">
+                <li>방송안내</li>
+            </a>
+            <a href="./resource.html">
+                <li>자료실</li>
+            </a>
+            <a href="./prepare.html">
+                <li>방재</li>
+            </a>
+            <a href="./special.html">
+                <li>스페셜</li>
+            </a>
+            <a href="./emergency.html">
+                <li>특설페이지</li>
+            </a>
         </ul>
         <a href="javascript:return false;" class="navbarBtn">
             <i class="fa-solid fa-bars"></i>
@@ -62,62 +83,63 @@
     </nav>
     <div class="scroll">
         <marquee scrollamount="20">
-            <span class="korean" style="font-weight: 800;">현재 웨더뉴스의 M-스케일은 M2 입니다.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="japan" style="font-weight:bold; font-family: 'M PLUS 1p', sans-serif;
+            <span class="korean" style="font-weight: 800;">현재 웨더뉴스의 M-스케일은 M2
+                입니다.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="japan" style="font-weight:bold; font-family: 'M PLUS 1p', sans-serif;
             ">現在、ウェザーニュースのMスケールはM2です。</span>
             <script>
-                var scroll = $( ".scroll" );
-                var bosai = $( ".go_to_your" );
-                var korean_text = $( ".korean" );
-                var japan_text = $( ".japan" );
+                var scroll = $(".scroll");
+                var bosai = $(".go_to_your");
+                var korean_text = $(".korean");
+                var japan_text = $(".japan");
                 get_mscale();
                 setInterval(get_mscale, 10000);
                 function get_mscale() {
-                    try{
+                    try {
                         // $.getJSON('./test.json', function(data) {
-                        $.getJSON('https://weathernews.jp/mscale/json/scale.json', function(data) {
-                        const asdf = data['mscale'];
-                        switch (asdf) {
-                            case '1':
-                                scroll.css({
-                                    backgroundColor: 'blue',
-                                    color: 'white'
-                                });
-                                break;
-                            case '2':
-                                scroll.css({
-                                    backgroundColor: 'yellow',
-                                    color: 'black'
-                                });
-                                break;
-                            case '3':
-                                scroll.css({
-                                    backgroundColor: 'red',
-                                    color: 'white'
-                                });
-                                break; 
-                            case '4':
-                                scroll.css({
-                                    backgroundColor: 'black',
-                                    color: 'white'
-                                });
-                                break;
-                            default:
-                                scroll.css({
-                                    backgroundColor: 'white',
-                                    color: 'black'
-                                });
-                                break;
-                        }
-                        korean_text.text(`현재 웨더뉴스의 M-스케일은 M${asdf} 입니다.`);
-                        japan_text.text(`現在、ウェザーニュースのMスケールはM${asdf}です。`);
-                    })
-                    }catch(error){
+                        $.getJSON('https://weathernews.jp/mscale/json/scale.json', function (data) {
+                            const asdf = data['mscale'];
+                            switch (asdf) {
+                                case '1':
+                                    scroll.css({
+                                        backgroundColor: 'blue',
+                                        color: 'white'
+                                    });
+                                    break;
+                                case '2':
+                                    scroll.css({
+                                        backgroundColor: 'yellow',
+                                        color: 'black'
+                                    });
+                                    break;
+                                case '3':
+                                    scroll.css({
+                                        backgroundColor: 'red',
+                                        color: 'white'
+                                    });
+                                    break;
+                                case '4':
+                                    scroll.css({
+                                        backgroundColor: 'black',
+                                        color: 'white'
+                                    });
+                                    break;
+                                default:
+                                    scroll.css({
+                                        backgroundColor: 'white',
+                                        color: 'black'
+                                    });
+                                    break;
+                            }
+                            korean_text.text(`현재 웨더뉴스의 M-스케일은 M${asdf} 입니다.`);
+                            japan_text.text(`現在、ウェザーニュースのMスケールはM${asdf}です。`);
+                        })
+                    } catch (error) {
                         console.log(`에러 발생:${error}`);
                     }
                 }
             </script>
         </marquee>
-    <!-- <div class="notice">
+        <!-- <div class="notice">
         <h4 id="notice_text">ㅁㄴㅇㄹ</h4>
         <a href="#">
             <div class="notice_btn">
@@ -130,8 +152,10 @@
         <!-- <h1>방재</h1> -->
     </div>
     <div style="background-color:#5db0e9">
-        <h1 data-aos="fade-up" data-aos-duration="2000" class="prepare_title" style="color:white; font-size:50px;">일상을 지키는, 일상의 대비.</h1>
-        <h4 class="prepare_content" id="down-border">본 페이지는 <a href="https://emg.yahoo.co.jp/notebook/">야후 방재수첩</a> 페이지를 번역한 것입니다.</h4>
+        <h1 data-aos="fade-up" data-aos-duration="2000" class="prepare_title" style="color:white; font-size:50px;">일상을
+            지키는, 일상의 대비.</h1>
+        <h4 class="prepare_content" id="down-border">본 페이지는 <a href="https://emg.yahoo.co.jp/notebook/">야후 방재수첩</a> 페이지를
+            번역한 것입니다.</h4>
     </div>
     <!-- <div class="emer2" id="down-border">
         <a href="./yourbosai.html">
@@ -153,6 +177,62 @@
         </a>
     </div>
     <div class="bosai_content">
+        <script>
+            var xhr = new XMLHttpRequest();
+            function getToday() {
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = ("0" + (1 + date.getMonth())).slice(-2);
+                var day = ("0" + date.getDate()).slice(-2);
+
+                return year + month + day;
+            }
+            const api_key = config.apikey;
+            var url = 'http://apis.data.go.kr/1360000/TyphoonInfoService/getTyphoonInfo'; /*URL*/
+            var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + api_key; /*Service Key*/
+            queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호 조회*/
+            queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /*행 수*/
+            queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /*데이터 타입 - JSON*/
+            queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()); /*조회 시작 날짜 - 오늘*/
+            queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /*조회 끝 날짜 - 오늘*/
+            xhr.open('GET', url + queryParams);
+            api_url = url + queryParams;
+            var number = 0;
+            typhoon()
+            function typhoon() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myObj = JSON.parse(this.responseText);
+                        typ_num = myObj.response.body.items.item[number].typSeq;
+                        typ_name = myObj.response.body.items.item[number].typName;
+                        document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + myObj.response.body.items.item[number].tmSeq + "호]"
+                        document.getElementById("typhoon_clock").textContent = myObj.response.body.items.item[number].tmFc + "발표"
+                        document.getElementById("typhoon_info_text").textContent =
+                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + myObj.response.body.items.item[number].typLoc + "에서 " + myObj.response.body.items.item[number].typDir + "방향으로 " + myObj.response.body.items.item[number].typSp + "km/h의 속도로 이동중.";
+                        document.getElementById("typhoon_img").src = myObj.response.body.items.item[number].img;
+                    }
+                };
+                xmlhttp.open("GET", api_url, true);
+                xmlhttp.send();
+            }
+            function count(type) {
+                if (type == 'plus') {
+                    number = parseInt(number) + 1;
+                    console.log(number);
+                    typhoon()
+                }
+                if (type == 'minus') {
+                    number = parseInt(number) - 1;
+                    console.log(number);
+                    typhoon()
+                    if (number < 1) {
+                        number = 0;
+                    }
+                }
+            }
+
+        </script>
         <!--태풍정보-->
         <br>
         <div class="eva-disease">
@@ -177,7 +257,7 @@
                     <span id="typhoon_clock" style="font-size:15px;"></span>
                 </p>
                 <p id="typhoon_info_text">잠시만 기다려주세요<br></p>
-                    <div class="typhoon_info_box_text_img">
+                <div class="typhoon_info_box_text_img">
                     <img id="typhoon_img" src="" alt="태풍정보 이미지를 불러오고 있거나 실패하였습니다.">
                 </div>
                 <div class="typhoon_forcast_btn">
@@ -188,24 +268,35 @@
                     <div class="typhoon_krjp">
                         <h4>한국</h4>
                         <div>
-                            <p><a href="https://www.weather.go.kr/w/typhoon/report.do" class="out_link" target="_blank">기상청 태풍정보</a></p>
-                            <p><a href="https://www.weather.go.kr/w/weather/warning/status.do" class="out_link" target="_blank">기상 경보, 주의보</a></p>
-                            <p><a href="https://www.weather.go.kr/w/image/radar.do" class="out_link" target="_blank">비 구름 레이더</a></p>
+                            <p><a href="https://www.weather.go.kr/w/typhoon/report.do" class="out_link"
+                                    target="_blank">기상청 태풍정보</a></p>
+                            <p><a href="https://www.weather.go.kr/w/weather/warning/status.do" class="out_link"
+                                    target="_blank">기상 경보, 주의보</a></p>
+                            <p><a href="https://www.weather.go.kr/w/image/radar.do" class="out_link" target="_blank">비
+                                    구름 레이더</a></p>
                             <p><a href="http://www.hrfco.go.kr/main.do" class="out_link" target="_blank">하천 수위정보</a></p>
-                            <p><a href="https://www.forest.go.kr/kfsweb/kfi/kfs/trail/sanSaTae.do?pblicDataId=PBD0000210&tabs=4&mn=NKFS_06_08_02&subTitle=%EC%82%B0%EC%82%AC%ED%83%9C%EC%9C%84%ED%97%98%EC%A7%80%EB%8F%84" class="out_link" target="_blank">산사태 위험지도</a></p>
-                            <p><a href="https://sansatai.forest.go.kr/gis/main.do#mhms0" class="out_link" target="_blank">산사태 정보시스템</a></p>
+                            <p><a href="https://www.forest.go.kr/kfsweb/kfi/kfs/trail/sanSaTae.do?pblicDataId=PBD0000210&tabs=4&mn=NKFS_06_08_02&subTitle=%EC%82%B0%EC%82%AC%ED%83%9C%EC%9C%84%ED%97%98%EC%A7%80%EB%8F%84"
+                                    class="out_link" target="_blank">산사태 위험지도</a></p>
+                            <p><a href="https://sansatai.forest.go.kr/gis/main.do#mhms0" class="out_link"
+                                    target="_blank">산사태 정보시스템</a></p>
                         </div>
                     </div>
                     <div class="typhoon_krjp">
                         <h4>일본</h4>
                         <div>
-                            <p><a href="https://www.jma.go.jp/bosai/map.html#5&5&elem=root&typhoon=all&contents=typhoon" class="out_link" target="_blank">태풍정보</a></p>
-                            <p><a href="https://www.jma.go.jp/bosai/map.html#5&elem=all&contents=warning" class="out_link" target="_blank">기상 경보, 주의보</a></p>
-                            <p><a href="https://crisis.yahoo.co.jp/evacuation/" class="out_link" target="_blank">피난정보</a></p>
-                            <p><a href="https://weather.yahoo.co.jp/weather/levelmap/" class="out_link" target="_blank">호우 경계레벨 지도</a></p>
-                            <p><a href="https://www.jma.go.jp/bosai/nowc/" class="out_link"target="_blank">비 구름 레이더</a></p>
+                            <p><a href="https://www.jma.go.jp/bosai/map.html#5&5&elem=root&typhoon=all&contents=typhoon"
+                                    class="out_link" target="_blank">태풍정보</a></p>
+                            <p><a href="https://www.jma.go.jp/bosai/map.html#5&elem=all&contents=warning"
+                                    class="out_link" target="_blank">기상 경보, 주의보</a></p>
+                            <p><a href="https://crisis.yahoo.co.jp/evacuation/" class="out_link"
+                                    target="_blank">피난정보</a></p>
+                            <p><a href="https://weather.yahoo.co.jp/weather/levelmap/" class="out_link"
+                                    target="_blank">호우 경계레벨 지도</a></p>
+                            <p><a href="https://www.jma.go.jp/bosai/nowc/" class="out_link" target="_blank">비 구름 레이더</a>
+                            </p>
                             <p><a href="https://www.river.go.jp/index" class="out_link" target="_blank">강의 방재 정보</a></p>
-                            <p><a href="https://typhoon.yahoo.co.jp/weather/river/" class="out_link" target="_blank">하천 수위</a></p>
+                            <p><a href="https://typhoon.yahoo.co.jp/weather/river/" class="out_link" target="_blank">하천
+                                    수위</a></p>
                         </div>
                     </div>
                 </div>
@@ -215,27 +306,30 @@
         <br>
         <div class="hot_info">
             <div class="hot_imoji">
-                <span>  
+                <span>
                     <h4 style="font-weight:bold; padding:5px;">폭염정보</h4>
                 </span>
             </div>
             <div style="padding:0px 5px;">
                 <p style="font-weight:bold">
                     <a href="https://www.weather.go.kr/w/weather/warning/status.do" class="out_link">
-                        <span style="font-size:20px;">폭염정보</span>&nbsp;&nbsp;<span style="font-size:17px;">기온이 높은 시간대를 확인하고, 열중증 대책을.</span>
-                    </a> 
-                    - 
+                        <span style="font-size:20px;">폭염정보</span>&nbsp;&nbsp;<span style="font-size:17px;">기온이 높은 시간대를
+                            확인하고, 열중증 대책을.</span>
+                    </a>
+                    -
                     <a href="./prepare/hot.html" class="out_link">
                         <span style="font-size:16px;">열중증에 대비하는 방법</span>
                     </a>
                 </p>
             </div>
         </div>
-        <a href="https://library.krihs.re.kr/bbs/content/2_114 "><h3>라이프라인</a>・구급</h3>
+        <a href="https://library.krihs.re.kr/bbs/content/2_114 ">
+            <h3>라이프라인
+        </a>・구급</h3>
         <div id="down-border" class="lifeline">
             <a href="./prepare/electricitygas.html">
                 <div class="bosai_box">
-                        <h4>전기・가스</h4>
+                    <h4>전기・가스</h4>
                 </div>
             </a>
             <a href="./prepare/water.html">
@@ -292,7 +386,7 @@
             <a href="./prepare/heavysnow.html">
                 <div class="bosai_box">
                     <img src="./prepare/heavysnow.png">
-                        <h4>폭설</h4>
+                    <h4>폭설</h4>
                 </div>
             </a>
             <a href="./prepare/cityflood.html">
@@ -331,19 +425,25 @@
     <div class="warning">
         <h3>안내 사항</h3>
         <h4>공지</h4>
-        <p>본 페이지 및 본 페이지의 하위 페이지는 야후 재팬의 방재수첩(YAHOO! JAPAN <span style="font-family: 'Noto Sans KR'; font-weight: 400;">防災手帳</span>)의 콘텐츠를 한국에 맞게 일부 의역하여 번역한 페이지입니다. 단, 일부 페이지는 직접 제작하였다는 사실을 인지 바랍니다.</p>
+        <p>본 페이지 및 본 페이지의 하위 페이지는 야후 재팬의 방재수첩(YAHOO! JAPAN <span
+                style="font-family: 'Noto Sans KR'; font-weight: 400;">防災手帳</span>)의 콘텐츠를 한국에 맞게 일부 의역하여 번역한 페이지입니다. 단,
+            일부 페이지는 직접 제작하였다는 사실을 인지 바랍니다.</p>
         <p>호야-재난방송은 본 페이지를 통해 영리적인 행위를 하지 아니하며 어떠한 이익도 얻지 않습니다.</p>
         <p>본 사이트의 내용은 사전 공지 없이 수정되거나 삭제될 수 있습니다.</p>
         <h4>면책사항</h4>
-        <p>본 서비스에서는 정보의 전달에 대해 심혈을 기울이고 있습니다만, 내용의 정확성이나 완전성을 보증하지는 않습니다. 본 서비스의 정보가 항상 정확한 것은 아닙니다. 재해는 예측 불가이기 때문에 대처법에 정답은 없습니다.</p>
+        <p>본 서비스에서는 정보의 전달에 대해 심혈을 기울이고 있습니다만, 내용의 정확성이나 완전성을 보증하지는 않습니다. 본 서비스의 정보가 항상 정확한 것은 아닙니다. 재해는 예측 불가이기 때문에
+            대처법에 정답은 없습니다.</p>
         <p>재해 발생 시에는 정부 기관이나 각 지자체가 발표하는 정보에도 주의를 기울여, 필요에 따라서 신속하게 피난 등을 실시해 주십시오. 반드시 다른 정보와 함께 상황을 확인하십시오.</p>
-        <p>본 서비스로 인해 입은 어떠한 손해에 대해서도 호야-재난방송 및 YAHOO! JAPAN(YAHOO! JAPAN의 면책사항 참고)은 일체의 책임을 지지 않습니다. 본 정보를 자신의 판단과 책임으로 이용해주십시오.</p>
+        <p>본 서비스로 인해 입은 어떠한 손해에 대해서도 호야-재난방송 및 YAHOO! JAPAN(YAHOO! JAPAN의 면책사항 참고)은 일체의 책임을 지지 않습니다. 본 정보를 자신의 판단과 책임으로
+            이용해주십시오.</p>
     </div>
     <div class="footer">
         <div class="footer_up">
             <div class="footer_info">
                 <p><span class="name">호야-재난방송</span></p>
-                <p><img src="./img_opencode1_m.jpeg" alt="공공데이터포털 출처 표시" style="float:left; padding-right:5px;">본 저작물은 '공공데이터포털' 및 '기상청'에서 19년 작성하여 공공누리 제1유형으로 개방한 '기상청_태풍정보 조회서비스'를 이용하였으며, 해당 저작물은 '공공데이터포털'에서 무료로 사용하실 수 있습니다.</p>
+                <p><img src="./img_opencode1_m.jpeg" alt="공공데이터포털 출처 표시" style="float:left; padding-right:5px;">본 저작물은
+                    '공공데이터포털' 및 '기상청'에서 19년 작성하여 공공누리 제1유형으로 개방한 '기상청_태풍정보 조회서비스'를 이용하였으며, 해당 저작물은 '공공데이터포털'에서 무료로 사용하실
+                    수 있습니다.</p>
             </div>
             <div class="footer_sitemap">
                 <a href="./index.html">
@@ -379,4 +479,5 @@
         <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
     </div>
 </body>
+
 </html>
