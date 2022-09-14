@@ -20,8 +20,9 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = JSON.parse(this.responseText);
-        document.getElementById("typhoon_title").innerHTML = "<span style='font-weight:900; font-size:19px;'>[제 " + myObj.response.body.items.item[2].typSeq + "호 태풍 " + myObj.response.body.items.item[2].typName + "에 관한 기상청 태풍정보 제 " + myObj.response.body.items.item[2].tmSeq + "호]</span>" + myObj.response.body.items.item[2].tmFc + "발표" 
-        document.getElementById("typhoon_info_text").innerHTML = 
+        document.getElementById("typhoon_title").textContent = "[제 " + myObj.response.body.items.item[2].typSeq + "호 태풍 " + myObj.response.body.items.item[2].typName + "에 관한 기상청 태풍정보 제 " + myObj.response.body.items.item[2].tmSeq + "호]"
+        document.getElementById("typhoon_clock").textContent =myObj.response.body.items.item[2].tmFc + "발표" 
+        document.getElementById("typhoon_info_text").textContent = 
         "제 " + myObj.response.body.items.item[2].typSeq  + "호 태풍 " + myObj.response.body.items.item[2].typName + "은 " + myObj.response.body.items.item[2].typLoc + "에서 " + myObj.response.body.items.item[2].typDir + "방향으로 " + myObj.response.body.items.item[2].typSp + "km/h의 속도로 이동중.";
         document.getElementById("typhoon_img").src = myObj.response.body.items.item[2].img;
     }
