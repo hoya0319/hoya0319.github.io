@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="./main.js" defer></script>
     <script src="./notice.js" defer></script>
-    <script src="./typhoon.js" defer></script>
+    <!-- <script src="./typhoon.js" defer></script> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -165,15 +165,47 @@
         </div>
         <br>
         <div class="typhoon_info">
+        <script>
+            var xhr = new XMLHttpRequest();
+            function getToday(){
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = ("0" + (1 + date.getMonth())).slice(-2);
+                var day = ("0" + date.getDate()).slice(-2);
+
+                return year + month + day;
+            }
+            var url = 'http://apis.data.go.kr/1360000/TyphoonInfoService/getTyphoonInfo'; /*URL*/
+            var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
+            queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+            queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+            queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
+            queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()); /**/
+            queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
+            xhr.open('GET', url + queryParams);
+            api_url = url+queryParams
+            console.log(api_url);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200)
+                {
+                    var myObj = JSON.parse(this.responseText);
+                    document.getElementById("typhoon_info_text").innerHTML = "제 "+ myObj.response.body.items.item[2].typSeq + "호 태풍 " + myObj.response.body.items.item[2].typName+"은 " +myObj.response.body.items.item[2].typLoc +"에서 "+myObj.response.body.items.item[2].typDir + "방향으로 " + myObj.response.body.items.item[2].typSp + "km/h의 속도로 이동중.";
+                    document.getElementById("typhoon_img").src = myObj.response.body.items.item[2].img
+                }
+            };
+            xmlhttp.open("GET", api_url, true);
+            xmlhttp.send();
+        </script>
             <div class="typhoon_imoji">
                 <span>
                     <h4 style="font-weight:bold; padding:5px;">태풍정보</h4>
                 </span>
             </div>
             <div class="typhoon_info_box">
-                <p id="typhoon_info_text">제 14호 태풍 난마돌이 발생했습니다.<br></p>
+                <p id="typhoon_info_text"><br></p>
                     <div class="typhoon_info_box_text_img">
-                    <img src="https://www.weather.go.kr/w/repositary/image/typ/img/RTKO63_202209140430]14_ko.png" alt="태풍정보">
+                    <img id="typhoon_img" src="" alt="태풍정보">
                 </div>
                 <div class="typhoon_two">
                     <div class="typhoon_krjp">
