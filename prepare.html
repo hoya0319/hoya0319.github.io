@@ -173,12 +173,16 @@
             </div>
             <div class="typhoon_info_box">
                 <p style="text-align:center;">
-                    <span id="typhoon_title" style="font-weight: 900; font-size:20px;"></span>
+                    <span id="typhoon_title" style="font-weight: 900; font-size:20px;">기상청 태풍정보를 불러오는 중입니다.</span>
                     <span id="typhoon_clock" style="font-size:15px;"></span>
                 </p>
-                <p id="typhoon_info_text"><br></p>
+                <p id="typhoon_info_text">잠시만 기다려주세요<br></p>
                     <div class="typhoon_info_box_text_img">
-                    <img id="typhoon_img" src="" alt="태풍정보">
+                    <img id="typhoon_img" src="" alt="태풍정보 이미지를 불러오고 있거나 실패하였습니다.">
+                </div>
+                <div class="typhoon_forcast_btn">
+                    <input class="forcast_btn" type="button" onclick='count("minus")' value="< 다음 발표">
+                    <input class="forcast_btn" type="button" onclick='count("plus")' value="이전 발표 >">
                 </div>
                 <div class="typhoon_two">
                     <div class="typhoon_krjp">
@@ -339,7 +343,7 @@
         <div class="footer_up">
             <div class="footer_info">
                 <p><span class="name">호야-재난방송</span></p>
-                <p><img src="./img_opencode1_m.jpeg" alt="공공데이터포털 출처 표시" style="float:left">본 저작물은 '공공데이터포털' 및 '기상청'에서 19년 작성하여 공공누리 제1유형으로 개방한 '기상청_태풍정보 조회서비스'를 이용하였으며, 해당 저작물은 '공공데이터포털'에서 무료로 사용하실 수 있습니다.</p>
+                <p><img src="./img_opencode1_m.jpeg" alt="공공데이터포털 출처 표시" style="float:left; padding-right:5px;">본 저작물은 '공공데이터포털' 및 '기상청'에서 19년 작성하여 공공누리 제1유형으로 개방한 '기상청_태풍정보 조회서비스'를 이용하였으며, 해당 저작물은 '공공데이터포털'에서 무료로 사용하실 수 있습니다.</p>
             </div>
             <div class="footer_sitemap">
                 <a href="./index.html">
