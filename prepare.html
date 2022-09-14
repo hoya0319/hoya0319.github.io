@@ -24,6 +24,17 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="icon" href="./호야.png">
+    <script type="text/javascript">
+        // F12 버튼 방지
+        $(document).ready(function(){
+            $(document).bind('keydown',function(e){
+                if ( e.keyCode == 123 /* F12 */) {
+                    e.preventDefault();
+                    e.returnValue = false;
+                }
+            });
+        });
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800&display=swap');
 
