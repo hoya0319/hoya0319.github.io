@@ -205,7 +205,7 @@
             var url = 'http://apis.data.go.kr/1360000/TyphoonInfoService/getTyphoonInfo'; /*URL*/
             var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + api_key; /*Service Key*/
             queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호 조회*/
-            queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /*행 수*/
+            queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('30'); /*행 수*/
             queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /*데이터 타입 - JSON*/
             queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()); /*조회 시작 날짜 - 오늘*/
             queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /*조회 끝 날짜 - 오늘*/
@@ -223,12 +223,18 @@
                         document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + myObj.response.body.items.item[number].tmSeq + "호]"
                         document.getElementById("typhoon_clock").textContent = myObj.response.body.items.item[number].tmFc + "발표"
                         document.getElementById("typhoon_info_text").textContent =
-                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + "현재, 추정 중심기압 " + myObj.response.body.items.item[number].typPs + "hPa이며, "+myObj.response.body.items.item[number].typLoc + "에서 " + myObj.response.body.items.item[number].typDir + "방향으로 " + myObj.response.body.items.item[number].typSp + "km/h의 속도로 이동중.";
+                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + "현재, 추정 중심기압 " + myObj.response.body.items.item[number].typPs + "hPa이며, " + myObj.response.body.items.item[number].typLoc + "에서 " + myObj.response.body.items.item[number].typDir + "방향으로 " + myObj.response.body.items.item[number].typSp + "km/h의 속도로 이동중.";
                         document.getElementById("typhoon_img").src = myObj.response.body.items.item[number].img;
-                        document.getElementById("other").textContent ="○" +myObj.response.body.items.item[number].other
+                        document.getElementById("other").textContent = "○" + myObj.response.body.items.item[number].other
                         var beforerem = myObj.response.body.items.item[number].rem;
                         var afterrem = beforerem.split('|')
-                        document.getElementById("rem").textContent ="○" +afterrem[0] + " "+ afterrem[1];
+                        document.getElementById("rem").textContent = "○" + afterrem[0] + " " + afterrem[1];
+                        max_num = myObj.response.body.totalCount
+                        console.log(max_num)
+                        if (number >= max_num-1){
+                            number = max_num-2
+                            alert("오늘 가장 먼저 발표된 태풍 정보입니다. 이 전에 발표된 태풍정보는 없습니다.")
+                        }
                     }
                 };
                 xmlhttp.open("GET", api_url, true);
@@ -245,7 +251,8 @@
                     number = parseInt(number) - 1;
                     console.log(number);
                     typhoon()
-                    if (number < 1) {
+                    if (number < 0) {
+                        alert("최신 태풍정보입니다.")
                         number = 0;
                     }
                 }
@@ -263,7 +270,7 @@
             </div>
         </div>
         <br>
-        <div class="typhoon_info" >
+        <div class="typhoon_info">
             <div class="typhoon_imoji">
                 <span>
                     <h4 style="font-weight:bold; padding:5px;">태풍정보</h4>
@@ -280,8 +287,8 @@
                 </div>
                 <p><span id="other"></span><br><span id="rem"></span></p>
                 <div class="typhoon_forcast_btn">
-                    <input class="forcast_btn" type="button" onclick='count("minus")' value="< 다음 발표">
-                    <input class="forcast_btn" type="button" onclick='count("plus")' value="이전 발표 >">
+                    <input class="forcast_btn" type="button" onclick='count("minus")' value="< 이전">
+                    <input class="forcast_btn" type="button" onclick='count("plus")' value="다음 >">
                 </div>
                 <div class="typhoon_two">
                     <div class="typhoon_krjp">
@@ -322,8 +329,8 @@
                 <p style="text-align: center;"><a href="./prepare/typhoon.html">태풍에 대비</a></p>
             </div>
         </div>
-        <br>
-        <div class="hot_info">
+        <!-- <br> -->
+        <!-- <div class="hot_info">
             <div class="hot_imoji">
                 <span>
                     <h4 style="font-weight:bold; padding:5px;">폭염정보</h4>
@@ -340,8 +347,8 @@
                         <span style="font-size:16px;">열중증에 대비하는 방법</span>
                     </a>
                 </p>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
         <a href="https://library.krihs.re.kr/bbs/content/2_114 ">
             <h3>라이프라인
         </a>・구급</h3>
@@ -498,5 +505,4 @@
         <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
     </div>
 </body>
-
 </html>
