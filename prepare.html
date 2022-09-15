@@ -24,17 +24,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="icon" href="./호야.png">
-    <script type="text/javascript">
-        // F12 버튼 방지
-        $(document).ready(function(){
-            $(document).bind('keydown',function(e){
-                if ( e.keyCode == 123 /* F12 */) {
-                    e.preventDefault();
-                    e.returnValue = false;
-                }
-            });
-        });
-    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800&display=swap');
 
@@ -53,9 +42,23 @@
             background-color: #F0EFF5;
         }
     </style>
+    <script type="text/javascript">
+        // F12 버튼 방지
+        $(document).ready(function(){
+            $(document).bind('keydown',function(e){
+                if ( e.keyCode == 123 /* F12 */) {
+                    e.preventDefault();
+                    e.returnValue = false;
+                }else if ( e.keyCode == 73 /* F12 */) {
+                    e.preventDefault();
+                    e.returnValue = false;
+                }
+            });
+        });
+    </script>
 </head>
 
-<body>
+<body oncontextmenu="return false">
     <script>
         AOS.init();
     </script>
@@ -220,12 +223,17 @@
                         document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + myObj.response.body.items.item[number].tmSeq + "호]"
                         document.getElementById("typhoon_clock").textContent = myObj.response.body.items.item[number].tmFc + "발표"
                         document.getElementById("typhoon_info_text").textContent =
-                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + myObj.response.body.items.item[number].typLoc + "에서 " + myObj.response.body.items.item[number].typDir + "방향으로 " + myObj.response.body.items.item[number].typSp + "km/h의 속도로 이동중.";
+                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + "현재, 추정 중심기압 " + myObj.response.body.items.item[number].typPs + "hPa이며, "+myObj.response.body.items.item[number].typLoc + "에서 " + myObj.response.body.items.item[number].typDir + "방향으로 " + myObj.response.body.items.item[number].typSp + "km/h의 속도로 이동중.";
                         document.getElementById("typhoon_img").src = myObj.response.body.items.item[number].img;
+                        document.getElementById("other").textContent ="○" +myObj.response.body.items.item[number].other
+                        var beforerem = myObj.response.body.items.item[number].rem;
+                        var afterrem = beforerem.split('|')
+                        document.getElementById("rem").textContent ="○" +afterrem[0] + " "+ afterrem[1];
                     }
                 };
                 xmlhttp.open("GET", api_url, true);
                 xmlhttp.send();
+                console.log(api_url)
             }
             function count(type) {
                 if (type == 'plus') {
@@ -244,7 +252,6 @@
             }
 
         </script>
-        <!--태풍정보-->
         <br>
         <div class="eva-disease">
             <div>
@@ -256,7 +263,7 @@
             </div>
         </div>
         <br>
-        <div class="typhoon_info">
+        <div class="typhoon_info" >
             <div class="typhoon_imoji">
                 <span>
                     <h4 style="font-weight:bold; padding:5px;">태풍정보</h4>
@@ -269,8 +276,9 @@
                 </p>
                 <p id="typhoon_info_text">잠시만 기다려주세요<br></p>
                 <div class="typhoon_info_box_text_img">
-                    <img id="typhoon_img" src="" alt="태풍정보 이미지를 불러오고 있거나 실패하였습니다.">
+                    <img id="typhoon_img" src="" alt="태풍정보 이미지를 불러오고 있거나 불러오기를 실패하였습니다.">
                 </div>
+                <p><span id="other"></span><br><span id="rem"></span></p>
                 <div class="typhoon_forcast_btn">
                     <input class="forcast_btn" type="button" onclick='count("minus")' value="< 다음 발표">
                     <input class="forcast_btn" type="button" onclick='count("plus")' value="이전 발표 >">
