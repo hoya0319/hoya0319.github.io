@@ -43,22 +43,22 @@
         }
     </style>
     <script type="text/javascript">
-        // F12 버튼 방지
-        // $(document).ready(function(){
-        //     $(document).bind('keydown',function(e){
-        //         if ( e.keyCode == 123 /* F12 */) {
-        //             e.preventDefault();
-        //             e.returnValue = false;
-        //         }else if ( e.keyCode == 73 /* F12 */) {
-        //             e.preventDefault();
-        //             e.returnValue = false;
-        //         }
-        //     });
-        // }); oncontextmenu="return false"
+        F12 버튼 방지
+        $(document).ready(function(){
+            $(document).bind('keydown',function(e){
+                if ( e.keyCode == 123 /* F12 */) {
+                    e.preventDefault();
+                    e.returnValue = false;
+                }else if ( e.keyCode == 73 /* F12 */) {
+                    e.preventDefault();
+                    e.returnValue = false;
+                }
+            });
+        });
     </script>
 </head>
 
-<body>
+<body oncontextmenu="return false">
     <script>
         AOS.init();
     </script>
@@ -154,14 +154,14 @@
             </script>
         </div>
         </marquee>
-        <div class="notice">
+<!--         <div class="notice">
             <h4 id="notice_text">ㅁㄴㅇㄹ</h4>
             <a href="#">
                 <div class="notice_btn">
                     <p  >자세한 정보는 여기서</p>
                 </div>
             </a>
-        </div>
+        </div> -->
     </div>
     <div class="prepare_fir_title">
         <!-- <h1>방재</h1> -->
