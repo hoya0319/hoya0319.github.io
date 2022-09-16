@@ -9,6 +9,7 @@ body{
     max-width:100%;
     overflow-x: hidden;
     line-height:1.5;
+    
 }
 h1{
     margin:0px;
@@ -44,6 +45,9 @@ p{
     padding:10px 0px 10px;
     line-height: 23px;
     font-weight: 700;
+}
+p, span, h1, h2, h3, h4{
+    transform : rotate(0.04deg); 
 }
 .special_content h1{
     margin:0px;
@@ -260,6 +264,7 @@ li, ol{
     justify-content: center;
     flex-direction: column;
     color:white;
+    display:none;
 }
 .notice h4{
     padding:0px;

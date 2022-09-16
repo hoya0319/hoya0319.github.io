@@ -44,21 +44,21 @@
     </style>
     <script type="text/javascript">
         // F12 버튼 방지
-        $(document).ready(function(){
-            $(document).bind('keydown',function(e){
-                if ( e.keyCode == 123 /* F12 */) {
-                    e.preventDefault();
-                    e.returnValue = false;
-                }else if ( e.keyCode == 73 /* F12 */) {
-                    e.preventDefault();
-                    e.returnValue = false;
-                }
-            });
-        });
+        // $(document).ready(function(){
+        //     $(document).bind('keydown',function(e){
+        //         if ( e.keyCode == 123 /* F12 */) {
+        //             e.preventDefault();
+        //             e.returnValue = false;
+        //         }else if ( e.keyCode == 73 /* F12 */) {
+        //             e.preventDefault();
+        //             e.returnValue = false;
+        //         }
+        //     });
+        // }); oncontextmenu="return false"
     </script>
 </head>
 
-<body oncontextmenu="return false">
+<body>
     <script>
         AOS.init();
     </script>
@@ -152,15 +152,16 @@
                     }
                 }
             </script>
+        </div>
         </marquee>
-        <!-- <div class="notice">
-        <h4 id="notice_text">ㅁㄴㅇㄹ</h4>
-        <a href="#">
-            <div class="notice_btn">
-                <p  >자세한 정보는 여기서</p>
-            </div>
-        </a>
-    </div> -->
+        <div class="notice">
+            <h4 id="notice_text">ㅁㄴㅇㄹ</h4>
+            <a href="#">
+                <div class="notice_btn">
+                    <p  >자세한 정보는 여기서</p>
+                </div>
+            </a>
+        </div>
     </div>
     <div class="prepare_fir_title">
         <!-- <h1>방재</h1> -->
@@ -189,6 +190,11 @@
                 <h4>방재용품</h4>
             </div>
         </a>
+        <a href="./prepare/shelter.html">
+            <div class="bosai_top_box">
+                <h4>피난소 찾기</h4>
+            </div>
+        </a>
     </div>
     <div class="bosai_content">
         <script>
@@ -207,7 +213,7 @@
             queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호 조회*/
             queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('30'); /*행 수*/
             queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /*데이터 타입 - JSON*/
-            queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()); /*조회 시작 날짜 - 오늘*/
+            queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()-1); /*조회 시작 날짜 - 오늘*/
             queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /*조회 끝 날짜 - 오늘*/
             xhr.open('GET', url + queryParams);
             api_url = url + queryParams;
@@ -218,22 +224,23 @@
                 xmlhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         var myObj = JSON.parse(this.responseText);
-                        typ_num = myObj.response.body.items.item[number].typSeq;
-                        typ_name = myObj.response.body.items.item[number].typName;
-                        document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + myObj.response.body.items.item[number].tmSeq + "호]"
-                        document.getElementById("typhoon_clock").textContent = myObj.response.body.items.item[number].tmFc + "발표"
+                        typ_par_main=myObj.response.body.items.item[number]
+                        typ_num = typ_par_main.typSeq;
+                        typ_name = typ_par_main.typName;
+                        document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + typ_par_main.tmSeq + "호]"
+                        document.getElementById("typhoon_clock").textContent = typ_par_main.tmFc + "발표"
                         document.getElementById("typhoon_info_text").textContent =
-                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + "현재, 추정 중심기압 " + myObj.response.body.items.item[number].typPs + "hPa이며, " + myObj.response.body.items.item[number].typLoc + "에서 " + myObj.response.body.items.item[number].typDir + "방향으로 " + myObj.response.body.items.item[number].typSp + "km/h의 속도로 이동중.";
-                        document.getElementById("typhoon_img").src = myObj.response.body.items.item[number].img;
-                        document.getElementById("other").textContent = "○" + myObj.response.body.items.item[number].other
-                        var beforerem = myObj.response.body.items.item[number].rem;
+                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + "현재, 추정 중심기압 " + typ_par_main.typPs + "hPa이며, " + typ_par_main.typLoc + "에서 " + typ_par_main.typDir + "방향으로 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
+                        document.getElementById("typhoon_img").src = typ_par_main.img;
+                        document.getElementById("other").textContent = "○" + typ_par_main.other
+                        var beforerem = typ_par_main.rem;
                         var afterrem = beforerem.split('|')
                         document.getElementById("rem").textContent = "○" + afterrem[0] + " " + afterrem[1];
                         max_num = myObj.response.body.totalCount
                         console.log(max_num)
                         if (number >= max_num-1){
                             number = max_num-2
-                            alert("오늘 가장 먼저 발표된 태풍 정보입니다. 이 전에 발표된 태풍정보는 없습니다.")
+                            alert("조회 가능한 날짜는 어제~오늘입니다.");
                         }
                     }
                 };
@@ -287,8 +294,8 @@
                 </div>
                 <p><span id="other"></span><br><span id="rem"></span></p>
                 <div class="typhoon_forcast_btn">
-                    <input class="forcast_btn" type="button" onclick='count("minus")' value="< 이전">
-                    <input class="forcast_btn" type="button" onclick='count("plus")' value="다음 >">
+                    <input class="forcast_btn" type="button" onclick='count("minus")' value="< 다음 발표">
+                    <input class="forcast_btn" type="button" onclick='count("plus")' value="이전 발표 >">
                 </div>
                 <div class="typhoon_two">
                     <div class="typhoon_krjp">
