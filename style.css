@@ -317,7 +317,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-@media screen and (max-width : 911px) {
+@media screen and (max-width : 800px) {
     .emergency .box{
         width:300px;
     }
