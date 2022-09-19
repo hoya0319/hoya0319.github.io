@@ -45,23 +45,23 @@
     </style>
     <script type="text/javascript">
         // F12 버튼 방지
-        // $(document).ready(function(){
-        //     $(document).bind('keydown',function(e){
-        //         if ( e.keyCode == 123 /* F12 */) {
-        //             e.preventDefault();
-        //             e.returnValue = false;
-        //         }else if ( e.keyCode == 73 /* F12 */) {
-        //             e.preventDefault();
-        //             e.returnValue = false;
-        //         }
-        //     });
-        // }); 
+        $(document).ready(function(){
+            $(document).bind('keydown',function(e){
+                if ( e.keyCode == 123 /* F12 */) {
+                    e.preventDefault();
+                    e.returnValue = false;
+                }else if ( e.keyCode == 73 /* F12 */) {
+                    e.preventDefault();
+                    e.returnValue = false;
+                }
+            });
+        }); 
         
     </script>
 </head>
 
-<!-- <body oncontextmenu="return false" > -->
-<body>
+<body oncontextmenu="return false" >
+<!-- <body> -->
     <script>
         AOS.init();
     </script>
