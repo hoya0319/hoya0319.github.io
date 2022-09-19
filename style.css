@@ -264,6 +264,36 @@
 .typhoon_info_box p{
     font-size:17px;
 }
+.quake_info{
+    width:95%;
+    margin:auto;
+    border:2px solid brown;
+    background-color: #f3f4f9;
+}
+.quake_title span{
+    background:rgb(182, 77, 77);
+    color: #fff;
+    display: block; 
+    text-align: center;
+    margin: 2px 5px;
+    border-radius: 24px;
+    position: relative;
+}
+.quake_info_more{
+    display: flex;
+}
+.quake_text_box{
+    padding:10px 20px;
+}
+.quake_info_more p{
+    padding:5px 0px;
+}
+.quake_info_text{
+    padding:0px;
+}
+#intensity{
+    padding-left:100px;
+}
 .hot_info{
     width:95%;
     margin:auto;
@@ -293,6 +323,9 @@
     display: flex;
     justify-content: center;
 }
+#quake_location, #quake_time, #quake_rem{
+    padding:5px 0px;
+}
 @keyframes appLinkTyphoon{
     0%{-webkit-transform:rotate(0);transform:rotate(0)}
     100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg)}
@@ -304,15 +337,22 @@
 .typhoon_krjp{
     width:47%;
 }
+.earthquake_krjp{
+    width:31%;
+}
+.earthquake_krjp h4{
+    padding: 5px 0px;
+    border-bottom:solid 2px gray;
+}
 .typhoon_krjp h4{
     padding: 5px 0px;
     border-bottom:solid 2px gray;
 }
-.typhoon_krjp p{
+.typhoon_krjp p, .earthquake_krjp p{
     padding: 3px 0px;
     width:150px;
 }
-.typhoon_krjp div{
+.typhoon_krjp div, .earthquake_krjp div{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
