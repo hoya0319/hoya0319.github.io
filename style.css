@@ -326,6 +326,12 @@
 #quake_location, #quake_time, #quake_rem{
     padding:5px 0px;
 }
+#copy{
+    font-size:8px;
+}
+#copy img{
+    width:50px;
+}
 @keyframes appLinkTyphoon{
     0%{-webkit-transform:rotate(0);transform:rotate(0)}
     100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg)}
