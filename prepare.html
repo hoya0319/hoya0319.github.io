@@ -19,7 +19,7 @@
     <script src="./main.js" defer></script>
     <script src="./notice.js" defer></script>
     <script type="text/javascript" src="./api.js"></script>
-    <!-- <script src="./typhoon.js" defer type="module"></script> -->
+    <script src="./quakeinfo.js" defer type="module"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -55,10 +55,12 @@
                 }
             });
         }); 
+        
     </script>
 </head>
 
-<body oncontextmenu="return false">
+<body oncontextmenu="return false" >
+<!-- <body> -->
     <script>
         AOS.init();
     </script>
@@ -158,7 +160,7 @@
             <h4 id="notice_text">ㅁㄴㅇㄹ</h4>
             <a href="#">
                 <div class="notice_btn">
-                    <p  >자세한 정보는 여기서</p>
+                    <p>자세한 정보는 여기서</p>
                 </div>
             </a>
         </div>
@@ -227,17 +229,54 @@
                         typ_par_main=myObj.response.body.items.item[number]
                         typ_num = typ_par_main.typSeq;
                         typ_name = typ_par_main.typName;
+                        typ_dir=typ_par_main.typDir
+                        var dir = "방향"
+                        if(typ_dir=='N'){
+                            dir = "북"
+                        }else if(typ_dir=='NNE'){
+                            dir = "북북동"
+                        }else if(typ_dir =='NE'){
+                            dir = "북동"
+                        }else if(typ_dir =='ENE'){
+                            dir = "동북동"
+                        }else if(typ_dir =='E'){
+                            dir = "동"
+                        }else if(typ_dir =="ESE"){
+                            dir = "동남동"
+                        }else if(typ_dir =="SE"){
+                            dir = "남동"
+                        }else if(typ_dir =="SSE"){
+                            dir = '남남동'
+                        }else if(typ_dir =='S'){
+                            dir = '남'
+                        }else if(typ_dir =='SSW'){
+                            dir = '남남서'
+                        }else if(typ_dir =='SW'){
+                            dir = '남서'
+                        }else if(typ_dir =='WSW'){
+                            dir = '서남서'
+                        }else if(typ_dir =='W'){
+                            dir = '서'
+                        }else if(typ_dir =='WNW'){
+                            dir = '서북서'
+                        }else if(typ_dir == 'NW'){
+                            dir='북서'
+                        }else if(typ_dir =='NNW'){
+                            dir='북북서'
+                        }else{
+                            dir='정의되지 않음'
+                        }
                         document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + typ_par_main.tmSeq + "호]"
                         document.getElementById("typhoon_clock").textContent = typ_par_main.tmFc + "발표"
                         document.getElementById("typhoon_info_text").textContent =
-                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + "현재, 추정 중심기압 " + typ_par_main.typPs + "hPa이며, " + typ_par_main.typLoc + "에서 " + typ_par_main.typDir + "방향으로 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
+                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + "현재, 추정 중심기압 " + typ_par_main.typPs + "hPa이며, " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
                         document.getElementById("typhoon_img").src = typ_par_main.img;
                         document.getElementById("other").textContent = "○" + typ_par_main.other
                         var beforerem = typ_par_main.rem;
                         var afterrem = beforerem.split('|')
                         document.getElementById("rem").textContent = "○" + afterrem[0] + " " + afterrem[1];
                         max_num = myObj.response.body.totalCount
-                        console.log(max_num)
+                        // console.log(max_num)
                         if (number >= max_num-1){
                             number = max_num-2
                             alert("조회 가능한 날짜는 어제~오늘입니다.");
@@ -246,17 +285,17 @@
                 };
                 xmlhttp.open("GET", api_url, true);
                 xmlhttp.send();
-                console.log(api_url)
+                // console.log(api_url)
             }
             function count(type) {
                 if (type == 'plus') {
                     number = parseInt(number) + 1;
-                    console.log(number);
+                    // console.log(number);
                     typhoon()
                 }
                 if (type == 'minus') {
                     number = parseInt(number) - 1;
-                    console.log(number);
+                    // console.log(number);
                     typhoon()
                     if (number < 0) {
                         alert("최신 태풍정보입니다.")
@@ -264,7 +303,6 @@
                     }
                 }
             }
-
         </script>
         <br>
         <div class="eva-disease">
@@ -301,17 +339,12 @@
                     <div class="typhoon_krjp">
                         <h4>한국</h4>
                         <div>
-                            <p><a href="https://www.weather.go.kr/w/typhoon/report.do" class="out_link"
-                                    target="_blank">기상청 태풍정보</a></p>
-                            <p><a href="https://www.weather.go.kr/w/weather/warning/status.do" class="out_link"
-                                    target="_blank">기상 경보, 주의보</a></p>
-                            <p><a href="https://www.weather.go.kr/w/image/radar.do" class="out_link" target="_blank">비
-                                    구름 레이더</a></p>
+                            <p><a href="https://www.weather.go.kr/w/typhoon/report.do" class="out_link" target="_blank">기상청 태풍정보</a></p>
+                            <p><a href="https://www.weather.go.kr/w/weather/warning/status.do" class="out_link" target="_blank">기상 경보, 주의보</a></p>
+                            <p><a href="https://www.weather.go.kr/w/image/radar.do" class="out_link" target="_blank">비 구름 레이더</a></p>
                             <p><a href="http://www.hrfco.go.kr/main.do" class="out_link" target="_blank">하천 수위정보</a></p>
-                            <p><a href="https://www.forest.go.kr/kfsweb/kfi/kfs/trail/sanSaTae.do?pblicDataId=PBD0000210&tabs=4&mn=NKFS_06_08_02&subTitle=%EC%82%B0%EC%82%AC%ED%83%9C%EC%9C%84%ED%97%98%EC%A7%80%EB%8F%84"
-                                    class="out_link" target="_blank">산사태 위험지도</a></p>
-                            <p><a href="https://sansatai.forest.go.kr/gis/main.do#mhms0" class="out_link"
-                                    target="_blank">산사태 정보시스템</a></p>
+                            <p><a href="https://www.forest.go.kr/kfsweb/kfi/kfs/trail/sanSaTae.do?pblicDataId=PBD0000210&tabs=4&mn=NKFS_06_08_02&subTitle=%EC%82%B0%EC%82%AC%ED%83%9C%EC%9C%84%ED%97%98%EC%A7%80%EB%8F%84" class="out_link" target="_blank">산사태 위험지도</a></p>
+                            <p><a href="https://sansatai.forest.go.kr/gis/main.do#mhms0" class="out_link" target="_blank">산사태 정보시스템</a></p>
                         </div>
                     </div>
                     <div class="typhoon_krjp">
@@ -336,8 +369,56 @@
                 <p style="text-align: center;"><a href="./prepare/typhoon.html">태풍에 대비</a></p>
             </div>
         </div>
-        <!-- <br> -->
-        <!-- <div class="hot_info">
+        <br>
+        <div class="quake_info">
+            <div class="quake_title">
+                <span>
+                    <h4 style="font-weight:bold; padding:5px;">지진정보</h4>
+                </span>
+            </div>
+            <div class="typhoon_info_box">
+                <p style="text-align:center;">
+                    <span id="quake_title" style="font-weight: 900; font-size:20px;">기상청 지진정보를 불러오는 중입니다.</span>
+                    <span id="typhoon_clock" style="font-size:15px;"></span>
+                </p>
+                <div class="typhoon_info_box_text_img">
+                    <img id="quake_img" src="" alt="지진정보 이미지를 불러오고 있거나 불러오기를 실패하였습니다.">
+                </div>
+                <div class="quake_text_box">
+                    <p id="quake_location">정보를 불러오는 중입니다...</p>
+                    <p id="quake_time">잠시만 기다려주세요</p>
+                    <div class="quake_info_more">
+                        <p id="magnitude"></p>
+                        <p id="intensity"></p>
+                    </div>
+                    <p id="quake_rem"></p>
+                </div>
+                <div class="typhoon_two">
+                    <div class="earthquake_krjp">
+                        <h4>한국</h4>
+                        <div>
+                            <p><a href="https://www.weather.go.kr/w/eqk-vol/recent-eqk.do" class="out_link" target="_blank">지진정보</a></p>
+                            <p><a href="https://www.weather.go.kr/w/eqk-vol/search/korea.do?schOption=&xls=0&startSize=&endSize=&startLat=&endLat=&startLon=&endLon=&lat=&lon=&dist=&keyword=&dpType=a" class="out_link" target="_blank">미소지진정보</a></p>
+                        </div>
+                    </div>
+                    <div class="earthquake_krjp">
+                        <h4>일본</h4>
+                        <div>
+                            <p><a href="https://www.jma.go.jp/bosai/map.html#9&elem=int&contents=earthquake_map" class="out_link" target="_blank">지진정보</a></p>
+                        </div>
+                    </div>
+                    <div class="earthquake_krjp">
+                        <h4>기타</h4>
+                        <div>
+                            <p><a href="https://earthquake.usgs.gov/earthquakes/map/" class="out_link" target="_blank">USGS 지진정보</a></p>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center;"><a href="./prepare/earthquake.html">지진에 대비</a></p>
+            </div>
+        </div>
+        <br>
+        <div class="hot_info">
             <div class="hot_imoji">
                 <span>
                     <h4 style="font-weight:bold; padding:5px;">폭염정보</h4>
@@ -354,8 +435,8 @@
                         <span style="font-size:16px;">열중증에 대비하는 방법</span>
                     </a>
                 </p>
-            </div> -->
-        <!-- </div> -->
+            </div>
+        </div>
         <a href="https://library.krihs.re.kr/bbs/content/2_114 ">
             <h3>라이프라인
         </a>・구급</h3>
