@@ -19,7 +19,8 @@
     <script src="./main.js" defer></script>
     <script src="./notice.js" defer></script>
     <script type="text/javascript" src="./api.js"></script>
-    <script src="./quakeinfo.js" defer type="module"></script>
+    <!-- <script src="./typhoon.js" defer type="module"></script> -->
+    <!-- <script src="./quakeinfo.js" defer type="module"></script> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -56,6 +57,9 @@
             });
         }); 
         
+    </script>
+    <script>
+        alert('개발중인 페이지입니다. 버그가 발생할 수 있으며 내용이 바뀔 수 있습니다.')
     </script>
 </head>
 
@@ -99,9 +103,8 @@
     </nav>
     <div class="scroll">
         <marquee scrollamount="20">
-            <span class="korean" style="font-weight: 800;">현재 웨더뉴스의 M-스케일은 M2
-                입니다.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="japan" style="font-weight:bold; font-family: 'M PLUS 1p', sans-serif;
-            ">現在、ウェザーニュースのMスケールはM2です。</span>
+            <span class="korean" style="font-weight: 800;">웨더뉴스의 M-스케일을 불러오는 중입니다.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="japan" style="font-weight:bold; font-family: 'M PLUS 1p', sans-serif;
+            ">ウェザーニュースのMスケールを読み込み中です。</span>
             <script>
                 var scroll = $(".scroll");
                 var bosai = $(".go_to_your");
@@ -199,117 +202,6 @@
         </a>
     </div>
     <div class="bosai_content">
-        <script>
-            var xhr = new XMLHttpRequest();
-            function getToday() {
-                var date = new Date();
-                var year = date.getFullYear();
-                var month = ("0" + (1 + date.getMonth())).slice(-2);
-                var day = ("0" + date.getDate()).slice(-2);
-
-                return year + month + day;
-            }
-            const api_key = config.apikey;
-            var url = 'http://apis.data.go.kr/1360000/TyphoonInfoService/getTyphoonInfo'; /*URL*/
-            var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + api_key; /*Service Key*/
-            queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호 조회*/
-            queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('30'); /*행 수*/
-            queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /*데이터 타입 - JSON*/
-            queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()-1); /*조회 시작 날짜 - 오늘*/
-            queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /*조회 끝 날짜 - 오늘*/
-            xhr.open('GET', url + queryParams);
-            api_url = url + queryParams;
-            var number = 0;
-            typhoon()
-            function typhoon() {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        var myObj = JSON.parse(this.responseText);
-                        typ_par_main=myObj.response.body.items.item[number]
-                        typ_num = typ_par_main.typSeq;
-                        typ_name = typ_par_main.typName;
-                        typ_dir=typ_par_main.typDir
-                        var dir = "방향"
-                        if(typ_dir=='N'){
-                            dir = "북"
-                        }else if(typ_dir=='NNE'){
-                            dir = "북북동"
-                        }else if(typ_dir =='NE'){
-                            dir = "북동"
-                        }else if(typ_dir =='ENE'){
-                            dir = "동북동"
-                        }else if(typ_dir =='E'){
-                            dir = "동"
-                        }else if(typ_dir =="ESE"){
-                            dir = "동남동"
-                        }else if(typ_dir =="SE"){
-                            dir = "남동"
-                        }else if(typ_dir =="SSE"){
-                            dir = '남남동'
-                        }else if(typ_dir =='S'){
-                            dir = '남'
-                        }else if(typ_dir =='SSW'){
-                            dir = '남남서'
-                        }else if(typ_dir =='SW'){
-                            dir = '남서'
-                        }else if(typ_dir =='WSW'){
-                            dir = '서남서'
-                        }else if(typ_dir =='W'){
-                            dir = '서'
-                        }else if(typ_dir =='WNW'){
-                            dir = '서북서'
-                        }else if(typ_dir == 'NW'){
-                            dir='북서'
-                        }else if(typ_dir =='NNW'){
-                            dir='북북서'
-                        }else{
-                            dir='정의되지 않음'
-                        }
-                        var yyyymmdd = String(typ_par_main.tmFc);
-                        var year = yyyymmdd.slice(0,4);
-                        var month = yyyymmdd.slice(4,6);
-                        var date = yyyymmdd.slice(6,8);
-                        var hour = yyyymmdd.slice(8,10);
-                        var minute = yyyymmdd.slice(10,12);
-                        document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + typ_par_main.tmSeq + "호]"
-                        document.getElementById("typhoon_clock").textContent = year+"년 "+month+"월 "+date + "일 "+hour + "시 " + minute + "분 발표"
-                        document.getElementById("typhoon_info_text").textContent =
-                            "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + "현재, 추정 중심기압 " + typ_par_main.typPs + "hPa이며, " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
-                        document.getElementById("typhoon_img").src = typ_par_main.img;
-                        document.getElementById("other").textContent = "○" + typ_par_main.other
-                        var beforerem = typ_par_main.rem;
-                        var afterrem = beforerem.split('|')
-                        document.getElementById("rem").textContent = "○" + afterrem[0] + " " + afterrem[1];
-                        max_num = myObj.response.body.totalCount
-                        // console.log(max_num)
-                        if (number >= max_num-1){
-                            number = max_num-2
-                            alert("조회 가능한 날짜는 어제~오늘입니다.");
-                        }
-                    }
-                };
-                xmlhttp.open("GET", api_url, true);
-                xmlhttp.send();
-                // console.log(api_url)
-            }
-            function count(type) {
-                if (type == 'plus') {
-                    number = parseInt(number) + 1;
-                    // console.log(number);
-                    typhoon()
-                }
-                if (type == 'minus') {
-                    number = parseInt(number) - 1;
-                    // console.log(number);
-                    typhoon()
-                    if (number < 0) {
-                        alert("최신 태풍정보입니다.")
-                        number = 0;
-                    }
-                }
-            }
-        </script>
         <br>
         <div class="eva-disease">
             <div>
@@ -320,8 +212,8 @@
                 <a href="#" class="out_link">반출품 리스트</a>
             </div>
         </div>
-        <br>
-        <div class="typhoon_info">
+        <!-- <br>
+        <div id="typhoon_box" class="typhoon_info">
             <div class="typhoon_imoji">
                 <span>
                     <h4 style="font-weight:bold; padding:5px;">태풍정보</h4>
@@ -338,8 +230,8 @@
                 </div>
                 <p><span id="other"></span><br><span id="rem"></span></p>
                 <div class="typhoon_forcast_btn">
-                    <input class="forcast_btn" type="button" onclick='count("minus")' value="< 다음 발표">
-                    <input class="forcast_btn" type="button" onclick='count("plus")' value="이전 발표 >">
+                    <input class="forcast_btn" type="button" id="before" value="< 다음 발표">
+                    <input class="forcast_btn" type="button" id="next" value="이전 발표 >">
                 </div>
                 <div class="typhoon_two">
                     <div class="typhoon_krjp">
@@ -442,7 +334,7 @@
                     </a>
                 </p>
             </div>
-        </div>
+        </div> -->
         <a href="https://library.krihs.re.kr/bbs/content/2_114 ">
             <h3>라이프라인
         </a>・구급</h3>
@@ -457,7 +349,7 @@
                     <h4>수도</h4>
                 </div>
             </a>
-            <a href="./prepare/">
+            <a href="./prepare/aid.html">
                 <div class="bosai_box">
                     <h4>응급</h4>
                 </div>
