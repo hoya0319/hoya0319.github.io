@@ -43,12 +43,12 @@
     justify-content: space-evenly;
     flex-direction: row;
 }
-.typhoon_forcast_btn{
+.typhoon_forecast_btn{
     margin: auto;
     display: flex;
     justify-content: space-evenly;
 }
-.forcast_btn{
+.forecast_btn{
     padding:10px 25px;
     background-color: rgb(106, 106, 255);
     color:white;
@@ -263,6 +263,7 @@
 }
 .typhoon_info_box p{
     font-size:17px;
+    padding: 2px 0px;
 }
 .quake_info{
     width:95%;
@@ -291,14 +292,16 @@
 .quake_info_text{
     padding:0px;
 }
-#intensity{
-    padding-left:100px;
-}
 .hot_info{
     width:95%;
     margin:auto;
     border:2px solid red;
     background-color: #f3f4f9;   
+}
+#quake_title{
+    margin:10px 0px;
+    font-weight: 900;
+    font-size:22px;
 }
 .hot_imoji{
     background:#ac2a2a;
@@ -331,6 +334,20 @@
 }
 #copy img{
     width:50px;
+}
+.your_bosai{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.your_bosai p{
+    text-align : center;
+}
+.your_bosai_box{
+    border : 2px solid black;
+    width:100px;
+    margin:10px 0px;
 }
 @keyframes appLinkTyphoon{
     0%{-webkit-transform:rotate(0);transform:rotate(0)}
@@ -388,5 +405,11 @@
     }
     .eva-disease_text{
         padding-left:50px;
+    }
+}
+@media screen and (max-width : 377px) {
+    .bosai_top_box{
+        width:90px;
+        height:100px;
     }
 }

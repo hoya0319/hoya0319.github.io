@@ -1,0 +1,175 @@
+.disaster_title{
+    border:1px solid brown;
+    background: linear-gradient(#D8D8D8 50%, #FFFFFF);
+}
+.disaster_title >*{
+    padding:0px;
+    padding: 5px 10px;
+}
+table{
+    border-spacing: 0px;
+    margin: auto;
+}
+input{
+    accent-color:blue;
+}
+.disaster_content{
+    width:1000px;
+    margin:auto;
+    background-color:white;
+    display: flex;
+}
+.left_top {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 8px 4px;
+    word-break: normal;     
+    background-color: rgb(233, 233, 233);
+    width:140px;
+    text-align: center;
+}
+.right_top {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 1px 0px 0px;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 8px 4px;
+    word-break: normal;     
+    background-color: white;
+    width:660px;
+}
+.left_bottom {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 8px 4px;
+    word-break: normal;     
+    background-color: rgb(233, 233, 233);
+    width:140px;
+    text-align: center;
+}
+.right_bottom {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 1px 1px 0px;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 8px 4px;
+    word-break: normal;     
+    background-color: white;
+    width:660px;
+}
+.content_left{
+    width:800px;
+}
+.content_right{
+    width:200px;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    padding:1px;
+    background-color: black;
+    width: 122px;
+    margin:auto;
+}
+.menu a{
+    width:100px;
+    text-align: center;
+    padding:5px 10px;
+    border:solid 1px black;
+    background-color: white;
+}
+.menu a:hover{
+    transform: scale(1.03);
+    background-color: rgb(255, 231, 186 );
+}
+.main_box{
+    width:95%;
+    margin:auto;
+    border:1px solid black;
+    margin-top:20px;
+    padding:2.35%;
+}
+#quake_title{
+    padding-top:0px;
+}
+.map{
+    text-align:center;
+}
+.map img{
+    border : 4px solid black;
+    width:95%;
+}
+.forecast_btn{
+    padding:10px 25px;
+    background-color: rgb(106, 106, 255);
+    color:white;
+    font-family: 'NanumSquare';
+    border-color:rgb(106, 106, 255);
+    border-radius: 5px;
+    margin:10px -20px;
+}
+.typhoon_forecast_btn{
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+@media screen and (max-width : 1020px) {
+    .disaster_content{
+        width: 750px;
+        margin:auto;
+        background-color:white;
+    }
+    .content_left{
+        width: 700px;
+    }
+}
+@media screen and (max-width :  800px) {
+    .disaster_content{
+        width:90%;
+        margin:auto;
+        background-color:white;
+        flex-direction: column-reverse;
+    }
+    .content_right{
+        width:100%;
+    }
+    .menu{
+        display: flex;
+        background-color: black;
+        margin: auto;
+        flex-direction: row;
+        margin-bottom:10px;
+        width:100%;
+    }
+    .menu a{
+        text-align: center;
+        padding:5px 10px;
+        border:solid 1px black;
+        background-color: white;
+    }
+    .content_left{
+        width:100%;
+        margin:auto;
+    }
+    .menu{
+        display: flex;
+        background-color: white;
+        margin: auto;
+        flex-direction: row;
+        margin-bottom: 10px;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .menu a{
+            width: 60px;
+    }
+}

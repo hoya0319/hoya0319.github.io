@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNGCQ3FBZ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QNGCQ3FBZ1');
+</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="호야, 지진, 재난, 재난방송, 지진방송, 일본지진, 호야 재난방송, 호야 지진방송, 일본, 태풍, 정전, 수도, 응급, 재해 지식, 해일, 쓰나미, 화산, 분화, 화산폭발, 열사병, 일사병, 열중증, 폭설, 내수범람, 하천홍수, 홍수, 폭염, 수해, 침수, 지진동, 진도, 규모, 기압, 풍속, 태풍, 기상, 기상특보, 기상경보, 경보, 주의보, 난카이트로프, 난카이 트로프, 거대지진, 거대 지진, 특설 페이지, M 스케일, mscale, 토사재해, 산사태, 기상, 날씨, 기상특보, 피난, 코로나, 감염, 대피, 피난소, 태풍정보, 정보, 레이더, 비, 산사태, 하천 수위, 수위">
+    <meta name="description" content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
+    <meta name="author" content="호야">
+    <meta property="robots" content="index, follow">
+    <title>호야-재난방송 - 태풍정보</title>
+    <link rel="stylesheet" href="../HDS.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
+    <script src="../main.js" defer></script>
+    <script src="../notice.js" defer></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="icon" href="../호야.png">
+</head>
+<body>
+    <script>
+        AOS.init();
+    </script>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="../index.html">
+                <img src="../logo.png" alt="로고">
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <a href="../index.html"><li>홈</li></a>
+            <a href="../intro.html"><li>채널소개</li></a>
+            <a href="../broadcast.html"><li>방송안내</li></a>
+            <a href="../resource.html"><li>자료실</li></a>
+            <a href="../prepare.html"><li>방재</li></a>
+            <a href="../special.html"><li>스페셜</li></a>
+            <a href="../emergency.html"><li>특설페이지</li></a>
+        </ul>
+        <a href="javascript:return false;" class="navbarBtn">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>  
+    <div class="disaster_content" style="padding-top:80px;">
+        <div class="content_left">
+            <div class="disaster_title">
+                <h1 style="text-align:left">태풍정보</h1>
+                <p id="info">최근 2일간 발표된 태풍정보를 시간순으로 찾아볼 수 있습니다.</p>
+            </div>
+            <div class="main_box">
+                <h2 id="typhoon_title"></h2>
+                <h4 id="typhoon_clock"></h4>
+                <div class="map">
+                    <img id="typhoon_img" src="">
+                </div>
+                <p id="typhoon_info_text"></p>
+                <div class="typhoon_forecast_btn">
+                    <input class="forecast_btn" type="button" id="before" value="< 다음 발표">
+                    <input class="forecast_btn" type="button" id="next" value="이전 발표 >">
+                </div>
+                <div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="left_top">태풍 이름</td>
+                                <td class="right_top" id="typhoon_name"></td>
+                            </tr>
+                            <tr>
+                                <td class="left_top">위치</td>
+                                <td class="right_top"><span id="location"></span><br><span id="lat"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="left_top">이동 방향 / 속도</td>
+                                <td class="right_top" id="movement"></td>
+                            </tr>
+                            <tr>
+                                <td class="left_top">중심기압</td>
+                                <td class="right_top" id="pressure"></td>
+                            </tr>
+                            <tr>
+                                <td class="left_top">최대풍속</td>
+                                <td class="right_top" id="wind_speed"></td>
+                            </tr>
+                            <tr>
+                                <td class="left_top">강도</td>
+                                <td class="right_top" id="strength"></td>
+                            </tr>
+                            <tr>
+                                <td class="left_top">강풍반경 / 폭풍반경</td>
+                                <td class="right_top"id="typ15"></td>
+                            </tr>
+                            <tr>
+                                <td class="left_top">참고사항</td>
+                                <td class="right_top"id="rem"></td>
+                            </tr>
+                            <tr>
+                                <td class="left_bottom">비고</td>
+                                <td class="right_bottom" id="other" ></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="menu">
+                <a href="./quakeinfo.html">지진정보</a>
+                <a href="./typhooninfo.html">태풍정보</a>
+                <a href="./weatherforecast.html">동네예보</a>
+                <a href="./weatherwarning.html">기상특보</a>
+                <a href="./weathermap.html">일기도</a>
+                <a href="./satellite.html">위성영상</a>
+            </div>
+        </div>
+    </div>
+    <div class="homeButton_area">
+        <a href="../index.html" class="homeButton">홈</a>
+    </div>
+    <div class="footer">
+        <div class="footer_up">
+            <div class="footer_info">
+                <p><span class="name">호야-재난방송</span></p>
+            </div>
+            <div class="footer_sitemap">
+                <a href="../index.html">
+                    <p>홈</p>
+                </a>
+                <a href="../intro.html">
+                    <p>채널소개</p>
+                </a>
+                <a href="../broadcast.html">
+                    <p>방송안내</p>
+                </a>
+                <a href="../resource.html">
+                    <p>자료실</p>
+                </a>
+                <a href="../prepare.html">
+                    <p>방재</p>
+                </a>
+                <a href="../special.html">
+                    <p>스페셜</p>
+                </a>
+                <a href="../emergency.html">
+                    <p>특설페이지</p>
+                </a>
+                <a href="../sitemap.html">
+                    <p>사이트맵</p>
+                </a>
+            </div>
+            <div class="footer_link">
+                <a href="https://www.youtube.com/c/호야지진방송"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://discord.gg/wAUxJsU9aK"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </div>
+        <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
+    </div>
+</body>
+<script src="../source/javascript/gongong/data/api/jsfiles/typhoon.js"></script>
+</html>
