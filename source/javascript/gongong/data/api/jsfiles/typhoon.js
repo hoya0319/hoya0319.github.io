@@ -24,7 +24,7 @@ queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(g
 queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /*조회 끝 날짜 - 오늘*/
 xhr.open('GET', url + queryParams);
 var api_url = url + queryParams;
-console.log(api_url)
+// console.log(api_url)
 var number = 0;
 typhoon()
 function typhoon() {

@@ -98,4 +98,4 @@ xhr.onreadystatechange = function () {
     }
 };
 xhr.send('');
-console.log(url + queryParams)
+// console.log(url + queryParams)

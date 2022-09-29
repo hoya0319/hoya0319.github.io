@@ -16,7 +16,7 @@ queryParams += '&' + encodeURIComponent('stnId') + '=' + encodeURIComponent('108
 queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()); /**/
 queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
 xhr.open('GET', url + queryParams);
-console.log(url + queryParams)
+// console.log(url + queryParams)
 xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
         var myObj = JSON.parse(this.responseText);
