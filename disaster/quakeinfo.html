@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-QNGCQ3FBZ1');
 </script>
     <meta charset="UTF-8">
@@ -69,7 +68,7 @@
                         <tbody>
                             <tr>
                                 <td class="left_top">진앙</td>
-                                <td class="right_top" id="quake_location"></td>
+                                <td class="right_top"><span id="quake_location"></span><br><span id="lat"></span>&nbsp;<span id="lon"></span></td>
                             </tr>
                             <tr>
                                 <td class="left_top">발생시각</td>
@@ -88,8 +87,12 @@
                                 <td class="right_top"id="intensity"></td>
                             </tr>
                             <tr>
-                                <td class="left_bottom">참고사항</td>
-                                <td class="right_bottom" id="quake_rem" ></td>
+                                <td class="left_top">참고사항</td>
+                                <td class="right_top"id="quake_rem"></td>
+                            </tr>
+                            <tr>
+                                <td class="left_bottom">해일 가능성</td>
+                                <td class="right_bottom"><span id="comment"></span><br><p style="font-size:10px; line-height:10px; padding:0px;" id="comment_ex"></p></td>
                             </tr>
                         </tbody>
                     </table>
