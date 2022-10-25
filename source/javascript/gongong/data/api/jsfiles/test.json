@@ -9,12 +9,12 @@
             "items": {
                 "item": [
                     {
-                        "satImgC-file": "[http://w  ww.kma.go.kr/repositary/image/sat/gk2a/KO/gk2a_ami_le1b_ir105_ko020lc_202209210000.thn.png, http://www.kma.go.kr/repositary/image/sat/gk2a/KO/gk2a_ami_le1b_ir105_ko020lc_202209210002.thn.png, http://www.kma.go.kr/repositary/image/sat/gk2a/KO/gk2a_ami_le1b_ir105_ko020lc_202209210004.thn.png, http://www.kma.go.kr/repositary/image/sat/gk2a/KO/gk2a_ami_le1b_ir105_ko020lc_202209210006.thn.png, http://www.kma.go.kr/repositary/image/sat/gk2a/KO/gk2a_ami_le1b_ir105_ko020lc_202209210008.thn.png]"
+                        "man-file": "[http://www.kma.go.kr/repositary/image/cht/img/ghmd_s24_2022102400.png, http://www.kma.go.kr/repositary/image/cht/img/ghmd_s24_2022102412.png]"
                     }
                 ]
             },
             "pageNo": 1,
-            "numOfRows": 1,
+            "numOfRows": 10,
             "totalCount": 1
         }
     }
