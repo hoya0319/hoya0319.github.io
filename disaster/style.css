@@ -121,6 +121,24 @@ input{
     display: flex;
     justify-content: space-evenly;
 }
+.now_weather{
+    width:100%;
+    display: flex;
+}
+.now_weather_num{
+    width:50%;
+}
+.now_weather_etc{
+    display: flex;
+    text-align:center;
+}
+.now_weather_etc_cont{
+    width:100%;
+}
+.border{
+    border:solid black;
+    border-width: 0px 1px 0px 0px;
+}
 @media screen and (max-width : 1020px) {
     .disaster_content{
         width: 750px;
@@ -171,5 +189,8 @@ input{
     }
     .menu a{
             width: 60px;
+    }
+    .now_weather{
+        width:100%;
     }
 }
