@@ -124,6 +124,7 @@ input{
 .now_weather{
     width:100%;
     display: flex;
+    justify-content: space-between;
 }
 .now_weather_num{
     width:50%;
@@ -192,5 +193,13 @@ input{
     }
     .now_weather{
         width:100%;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .now_weather_num{
+        width:100%;
+    }
+    #now_weather_Chart{
+        margin-top:20px;
     }
 }

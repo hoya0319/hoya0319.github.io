@@ -102,7 +102,7 @@ xhr.onreadystatechange = function(){
                     }else if (quakeinfo.mt >= 7.0 && quakeinfo.dep >= 10){
                         document.getElementById('comment').textContent = '일반적으로 이 정도 규모의 지진이 해역에서 발생하면 넓은 지역에 해일 발생 위험이 있습니다.'
                     }else if (quakeinfo.mt >= 7.0 && quakeinfo.dep >= 30 && quakeinfo.dep <= 50){
-                        document.getElementById('comment').textContent = '일반적으로 이 정도 규모의 지진이 해역에서 발생하면 진원 근방에 해일 발생 위험이 있습니다.'
+                        document.getElementById('comment').textContent = '일반적으로 이 정도 규모의 지진이 해역에서 발생하면 진원 근방에 작은 해일 발생 위험이 있습니다.'
                     }else if (quakeinfo.mt >= 6.5 && quakeinfo.dep >= 10 && quakeinfo.dep <= 20){
                         document.getElementById('comment').textContent = '일반적으로 이 정도 규모의 지진이 해역에서 발생하면 진원 근방에서 작은 해일 발생 위험이 있습니다.'
                     }else{
@@ -116,9 +116,9 @@ xhr.onreadystatechange = function(){
                 document.getElementById('quake_title').textContent = "오류가 발생했습니다. 페이지를 새로고침 해 보세요."
             }
         }else if(myObj.response.header.resultCode == "01"){
-            document.getElementById('quake_title').textContent = "[01]  어플리케이션 에러 발생(APPLICATION_ERROR)"
+            document.getElementById('quake_title').textContent = "[01] 어플리케이션 에러 발생(APPLICATION_ERROR)"
         }else if(myObj.response.header.resultCode == "02"){
-            document.getElementById('quake_title').textContent = "[02]  데이터베이스 에러 발생(DATABASE_ERROR)"
+            document.getElementById('quake_title').textContent = "[02] 데이터베이스 에러 발생(DATABASE_ERROR)"
         }else if (myObj.response.header.resultCode == "03"){
             try{
                 document.getElementById('quake_info').style.display = 'none';

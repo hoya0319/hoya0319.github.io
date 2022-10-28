@@ -23,10 +23,10 @@
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="../main.js" defer></script>
     <script src="../notice.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <link rel="icon" href="../호야.png">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
@@ -74,27 +74,40 @@
                             <p style="text-align:center;"><span id="now_temp" style="font-size:35px;">0</span>℃</p>
                             <div class="now_weather_etc">
                                 <div class="now_weather_etc_cont">
-                                    <p>1시간 강수량</p>
+                                    <p style="padding:4px;">1시간 강수량</p>
                                     <p><span id="now_rain" style="font-size:30px">0.0</span>mm</p>
                                 </div>
                                 <div class="border"></div>
                                 <div class="now_weather_etc_cont">
-                                    <p>습도</p>
+                                    <p style="padding:4px;">습도</p>
                                     <p><span id="now_humid" style="font-size:30px">00</span>%</p>
                                 </div>
                                 <div class="border"></div>
                                 <div class="now_weather_etc_cont">
-                                    <p>바람</p>
+                                    <p style="padding:4px;">바람</p>
                                     <p><span id="now_wind_dir" style="font: size 17px">북북동</span> <span id="now_wind_str" style="font-size:30px">00</span>m/s</p>
                                 </div>
                             </div>
+                            <div class="now_weather_etc">
+                                <div class="now_weather_etc_cont">
+                                    <p style="padding:2px;">최저기온</p>
+                                    <p style="padding:2px;"><span id="min_temp" style="font-size:30px">0</span>℃</p>
+                                </div>
+                                <div class="border"></div>
+                                <div class="now_weather_etc_cont">
+                                    <p style="padding:2px;">최고기온</p>
+                                    <p style="padding:2px;"><span id="max_temp" style="font-size:30px">0</span>℃</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="now_weather_graph">
-	                        <canvas id="now_weather_Chart"></canvas>
+                        <div class="now_weather_graph" id="now_weather_graph">
+	                        <canvas id="now_weather_Chart" style="height:300px; width:350px;"></canvas>
                         </div>
                     </div>
                     <div class="ultra_weather_fore">
-
+                        <!-- <p id="test"></p>
+                        <p id="max"></p>
+                        <p id="min"></p> -->
                     </div>
                     <div class="weather_fore">
 
@@ -156,4 +169,5 @@
     </div>
 </body>
 <script src="../source/javascript/gongong/data/api/jsfiles/weatherforecast.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </html>
