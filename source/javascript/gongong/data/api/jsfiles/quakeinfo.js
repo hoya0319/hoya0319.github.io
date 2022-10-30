@@ -40,15 +40,15 @@ xhr.onreadystatechange = function(){
                     document.getElementById('intensity').textContent = "국외지진정보는 최대진도 정보가 제공되지 않습니다."
                 } else if (quakeinfo.fcTp == 3 || quakeinfo.fcTp == 5){
                     //국내지진정보 || 국내지진정보 재통보
-                    if (quakeinfo.mt >= 2.0){
-                        document.getElementById('quake_title').textContent = '국내에서 규모 2.0 이상의 지진이 발생했습니다.'
-                    }else if (quakeinfo.mt >= 3.0){
-                        document.getElementById('quake_title').textContent = '국내에서 규모 3.0 이상의 약간 강한 지진이 발생했습니다.'
+                    if (quakeinfo.mt >= 5.0){
+                        document.getElementById('quake_title').textContent = '국내에서 규모 5.0 이상의 매우 강한 지진이 발생했습니다.'
                     }else if (quakeinfo.mt >= 4.0){
                         document.getElementById('quake_title').textContent = '국내에서 규모 4.0 이상의 강한 지진이 발생했습니다.'
-                    } else if (quakeinfo.mt >= 5.0){
-                        document.getElementById('quake_title').textContent = '국내에서 규모 5.0 이상의 매우 강한 지진이 발생했습니다.'
-                    } else{
+                    }else if (quakeinfo.mt >= 3.0){
+                        document.getElementById('quake_title').textContent = '국내에서 규모 3.0 이상의 약간 강한 지진이 발생했습니다.'
+                    }else if (quakeinfo.mt >= 2.0){
+                        document.getElementById('quake_title').textContent = '국내에서 규모 2.0 이상의 지진이 발생했습니다.'
+                    }else{
                         document.getElementById('quake_title').textContent = '국내에서 지진이 발생했습니다.'
                     }
                     document.getElementById('intensity').textContent = quakeinfo.inT
