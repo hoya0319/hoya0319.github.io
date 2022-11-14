@@ -60,43 +60,29 @@
             </div>
             <div class="main_box">
                 <h2 id="quake_title"></h2>
-                <div class="map">
-                    <img id="quake_img" src="">
+                <div class="quakeinfo">
+                    <div class="map">
+                        <img id="quake_img" src="">
+                    </div>
+                    <div class="content">
+                        <p id="quake_time" style="padding:0px; font-size: 17px; border-bottom: black solid 1px;"></p>
+                        <p><span id="quake_location" style="font-size:25px;"></span><br><span id="lat" style="font-size:15px"></span>&nbsp;<span id="lon"style="font-size:15px"></span></p>
+                        <div class="magdep" style="text-align:center">
+                            <p style="width:50%;" id="magbox"><span id='mag-scale' ></span><span id="magnitude" style="font-size:30px"></span></p>
+                            <p style="width:50%;" id="dep"><span id='dep-scale'></span><span id="depth" style="font-size:30px"></span></p>
+                        </div>
+                        <div id="int">
+                            <p id="max_int"></p>
+                            <h4 id="intensity"></h4>
+                        </div>
+                        <p id="quake_rem" style="font-size:15px;"></p>
+                    </div>
                 </div>
-                <div>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="left_top">진앙</td>
-                                <td class="right_top"><span id="quake_location"></span><br><span id="lat"></span>&nbsp;<span id="lon"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">발생시각</td>
-                                <td class="right_top" id="quake_time"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">규모</td>
-                                <td class="right_top" id="magnitude"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">깊이</td>
-                                <td class="right_top" id="depth"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">진도</td>
-                                <td class="right_top"id="intensity"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">참고사항</td>
-                                <td class="right_top"id="quake_rem"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_bottom">해일 가능성</td>
-                                <td class="right_bottom"><span id="comment"></span><br><p style="font-size:10px; line-height:10px; padding:0px;" id="comment_ex"></p></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <p style="text-align:center;"><a href="https://www.weather.go.kr/w/eqk-vol/recent-eqk.do" target="_blank" style="background-color: #0055CC; padding:5px 10px; border:1px black solid; border-radius: 5px; color:white;" id="kma">기상청 지진정보</a></p>
+                <p style="text-align:center;"><a href="/prepare/earthquake.html" target="_blank" class="out_link">지진에 대비하기</a></p>
+                <!-- <p style='line-height:13px;'>
+                    <span id="comment"></span><br><span style="font-size:10px;  padding:0px;" id="comment_ex"></span>
+                </p> -->
             </div>
         </div>
         <div class="content_right">

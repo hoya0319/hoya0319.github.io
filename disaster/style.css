@@ -98,14 +98,44 @@ input{
     padding:2.35%;
 }
 #quake_title{
-    padding-top:0px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:10px;
+    border-radius: 20px;
+    border:black solid 1px;
 }
+
 .map{
     text-align:center;
+    width:50%;
+}
+.weathermap{
+    width:100%
+}
+#weathermap_img{
+    width:100%
 }
 .map img{
     border : 4px solid black;
     width:95%;
+}
+#max_int, #intensity{
+    padding:0px 5px;    
+}
+#int{
+    padding:2px 3px;
+    border:1px black solid;
+    border-radius: 15px;
+}
+.magdep{
+    display: flex;
+}
+.quakeinfo{
+    display: flex;
+}
+.content{
+    width:50%;
+    height: 324px;
 }
 .forecast_btn{
     padding:10px 25px;
@@ -140,6 +170,26 @@ input{
     border:solid black;
     border-width: 0px 1px 0px 0px;
 }
+.ultra_weather_fore{
+    display: flex;
+}
+.category{
+    display: flex;
+    flex-direction: column;
+    border : solid black;
+    border-width:0px 1px 0px 0px;
+    width:60px;
+    text-align:center;
+}
+.ultra_weather_fore{
+    border: 1px solid black;    
+}
+.ultra_time{
+    display: flex;
+}
+/* .category > p{
+    padding:3px;
+} */
 @media screen and (max-width : 1020px) {
     .disaster_content{
         width: 750px;
@@ -148,6 +198,9 @@ input{
     }
     .content_left{
         width: 700px;
+    }
+    .content{
+        height:100%;    
     }
 }
 @media screen and (max-width :  800px) {
@@ -201,5 +254,13 @@ input{
     }
     #now_weather_Chart{
         margin-top:20px;
+    }
+    .quakeinfo{
+        display: flex;
+        flex-direction: column;
+    }
+    .map, .content{
+        width:100%;
+        height:100%;    
     }
 }

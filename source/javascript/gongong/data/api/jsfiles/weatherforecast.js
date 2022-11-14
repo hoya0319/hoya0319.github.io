@@ -42,6 +42,8 @@ $(function () {
     areaSelectMaker("select[name=addressRegion]");
 });
 
+var main;
+
 var areaSelectMaker = function (target) {
     if (target == null || $(target).length == 0) {
         console.warn("Unkwon Area Tag");
@@ -1249,7 +1251,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 document.getElementById('location').textContent = '에러 발생.'
             }
             if (loaded.response.header.resultCode = "00") {
-                var main = loaded.response.body.items.item;
+                main = loaded.response.body.items.item;
 
                 //현재 기온
                 document.getElementById('now_temp').textContent = loaded.response.body.items.item[3].obsrValue;
@@ -1259,21 +1261,21 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 document.getElementById('now_humid').textContent = loaded.response.body.items.item[1].obsrValue;
                 // 바람
                 var wind_dir = "NaN";
-                if (loaded.response.body.items.item[1].obsrValue >= 0 || loaded.response.body.items.item[1].obsrValue < 45) {
+                if (loaded.response.body.items.item[5].obsrValue >= 0 && loaded.response.body.items.item[5].obsrValue < 45) {
                     wind_dir = "북-북동"
-                } else if (loaded.response.body.items.item[1].obsrValue >= 45 || loaded.response.body.items.item[1].obsrValue < 90) {
+                } else if (loaded.response.body.items.item[5].obsrValue >= 45 && loaded.response.body.items.item[5].obsrValue < 90) {
                     wind_dir = "북동-동"
-                } else if (loaded.response.body.items.item[1].obsrValue >= 90 || loaded.response.body.items.item[1].obsrValue < 135) {
+                } else if (loaded.response.body.items.item[5].obsrValue >= 90 && loaded.response.body.items.item[5].obsrValue < 135) {
                     wind_dir = "동-남동"
-                } else if (loaded.response.body.items.item[1].obsrValue >= 135 || loaded.response.body.items.item[1].obsrValue < 180) {
+                } else if (loaded.response.body.items.item[5].obsrValue >= 135 && loaded.response.body.items.item[5].obsrValue < 180) {
                     wind_dir = "남동-남"
-                } else if (loaded.response.body.items.item[1].obsrValue >= 180 || loaded.response.body.items.item[1].obsrValue < 225) {
+                } else if (loaded.response.body.items.item[5].obsrValue >= 180 && loaded.response.body.items.item[5].obsrValue < 225) {
                     wind_dir = "남-남서"
-                } else if (loaded.response.body.items.item[1].obsrValue >= 225 || loaded.response.body.items.item[1].obsrValue < 270) {
+                } else if (loaded.response.body.items.item[5].obsrValue >= 225 && loaded.response.body.items.item[5].obsrValue < 270) {
                     wind_dir = "남서-서"
-                } else if (loaded.response.body.items.item[1].obsrValue >= 270 || loaded.response.body.items.item[1].obsrValue < 315) {
+                } else if (loaded.response.body.items.item[5].obsrValue >= 270 && loaded.response.body.items.item[5].obsrValue < 315) {
                     wind_dir = "서-북서"
-                } else if (loaded.response.body.items.item[1].obsrValue >= 315 || loaded.response.body.items.item[1].obsrValue <= 360) {
+                } else if (loaded.response.body.items.item[5].obsrValue >= 315 && loaded.response.body.items.item[5].obsrValue <= 360) {
                     wind_dir = "북서-북"
                 } else {
                     wind_dir = "몰?루"
@@ -1308,12 +1310,12 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             }
             if (ultra_fore_loaded.response.header.resultCode = "00") {
                 var ultra_fore_main = ultra_fore_loaded.response.body.items.item;
-
-                // let today = new Date();   
-                // now_hour = hours-7;
-                // document.getElementById('test').textContent=ultra_fore_main[now_hour+4].fcstTime + ultra_fore_main[now_hour+4].fcstValue
-                // console.log(hours+5);
+                var ultra_temp1 = ultra_temp2 = ultra_temp3 = ultra_temp4 =ultra_temp5 = ultra_temp6 = 0;
             }
+        }
+        for (i = 0; i<6; i++){
+            now_hours =parseInt(today.getHours());
+            document.getElementById('ultra_time1').textContent = now_hours;
         }
     };
     var max_temp;

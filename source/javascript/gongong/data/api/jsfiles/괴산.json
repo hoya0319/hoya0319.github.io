@@ -1,0 +1,82 @@
+{
+    "response": {
+        "header": {
+            "resultCode": "00",
+            "resultMsg": "NORMAL_SERVICE"
+        },
+        "body": {
+            "dataType": "JSON",
+            "items": {
+                "item": [
+                    {
+                        "cnt": 1,
+                        "fcTp": 3,
+                        "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_3_20221029082749.png",
+                        "inT": "최대진도 Ⅴ(충북),Ⅳ(경북),Ⅲ(강원,경기,대전)",
+                        "lat": 36.88,
+                        "loc": "충북 괴산군 북동쪽 11km 지역",
+                        "lon": 127.88,
+                        "mt": 4.1,
+                        "rem": "지진 발생 인근 지역은 지진동을 느낄 수 있음. 안전에 유의하기 바람.",
+                        "stnId": 108,
+                        "tmEqk": 20221029082749,
+                        "tmFc": 202210290835,
+                        "tmSeq": 1070,
+                        "dep": 12
+                    },
+                    {
+                        "cnt": 1,
+                        "fcTp": 3,
+                        "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_3_20221029082733.png",
+                        "inT": "최대진도 Ⅴ(충북),Ⅳ(경북),Ⅲ(강원,경기,대전)",
+                        "lat": 36.88,
+                        "loc": "충북 괴산군 북동쪽 11km 지역",
+                        "lon": 127.88,
+                        "mt": 3.5,
+                        "rem": "지진 발생 인근 지역은 지진동을 느낄 수 있음. 안전에 유의하기 바람.",
+                        "stnId": 108,
+                        "tmEqk": 20221029082733,
+                        "tmFc": 202210290830,
+                        "tmSeq": 1068,
+                        "dep": 13
+                    },
+                    {
+                        "cnt": 1,
+                        "fcTp": 14,
+                        "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_14_20221029082749.png",
+                        "inT": "최대진도 Ⅴ(충북),Ⅳ(강원,경북),Ⅲ(경기,대전,서울,세종,충남)",
+                        "lat": 36.88,
+                        "loc": "충북 괴산군 북동쪽 12km 지역",
+                        "lon": 127.89,
+                        "mt": 4.3,
+                        "rem": "위 정보는 이동속도가 빠른 지진파(P파)만을 이용하여 자동 추정한 정보임.\n수동으로 분석한 정보는 지진정보로 추가 발표할 예정임",
+                        "stnId": 108,
+                        "tmEqk": 20221029082749,
+                        "tmFc": 202210290828,
+                        "tmSeq": 1067,
+                        "dep": 0
+                    },
+                    {
+                        "cnt": 1,
+                        "fcTp": 14,
+                        "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_14_20221029082733.png",
+                        "inT": "최대진도 Ⅳ(충북),Ⅲ(경북),Ⅱ(강원,경기,대전,세종,충남)",
+                        "lat": 36.88,
+                        "loc": "충북 괴산군 북동쪽 11km 지역",
+                        "lon": 127.88,
+                        "mt": 3.5,
+                        "rem": "위 정보는 이동속도가 빠른 지진파(P파)만을 이용하여 자동 추정한 정보임.\n수동으로 분석한 정보는 지진정보로 추가 발표할 예정임",
+                        "stnId": 108,
+                        "tmEqk": 20221029082733,
+                        "tmFc": 202210290827,
+                        "tmSeq": 1066,
+                        "dep": 0
+                    }
+                ]
+            },
+            "pageNo": 1,
+            "numOfRows": 10,
+            "totalCount": 4
+        }
+    }
+}
