@@ -94,7 +94,7 @@ var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKd
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
-queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 3); /**/
+queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()-3); /**/
 queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
@@ -103,7 +103,7 @@ xhr.onreadystatechange = function () {
             var myObj = JSON.parse(this.responseText);
             // var myObj = earthquake_json;
         } catch (error) {
-            document.getElementById('quake_title').textContent = "[01] 어플리케이션 에러 발생(APPLICATION_ERROR)"
+            document.getElementById('quake_title').textContent = "예상치 못한 오류가 발생했습니다."
         }
         if (myObj.response.header.resultCode == "00") {
             var quakeinfo = myObj.response.body.items.item[0];
@@ -137,9 +137,9 @@ xhr.onreadystatechange = function () {
                     document.getElementById('intensity').textContent = "국외지진정보는 최대진도 정보가 제공되지 않습니다."
                     try {
                         document.getElementById('int').style = 'background-color:white;'
-                        var img = quakeinfo.img
                         document.getElementById('quake_img').src = quakeinfo.img
                     } catch (error) {
+                        document.getElementById('quake_img').src = quakeinfo.img
 
                     }
                 } else if (quakeinfo.fcTp == 3 || quakeinfo.fcTp == 5) {
@@ -171,6 +171,13 @@ xhr.onreadystatechange = function () {
                     document.getElementById('quake_title').style = 'background-color: red; color:yellow; text-align:center;';
                     document.getElementById('intensity').textContent = (quakeinfo.inT).slice(5,)
 
+                }
+                if (quakeinfo.fcTp == 11 || quakeinfo.fcTp == 13 || quakeinfo.fcTp == 12 || quakeinfo.fcTp == 14) {
+                    document.getElementById('kma').textContent = '기상청 실시간 지진감시'
+                    document.getElementById('kma').href = 'https://www.weather.go.kr/pews/'
+                    document.getElementById('dep').style.display = 'none'
+                    document.getElementById('magbox').style = 'width:100%;'
+                    var tongbo = '/e_'
                 }
                 if (quakeinfo.fcTp == 11 || quakeinfo.fcTp == 13 || quakeinfo.fcTp == 12 || quakeinfo.fcTp == 14 || quakeinfo.fcTp == 3 || quakeinfo.fcTp == 5) {
                     try{
@@ -204,13 +211,6 @@ xhr.onreadystatechange = function () {
                     }catch(error){
 
                     }
-                }
-                if (quakeinfo.fcTp == 11 || quakeinfo.fcTp == 13 || quakeinfo.fcTp == 12 || quakeinfo.fcTp == 14) {
-                    document.getElementById('kma').textContent = '기상청 실시간 지진감시'
-                    document.getElementById('kma').href = 'https://www.weather.go.kr/pews/'
-                    document.getElementById('dep').style.display = 'none'
-                    document.getElementById('magbox').style = 'width:100%;'
-                    var tongbo = '/e_'
                 }
                 try {
                     document.getElementById('max_int').textContent = '최대진도'
@@ -269,26 +269,6 @@ xhr.onreadystatechange = function () {
                 }catch(error){
 
                 }
-
-                //코멘트
-                // try{
-                //     if (quakeinfo.mt >= 8.0 && quakeinfo.dep >= 10){
-                //         document.getElementById('comment').textContent = '일반적으로 이 정도 규모의 지진이 해역에서 발생하면 광범위한 지역에 해일 발생 위험이 있습니다.'
-                //     }else if (quakeinfo.mt >= 8.0 && quakeinfo.dep >= 50 && quakeinfo.dep <= 80){
-                //         document.getElementById('comment').textContent = '일반적으로 이 정도 규모의 지진이 해역에서 발생하면 진원 근방 지역에 해일 발생 위험이 있습니다.'
-                //     }else if (quakeinfo.mt >= 7.0 && quakeinfo.dep >= 30 && quakeinfo.dep <= 50){
-                //         document.getElementById('comment').textContent = '일반적으로 이 정도 규모의 지진이 해역에서 발생하면 진원 근방에 작은 해일 발생 위험이 있습니다.'
-                //     }else if (quakeinfo.mt >= 7.0 && quakeinfo.dep >= 10 && quakeinfo.dep <= 30){
-                //         document.getElementById('comment').textContent = '일반적으로 이 정도 규모의 지진이 해역에서 발생하면 넓은 지역에 해일 발생 위험이 있습니다.'
-                //     }else if (quakeinfo.mt >= 6.5 && quakeinfo.dep >= 10 && quakeinfo.dep <= 20){
-                //         document.getElementById('comment').textContent = '일반적으로 이 정도 규모의 지진이 해역에서 발생하면 진원 근방에서 작은 해일 발생 위험이 있습니다.'
-                //     }else{
-                //         document.getElementById('comment').textContent = '일반적으로 이 지진의 규모와 깊이를 보았을때 이 지진은 해일을 발생시키지 않습니다.'
-                //     }
-                //     document.getElementById('comment_ex').textContent = "※이 항목은 기상청의 의견이 아닌 '호야-재난방송'의 독자적인 의견이며 실제와는 다를 수 있습니다. 이 문장은 규모와 깊이에 근거하여 정해진대로 출력되므로 사실과 맞지 않을 수 있습니다."
-                // }catch(error){
-
-                // }
             } catch (error) {
                 document.getElementById('quake_title').textContent = "오류가 발생했습니다. 페이지를 새로고침 해 보세요."
                 console.log(error)

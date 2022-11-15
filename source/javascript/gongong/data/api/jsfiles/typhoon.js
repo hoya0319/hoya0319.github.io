@@ -8,12 +8,102 @@ function getToday() {
 
     return year + month + day;
 }
+var typhoon_json = {
+    "response": {
+        "header": {
+            "resultCode": "00",
+            "resultMsg": "NORMAL_SERVICE"
+        },
+        "body": {
+            "dataType": "JSON",
+            "items": {
+                "item": [
+                    {
+                        "other": "제24호 태풍 야마네코(YAMANEKO)는 일본에서 제출한 이름으로 살쾡이자리(별자리)를 의미함.",
+                        "img": "http://www.weather.go.kr/w/repositary/image/typ/img/RTKO63_202211141600]24_ko.png",
+                        "rem": "이 태풍은 오늘(14일) 15시경 열대저압부로 약화되었으며, 이것으로 제24호 태풍 야마네코(YAMANEKO)에 대한 정보를 종료함.|",
+                        "tmFc": "202211141600",
+                        "tmSeq": 8,
+                        "typ15": 0,
+                        "typ15ed": "-",
+                        "typ15er": 0,
+                        "typ25": 0,
+                        "typ25ed": "-",
+                        "typ25er": 0,
+                        "typDir": "NNE",
+                        "typEn": "YAMANEKO",
+                        "typLat": 24.8,
+                        "typLoc": "일본 도쿄 동남동쪽 약 2780 km 부근 해상",
+                        "typLon": 165.9,
+                        "typName": "야마네코",
+                        "typPs": 1004,
+                        "typSeq": 24,
+                        "typSp": 21,
+                        "typTm": 202211141500,
+                        "typWs": 15
+                    },
+                    {
+                        "other": "제24호 태풍 야마네코(YAMANEKO)는 일본에서 제출한 이름으로 살쾡이자리(별자리)를 의미함.",
+                        "img": "http://www.weather.go.kr/w/repositary/image/typ/img/RTKO63_202211141000]24_ko.png",
+                        "rem": "이 태풍은 24시간 이내에 온대저기압으로 변질될 것으로 예상됨.|다음 정보는 오늘(14일) 16시경에 발표될 예정임.|",
+                        "tmFc": "202211141000",
+                        "tmSeq": 7,
+                        "typ15": 250,
+                        "typ15ed": "SW",
+                        "typ15er": 150,
+                        "typ25": 0,
+                        "typ25ed": "-",
+                        "typ25er": 0,
+                        "typDir": "NNW",
+                        "typEn": "YAMANEKO",
+                        "typLat": 23.8,
+                        "typLoc": "일본 도쿄 동남동쪽 약 2810 km 부근 해상",
+                        "typLon": 165.6,
+                        "typName": "야마네코",
+                        "typPs": 1002,
+                        "typSeq": 24,
+                        "typSp": 23,
+                        "typTm": 202211140900,
+                        "typWs": 18
+                    },
+                    {
+                        "other": "제24호 태풍 야마네코(YAMANEKO)는 일본에서 제출한 이름으로 살쾡이자리(별자리)를 의미함.",
+                        "img": "http://www.weather.go.kr/w/repositary/image/typ/img/RTKO63_202211140400]24_ko.png",
+                        "rem": "이 태풍은 24시간 이내에 온대저기압으로 변질될 것으로 예상됨.|다음 정보는 오늘(14일) 10시경에 발표될 예정임.|",
+                        "tmFc": "202211140400",
+                        "tmSeq": 6,
+                        "typ15": 250,
+                        "typ15ed": "SW",
+                        "typ15er": 150,
+                        "typ25": 0,
+                        "typ25ed": "-",
+                        "typ25er": 0,
+                        "typDir": "NNE",
+                        "typEn": "YAMANEKO",
+                        "typLat": 22.7,
+                        "typLoc": "일본 도쿄 동남동쪽 약 2920 km 부근 해상",
+                        "typLon": 166.0,
+                        "typName": "야마네코",
+                        "typPs": 1002,
+                        "typSeq": 24,
+                        "typSp": 7,
+                        "typTm": 202211140300,
+                        "typWs": 18
+                    }
+                ]
+            },
+            "pageNo": 1,
+            "numOfRows": 30,
+            "totalCount": 3
+        }
+    }
+}
 var url = 'http://apis.data.go.kr/1360000/TyphoonInfoService/getTyphoonInfo'; /*URL*/
 var queryParams = '?' + encodeURIComponent('serviceKey') + '=' +'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호 조회*/
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('30'); /*행 수*/
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /*데이터 타입 - JSON*/
-queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 1); /*조회 시작 날짜 - 오늘*/
+queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()-1); /*조회 시작 날짜 - 오늘*/
 queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /*조회 끝 날짜 - 오늘*/
 xhr.open('GET', url + queryParams);
 var api_url = url + queryParams;
@@ -25,7 +115,8 @@ function typhoon() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             try{    
-                var myObj = JSON.parse(this.responseText);
+                var myObj = JSON.parse(this.responseText);   
+                // var myObj = typhoon_json
             }catch (error){
                 document.getElementById("typhoon_title").textContent = "기상청 태풍정보를 불러오는데 실패했습니다."
                 document.getElementById("typhoon_img").alt = "태풍정보 이미지를 불러오는데 실패했습니다."
@@ -84,9 +175,21 @@ function typhoon() {
                 var date = yyyymmdd.slice(6, 8);
                 var hour = yyyymmdd.slice(8, 10);
                 var minute = yyyymmdd.slice(10, 12);
-                    document.getElementById("typhoon_info_text").textContent =
-                "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
+                try{
+                document.getElementById("typhoon_info_text").textContent = "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
+                }catch(error){
+
+                }
+                try{
                 document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + typ_par_main.tmSeq + "호]"
+                }catch(error){
+
+                }
+                try{
+                    document.getElementById('hou').textContent=` (제${typ_par_main.tmSeq}보)`
+                }catch(error){
+
+                }
                 document.getElementById("typhoon_clock").textContent = year + "년 " + month + "월 " + date + "일 " + hour + "시 " + minute + "분 발표"
                 document.getElementById("typhoon_img").src = typ_par_main.img;
                 document.getElementById("other").textContent = "○" + typ_par_main.other
@@ -94,76 +197,116 @@ function typhoon() {
                 var afterrem = beforerem.split('|')
                 document.getElementById("rem").textContent = "○" + afterrem[0] + " " + afterrem[1];
                 try{
+                    try{
+                        document.getElementById('number').textContent = `태풍 제${typ_num}호 `
+                    }catch(error){
+                        
+                    }
                     document.getElementById('typhoon_name').textContent = `${typ_par_main.typName}(${typ_par_main.typEn})`
-                    document.getElementById('location').textContent = typ_par_main.typLoc
-                    document.getElementById('lat').textContent = `(${typ_par_main.typLat}, ${typ_par_main.typLon})`
-                    document.getElementById('movement').textContent = `${dir}쪽, ${typ_par_main.typSp}km/h`
-                    document.getElementById('pressure').textContent = `${typ_par_main.typPs}hPa`
-                    document.getElementById('wind_speed').textContent = `${typ_par_main.typWs}m/s`
+                    document.getElementById('location').textContent = typ_par_main.typLoc;
+
+                    
+                    var lat, lon
+                    if (typ_par_main.typLat < 0) {
+                        lat = String(typ_par_main.typLat)
+                        lat = lat.slice(1,)
+                        lat = '남위 ' + typ_par_main.typLat + '도'
+                    } else if (typ_par_main.typLat > 0) {
+                        lat = typ_par_main.typLat
+                        lat = '북위 ' + lat + '도'
+                    }
+                    if (typ_par_main.typLon < 0) {
+                        lon = String(typ_par_main.typLon)
+                        lon = lon.slice(1,)
+                        lon = '서경 ' + lon + '도'
+                    } else if (typ_par_main.typLon > 0) {
+                        lon = typ_par_main.typLon
+                        lon = '동경 ' + lon + '도'
+                    }
+                    document.getElementById('lat').textContent = `${lat}  ${lon}`
+
+                    document.getElementById('movement').textContent = dir
+                    document.getElementById('speed').textContent = typ_par_main.typSp
+                    document.getElementById('pressure').textContent = typ_par_main.typPs
+                    document.getElementById('wind_speed').textContent = typ_par_main.typWs
+                    document.getElementById('dir-scale').textContent='이동방향 '
+                    document.getElementById('speed-scale').textContent='이동속도 '
+                    document.getElementById('speed-scale2').textContent='km/h'
                     if (typ_par_main.typ25==0){
                         typ25="--"
                     }else{
                         typ25=typ_par_main.typ25;
                     }
                     var strength
+                    var strength_sty
                     if (typ_par_main.typWs >= 54){
                         strength ="초강력"
+                        document.getElementById('strength').style = 'width:100px; text-align:center; border:1px solid; border-radius: 10px; padding:7px 0px; background-color:#7310ff; border-color: #7310ff; color:white;'
                     }else if(typ_par_main.typWs >= 45){
                         strength ="매우강"
+                        document.getElementById('strength').style = 'width:100px; text-align:center; border:1px solid; border-radius: 10px; padding:7px 0px; background-color:#fe0000; border-color: #fe0000; color:white;'
                     }else if(typ_par_main.typWs >= 33){
                         strength ="강"
+                        document.getElementById('strength').style = 'width:100px; text-align:center; border:1px solid; border-radius: 10px; padding:7px 0px; background-color:#fe8700; border-color: #fe8700; color:white;'
                     }else if(typ_par_main.typWs >= 25){
                         strength ="중"
+                        document.getElementById('strength').style = 'width:100px; text-align:center; border:1px solid; border-radius: 10px; padding:7px 0px; background-color:#fad600; border-color: #fad600; color:black;'
                     }else{
                         strength="--"
+                        document.getElementById('strength').style = 'width:100px; text-align:center; border:1px solid; border-radius: 10px; padding:7px 0px; background-color:#ffffff; border-color: #000000; color:black;'
                     }
                     console.log(strength)
                     document.getElementById('strength').textContent = strength;
-                    document.getElementById('typ15').textContent = `강풍반경 : ${typ_par_main.typ15}km, 폭풍반경 : ${typ25}km/h`
+                    document.getElementById('strong').textContent = typ_par_main.typ15
+                    document.getElementById('strong-scale').textContent = '강풍반경 '
+                    document.getElementById('strong-scale2').textContent = 'km'
+                    document.getElementById('boufu').textContent = typ_par_main.typ25
+                    document.getElementById('boufu-scale').textContent = '폭풍반경 '
+                    document.getElementById('boufu-scale2').textContent = 'km'
                 }catch(error){
                     console.log("이 페이지가 아닌가보오.")
                 }
+            }else if(myObj.response.header.resultCode == "01"){
+                document.getElementById('quake_title').textContent = "[01] 어플리케이션 에러 발생(APPLICATION_ERROR)"
+            }else if(myObj.response.header.resultCode == "02"){
+                document.getElementById('quake_title').textContent = "[02] 데이터베이스 에러 발생(DATABASE_ERROR)"
+            }else if (myObj.response.header.resultCode == "03"){
+                try{
+                    document.getElementById('typhoon_box').style.display = 'none';
+                    document.getElementById('typhoon_info_br').style.display = 'none';
+                }catch(error){
+                    document.getElementById('typhoon_title').textContent = "현재 발생하고 있는 태풍은 없습니다."
+                }
+            }else if (myObj.response.header.resultCode == "04"){
+                document.getElementById('quake_title').textContent = "[04] HTTP 에러 발생(HTTP_ERROR)"
+            }else if(myObj.response.header.resultCode == "05"){
+                document.getElementById('quake_title').textContent = "[05] 서비스 연결 실패(SERVICETIME_OUT)"
+            }else if(myObj.response.header.resultCode == "10"){
+                document.getElementById('quake_title').textContent = "[10] 요청 파라메터가 잘못됨(INVALID_REQUEST_PARAMETER_ERROR)"
+            }else if(myObj.response.header.resultCode == "11"){
+                document.getElementById('quake_title').textContent = '[11] 필수 요청 파라메터가 없음(NO_MANDATORY_REQUEST_PARAMETER_ERROR)'
+            }else if(myObj.response.header.resultCode == "12"){
+                document.getElementById('quake_title').textContent = '[12] 해당 오픈API 서비스가 없거나 폐기됨(NO_OPENAPI_SERVICE_ERROR)'
+            }else if(myObj.response.header.resultCode == "20"){
+                document.getElementById('quake_title').textContent = '[20] 서비스 접근이 거부됨(SERVICE_ACCESS_DENIED_ERROR)'
+            }else if(myObj.response.header.resultCode == "21"){
+                document.getElementById('quake_title').textContent = '[21] 서비스 키를 일시적으로 사용할 수 없음(TEMPORARILY_DISABLE_THE_SERVICEKEY_ERROR)'
+            }else if(myObj.response.header.resultCode == "22"){
+                document.getElementById('quake_title').textContent = '[22] 서비스 요청 제한 횟수가 초과됨(LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR)'
+            }else if(myObj.response.header.resultCode == "30"){
+                document.getElementById('quake_title').textContent = '[30] 서비스 키가 등록되지 않음(SERVICE_KEY_IS_NOT_REGISTERED_ERROR)'
+            }else if(myObj.response.header.resultCode == "31"){
+                document.getElementById('quake_title').textContent = '[31] 서비스 키의 기한이 만료됨(DEADLINE_HAS_EXPIRED_ERROR)'
+            }else if(myObj.response.header.resultCode == "32"){
+                document.getElementById('quake_title').textContent = '[32] IP가 등록되지 않음(UNREGISTERED_IP_ERROR)'
+            }else if(myObj.response.header.resultCode == "33"){
+                document.getElementById('quake_title').textContent = '[33] 서명되지 않은 호출(UNSIGNED_CALL_ERROR)'
+            }else if(myObj.response.header.resultCode == "99"){
+                document.getElementById('quake_title').textContent = '[99] 기타 에러 발생(UNKNOWN_ERROR)'
+            }else{
+                document.getElementById('quake_title').textContent = '예외처리되지 않은 에러가 발생하였습니다'
             }
             // if() 
-        }else if(myObj.response.header.resultCode == "01"){
-            document.getElementById('quake_title').textContent = "[01] 어플리케이션 에러 발생(APPLICATION_ERROR)"
-        }else if(myObj.response.header.resultCode == "02"){
-            document.getElementById('quake_title').textContent = "[02] 데이터베이스 에러 발생(DATABASE_ERROR)"
-        }else if (myObj.response.header.resultCode == "03"){
-            try{
-                document.getElementById('typhoon_box').style.display = 'none';
-                document.getElementById('typhoon_info_br').style.display = 'none';
-            }catch(error){
-                document.getElementById('typhoon_title').textContent = "현재 발생하고 있는 태풍은 없습니다."
-            }
-        }else if (myObj.response.header.resultCode == "04"){
-            document.getElementById('quake_title').textContent = "[04] HTTP 에러 발생(HTTP_ERROR)"
-        }else if(myObj.response.header.resultCode == "05"){
-            document.getElementById('quake_title').textContent = "[05] 서비스 연결 실패(SERVICETIME_OUT)"
-        }else if(myObj.response.header.resultCode == "10"){
-            document.getElementById('quake_title').textContent = "[10] 요청 파라메터가 잘못됨(INVALID_REQUEST_PARAMETER_ERROR)"
-        }else if(myObj.response.header.resultCode == "11"){
-            document.getElementById('quake_title').textContent = '[11] 필수 요청 파라메터가 없음(NO_MANDATORY_REQUEST_PARAMETER_ERROR)'
-        }else if(myObj.response.header.resultCode == "12"){
-            document.getElementById('quake_title').textContent = '[12] 해당 오픈API 서비스가 없거나 폐기됨(NO_OPENAPI_SERVICE_ERROR)'
-        }else if(myObj.response.header.resultCode == "20"){
-            document.getElementById('quake_title').textContent = '[20] 서비스 접근이 거부됨(SERVICE_ACCESS_DENIED_ERROR)'
-        }else if(myObj.response.header.resultCode == "21"){
-            document.getElementById('quake_title').textContent = '[21] 서비스 키를 일시적으로 사용할 수 없음(TEMPORARILY_DISABLE_THE_SERVICEKEY_ERROR)'
-        }else if(myObj.response.header.resultCode == "22"){
-            document.getElementById('quake_title').textContent = '[22] 서비스 요청 제한 횟수가 초과됨(LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR)'
-        }else if(myObj.response.header.resultCode == "30"){
-            document.getElementById('quake_title').textContent = '[30] 서비스 키가 등록되지 않음(SERVICE_KEY_IS_NOT_REGISTERED_ERROR)'
-        }else if(myObj.response.header.resultCode == "31"){
-            document.getElementById('quake_title').textContent = '[31] 서비스 키의 기한이 만료됨(DEADLINE_HAS_EXPIRED_ERROR)'
-        }else if(myObj.response.header.resultCode == "32"){
-            document.getElementById('quake_title').textContent = '[32] IP가 등록되지 않음(UNREGISTERED_IP_ERROR)'
-        }else if(myObj.response.header.resultCode == "33"){
-            document.getElementById('quake_title').textContent = '[33] 서명되지 않은 호출(UNSIGNED_CALL_ERROR)'
-        }else if(myObj.response.header.resultCode == "99"){
-            document.getElementById('quake_title').textContent = '[99] 기타 에러 발생(UNKNOWN_ERROR)'
-        }else{
-            document.getElementById('quake_title').textContent = '예외처리되지 않은 에러가 발생하였습니다'
         }
     };
     xmlhttp.open("GET", api_url, true);

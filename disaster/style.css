@@ -18,6 +18,7 @@ input{
     margin:auto;
     background-color:white;
     display: flex;
+    padding-top:80px;
 }
 .left_top {
     border-color: black;
@@ -104,10 +105,13 @@ input{
     border-radius: 20px;
     border:black solid 1px;
 }
-
 .map{
     text-align:center;
-    width:50%;
+    width:100%;
+}
+.quakemap{
+    text-align:center;
+    width:50%
 }
 .weathermap{
     width:100%
@@ -115,12 +119,17 @@ input{
 #weathermap_img{
     width:100%
 }
+.quakemap img{
+    border : 4px solid black;
+    width:95%;
+}
 .map img{
     border : 4px solid black;
     width:95%;
 }
 #max_int, #intensity{
     padding:0px 5px;    
+    text-align: left;
 }
 #int{
     padding:2px 3px;
@@ -133,7 +142,7 @@ input{
 .quakeinfo{
     display: flex;
 }
-.content{
+.qcontent{
     width:50%;
     height: 324px;
 }
@@ -187,6 +196,28 @@ input{
 .ultra_time{
     display: flex;
 }
+.now_jyou{
+    border:1px solid rgb(116, 116, 116);
+    border-radius: 20px;
+    background-color: rgb(116, 116, 116);
+    color:white;
+    display: flex;
+    align-items: center;
+}
+.now_jyou > *{
+    width:50%;
+    text-align: center;
+}
+.now_jyou p{
+    padding:20px 10px;
+    margin-top:5px;
+}
+.info_bottom{
+    margin-top:10px;
+}
+.info_bottom p{
+    padding: 0px;
+}
 /* .category > p{
     padding:3px;
 } */
@@ -195,11 +226,12 @@ input{
         width: 750px;
         margin:auto;
         background-color:white;
+        padding-top:80px;
     }
     .content_left{
         width: 700px;
     }
-    .content{
+    .qcontent{
         height:100%;    
     }
 }
@@ -209,23 +241,18 @@ input{
         margin:auto;
         background-color:white;
         flex-direction: column-reverse;
+        padding-top:60px;
     }
     .content_right{
         width:100%;
-    }
-    .menu{
-        display: flex;
-        background-color: black;
-        margin: auto;
-        flex-direction: row;
-        margin-bottom:10px;
-        width:100%;
+        overflow-x: scroll;
     }
     .menu a{
         text-align: center;
         padding:5px 10px;
         border:solid 1px black;
         background-color: white;
+        overflow-x: auto;
     }
     .content_left{
         width:100%;
@@ -236,13 +263,9 @@ input{
         background-color: white;
         margin: auto;
         flex-direction: row;
-        margin-bottom: 10px;
-        width: 100%;
-        flex-wrap: wrap;
+        width: 500px;
+        flex-wrap: nowrap;
         justify-content: center;
-    }
-    .menu a{
-            width: 60px;
     }
     .now_weather{
         width:100%;
@@ -259,8 +282,15 @@ input{
         display: flex;
         flex-direction: column;
     }
-    .map, .content{
+    .map, .qcontent, .quakemap{
         width:100%;
         height:100%;    
+    }
+    .content_left{
+        margin-top:15px;
+    }
+    .now_jyou p{
+        padding:20px 10px;
+        margin-top:0px;
     }
 }

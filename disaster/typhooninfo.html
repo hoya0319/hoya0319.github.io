@@ -52,15 +52,13 @@
             <i class="fa-solid fa-bars"></i>
         </a>
     </nav>  
-    <div class="disaster_content" style="padding-top:80px;">
+    <div class="disaster_content" >
         <div class="content_left">
             <div class="disaster_title">
                 <h1 style="text-align:left">태풍정보</h1>
                 <p id="info">최근 2일간 발표된 태풍정보를 시간순으로 찾아볼 수 있습니다.</p>
             </div>
             <div class="main_box">
-                <h2 id="typhoon_title"></h2>
-                <h4 id="typhoon_clock"></h4>
                 <div class="map">
                     <img id="typhoon_img" src="">
                 </div>
@@ -69,46 +67,37 @@
                     <input class="forecast_btn" type="button" id="next" value="이전 발표 >">
                 </div>
                 <div>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="left_top">태풍 이름</td>
-                                <td class="right_top" id="typhoon_name"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">위치</td>
-                                <td class="right_top"><span id="location"></span><br><span id="lat"></span></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">이동 방향 / 속도</td>
-                                <td class="right_top" id="movement"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">중심기압</td>
-                                <td class="right_top" id="pressure"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">최대풍속</td>
-                                <td class="right_top" id="wind_speed"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">강도</td>
-                                <td class="right_top" id="strength"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">강풍반경 / 폭풍반경</td>
-                                <td class="right_top"id="typ15"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">참고사항</td>
-                                <td class="right_top"id="rem"></td>
-                            </tr>
-                            <tr>
-                                <td class="left_bottom">비고</td>
-                                <td class="right_bottom" id="other" ></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="info_top" style="border-bottom:black 1px solid; padding-bottom:10px;">
+                        <h3 style="text-align:left; padding:0px;"><span id="number" style="font-size:17px;"></span><span id="typhoon_name"></span></h3>
+                        <p style="padding:0px; font-size:15px;"><span id="typhoon_clock" ></span><span id='hou'></span></p>
+                        <p id="strength"></p>
+                    </div>
+                    <div class="info_mid">
+                        <p id="typhoon_info_text"></p>
+                        <div class="now_jyou">
+                            <div class="press">
+                                <p style="font-size:35px"><span style="font-size:15px;">중심기압 </span><span id="pressure"></span><span style="font-size:15px;">hPa</span></p>
+                            </div>
+                            <div class="wind">
+                                <p style="font-size:35px"><span style="font-size:15px;">최대풍속 </span><span id=wind_speed></span><span style="font-size:15px;">m/s</span></p>
+                            </div>
+                        </div>
+                        <p>중심위치 &nbsp;&nbsp;&nbsp;&nbsp;<span id='location' style="font-size:20px;"></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="lat" style="font-size:15px;"></span></p>
+                        <div class="magdep" style="text-align:center">
+                            <p style="width:50%;" id="magbox"><span id="dir-scale"></span><span id="movement" style="font-size:30px"></span></p>
+                            <p style="width:50%;" id="dep"><span id="speed-scale"></span><span id="speed" style="font-size:30px"></span><span id=speed-scale2></span></p>
+                        </div>
+                        <div class="magdep" style="text-align:center">
+                            <p style="width:50%;" id="magbox"><span id="strong-scale"></span><span id="strong" style="font-size:30px"></span><span id=strong-scale2></span></p>
+                            <p style="width:50%;" id="dep"><span id="boufu-scale"></span><span id="boufu" style="font-size:30px"></span><span id=boufu-scale2></span></p>
+                        </div>
+                    </div>
+                    <div class="info_bottom">
+                        <p id="rem"></p>
+                        <p id="other"></p>
+                    </div>
+                    <p style="text-align:center; margin-top:20px;"><a href="https://www.weather.go.kr/w/typhoon/report.do" target="_blank" style="background-color: #0055CC; padding:5px 10px; border:1px black solid; border-radius: 5px; color:white;" id="kma">기상청 태풍 통보문</a></p>
+                    <p style="text-align:center;"><a href="/prepare/typhoon.html" class="out_link">태풍에 대비하기</a></p>
                 </div>
             </div>
         </div>
