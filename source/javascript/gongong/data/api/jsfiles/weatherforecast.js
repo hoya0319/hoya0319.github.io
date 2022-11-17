@@ -9,7 +9,7 @@ let today = new Date();
 hours = today.getHours();
 hours = hours - 1;
 hours = String(hours);
-console.log(hours);
+// console.log(hours);
 if (hours.length == 1) {
     hours = "0" + hours + "00"
 } else {
@@ -128,9 +128,9 @@ var areaSelectMaker = function (target) {
 document.getElementById('confirm_btn').addEventListener("click", function () {
     // document.getElementById('weather').style.display ='block'
     // document.getElementById('now_weather_Chart').style.display ='block'
-    console.log(document.getElementById('addressRegion1').value);
-    console.log(document.getElementById('addressDo1').value);
-    console.log(document.getElementById('addressSiGunGu1').value);
+    // console.log(document.getElementById('addressRegion1').value);
+    // console.log(document.getElementById('addressDo1').value);
+    // console.log(document.getElementById('addressSiGunGu1').value);
     document.getElementById('location').textContent = `${document.getElementById('addressDo1').value} ${document.getElementById('addressSiGunGu1').value}의 날씨`;
 
     //주소 -> 좌표
@@ -1266,7 +1266,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     ultra_now_xhr.open('GET', ultra_now_url + ultra_now_queryParams);
     ultra_now_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            console.log(ultra_now_url + ultra_now_queryParams);
+            // console.log(ultra_now_url + ultra_now_queryParams);
             try {
                 var loaded = JSON.parse(this.responseText);
             } catch (error) {
@@ -1282,31 +1282,22 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 //습도
                 document.getElementById('now_humid').textContent = loaded.response.body.items.item[1].obsrValue;
                 // 바람
-                var wind_dir = "NaN";
-                if (loaded.response.body.items.item[5].obsrValue >= 0 && loaded.response.body.items.item[5].obsrValue < 45) {
-                    wind_dir = "북-북동"
-                } else if (loaded.response.body.items.item[5].obsrValue >= 45 && loaded.response.body.items.item[5].obsrValue < 90) {
-                    wind_dir = "북동-동"
-                } else if (loaded.response.body.items.item[5].obsrValue >= 90 && loaded.response.body.items.item[5].obsrValue < 135) {
-                    wind_dir = "동-남동"
-                } else if (loaded.response.body.items.item[5].obsrValue >= 135 && loaded.response.body.items.item[5].obsrValue < 180) {
-                    wind_dir = "남동-남"
-                } else if (loaded.response.body.items.item[5].obsrValue >= 180 && loaded.response.body.items.item[5].obsrValue < 225) {
-                    wind_dir = "남-남서"
-                } else if (loaded.response.body.items.item[5].obsrValue >= 225 && loaded.response.body.items.item[5].obsrValue < 270) {
-                    wind_dir = "남서-서"
-                } else if (loaded.response.body.items.item[5].obsrValue >= 270 && loaded.response.body.items.item[5].obsrValue < 315) {
-                    wind_dir = "서-북서"
-                } else if (loaded.response.body.items.item[5].obsrValue >= 315 && loaded.response.body.items.item[5].obsrValue <= 360) {
-                    wind_dir = "북서-북"
-                } else {
-                    wind_dir = "몰?루"
-                }
-                document.getElementById('now_wind_dir').textContent = wind_dir;
+                var wind_dir =loaded.response.body.items.item[5].obsrValue
+                document.getElementById('now_wind_dir').style = 'transform: rotate(' + wind_dir +'deg)';
+
                 document.getElementById('now_wind_str').textContent = loaded.response.body.items.item[7].obsrValue;
 
                 //그래프
                 now_temp = parseFloat(loaded.response.body.items.item[3].obsrValue)
+                now_temp = Number(now_temp)
+                wind = Number(loaded.response.body.items.item[7].obsrValue) * 3.6
+                //체감기온
+                console.log(wind)
+                var body_temp = 13.12 +  0.6215* now_temp
+                body_temp = body_temp - 11.37 * Math.pow(wind, 0.16)
+                body_temp = body_temp + 0.3965 * Math.pow(wind, 0.16) * now_temp;
+                body_temp = Math.ceil(body_temp * 10) / 10
+                document.getElementById('body_temp').textContent = body_temp;
             }
         }
     };
@@ -1324,7 +1315,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     ultra_fore_xhr.open('GET', ultra_fore_url + ultra_fore_queryParams);
     ultra_fore_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            console.log(ultra_fore_url + ultra_fore_queryParams);
+            // console.log(ultra_fore_url + ultra_fore_queryParams);
             try {
                 var ultra_fore_loaded = JSON.parse(this.responseText);
             } catch (error) {
@@ -1453,7 +1444,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     fore_xhr.open('GET', fore_url + fore_queryParams);
     fore_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            console.log(fore_url + fore_queryParams);
+            // console.log(fore_url + fore_queryParams);
             try {
                 var fore_loaded = JSON.parse(this.responseText);
             } catch (error) {
@@ -1475,7 +1466,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
 
             }
         }
-        console.log(now_temp)
+        // console.log(now_temp)
         var now = [min_temp, now_temp, max_temp];
         now_chart.data.datasets[0].data = now;
         now_chart.update();
@@ -1495,7 +1486,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             try {
                 var info_loaded = JSON.parse(this.responseText);
             } catch (error) {
-                document.getElementById('location').textContent = '에러 발생.'
+                document.getElementById('weather_info').textContent = '에러 발생.'
             }
             if (info_loaded.response.header.resultCode = "00") {
                 var info_main = info_loaded.response.body.items.item;
@@ -1510,7 +1501,6 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             }
         }
     };
-
     ultra_now_xhr.send('');
     ultra_fore_xhr.send('');
     fore_xhr.send('');

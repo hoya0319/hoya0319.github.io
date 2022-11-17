@@ -27,8 +27,6 @@
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="./main.js" defer></script>
     <script src="./notice.js" defer></script>
-    <script src="./source/javascript/gongong/data/api/jsfiles/typhoon.js"></script>
-    <script src="./source/javascript/gongong/data/api/jsfiles/quakeinfo.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -275,8 +273,8 @@
                 <p style="text-align: center;"><a href="./prepare/typhoon.html">태풍에 대비</a></p>
             </div>
         </div>
-        <br>
-        <div class="quake_info">
+        <br id="typhoon_info_br">
+        <div id="quake_info"class="quake_info">
             <div class="quake_title">
                 <span>
                     <h4 style="font-weight:bold; padding:5px;">지진정보</h4>
@@ -320,7 +318,7 @@
                 <p style="text-align: center;"><a href="./prepare/earthquake.html">지진에 대비</a></p>
             </div>
         </div>
-        <br>
+        <br id="quake_info_br">
         <div class="hot_info">
             <div class="hot_imoji">
                 <span>
@@ -354,7 +352,7 @@
             </a>
             <a href="./disaster/weatherforecast.html">
                 <div class="your_bosai_box">
-                    <p>동네예보</p>
+                    <p>날씨예보</p>
                 </div>
             </a>
             <a href="./disaster/weatherwarning.html">
@@ -491,9 +489,6 @@
         <div class="footer_up">
             <div class="footer_info">
                 <p><span class="name">호야-재난방송</span></p>
-                <p id="copy"><img src="./img_opencode1_m.jpeg" alt="공공데이터포털 출처 표시" style="float:left; padding-right:5px;">본 저작물은
-                    '공공데이터포털' 및 '기상청'에서 19년 작성하여 공공누리 제1유형으로 개방한 '기상청_태풍정보 조회서비스'를 이용하였으며, 해당 저작물은 '공공데이터포털'에서 무료로 사용하실
-                    수 있습니다.</p>
             </div>
             <div class="footer_sitemap">
                 <a href="./index.html">
@@ -529,4 +524,6 @@
         <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
     </div>
 </body>
+<script src="./source/javascript/gongong/data/api/jsfiles/typhoon.js"></script>
+<script src="./source/javascript/gongong/data/api/jsfiles/quakeinfo.js"></script>
 </html>

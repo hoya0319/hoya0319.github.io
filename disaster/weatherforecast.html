@@ -72,10 +72,10 @@
                         <div class="now_weather_num">
                             <h3 id="location">지금 어디에 있나요?</h3>
                             <div class="now_weather_etc" style="padding:0px;">
-                                <div class="now_weather_etc_cont" style="display: flex;align-items: center; flex-direction: column; justify-content: flex-end;">
+                                <div class="now_weather_etc_cont" style="display: flex;align-items: center; flex-direction: column; justify-content: center;">
                                     <span>현재기온</span>
                                     <p style="text-align:center;"><span id="now_temp" style="font-size:35px;">0</span>℃</p>
-                                    <br>
+                                    <span>체감 <span id="body_temp">0</span>℃</span>
                                 </div>
                                 <div class="now_weather_etc_cont">
                                     <div>
@@ -99,7 +99,10 @@
                                 </div>
                                 <div class="now_weather_etc_cont">
                                     <p style="padding:4px;">바람</p>
-                                    <p><span id="now_wind_dir" style="font: size 17px">북북동</span> <span id="now_wind_str" style="font-size:30px">00</span>m/s</p>
+                                    <div class="windpa">
+                                        <img id="now_wind_dir" src="./wind_dir.png">
+                                        <p><span id="now_wind_str" style="font-size:30px">00</span>m/s</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -112,8 +115,8 @@
                         <div class="category">
                             <p>시간</p>
                             <p>기온</p>
-                            <p>풍속</p>
                             <p>풍향</p>
+                            <p>풍속</p>
                             <p>습도</p>
                             <p>강수</p>
                             <p>하늘</p>
@@ -186,6 +189,11 @@
                         <h4 style="text-align:left; padding-bottom: 0px;">기상정보</h4>
                         <p id="info_time" style="padding:0px; font-size:15px;"></p>
                         <p id="weather_info" style="padding:3px 0px; font-size:17px;"></p>
+                    </div>
+                    <div id="weather_sokbo_box">
+                        <h4 style="text-align: left; padding-bottom:0px;">기상속보</h4>
+                        <p id="sokbo_time" style="padding:0px; font-size:15px;"></p>
+                        <p id="weather_sokbo" style="padding:3px 0px; font-size:17px;"></p>
                     </div>
                 </div>
             </div>

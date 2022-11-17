@@ -145,16 +145,16 @@ xhr.onreadystatechange = function () {
                 } else if (quakeinfo.fcTp == 3 || quakeinfo.fcTp == 5) {
                     //국내지진정보 || 국내지진정보 재통보
                     if (quakeinfo.mt >= 5.0) {
-                        document.getElementById('quake_title').textContent = '국내에서 규모 5.0 이상의 매우 강한 지진이 발생했습니다.'
+                        document.getElementById('quake_title').textContent = '규모 5.0 이상의 매우 강한 지진이 발생했습니다.'
                         document.getElementById('quake_title').style = 'background-color: red; color:yellow; text-align:center';
                     } else if (quakeinfo.mt >= 4.0) {
-                        document.getElementById('quake_title').textContent = '국내에서 규모 4.0 이상의 강한 지진이 발생했습니다.'
+                        document.getElementById('quake_title').textContent = '규모 4.0 이상의 강한 지진이 발생했습니다.'
                         document.getElementById('quake_title').style = 'background-color: orange; color:black; text-align:center';
                     } else if (quakeinfo.mt >= 3.0) {
-                        document.getElementById('quake_title').textContent = '국내에서 규모 3.0 이상의 약간 강한 지진이 발생했습니다.'
+                        document.getElementById('quake_title').textContent = '규모 3.0 이상의 약간 강한 지진이 발생했습니다.'
                         document.getElementById('quake_title').style = 'background-color: yellow; color:black; text-align:center';
                     } else if (quakeinfo.mt >= 2.0) {
-                        document.getElementById('quake_title').textContent = '국내에서 규모 2.0 이상의 지진이 발생했습니다.'
+                        document.getElementById('quake_title').textContent = '규모 2.0 이상의 지진이 발생했습니다.'
                     } else {
                         document.getElementById('quake_title').textContent = '국내에서 지진이 발생했습니다.'
                     }
@@ -255,6 +255,8 @@ xhr.onreadystatechange = function () {
                 try {
                     document.getElementById('dep-scale').textContent = '깊이 '
                     document.getElementById('mag-scale').textContent = '규모 '
+                    document.getElementById('mag-m').textContent = 'M'
+                    document.getElementById('mag-l').textContent = 'L'
                 } catch (error) {
 
                 }
