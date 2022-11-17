@@ -23,7 +23,6 @@
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="../main.js" defer></script>
     <script src="../notice.js" defer></script>
-    <!-- <script src="./satellite.js"></script> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -77,23 +76,24 @@
                             <tr>
                                 <td class="left_top">영상종류</td>
                                 <td class="right_top">
-                                    <input type="radio" name="image_select" checked="checked">적외영상
-                                    <input type="radio" name="image_select">가시영상
-                                    <input type="radio" name="image_select">수증기영상
-                                    <input type="radio" name="image_select">단파적외영상
-                                    <input type="radio" name="image_select">RGB컬러영상
-                                    <input type="radio" name="image_select">RGB주야간합성영상
+                                    <input type="radio" name="image_select" checked="checked"  value="ir105">적외영상
+                                    <input type="radio" name="image_select" value="vi006">가시영상
+                                    <input type="radio" name="image_select" value="wv069">수증기영상
+                                    <input type="radio" name="image_select" value="sw038">단파적외영상
+                                    <input type="radio" name="image_select" value="rgbt">RGB컬러영상
+                                    <input type="radio" name="image_select" value="rgbdn">RGB주야간합성영상
                                 </td>
                             </tr>
                             <tr>
                                 <td class="left_bottom">지역선택</td>
                                 <td class="right_bottom">
-                                    <input type="radio" name="area_select">전구
-                                    <input type="radio" name="area_select">동아시아
-                                    <input type="radio" name="area_select" checked="checked">한반도
+                                    <input type="radio" name="area_select" value="fd">전구
+                                    <input type="radio" name="area_select" value="ea">동아시아
+                                    <input type="radio" name="area_select"  value='ko' checked="checked">한반도
                             </tr>
                         </tbody>
                     </table>
+                    <input class="confirm_btn" type="button" id="confirm_btn" value="위성영상 보기">
                 </div>
                 <div>
                     <img id="satellite_img" src="">
@@ -107,6 +107,7 @@
                 <a href="./weatherforecast.html">날씨예보</a>
                 <a href="./weatherwarning.html">기상특보</a>
                 <a href="./weathermap.html">일기도</a>
+                <a href="./satellite.html">위성영상</a>
             </div>
         </div>
     </div>
@@ -152,4 +153,5 @@
         <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
     </div>
 </body>
+<script src="./satellite.js"></script>
 </html>

@@ -67,36 +67,39 @@
                 <select name="addressDo" id="addressDo1"></select>
                 <select name="addressSiGunGu" id="addressSiGunGu1"></select>
                 <input class="confirm_btn" type="button" id="confirm_btn" value="확인">
-                <div class="weather">
+                <div id="weather">
                     <div class="now_weather">
                         <div class="now_weather_num">
                             <h3 id="location">지금 어디에 있나요?</h3>
-                            <p style="text-align:center;"><span id="now_temp" style="font-size:35px;">0</span>℃</p>
+                            <div class="now_weather_etc" style="padding:0px;">
+                                <div class="now_weather_etc_cont" style="display: flex;align-items: center; flex-direction: column; justify-content: flex-end;">
+                                    <span>현재기온</span>
+                                    <p style="text-align:center;"><span id="now_temp" style="font-size:35px;">0</span>℃</p>
+                                    <br>
+                                </div>
+                                <div class="now_weather_etc_cont">
+                                    <div>
+                                        <p style="padding:2px; font-size:14px;">최고기온</p>
+                                        <p style="padding:2px;color:#ed494e;"><span id="max_temp" style="font-size:30px;">0</span>℃</p>
+                                    </div>
+                                    <div style="padding-top:5px;">
+                                        <p style="padding:2px;color:#0887d9"><span id="min_temp" style="font-size:30px;">0</span>℃</p>
+                                        <p style="padding:2px; font-size:14px;">최저기온</p>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="now_weather_etc">
                                 <div class="now_weather_etc_cont">
                                     <p style="padding:4px;">1시간 강수량</p>
                                     <p><span id="now_rain" style="font-size:30px">0.0</span>mm</p>
                                 </div>
-                                <div class="border"></div>
                                 <div class="now_weather_etc_cont">
                                     <p style="padding:4px;">습도</p>
                                     <p><span id="now_humid" style="font-size:30px">00</span>%</p>
                                 </div>
-                                <div class="border"></div>
                                 <div class="now_weather_etc_cont">
                                     <p style="padding:4px;">바람</p>
                                     <p><span id="now_wind_dir" style="font: size 17px">북북동</span> <span id="now_wind_str" style="font-size:30px">00</span>m/s</p>
-                                </div>
-                            </div>
-                            <div class="now_weather_etc">
-                                <div class="now_weather_etc_cont">
-                                    <p style="padding:2px;">최저기온</p>
-                                    <p style="padding:2px;"><span id="min_temp" style="font-size:30px">0</span>℃</p>
-                                </div>
-                                <div class="border"></div>
-                                <div class="now_weather_etc_cont">
-                                    <p style="padding:2px;">최고기온</p>
-                                    <p style="padding:2px;"><span id="max_temp" style="font-size:30px">0</span>℃</p>
                                 </div>
                             </div>
                         </div>
@@ -109,26 +112,80 @@
                         <div class="category">
                             <p>시간</p>
                             <p>기온</p>
-                            <p>바람</p>
+                            <p>풍속</p>
+                            <p>풍향</p>
                             <p>습도</p>
                             <p>강수</p>
                             <p>하늘</p>
-                            <p>신적설</p>
-                            <p>낙뢰</p>
+                            <p>강수형태</p>
                         </div>
                         <div class="ultra_fore_content">
                             <div class="ultra_time">
                                 <p id="ultra_time1"></p>
+                                <p id="ultra_temp1"></p>
+                                <p id="ultra_wind_dir1"></p>
+                                <p id="ultra_wind1"></p>
+                                <p id="ultra_humid1"></p>
+                                <p id="ultra_rain1"></p>
+                                <p id="ultra_sky1"></p>
+                                <p id="ultra_rain_form1"></p>
+                            </div>
+                            <div class="ultra_time">
                                 <p id="ultra_time2"></p>
+                                <p id="ultra_temp2"></p>
+                                <p id="ultra_wind_dir2"></p>
+                                <p id="ultra_wind2"></p>
+                                <p id="ultra_humid2"></p>
+                                <p id="ultra_rain2"></p>
+                                <p id="ultra_sky2"></p>
+                                <p id="ultra_rain_form2"></p>
+                            </div>
+                            <div class="ultra_time">
                                 <p id="ultra_time3"></p>
+                                <p id="ultra_temp3"></p>
+                                <p id="ultra_wind_dir3"></p>
+                                <p id="ultra_wind3"></p>
+                                <p id="ultra_humid3"></p>
+                                <p id="ultra_rain3"></p>
+                                <p id="ultra_sky3"></p>
+                                <p id="ultra_rain_form3"></p>
+                            </div>
+                            <div class="ultra_time">
                                 <p id="ultra_time4"></p>
+                                <p id="ultra_temp4"></p>
+                                <p id="ultra_wind_dir4"></p>
+                                <p id="ultra_wind4"></p>
+                                <p id="ultra_humid4"></p>
+                                <p id="ultra_rain4"></p>
+                                <p id="ultra_sky4"></p>
+                                <p id="ultra_rain_form4"></p>
+                            </div>
+                            <div class="ultra_time">
                                 <p id="ultra_time5"></p>
+                                <p id="ultra_temp5"></p>
+                                <p id="ultra_wind_dir5"></p>
+                                <p id="ultra_wind5"></p>
+                                <p id="ultra_humid5"></p>
+                                <p id="ultra_rain5"></p>
+                                <p id="ultra_sky5"></p>
+                                <p id="ultra_rain_form5"></p>
+                            </div>
+                            <div class="ultra_time">
                                 <p id="ultra_time6"></p>
+                                <p id="ultra_temp6"></p>
+                                <p id="ultra_wind_dir6"></p>
+                                <p id="ultra_wind6"></p>
+                                <p id="ultra_humid6"></p>
+                                <p id="ultra_rain6"></p>
+                                <p id="ultra_sky6"></p>
+                                <p id="ultra_rain_form6"></p>
                             </div>
                         </div>
                     </div>
-                    <div class="weather_fore">
-                        
+                    <div class="weather_info">
+                        <h4 style="text-align:left; padding-bottom: 0px;">기상정보</h4>
+                        <p id="info_time" style="padding:0px; font-size:15px;"></p>
+                        <p id="weather_info" style="padding:3px 0px; font-size:17px;"></p>
                     </div>
                 </div>
             </div>
