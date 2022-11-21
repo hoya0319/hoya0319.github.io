@@ -186,13 +186,17 @@ input {
     border-radius: 5px;
     margin: 10px -20px;
 }
-
 .typhoon_forecast_btn {
     margin: auto;
     display: flex;
     justify-content: space-evenly;
 }
-
+.tts{
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom:10px;
+}
 .now_weather {
     width: 100%;
     display: flex;
@@ -269,10 +273,9 @@ input {
 }
 
 .now_jyou {
-    border: 1px solid rgb(116, 116, 116);
+    border: 1px solid rgb(233,233,233);
     border-radius: 20px;
-    background-color: rgb(116, 116, 116);
-    color: white;
+    background-color: rgb(233,233,233);
     display: flex;
     align-items: center;
 }

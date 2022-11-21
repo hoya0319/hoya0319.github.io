@@ -50,14 +50,14 @@ document.getElementById('confirm_btn').addEventListener("click", function (){
                 test=test.slice(1,106)
                 document.getElementById('satellite_img').src = test
             }else{
-                // test=test.slice(1,99)
-                // document.getElementById('satellite_img').src = test
-                for(i=0; i<long.length; i++){
-                    if(i %100 == 0) {
-                        test= test.slice(i,i+99)
-                        console.log(test)
-                    }
-                }
+                test=test.slice(1,99)
+                document.getElementById('satellite_img').src = test
+                // for(i=0; i<long.length; i++){
+                //     if(i %100 == 0) {
+                //         test= test.slice(i,i+99)
+                //         console.log(test)
+                //     }
+                // }
             }
             console.log(long.length)
             // for(i=0; i<long.length; i++){
