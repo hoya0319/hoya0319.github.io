@@ -40,7 +40,7 @@ var typhoon_json = {
                         "typSeq": 24,
                         "typSp": 21,
                         "typTm": 202211141500,
-                        "typWs": 15
+                        "typWs": 55
                     },
                     {
                         "other": "제24호 태풍 야마네코(YAMANEKO)는 일본에서 제출한 이름으로 살쾡이자리(별자리)를 의미함.",
@@ -122,6 +122,10 @@ function typhoon() {
                 document.getElementById("typhoon_img").alt = "태풍정보 이미지를 불러오는데 실패했습니다."
             }
             if(myObj.response.header.resultCode == "00"){
+                try{
+                    document.getElementById('typhoon_box').style.display = 'block';
+                    document.getElementById('typhoon_info_br').style.display = 'block';
+                }catch(error){}
                 var typ_par_main = myObj.response.body.items.item[number];
                 var max_num = myObj.response.body.totalCount
                 try{
@@ -272,10 +276,8 @@ function typhoon() {
                 document.getElementById('quake_title').textContent = "[02] 데이터베이스 에러 발생(DATABASE_ERROR)"
             }else if (myObj.response.header.resultCode == "03"){
                 try{
-                    document.getElementById('typhoon_box').style.display = 'none';
-                    document.getElementById('typhoon_info_br').style.display = 'none';
-                }catch(error){
                     document.getElementById('typhoon_title').textContent = "현재 발생하고 있는 태풍은 없습니다."
+                }catch(error){
                 }
             }else if (myObj.response.header.resultCode == "04"){
                 document.getElementById('quake_title').textContent = "[04] HTTP 에러 발생(HTTP_ERROR)"

@@ -30,6 +30,13 @@ var now_chart = new Chart(document.getElementById("now_weather_Chart"), {
         ]
     },
     options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
         legend: { display: false },
         title: {
             display: false,
@@ -1282,8 +1289,8 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 //습도
                 document.getElementById('now_humid').textContent = loaded.response.body.items.item[1].obsrValue;
                 // 바람
-                var wind_dir =loaded.response.body.items.item[5].obsrValue
-                document.getElementById('now_wind_dir').style = 'transform: rotate(' + wind_dir +'deg)';
+                var wind_dir = loaded.response.body.items.item[5].obsrValue
+                document.getElementById('now_wind_dir').style = 'transform: rotate(' + wind_dir + 'deg)';
 
                 document.getElementById('now_wind_str').textContent = loaded.response.body.items.item[7].obsrValue;
 
@@ -1293,7 +1300,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 wind = Number(loaded.response.body.items.item[7].obsrValue) * 3.6
                 //체감기온
                 console.log(wind)
-                var body_temp = 13.12 +  0.6215* now_temp
+                var body_temp = 13.12 + 0.6215 * now_temp
                 body_temp = body_temp - 11.37 * Math.pow(wind, 0.16)
                 body_temp = body_temp + 0.3965 * Math.pow(wind, 0.16) * now_temp;
                 body_temp = Math.ceil(body_temp * 10) / 10
@@ -1342,7 +1349,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                         ultra_wind_dir.push(ultra_fore_main[i].fcstValue)
                     } else if (ultra_fore_main[i].category == 'RN1') {
                         if (ultra_fore_main[i].fcstValue == '강수없음') {
-                            ultra_rain.push('0')
+                            ultra_rain.push('--')
                         } else {
                             ultra_rain.push(ultra_fore_main[i].fcstValue)
                         }
@@ -1392,12 +1399,12 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 document.getElementById('ultra_wind_dir4').textContent = `${ultra_wind_dir[3]}도`
                 document.getElementById('ultra_wind_dir5').textContent = `${ultra_wind_dir[4]}도`
                 document.getElementById('ultra_wind_dir6').textContent = `${ultra_wind_dir[5]}도`
-                document.getElementById('ultra_wind_dir1').style = 'transform: rotate(' + ultra_wind_dir[0] +'deg); display: block '
-                document.getElementById('ultra_wind_dir2').style = 'transform: rotate(' + ultra_wind_dir[1] +'deg); display: block '
-                document.getElementById('ultra_wind_dir3').style = 'transform: rotate(' + ultra_wind_dir[2] +'deg); display: block '
-                document.getElementById('ultra_wind_dir4').style = 'transform: rotate(' + ultra_wind_dir[3] +'deg); display: block '
-                document.getElementById('ultra_wind_dir5').style = 'transform: rotate(' + ultra_wind_dir[4] +'deg); display: block '
-                document.getElementById('ultra_wind_dir6').style = 'transform: rotate(' + ultra_wind_dir[5] +'deg); display: block '
+                document.getElementById('ultra_wind_dir1').style = 'transform: rotate(' + ultra_wind_dir[0] + 'deg); display: block '
+                document.getElementById('ultra_wind_dir2').style = 'transform: rotate(' + ultra_wind_dir[1] + 'deg); display: block '
+                document.getElementById('ultra_wind_dir3').style = 'transform: rotate(' + ultra_wind_dir[2] + 'deg); display: block '
+                document.getElementById('ultra_wind_dir4').style = 'transform: rotate(' + ultra_wind_dir[3] + 'deg); display: block '
+                document.getElementById('ultra_wind_dir5').style = 'transform: rotate(' + ultra_wind_dir[4] + 'deg); display: block '
+                document.getElementById('ultra_wind_dir6').style = 'transform: rotate(' + ultra_wind_dir[5] + 'deg); display: block '
 
                 document.getElementById('ultra_humid1').textContent = `${ultra_humid[0]}%`
                 document.getElementById('ultra_humid2').textContent = `${ultra_humid[1]}%`
@@ -1406,12 +1413,12 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 document.getElementById('ultra_humid5').textContent = `${ultra_humid[4]}%`
                 document.getElementById('ultra_humid6').textContent = `${ultra_humid[5]}%`
 
-                document.getElementById('ultra_rain1').textContent = `${ultra_rain[0]}mm`
-                document.getElementById('ultra_rain2').textContent = `${ultra_rain[1]}mm`
-                document.getElementById('ultra_rain3').textContent = `${ultra_rain[2]}mm`
-                document.getElementById('ultra_rain4').textContent = `${ultra_rain[3]}mm`
-                document.getElementById('ultra_rain5').textContent = `${ultra_rain[4]}mm`
-                document.getElementById('ultra_rain6').textContent = `${ultra_rain[5]}mm`
+                document.getElementById('ultra_rain1').textContent = `${ultra_rain[0]}`
+                document.getElementById('ultra_rain2').textContent = `${ultra_rain[1]}`
+                document.getElementById('ultra_rain3').textContent = `${ultra_rain[2]}`
+                document.getElementById('ultra_rain4').textContent = `${ultra_rain[3]}`
+                document.getElementById('ultra_rain5').textContent = `${ultra_rain[4]}`
+                document.getElementById('ultra_rain6').textContent = `${ultra_rain[5]}`
 
                 document.getElementById('ultra_sky1').textContent = `${ultra_sky[0]}`
                 document.getElementById('ultra_sky2').textContent = `${ultra_sky[1]}`
@@ -1501,10 +1508,44 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             }
         }
     };
+    // var sokbo_xhr = new XMLHttpRequest();
+    // var sokbo_url = 'http://apis.data.go.kr/1360000/WthrWrnInfoService/getWthrBrkNews'; /*URL*/
+    // var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
+    // queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+    // queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+    // queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
+    // queryParams += '&' + encodeURIComponent('stnId') + '=' + encodeURIComponent(108); /**/
+    // queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 1); /**/
+    // queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
+    // sokbo_xhr.open('GET', sokbo_url + queryParams);
+    // console.log(sokbo_url+queryParams)
+    // sokbo_xhr.onreadystatechange = function () {
+    //     if (this.readyState == 4) {
+    //         try {
+    //             var sokbo_loaded = JSON.parse(this.responseText);
+    //         } catch (error) {
+    //             document.getElementById('weather_sokbo').textContent = '에러 발생.'
+    //         }
+    //         if(sokbo_loaded.response.header.resultCode = '00'){
+    //             var sokbo_main = sokbo_loaded.body.items.item
+    //             var yyyymmdd = String(sokbo_main[0].tmFc);
+    //             var year = yyyymmdd.slice(0, 4);
+    //             var month = yyyymmdd.slice(4, 6);
+    //             var date = yyyymmdd.slice(6, 8);
+    //             var hour = yyyymmdd.slice(8, 10);
+    //             var minute = yyyymmdd.slice(10, 12);
+    //             console.log(month + date + hour + minute)
+    //             document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`
+    //             document.getElementById('weather_sokbo').textContent = sokbo_main[0].t1
+    //         }
+    //     }
+    // };
+
     ultra_now_xhr.send('');
     ultra_fore_xhr.send('');
     fore_xhr.send('');
     info_xhr.send('')
+    // sokbo_xhr.send('');
 })
 document.getElementById('ultra_time1').textContent = `${today.getHours()}시`
 let date = new Date();
