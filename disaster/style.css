@@ -13,7 +13,19 @@ table {
     border-spacing: 0px;
     margin: auto;
 }
-
+#tts{
+    background-color: white;
+    border-radius: 10px;
+}
+#tts:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: .5s;
+}
+#tts img{
+    width:35px;
+    height:35px;
+}
 input {
     accent-color: blue;
 }

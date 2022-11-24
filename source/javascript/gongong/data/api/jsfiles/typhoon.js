@@ -180,7 +180,7 @@ function typhoon() {
                 var hour = yyyymmdd.slice(8, 10);
                 var minute = yyyymmdd.slice(10, 12);
                 try{
-                document.getElementById("typhoon_info_text").textContent = "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
+                    document.getElementById("typhoon_info_text").textContent =  "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
                 }catch(error){
 
                 }
@@ -270,6 +270,55 @@ function typhoon() {
                 }catch(error){
                     console.log("이 페이지가 아닌가보오.")
                 }
+                function setVoiceList(){
+                    voices = window.speechSynthesis.getVoices();
+                }
+
+                setVoiceList();
+                window.speechSynthesis.onvoiceschanged = setVoiceList;
+
+                function speak(text, opt_prop){
+                    if(typeof SpeechSynthesisUtterance == 'undefined' || typeof window.speechSynthesis == 'undefined'){
+                        alert('이 브라우저는 음성 합성을 지원하지 않습니다.');
+                        return;
+                    }
+
+                    window.speechSynthesis.cancel()
+
+                    const prop = opt_prop || {}
+
+                    const speechMsg = new SpeechSynthesisUtterance()
+                    speechMsg.rate = prop.rate || 1;
+                    speechMsg.pitch = prop.pitch || 1;
+                    speechMsg.lang = prop.lang || 'ko-KR';
+                    speechMsg.text = text
+
+                    window.speechSynthesis.speak(speechMsg)
+                }
+                var text
+                var gae =  "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 시속" + typ_par_main.typSp + "킬로미터의 속도로 이동중입니다";
+                if(strength == '--'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. ${typ_par_main.other}`
+                }else if(strength == '중'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 중 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. ${typ_par_main.other}`
+                }else if(strength == '강'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 강 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. ${typ_par_main.other}`
+                }else if(strength == '매우강'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 매우강 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. ${typ_par_main.other}`
+                }else if(strength == '초강력'){
+                    text = `초강력 태풍에 대한 정보입니다. ${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 초강력 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. ${typ_par_main.other}`
+                }
+
+                const btnread = document.getElementById('tts')
+                "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
+                btnread.addEventListener("click", e =>{
+                    speak(text, {
+                        rate : 1.2,
+                        pitch: 1.2,
+                        lang: 'ko-KR'
+                    })
+                })
+
             }else if(myObj.response.header.resultCode == "01"){
                 document.getElementById('quake_title').textContent = "[01] 어플리케이션 에러 발생(APPLICATION_ERROR)"
             }else if(myObj.response.header.resultCode == "02"){

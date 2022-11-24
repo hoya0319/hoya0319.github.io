@@ -80,6 +80,22 @@ var earthquake_json = {
                         "tmFc": 202210290827,
                         "tmSeq": 1066,
                         "dep": 0
+                    },
+                    {
+                        "cnt": 1, 
+                        "fcTp": 2, 
+                        "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_2_20221123100814.png", 
+                        "inT": "", 
+                        "lat": 40.84, 
+                        "loc": "터키 아다파자리 동쪽 48km 지역", 
+                        "lon": 30.97, 
+                        "mt": 6.1, 
+                        "rem": "국내영향없음. 위 자료는 미지질조사소(USGS) 분석결과임.", 
+                        "stnId": 108, 
+                        "tmEqk": 20221123100814, 
+                        "tmFc": 202211231027, 
+                        "tmSeq": 1166, 
+                        "dep": 4 
                     }
                 ]
             },
@@ -94,7 +110,13 @@ var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKd
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
-queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 3); /**/
+var date = new Date();
+var year = date.getFullYear();
+date = new Date();
+date.setDate(date.getDate() - 3);
+date = date.toLocaleString()
+console.log(date)
+queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(year + date.slice(6, 8) + date.slice(10, 12)); /**/
 queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
@@ -106,10 +128,10 @@ xhr.onreadystatechange = function () {
             document.getElementById('quake_title').textContent = "예상치 못한 오류가 발생했습니다."
         }
         if (myObj.response.header.resultCode == "00") {
-            try{
+            try {
                 document.getElementById('quake_info').style.display = 'block';
-                document.getElementById('quake_info_br').style.display = 'block';                
-            }catch(error){
+                document.getElementById('quake_info_br').style.display = 'block';
+            } catch (error) {
 
             }
             var quakeinfo = myObj.response.body.items.item[0];
@@ -169,7 +191,7 @@ xhr.onreadystatechange = function () {
                         document.getElementById('quake_title').textContent = '국내에서 지진이 발생했습니다.'
                     }
                     int_info = (quakeinfo.inT).slice(5,)
-                    document.getElementById('intensity').textContent =int_info
+                    document.getElementById('intensity').textContent = int_info
                     var tongbo = '/i_'
                     int_info = quakeinfo.inT
 
@@ -177,14 +199,14 @@ xhr.onreadystatechange = function () {
                     document.getElementById('quake_title').textContent = '지진속보 발표. 흔들림에 대비.';
                     document.getElementById('quake_title').style = 'background-color: yellow; color:black; text-align:center;';
                     int_info = (quakeinfo.inT).slice(5,)
-                    document.getElementById('intensity').textContent =int_info
+                    document.getElementById('intensity').textContent = int_info
                     int_info = quakeinfo.inT
 
                 } else if (quakeinfo.fcTp == 11 || quakeinfo.fcTp == 13 || quakeinfo.fcTp == 12) {
                     document.getElementById('quake_title').textContent = '지진조기경보 발표. 흔들림에 경계.';
                     document.getElementById('quake_title').style = 'background-color: red; color:yellow; text-align:center;';
                     int_info = (quakeinfo.inT).slice(5,)
-                    document.getElementById('intensity').textContent =int_info
+                    document.getElementById('intensity').textContent = int_info
                     int_info = quakeinfo.inT
 
                 }
@@ -208,15 +230,15 @@ xhr.onreadystatechange = function () {
                         } else if (intensity_color == 'Ⅴ') {
                             document.getElementById('int').style = 'background-color:#ffc000'
                         } else if (intensity_color == 'Ⅵ') {
-                            document.getElementById('int').style = 'background-color:#ff0000'
+                            document.getElementById('int').style = 'background-color:#ff0000; color:white;'
                         } else if (intensity_color == 'Ⅶ') {
-                            document.getElementById('int').style = 'background-color:#a32777'
+                            document.getElementById('int').style = 'background-color:#a32777; color:white;'
                         } else if (intensity_color == 'Ⅷ') {
-                            document.getElementById('int').style = 'background-color:#632523'
+                            document.getElementById('int').style = 'background-color:#632523; color:white;'
                         } else if (intensity_color == 'Ⅸ') {
-                            document.getElementById('int').style = 'background-color:#4c2600'
+                            document.getElementById('int').style = 'background-color:#4c2600; color:white'
                         } else if (intensity_color == 'Ⅹ') {
-                            document.getElementById('int').style = 'background-color:#000'
+                            document.getElementById('int').style = 'background-color:#000; color:white;'
                             document.getElementById('max_int').style = 'color:#fff'
                             document.getElementById('intensity').style = 'color:#fff'
                         } else {
@@ -253,7 +275,7 @@ xhr.onreadystatechange = function () {
                         document.getElementById('lon').textContent = '동경 ' + lon + '도'
                     }
                 } catch (error) {
-                    
+
                 }
 
                 //규모 처리
@@ -288,10 +310,19 @@ xhr.onreadystatechange = function () {
 
                 }
             } catch (error) {
-                document.getElementById('quake_title').textContent = "오류가 발생했습니다. 페이지를 새로고침 해 보세요."
-                console.log(error)
+                document.getElementById('quake_rem').textContent = quakeinfo.rem;
+                document.getElementById('quake_location').textContent = quakeinfo.loc;
+                var mag = quakeinfo.mt
+                if (mag.length == 1) {
+                    document.getElementById('magnitude').textContent = quakeinfo.mt + ".0"
+                } else {
+                    document.getElementById('magnitude').textContent = quakeinfo.mt
+                }
+                document.getElementById('depth').textContent = '--km'
+                document.getElementById('quake_img').src = quakeinfo.img
+
             }
-            
+
             function setVoiceList() {
                 voices = window.speechSynthesis.getVoices();
             }
@@ -299,8 +330,8 @@ xhr.onreadystatechange = function () {
             setVoiceList();
             window.speechSynthesis.onvoiceschanged = setVoiceList;
 
-            function speak(text,opt_prop){
-                if (typeof SpeechSynthesisUtterance == 'undefined' || typeof window.speechSynthesis == 'undefined'){
+            function speak(text, opt_prop) {
+                if (typeof SpeechSynthesisUtterance == 'undefined' || typeof window.speechSynthesis == 'undefined') {
                     alert('이 브라우저는 음성 합성을 지원하지 않습니다.');
                     return;
                 }
@@ -323,25 +354,26 @@ xhr.onreadystatechange = function () {
             int = int.replace('Ⅱ', '진도 2가')
             int = int.replace('Ⅲ', '진도 3이')
             int = int.replace('Ⅳ', '진도 4가')
-            int = int.replace('Ⅵ', '진도 5가')
-            int = int.replace('Ⅶ', '진도 6이')
-            int = int.replace('Ⅷ', '진도 7이')
+            int = int.replace('Ⅴ', '진도 5가')
+            int = int.replace('Ⅵ', '진도 6이')
+            int = int.replace('Ⅶ', '진도 7이')
             int = int.replace('Ⅷ', '진도 8이')
             int = int.replace('Ⅸ', '진도 9가')
             int = int.replace('Ⅹ', '진도 10 이상이')
-            if (quakeinfo.fcTp == 2){
+            if (quakeinfo.fcTp == 2) {
                 int = int_info
-            }else{
+            } else {
                 int += '입니다'
             }
-            const text = `${month}월 ${date}일 ${hour}시 ${minute}분 경, ${quakeinfo.loc}에서 지진이 있었습니다. 지진의 규모는 ${quakeinfo.mt}, 진원의 깊이는 ${quakeinfo.dep}킬로미터 입니다. 진도정보입니다. ${int_info}. 참고사항입니다. ${quakeinfo.rem}`
+            console.log(int_info)
+            const text = `${month}월 ${date}일 ${hour}시 ${minute}분 경, ${quakeinfo.loc}에서 지진이 있었습니다. 지진의 규모는 ${quakeinfo.mt}, 진원의 깊이는 ${quakeinfo.dep}킬로미터 입니다. 진도정보입니다. ${int}. 참고사항입니다. ${quakeinfo.rem}`
             const btnread = document.getElementById('tts')
 
             btnread.addEventListener("click", e => {
                 speak(text, {
-                    rate : 1,
-                    pitch : 1.2,
-                    lang : 'ko-KR'
+                    rate: 1.2,
+                    pitch: 1.2,
+                    lang: 'ko-KR'
                 })
             })
         } else if (myObj.response.header.resultCode == "01") {

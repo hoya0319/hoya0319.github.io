@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNGCQ3FBZ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-QNGCQ3FBZ1');
-</script>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNGCQ3FBZ1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QNGCQ3FBZ1');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keyword" content="호야, 지진, 재난, 재난방송, 지진방송, 일본지진, 호야 재난방송, 호야 지진방송, 일본, 태풍, 정전, 수도, 응급, 재해 지식, 해일, 쓰나미, 화산, 분화, 화산폭발, 열사병, 일사병, 열중증, 폭설, 내수범람, 하천홍수, 홍수, 폭염, 수해, 침수, 지진동, 진도, 규모, 기압, 풍속, 태풍, 기상, 기상특보, 기상경보, 경보, 주의보, 난카이트로프, 난카이 트로프, 거대지진, 거대 지진, 특설 페이지, M 스케일, mscale, 토사재해, 산사태, 기상, 날씨, 기상특보, 피난, 코로나, 감염, 대피, 피난소, 태풍정보, 정보, 레이더, 비, 산사태, 하천 수위, 수위">
-    <meta name="description" content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
+    <meta name="keyword"
+        content="호야, 지진, 재난, 재난방송, 지진방송, 일본지진, 호야 재난방송, 호야 지진방송, 일본, 태풍, 정전, 수도, 응급, 재해 지식, 해일, 쓰나미, 화산, 분화, 화산폭발, 열사병, 일사병, 열중증, 폭설, 내수범람, 하천홍수, 홍수, 폭염, 수해, 침수, 지진동, 진도, 규모, 기압, 풍속, 태풍, 기상, 기상특보, 기상경보, 경보, 주의보, 난카이트로프, 난카이 트로프, 거대지진, 거대 지진, 특설 페이지, M 스케일, mscale, 토사재해, 산사태, 기상, 날씨, 기상특보, 피난, 코로나, 감염, 대피, 피난소, 태풍정보, 정보, 레이더, 비, 산사태, 하천 수위, 수위">
+    <meta name="description"
+        content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
     <meta name="author" content="호야">
     <meta property="robots" content="index, follow">
     <title>호야-재난방송 - 태풍정보</title>
@@ -29,6 +32,7 @@
     <link rel="icon" href="../호야.png">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
+
 <body>
     <script>
         AOS.init();
@@ -40,19 +44,33 @@
             </a>
         </div>
         <ul class="navbar_menu">
-            <a href="../index.html"><li>홈</li></a>
-            <a href="../intro.html"><li>채널소개</li></a>
-            <a href="../broadcast.html"><li>방송안내</li></a>
-            <a href="../resource.html"><li>자료실</li></a>
-            <a href="../prepare.html"><li>방재</li></a>
-            <a href="../special.html"><li>스페셜</li></a>
-            <a href="../emergency.html"><li>특설페이지</li></a>
+            <a href="../index.html">
+                <li>홈</li>
+            </a>
+            <a href="../intro.html">
+                <li>채널소개</li>
+            </a>
+            <a href="../broadcast.html">
+                <li>방송안내</li>
+            </a>
+            <a href="../resource.html">
+                <li>자료실</li>
+            </a>
+            <a href="../prepare.html">
+                <li>방재</li>
+            </a>
+            <a href="../special.html">
+                <li>스페셜</li>
+            </a>
+            <a href="../emergency.html">
+                <li>특설페이지</li>
+            </a>
         </ul>
         <a href="javascript:return false;" class="navbarBtn">
             <i class="fa-solid fa-bars"></i>
         </a>
-    </nav>  
-    <div class="disaster_content" >
+    </nav>
+    <div class="disaster_content">
         <div class="content_left">
             <div class="disaster_title">
                 <h1 style="text-align:left">태풍정보</h1>
@@ -69,36 +87,54 @@
                 </div>
                 <div>
                     <div class="info_top" style="border-bottom:black 1px solid; padding-bottom:10px;">
-                        <h3 style="text-align:left; padding:0px;"><span id="number" style="font-size:17px;"></span><span id="typhoon_name"></span></h3>
-                        <p style="padding:0px; font-size:15px;"><span id="typhoon_clock" ></span><span id='hou'></span></p>
+                        <h3 style="text-align:left; padding:0px;"><span id="number" style="font-size:17px;"></span><span
+                                id="typhoon_name"></span></h3>
+                        <p style="padding:0px; font-size:15px;"><span id="typhoon_clock"></span><span id='hou'></span>
+                        </p>
                         <p id="strength"></p>
                     </div>
                     <div class="info_mid">
                         <p id="typhoon_info_text"></p>
                         <div class="now_jyou">
                             <div class="press">
-                                <p style="font-size:35px"><span style="font-size:15px;">중심기압 </span><span id="pressure"></span><span style="font-size:15px;">hPa</span></p>
+                                <p style="font-size:35px"><span style="font-size:15px;">중심기압 </span><span
+                                        id="pressure"></span><span style="font-size:15px;">hPa</span></p>
                             </div>
                             <div class="wind">
-                                <p style="font-size:35px"><span style="font-size:15px;">최대풍속 </span><span id=wind_speed></span><span style="font-size:15px;">m/s</span></p>
+                                <p style="font-size:35px"><span style="font-size:15px;">최대풍속 </span><span
+                                        id=wind_speed></span><span style="font-size:15px;">m/s</span></p>
                             </div>
                         </div>
-                        <p>중심위치 &nbsp;&nbsp;&nbsp;&nbsp;<span id='location' style="font-size:20px;"></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="lat" style="font-size:15px;"></span></p>
+                        <p>중심위치 &nbsp;&nbsp;&nbsp;&nbsp;<span id='location'
+                                style="font-size:20px;"></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                id="lat" style="font-size:15px;"></span></p>
                         <div class="magdep" style="text-align:center">
-                            <p style="width:50%;" id="magbox"><span id="dir-scale"></span><span id="movement" style="font-size:30px"></span></p>
-                            <p style="width:50%;" id="dep"><span id="speed-scale"></span><span id="speed" style="font-size:30px"></span><span id=speed-scale2></span></p>
+                            <p style="width:50%;" id="magbox"><span id="dir-scale"></span><span id="movement"
+                                    style="font-size:30px"></span></p>
+                            <p style="width:50%;" id="dep"><span id="speed-scale"></span><span id="speed"
+                                    style="font-size:30px"></span><span id=speed-scale2></span></p>
                         </div>
                         <div class="magdep" style="text-align:center">
-                            <p style="width:50%;" id="magbox"><span id="strong-scale"></span><span id="strong" style="font-size:30px"></span><span id=strong-scale2></span></p>
-                            <p style="width:50%;" id="dep"><span id="boufu-scale"></span><span id="boufu" style="font-size:30px"></span><span id=boufu-scale2></span></p>
+                            <p style="width:50%;" id="magbox"><span id="strong-scale"></span><span id="strong"
+                                    style="font-size:30px"></span><span id=strong-scale2></span></p>
+                            <p style="width:50%;" id="dep"><span id="boufu-scale"></span><span id="boufu"
+                                    style="font-size:30px"></span><span id=boufu-scale2></span></p>
                         </div>
                     </div>
                     <div class="info_bottom">
                         <p id="rem"></p>
                         <p id="other"></p>
                     </div>
-                    <p style="text-align:center; margin-top:20px;"><a href="https://www.weather.go.kr/w/typhoon/report.do" target="_blank" style="background-color: #0055CC; padding:5px 10px; border:1px black solid; border-radius: 5px; color:white;" id="kma">기상청 태풍 통보문</a></p>
+                    <p style="text-align:center; margin-top:20px;"><a
+                            href="https://www.weather.go.kr/w/typhoon/report.do" target="_blank"
+                            style="background-color: #0055CC; padding:5px 10px; border:1px black solid; border-radius: 5px; color:white;"
+                            id="kma">기상청 태풍 통보문</a></p>
                     <p style="text-align:center;"><a href="/prepare/typhoon.html" class="out_link">태풍에 대비하기</a></p>
+                </div>
+                <div class="tts-box">
+                    <button id="tts">
+                        <img src="./tts.png" alt="읽어주기">
+                    </button>
                 </div>
             </div>
         </div>
@@ -156,4 +192,5 @@
     </div>
 </body>
 <script src="../source/javascript/gongong/data/api/jsfiles/typhoon.js"></script>
+
 </html>
