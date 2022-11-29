@@ -241,6 +241,9 @@
     background-color: #f3f4f9;
     border-radius: 20px;
 }
+#typhoon_box{
+    display: none;
+}
 .typhoon_imoji span{
     background:#2a63ac;
     color: #fff;
@@ -276,6 +279,7 @@
     border:2px solid brown;
     background-color: #f3f4f9;
     border-radius: 20px;
+    display: none;
 }
 .quake_title span{
     background:rgb(182, 77, 77);

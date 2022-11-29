@@ -13,19 +13,23 @@ table {
     border-spacing: 0px;
     margin: auto;
 }
-#tts{
+
+#tts {
     background-color: white;
     border-radius: 10px;
 }
-#tts:hover{
+
+#tts:hover {
     cursor: pointer;
     transform: scale(1.05);
     transition: .5s;
 }
-#tts img{
-    width:35px;
-    height:35px;
+
+#tts img {
+    width: 35px;
+    height: 35px;
 }
+
 input {
     accent-color: blue;
 }
@@ -109,7 +113,7 @@ input {
     text-align: center;
     padding: 5px 10px;
     border: solid 1px black;
-    margin:3px;
+    margin: 3px;
     min-width: 60px;
     border-radius: 5px;
 }
@@ -198,17 +202,20 @@ input {
     border-radius: 5px;
     margin: 10px -20px;
 }
+
 .typhoon_forecast_btn {
     margin: auto;
     display: flex;
     justify-content: space-evenly;
 }
-.tts{
-    width:100%;
+
+.tts {
+    width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
+
 .now_weather {
     width: 100%;
     display: flex;
@@ -225,11 +232,11 @@ input {
     border: 1px black solid;
     border-radius: 15px;
     padding: 20px 0px;
-    margin-top:5px;
+    margin-top: 5px;
 }
 
 .now_weather_etc_cont {
-    width: 100%;
+    flex-grow: 1;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -241,23 +248,27 @@ input {
     border-width: 0px 1px 0px 0px;
 }
 
-#now_wind_dir{
-    width:20%;
-    height:20%;
+#now_wind_dir {
+    width: 20%;
+    height: 20%;
 }
-.ultra_weather_fore{
+
+.ultra_weather_fore {
     display: flex;
     border-radius: 20px;
     border: 1px solid black;
 }
-.windpa{
+
+.windpa {
     display: flex;
     align-items: center;
 }
-#now_wind_dir{
-    width:50%;
-    height:50%;
+
+#now_wind_dir {
+    width: 50%;
+    height: 50%;
 }
+
 .category {
     display: flex;
     flex-direction: column;
@@ -269,7 +280,7 @@ input {
 }
 
 .ultra_fore_content {
-    overflow-x: none;
+    overflow-x: auto;
     width: 100%;
     display: flex;
 }
@@ -284,10 +295,39 @@ input {
     flex-grow: 1;
 }
 
+
+.mid_time p {
+    text-align: center;
+    flex-grow: 1;
+    min-width: 160px;
+}
+
+
+.mid_time {
+    flex-grow: 1;
+}
+
+#mid_day1,
+#mid_day2,
+#mid_day3,
+#mid_day4,
+#mid_day5,
+#mid_day6,
+#mid_day7,
+#mid_day8,
+#mid_day9,
+#mid_day10,
+#mid_day11,
+#mid_day12,
+#mid_day13 {
+    border-bottom: 1px black solid;
+    padding-bottom: 9px;
+}
+
 .now_jyou {
-    border: 1px solid rgb(233,233,233);
+    border: 1px solid rgb(233, 233, 233);
     border-radius: 20px;
-    background-color: rgb(233,233,233);
+    background-color: rgb(233, 233, 233);
     display: flex;
     align-items: center;
 }
@@ -325,7 +365,10 @@ input {
     border-bottom: 1px black solid;
     padding-bottom: 9px;
 }
-
+.time{
+    border-bottom: 1px black solid;
+    padding-bottom: 9px;
+}
 #ultra_wind_dir1,
 #ultra_wind_dir2,
 #ultra_wind_dir3,
@@ -340,8 +383,17 @@ input {
     color: rgba(0, 0, 0, 0);
 }
 
-#weather_sokbo_box{
+#weather_sokbo_box {
     display: none;
+}
+
+.wind_dir{
+    background-image: url('./wind_dir.png');
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: center center;
+    display: none;
+    color: rgba(0, 0, 0, 0);
 }
 
 @media screen and (max-width : 1020px) {

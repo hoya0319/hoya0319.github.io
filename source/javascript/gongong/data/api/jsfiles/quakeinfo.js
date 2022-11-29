@@ -326,7 +326,7 @@ xhr.onreadystatechange = function () {
             function setVoiceList() {
                 voices = window.speechSynthesis.getVoices();
             }
-
+            
             setVoiceList();
             window.speechSynthesis.onvoiceschanged = setVoiceList;
 
@@ -365,8 +365,13 @@ xhr.onreadystatechange = function () {
             } else {
                 int += '입니다'
             }
+            if (quakeinfo.dep == 0) {
+                dept = "불명"
+            } else {
+                document.getElementById('depth').textContent = quakeinfo.dep + "킬로미터"
+            }
             console.log(int_info)
-            const text = `${month}월 ${date}일 ${hour}시 ${minute}분 경, ${quakeinfo.loc}에서 지진이 있었습니다. 지진의 규모는 ${quakeinfo.mt}, 진원의 깊이는 ${quakeinfo.dep}킬로미터 입니다. 진도정보입니다. ${int}. 참고사항입니다. ${quakeinfo.rem}`
+            const text = `${month}월 ${date}일 ${hour}시 ${minute}분 경, ${quakeinfo.loc}에서 지진이 발생했습니다. 지진의 규모는 ${quakeinfo.mt}, 진원의 깊이는 ${dept} 입니다. 진도정보입니다. ${int}. 참고사항입니다. ${quakeinfo.rem}`
             const btnread = document.getElementById('tts')
 
             btnread.addEventListener("click", e => {
