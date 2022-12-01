@@ -365,6 +365,7 @@ xhr.onreadystatechange = function () {
             } else {
                 int += '입니다'
             }
+            var dept
             if (quakeinfo.dep == 0) {
                 dept = "불명"
             }
