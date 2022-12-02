@@ -1,3 +1,8 @@
+@keyframes motion {
+	0% {bottom: 5%;} 
+	65% {bottom: 10%;} 
+    100% {bottom: 5%;}
+}
 .mainBanner{
     height: 100vh;
     width:100vw;
@@ -6,9 +11,10 @@
     background-size: 100%; 
     background-repeat: no-repeat;
     background-color: #D8D8D8;
+    background-position: 50%;
 }
 .mainBanner h1{
-    font-size:50px;
+    font-size:45px;
     width:50%;
     left:25%;
     position: absolute;
@@ -28,8 +34,9 @@
     text-align: center;
     font-size:40px;
     color:orange;
-    bottom:5%;
+    /* bottom:5%;    */
     right:0%;
+    animation: motion 1.5s ease 0s infinite
 }
 .message{
     display: flex;
@@ -129,6 +136,12 @@
 }
 .out_link span:hover{
     cursor:pointer;
+}
+.project div{
+    border: solid 2px white;
+}
+.project div:hover{
+    border: solid 2px black;
 }
 /* .link_button {
 	background-color:#ffffff;
