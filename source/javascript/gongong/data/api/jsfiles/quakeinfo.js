@@ -368,6 +368,8 @@ xhr.onreadystatechange = function () {
             var dept
             if (quakeinfo.dep == 0) {
                 dept = "불명"
+            }else{
+                dept = quakeinfo.dep + "km"
             }
             console.log(int_info)
             const text = `${month}월 ${date}일 ${hour}시 ${minute}분 경, ${quakeinfo.loc}에서 지진이 발생했습니다. 지진의 규모는 ${quakeinfo.mt}, 진원의 깊이는 ${dept} 입니다. 진도정보입니다. ${int}. 참고사항입니다. ${quakeinfo.rem}`

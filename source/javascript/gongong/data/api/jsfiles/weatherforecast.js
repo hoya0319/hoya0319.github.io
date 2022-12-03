@@ -150,6 +150,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     var y = 0;
     var area_code = 0
     var yuksang
+    var warn_area
     var address = document.getElementById('addressSiGunGu1').value;
     if (document.getElementById('addressDo1').value == '서울특별시') {
         area_code = 109
@@ -158,86 +159,106 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         switch (address) {
             case '종로구':
             case '중구':
+                warn_area = 'L1100400'
                 x = 60;
                 y = 127;
                 break;
             case '용산구':
+                warn_area = 'L1100400'
                 x = 60;
                 y = 126;
                 break;
             case '성동구':
             case '동대문구':
+                warn_area = 'L1100200'
                 x = 61;
                 y = 127;
                 break;
             case '광진구':
+                warn_area = 'L1100200'
                 x = 62;
                 y = 126;
                 break;
             case '중랑구':
+                warn_area = 'L1100200'
                 x = 62;
                 y = 128;
                 break;
             case '성북구':
             case '강북구':
+                warn_area = 'L1100200'
                 x = 61;
                 y = 128;
                 break;
             case '도봉구':
             case '노원구':
+                warn_area = 'L1100200'
                 x = 61;
                 y = 129;
                 break;
             case '은평구':
+                warn_area = 'L1100400'
                 x = 59;
                 y = 127;
                 break;
             case '서대문구':
+                warn_area = 'L1100400'
                 x = 59;
                 y = 127;
                 break;
             case '마포구':
+                warn_area = 'L1100400'
                 x = 59;
                 y = 126;
                 break;
             case '양천구':
+                warn_area = 'L1100300'
                 x = 58;
                 y = 126;
                 break;
             case '강서구':
+                warn_area = 'L1100300'
                 x = 57;
                 y = 127;
                 break;
             case '구로구':
+                warn_area = 'L1100300'
                 x = 58;
                 y = 125;
                 break;
             case '금천구':
+                warn_area = 'L1100300'
                 x = 58;
                 y = 124;
                 break;
             case '영등포구':
+                warn_area = 'L1100300'
                 x = 59;
                 y = 126;
                 break;
             case '동작구':
             case '관악구':
+                warn_area = 'L1100300'
                 x = 59;
                 y = 125;
                 break;
             case '서초구':
+                warn_area = 'L1100100'
                 x = 60;
                 y = 125;
                 break;
             case '강남구':
+                warn_area = 'L1100100'
                 x = 61;
                 y = 125;
                 break;
             case '송파구':
+                warn_area = 'L1100100'
                 x = 62;
                 y = 125;
                 break;
             case '강동구':
+                warn_area = 'L1100100'
                 x = 62;
                 y = 126;
                 break;
@@ -248,6 +269,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         }
     } else if (document.getElementById('addressDo1').value == '부산광역시') {
         area_code = 159
+        warn_area = 'L1080100'
         ma = '11H20201' 
         yuksang=  '11H20000'
         switch (address) {
@@ -320,6 +342,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     } else if (document.getElementById('addressDo1').value == '대구광역시') {
         area_code = 143
         ma = '11H10701'
+        warn_area = 'L1070100'
         yuksang = '11H10000'
         switch (address) {
             case '중구':
@@ -358,6 +381,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         }
     } else if (document.getElementById('addressDo1').value == '인천광역시') {
         area_code = 109
+        warn_area = 'L1010800'
         yuksang = '11B00000'
         ma = '11B20101'
         switch (address) {
@@ -394,6 +418,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 y = 125;
                 break;
             case '강화군':
+                warn_area = 'L1010900'
                 ma = '11B20102'
                 x = 50;
                 y = 130;
@@ -403,10 +428,12 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 y = 120;
                 break;
             case '옹진군 연평면':
+                warn_area = 'L1014100'
                 x = 38;
                 y = 129;
                 break;
             case '옹진군 백령면':
+                warn_area = 'L1014100'
                 ma = '11A00101'
                 x = 21;
                 y = 135;
@@ -417,6 +444,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 break;
         }
     } else if (document.getElementById('addressDo1').value == '광주광역시') {
+        warn_area = 'L1050100'
         ma = '11F20501'
         area_code = 156
         yuksang = '11F20000'
@@ -448,6 +476,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     } else if (document.getElementById('addressDo1').value == '대전광역시') {
         area_code = 133
         ma = '11C20401'
+        warn_area = 'L1030100'
         yuksang = '11C20000'
         switch (address) {
             case '동구':
@@ -474,6 +503,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         }
     } else if (document.getElementById('addressDo1').value == '울산광역시') {
         yuksang=  '11H20000'
+        warn_area = 'L1080300'
         ma = '11H20101'
         area_code = 159
         switch (address) {
@@ -498,6 +528,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 y = 85;
                 break;
             case '삼척시':
+                warn_area = 'L1052200'
                 ma = '11D20602'
                 x=98;
                 y=125;
@@ -510,6 +541,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     } else if (document.getElementById('addressDo1').value == '세종특별자치시') {
         area_code = 133
         ma = '11C20404'
+        warn_area = 'L1031800'
         yuksang = '11C20000'
         switch (address) {
             case '세종특별자치시':
@@ -522,21 +554,25 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         yuksang = '11B00000'
         switch (address) {
             case '수원시 장안구':
+                warn_area = 'L1011900'
                 ma = '11B20601'
                 x = 60;
                 y = 121;
                 break;
             case '수원시 권선구':
+                warn_area = 'L1011900'
                 ma = '11B20601'
                 x = 60;
                 y = 120;
                 break;
             case '수원시 팔달구':
+                warn_area = 'L1011900'
                 ma = '11B20601'
                 x = 61;
                 y = 120;
                 break;
             case '수원시 영통구':
+                warn_area = 'L1011900'
                 ma = '11B20601'
                 x = 62;
                 y = 120;
@@ -544,184 +580,221 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             case '성남시 수정구':
             case '성남시 중원구':
                 ma = '11B20605'
+                warn_area = 'L1012000'
                 x = 63;
                 y = 124;
                 break;
             case '성남시 분당구':
+                warn_area = 'L1012000'
                 ma = '11B20605'
                 x = 62;
                 y = 123;
                 break;
             case '의정부시':
+                warn_area = 'L1011700'
                 ma = '11B20301'
                 x = 61;
                 y = 131;
                 break;
             case '안양시 만안구':
+                warn_area = 'L1012100'
                 ma = '11B20602'
                 x = 59;
                 y = 123;
                 break;
             case '안양시 동안구':
+                warn_area = 'L1012100'
                 ma = '11B20602'
                 x = 60;
                 y = 123;
                 break;
             case '부천시':
+                warn_area = 'L1010600'
                 ma = '11B20203'
                 x = 57;
                 y = 125;
                 break;
             case '광명시':
+                warn_area = 'L1010200'
                 ma = '11B10103'
                 x = 58;
                 y = 125;
                 break;
             case '평택시':
+                warn_area = 'L1012500'
                 ma = '11B20606'
                 x = 62;
                 y = 114;
                 break;
             case '동두천시':
+                warn_area = 'L1011100'
                 ma = '11B20401'
                 x = 61;
                 y = 134;
                 break;
             case '안산시 상록구':
+                warn_area = 'L1010400'
                 ma = '11B20203'
                 x = 58;
                 y = 121;
                 break;
             case '안산시 단원구':
+                warn_area = 'L1010400'
                 ma = '11B20203'
                 x = 57;
                 y = 121;
                 break;
             case '고양시 덕양구':
+                warn_area = 'L1011500'
                 ma = '11B20302'
                 x = 57;
                 y = 128;
                 break;
             case '고양시 일산동구':
+                warn_area = 'L1011500'
                 ma = '11B20302'
                 x = 56;
                 y = 129;
                 break;
             case '고양시 일산서구':
+                warn_area = 'L1011500'
                 ma = '11B20302'
                 x = 56;
                 y = 129;
                 break;
             case '과천시':
+                warn_area = 'L1010300'
                 ma = '11B10102'
                 x = 60;
                 y = 124;
                 break;
             case '구리시':
+                warn_area = 'L1012200'
                 ma = '11B20501'
                 x = 62;
                 y = 127;
                 break;
             case '남양주시':
+                warn_area = 'L1012300'
                 ma = '11B20502'
                 x = 64;
                 y = 128;
                 break;
             case '오산시':
+                warn_area = 'L1012700'
                 ma = '11B20602'
                 x = 62;
                 y = 118;
                 break;
             case '시흥시':
+                warn_area = 'L1010500'
                 ma = '11B20202'
                 x = 57;
                 y = 123;
                 break;
             case '군포시':
+                warn_area = 'L1012600'
                 ma = '11B20610'
                 x = 59;
                 y = 122;
                 break;
             case '의왕시':
+                warn_area = 'L1012700'
                 ma = '11B20609'
                 x = 60;
                 y = 122;
                 break;
             case '하남시':
+                warn_area = 'L1012800'
                 ma = '11B20504'
                 x = 64;
                 y = 126;
                 break;
             case '용인시 처인구':
+                warn_area = 'L1012900'
                 ma = '11B20612'
                 x = 64;
                 y = 119;
                 break;
             case '용인시 기흥구':
+                warn_area = 'L1012900'
                 ma = '11B20612'
                 x = 62;
                 y = 120;
                 break;
             case '용인시 수지구':
+                warn_area = 'L1012900'
                 ma = '11B20612'
                 x = 62;
                 y = 121;
                 break;
             case '파주시':
+                warn_area = 'L1011800'
                 ma = '11B20305'
                 x = 56;
                 y = 131;
                 break;
             case '이천시':
+                warn_area = 'L1013000'
                 ma = '11B20701'
                 x = 68;
                 y = 121;
                 break;
             case '안성시':
+                warn_area = 'L1013100'
                 ma = '11B20611'
                 x = 65;
                 y = 115;
                 break;
             case '김포시':
+                warn_area = 'L1010700'
                 ma = '11B20102'
                 x = 55;
                 y = 128;
                 break;
             case '화성시':
+                warn_area = 'L1013200'
                 ma = '11B20604'
                 x = 57;
                 y = 119;
                 break;
             case '광주시':
+                warn_area = 'L1013400'
                 ma = '11B20702'
                 x = 65;
                 y = 123;
                 break;
             case '양주시':
+                warn_area = 'L1011600'
                 ma = '11B20304'
                 x = 61;
                 y = 131;
                 break;
             case '포천시':
+                warn_area = 'L1011300'
                 ma = '11B20404'
                 x = 64;
                 y = 134;
                 break;
             case '여주시':
+                warn_area = 'L1013300'
                 ma = '11B20703'
                 x = 71;
                 y = 121;
                 break;
             case '연천군':
+                warn_area = 'L1011200'
                 ma = '11B20402'
                 x = 61;
                 y = 138;
                 break;
             case '가평군':
+                warn_area = 'L1011400'
                 x = 69;
                 y = 133;
                 break;
             case '양평군':
+                warn_area = 'L1013500'
                 ma = '11B20503'
                 x = 69;
                 y = 125;
@@ -736,28 +809,33 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         yuksang='11D10000'
         switch (address) {
             case '춘천시':
+                warn_area = 'L1021600'
                 ma = '11D10301'
                 x = 73;
                 y = 134;
                 break;
             case '원주시':
+                warn_area = 'L1021200'
                 ma = '11D10401'
                 x = 76;
                 y = 122;
                 break;
             case '강릉시':
+                warn_area = 'L1020110'
                 ma = '11D20501'
                 yuksang ='11D20000'
                 x = 92;
                 y = 131;
                 break;
             case '동해시':
+                warn_area = 'L1020210'
                 ma = '11D20601'
                 yuksang ='11D20000'
                 x = 97;
                 y = 127;
                 break;
             case '태백시':
+                warn_area = 'L1020300'
                 ma = '11D20301'
                 yuksang ='11D20000'
                 x = 95;
@@ -765,56 +843,67 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 break;
             case '속초시':
                 ma = '11D20401'
+                warn_area = 'L1020510'
                 x = 87;
                 y = 141;
                 yuksang ='11D20000'
                 break;
             case '홍천군':
+                warn_area = 'L1021510'
                 ma = '11D10302'
                 x = 75;
                 y = 130;
                 break;
             case '횡성군':
+                warn_area = 'L1021100'
                 ma = '11D10402'
                 x = 77;
                 y = 125;
                 break;
             case '영월군':
+                warn_area = 'L1020800'
                 ma = '11D10501'
                 x = 86;
                 y = 119;
                 break;
             case '평창군':
+                warn_area = 'L1020910'
                 ma = '11D10503'
                 x = 84;
                 y = 123;
                 break;
             case '정선군':
+                warn_area = 'L1021010'
                 ma = '11D10502'
                 x = 89;
                 y = 123;
                 break;
             case '철원군':
+                warn_area = 'L1021300'
                 ma = '11D10101'
                 x = 65;
                 y = 139;
                 break;
             case '화천군':
+                warn_area = 'L1021400'
                 ma = '11D10102'
                 x = 72;
                 y = 139;
                 break;
             case '양구군':
+                warn_area = 'L1021710'
                 ma = '11D10202'
                 x = 77;
                 y = 139;
                 break;
             case '인제군':
+                warn_area = 'L1021800'
                 ma = '11D10201'
                 x = 80;
                 y = 138;
                 break;
             case '고성군':
+                warn_area = 'L1020600'
                 ma = '11D20402'
                 x = 85;
                 y = 145;
@@ -822,6 +911,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 break;
             case '양양군':
                 ma = '11D20403'
+                warn_area = 'L1020710'
                 yuksang ='11D20000'
                 x = 88;
                 y = 138;
@@ -836,71 +926,85 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         yuksang = '11C10000'
         switch (address) {
             case '청주시 상당구':
+                warn_area = 'L1040100'
                 ma = '11C10301'
                 x = 69;
                 y = 106;
                 break;
             case '청주시 서원구':
+                warn_area = 'L1040100'
                 ma = '11C10301'
                 x = 69;
                 y = 107;
                 break;
             case '청주시 흥덕구':
+                warn_area = 'L1040100'
                 ma = '11C10301'
                 x = 67;
                 y = 106;
                 break;
             case '청주시 청원구':
+                warn_area = 'L1040100'
                 ma = '11C10301'
                 x = 69;
                 y = 107;
                 break;
             case '충주시':
+                warn_area = 'L1040800'
                 ma = '11C10101'
                 x = 76;
                 y = 114;
                 break;
             case '제천시':
+                warn_area = 'L1040900'
                 ma = '11C10201'
                 x = 81;
                 y = 118;
                 break;
             case '보은군':
+                warn_area = 'L1040900'
                 ma = '11C10302'
                 x = 73;
                 y = 103;
                 break;
             case '옥천군':
+                warn_area = 'L1040600'
                 ma = '11C10403'
                 x = 71;
                 y = 99;
                 break;
             case '영동군':
+                warn_area = 'L1040700'
                 ma = '11C10402'
                 x = 74;
                 y = 97;
                 break;
             case '증평군':
+                warn_area = 'L1041300'
                 ma = '11C10304'
                 x = 71;
                 y = 110;
                 break;
             case '진천군':
+                warn_area = 'L1041000'
                 ma = '11C10102'
                 x = 68;
                 y = 111;
                 break;
             case '괴산군':
+                warn_area = 'L1040400'
                 ma = '11C10303'
                 x = 74;
                 y = 111;
                 break;
             case '음성군':
+                warn_area = 'L1041100'
                 ma = '11C10103'
                 x = 72;
                 y = 113;
                 break;
             case '단양군':
+                warn_area = 'L1041200'
                 ma = '11C10202'
                 x = 84;
                 y = 115;
@@ -915,81 +1019,97 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         yuksang = '11C20000'
         switch (address) {
             case '천안시 동남구':
+                warn_area = 'L1030200'
                 ma = '11C20301'
                 x = 63;
                 y = 110;
                 break;
             case '천안시 서북구':
+                warn_area = 'L1030200'
                 ma = '11C20301'
                 x = 63;
                 y = 112;
                 break;
             case '공주시':
+                warn_area = 'L1030300'
                 ma = '11C20402'
                 x = 63;
                 y = 102;
                 break;
             case '보령시':
+                warn_area = 'L1031400'
                 ma = '11C20201'
                 x = 54;
                 y = 100;
                 break;
             case '아산시':
+                warn_area = 'L1030400'
                 ma = '11C20302'
                 x = 60;
                 y = 110;
                 break;
             case '서산시':
+                warn_area = 'L1031300'
                 ma = '11C20101'
                 x = 51;
                 y = 110;
                 break;
             case '논산시':
+                warn_area = 'L1030500'
                 ma = '11C20602'
                 x = 62;
                 y = 97;
                 break;
             case '계룡시':
+                warn_area = 'L1031700'
                 ma = '11C20403'
                 x = 65;
                 y = 99;
                 break;
             case '당진시':
+                warn_area = 'L1031200'
                 ma = '11C20103'
                 x = 54;
                 y = 112;
                 break;
             case '금산군':
+                warn_area = 'L1030600'
                 ma = '11C20601'
                 x = 69;
                 y = 95;
                 break;
             case '부여군':
+                warn_area = 'L1030800'
                 ma = '11C20501'
                 x = 59;
                 y = 99;
                 break;
             case '서천군':
+                warn_area = 'L1031500'
                 ma = '11C20202'
                 x = 55;
                 y = 94;
                 break;
             case '청양군':
+                warn_area = 'L1030900'
                 ma = '11C20502'
                 x = 57;
                 y = 103;
                 break;
             case '홍성군':
+                warn_area = 'L1031600'
                 ma = '11C20104'
                 x = 55;
                 y = 106;
                 break;
             case '예산군':
+                warn_area = 'L1031000'
                 ma = '11C20303'
                 x = 58;
                 y = 107;
                 break;
             case '태안군':
+                warn_area = 'L1031100'
                 ma = '11C20102'
                 x = 48;
                 y = 109;
@@ -1003,76 +1123,91 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         area_code = 146
         switch (address) {
             case '전주시 완산구':
+                warn_area = 'L1061300'
                 ma = '11F10201'
                 x = 63;
                 y = 89;
                 break;
             case '전주시 덕진구':
+                warn_area = 'L1061300'
                 ma = '11F10201'
                 x = 63;
                 y = 89;
                 break;
             case '군산시':
+                warn_area = 'L1060300'
                 ma = '11F10501'
                 x = 56;
                 y = 92;
                 break;
             case '익산시':
+                warn_area = 'L1061100'
                 ma = '11F10202'
                 x = 60;
                 y = 91;
                 break;
             case '정읍시':
+                warn_area = 'L1061200'
                 ma = '11F10203'
                 x = 58;
                 y = 83;
                 break;
             case '남원시':
+                warn_area = 'L1061400'
                 ma = '11F10401'
                 x = 68;
                 y = 80;
                 break;
             case '김제시':
+                warn_area = 'L1060400'
                 ma = '11F10501'
                 x = 59;
                 y = 88;
                 break;
             case '완주군':
+                warn_area = 'L1060500'
                 ma = '11F10204'
                 x = 63;
                 y = 89;
                 break;
             case '진안군':
+                warn_area = 'L1060600'
                 ma = '11F10303'
                 x = 68;
                 y = 88;
                 break;
             case '무주군':
+                warn_area = 'L1060700'
                 ma = '11F10302'
                 x = 72;                
                 y = 93;
                 break;
             case '장수군':
+                warn_area = 'L1060800'
                 ma = '11F10301'
                 x = 70;
                 y = 85;
                 break;
             case '임실군':
+                warn_area = 'L1060900'
                 ma = '11F10402'
                 x = 66;
                 y = 84;
                 break;
             case '순창군':
+                warn_area = 'L1061000'
                 ma = '11F10403'
                 x = 63;
                 y = 79;
                 break;
             case '고창군':
-                ma = '11F10601'
+                ma = '11F10601'                
+                warn_area = 'L1060100'
                 x = 56;
                 y = 80;
                 break;
             case '부안군':
+                warn_area = 'L1060200'
                 ma = '11F10602'
                 x = 56;
                 y = 87;
@@ -1087,111 +1222,133 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         area_code = 156
         switch (address) {
             case '목포시':
+                warn_area = 'L1052100'
                 ma = '11F20801'
                 x = 50;
                 y = 67;
                 break;
             case '여수시':
+                warn_area = 'L1051000'
                 ma = '11F20401'
                 x = 73;
                 y = 66;
                 break;
             case '순천시':
+                warn_area = 'L1051200'
                 ma = '11F20405'
                 x = 70;
                 y = 70;
                 break;
             case '나주시':
+                warn_area = 'L1050200'
                 ma = '11F20503'
                 x = 56;
                 y = 71;
                 break;
             case '광양시':
+                warn_area = 'L1051100'
                 ma = '11F20402'
                 x = 73;
                 y = 70;
                 break;
             case '담양군':
+                warn_area = 'L1050300'
                 ma = '11F20504'
                 x = 61;
                 y = 78;
                 break;
             case '곡성군':
+                warn_area = 'L1050400'
                 ma = '11F20602'
                 x = 66;
                 y = 77;
                 break;
             case '구례군':
+                warn_area = 'L1050500'
                 ma = '11F20601'
                 x = 69;
                 y = 75;
                 break;
             case '고흥군':
+                warn_area = 'L1050800'
                 ma = '11F20403'
                 x = 66;
                 y = 62;
                 break;
             case '보성군':
+                warn_area = 'L1050900'
                 ma = '11F20404'
                 x = 62;
                 y = 66;
                 break;
             case '화순군':
+                warn_area = 'L1050700'
                 ma = '11F20505'
                 x = 61;
                 y = 72;
                 break;
             case '장흥군':
+                warn_area = 'L1051300'
                 ma = '11F20304'
                 x = 59;
                 y = 64;
                 break;
             case '강진군':
+                warn_area = 'L1051400'
                 ma = '11F20303'
                 x = 57;
                 y = 63;
                 break;
             case '해남군':
+                warn_area = 'L1051500'
                 ma = '11F20302'
                 x = 54;
                 y = 61;
                 break;
             case '영암군':
+                warn_area = 'L1051700'
                 ma = '11F20802'
                 x = 56;
                 y = 66;
                 break;
             case '무안군':
+                warn_area = 'L1051800'
                 ma = '11F20804'
                 x = 52;
                 y = 71;
                 break;
             case '함평군':
+                warn_area = 'L1051900'
                 ma = '11F20101'
                 x = 52;
                 y = 72;
                 break;
             case '영광군':
+                warn_area = 'L1052000'
                 ma = '11F20102'
                 x = 52;
                 y = 77;
                 break;
             case '장성군':
+                warn_area = 'L1050600'
                 ma = '11F20502'
                 x = 57;
                 y = 77;
                 break;
             case '완도군':
+                warn_area = 'L1051600'
                 ma = '11F20301'
                 x = 57;
                 y = 56;
                 break;
             case '진도군':
+                warn_area = 'L1052300'
                 ma = '11F20201'
                 x = 48;
                 y = 59;
                 break;
             case '신안군':
+                warn_area = 'L1052200'
                 ma = '11F20803'
                 x = 50;
                 y = 66;
@@ -1206,126 +1363,151 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         area_code = 143
         switch (address) {
             case '포항시 남구':
+                warn_area = 'L1072400'
                 ma = '11H10201'
                 x = 102;
                 y = 94;
                 break;
             case '포항시 북구':
+                warn_area = 'L1072400'
                 ma = '11H10201'
                 x = 102;
                 y = 95;
                 break;
             case '경주시':
+                warn_area = 'L1072500'
                 ma = '11H10202'
                 x = 100;
                 y = 91;
                 break;
             case '김천시':
+                warn_area = 'L1071100'
                 ma = '11H10601'
                 x = 80;
                 y = 96;
                 break;
             case '안동시':
+                warn_area = 'L1071500'
                 ma = '11H10501'
                 x = 91;
                 y = 106;
                 break;
             case '구미시':
+                warn_area = 'L1070300'
                 ma = '11H10602'
                 x = 84;
                 y = 96;
                 break;
             case '영주시':
+                warn_area = 'L1071600'
                 ma = '11H10401'
                 x = 89;
                 y = 111;
                 break;
             case '영천시':
+                warn_area = 'L1070400'
                 ma = '11H10702'
                 x = 95;
                 y = 93;
                 break;
             case '상주시':
+                warn_area = 'L1071200'
                 ma = '11H10302'
                 x = 81;
                 y = 102;
                 break;
             case '문경시':
+                warn_area = 'L1071300'
                 ma = '11H10301'
                 x = 81;
                 y = 106;
                 break;
             case '경산시':
+                warn_area = 'L1070500'
                 ma = '11H10703'
                 x = 91;
                 y = 90;
                 break;
             case '군위군':
+                warn_area = 'L1070600'
                 ma = '11H10603'
                 x = 88;
                 y = 99;
                 break;
             case '의성군':
+                warn_area = 'L1071700'
                 ma = '11H10502'
                 x = 90;
                 y = 101;
                 break;
             case '청송군':
+                warn_area = 'L1071800'
                 ma = '11H10503'
                 x = 96;
                 y = 103;
                 break;
             case '영양군':
+                warn_area = 'L1071910'
                 ma = '11H10403'
                 x = 97;
                 y = 108;
                 break;
             case '영덕군':
+                warn_area = 'L1072200'
                 ma = '11H10102'
                 x = 102;
                 y = 103;
                 break;
             case '청도군':
+                warn_area = 'L1070700'
                 ma = '11H10704'
                 x = 91;
                 y = 86;
                 break;
             case '고령군':
+                warn_area = 'L1070800'
                 ma = '11H10604'
                 x = 83;
                 y = 87;
                 break;
             case '성주군':
+                warn_area = 'L1070900'
                 ma = '11H10605'
                 x = 83;
                 y = 91;
                 break;
             case '칠곡군':
+                warn_area = 'L1071000'
                 ma = '11H10705'
                 x = 85;
                 y = 93;
                 break;
             case '예천군':
+                warn_area = 'L1071400'
                 ma = '11H10303'
                 x = 86;
                 y = 107;
                 break;
             case '봉화군':
+                warn_area = 'L1072010'
                 ma = '11H10402'
                 x = 90;
                 y = 113;
                 break;
             case '울진군':
+                warn_area = 'L1072310'
                 ma = '11H10101'
                 x = 102;
                 y = 115;
                 break;
             case '울릉군':
+                warn_area = 'L1072100'
                 ma = '11E00101'
                 x = 127;
                 y = 127;
                 break;
             case '독도':
+                warn_area = 'L1072100'
                 ma = '11D00102'
                 x = 144;
                 y = 123;
@@ -1339,107 +1521,128 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         area_code = 159
         switch (address) {
             case '창원시 의창구':
+                warn_area = 'L1080600'
                 ma = '11H20301' 
                 x = 90; 
                 y = 77;
                 break;
             case '창원시 성산구':
+                warn_area = 'L1080600'
                 ma = '11H20301' 
                 x = 91;
                 y = 76;
                 break;
             case '창원시 마산합포구':
             case '창원시 마산회원구':
+                warn_area = 'L1080600'
                 ma = '11H20301' 
                 x = 89;
                 y = 76;
                 break;
             case '창원시 진해구':
+                warn_area = 'L1080600'
                 ma = '11H20301' 
                 x = 91;
                 y = 75;
                 break;
             case '진주시':
+                warn_area = 'L1081400'
                 ma = '11H20701' 
                 x = 81;
                 y = 75;
                 break;
             case '통영시':
+                warn_area = 'L1082000'
                 ma = '11H20401' 
                 x = 87;
                 y = 68;
                 break;
             case '사천시':
+                warn_area = 'L1082100'
                 ma = '11H20402' 
                 x = 80;
                 y = 71;
                 break;
             case '김해시':
+                warn_area = 'L1080900'
                 ma = '11H20304' 
                 x = 95;
                 y = 77;
                 break;
             case '밀양시':
+                warn_area = 'L1081000'
                 ma = '11H20601' 
                 x = 92;
                 y = 83;
                 break;
             case '거제시':
+                warn_area = 'L1082200'
                 ma = '11H20403' 
                 x = 90;
                 y = 69;
                 break;
             case '양산시':
+                warn_area = 'L1080500'
                 ma = '11H20102' 
                 x = 97;
                 y = 79;
                 break;
             case '의령군':
+                warn_area = 'L1081100'
                 ma = '11H20602' 
                 x = 83;
                 y = 78;
                 break;
             case '함안군':
+                warn_area = 'L1081200'
                 ma = '11H20603' 
                 x = 86;
                 y = 77;
                 break;
             case '창녕군':
+                warn_area = 'L1081300'
                 ma = '11H20604' 
                 x = 87;
                 y = 83;
                 break;
             case '고성군':
+                warn_area = 'L1082300'
                 ma = '11H20404' 
                 x = 85;
                 y = 71;
                 break;
             case '남해군':
+                warn_area = 'L1082400'
                 ma = '11H20405' 
                 x = 77;
                 y = 68;
                 break;
             case '하동군':
+                warn_area = 'L1081500'
                 ma = '11H20704' 
                 x = 74;
                 y = 73;
                 break;
             case '산청군':
+                warn_area = 'L1081600'
                 ma = '11H20703' 
                 x = 76;
                 y = 80;
                 break;
             case '함양군':
+                warn_area = 'L1081700'
                 ma = '11H20501' 
                 x = 74;
                 y = 82;
                 break;
             case '거창군':
+                warn_area = 'L1081800'
                 ma = '11H20502' 
                 x = 77;
                 y = 86;
                 break;
             case '합천군':
+                warn_area = 'L1081900'
                 ma = '11H20503' 
                 x = 81;
                 y = 84;
@@ -1455,16 +1658,19 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         switch (address) {
             case '제주시':
                 ma = '11G00101'
+                warn_area = 'L1090700'
                 x = 53;
                 y = 38;
                 break;
             case '서귀포시':
                 ma = '11G00401'
+                warn_area = 'L1090900'
                 x = 52;
                 y = 33;
                 break;
             case '이어도':
                 ma = '11G00601'
+                warn_area = 'L1090900'
                 x = 28;
                 y = 8;
             default:
@@ -1516,7 +1722,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 now_temp = Number(now_temp)
                 wind = Number(loaded.response.body.items.item[7].obsrValue) * 3.6
                 //체감기온
-                console.log(wind)
+                // console.log(wind)
                 var body_temp = 13.12 + 0.6215 * now_temp
                 body_temp = body_temp - 11.37 * Math.pow(wind, 0.16)
                 body_temp = body_temp + 0.3965 * Math.pow(wind, 0.16) * now_temp;
@@ -1667,7 +1873,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     fore_xhr.open('GET', fore_url + fore_queryParams);
     fore_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            console.log(fore_url + fore_queryParams);
+            // console.log(fore_url + fore_queryParams);
             try {
                 var fore_loaded = JSON.parse(this.responseText);
             } catch (error) {
@@ -2499,38 +2705,38 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             }
         }
     };
-    // var sokbo_xhr = new XMLHttpRequest();
-    // var sokbo_url = 'http://apis.data.go.kr/1360000/WthrWrnInfoService/getWthrBrkNews'; /*URL*/
-    // var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
-    // queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
-    // queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
-    // queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
-    // queryParams += '&' + encodeURIComponent('stnId') + '=' + encodeURIComponent(108); /**/
-    // queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 1); /**/
-    // queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
-    // sokbo_xhr.open('GET', sokbo_url + queryParams);
-    // console.log(sokbo_url+queryParams)
-    // sokbo_xhr.onreadystatechange = function () {
-    //     if (this.readyState == 4) {
-    //         try {
-    //             var sokbo_loaded = JSON.parse(this.responseText);
-    //         } catch (error) {
-    //             document.getElementById('weather_sokbo').textContent = '에러 발생.'
-    //         }
-    //         if(sokbo_loaded.response.header.resultCode = '00'){
-    //             var sokbo_main = sokbo_loaded.body.items.item
-    //             var yyyymmdd = String(sokbo_main[0].tmFc);
-    //             var year = yyyymmdd.slice(0, 4);
-    //             var month = yyyymmdd.slice(4, 6);
-    //             var date = yyyymmdd.slice(6, 8);
-    //             var hour = yyyymmdd.slice(8, 10);
-    //             var minute = yyyymmdd.slice(10, 12);
-    //             console.log(month + date + hour + minute)
-    //             document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`
-    //             document.getElementById('weather_sokbo').textContent = sokbo_main[0].t1
-    //         }
-    //     }
-    // };
+    var sokbo_xhr = new XMLHttpRequest();
+    var sokbo_url = 'http://apis.data.go.kr/1360000/WthrWrnInfoService/getWthrBrkNews'; /*URL*/
+    var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
+    queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+    queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+    queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
+    queryParams += '&' + encodeURIComponent('stnId') + '=' + encodeURIComponent(108); /**/
+    queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 1); /**/
+    queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
+    sokbo_xhr.open('GET', sokbo_url + queryParams);
+    console.log(sokbo_url+queryParams)
+    sokbo_xhr.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            try {
+                var sokbo_loaded = JSON.parse(this.responseText);
+            } catch (error) {
+                document.getElementById('weather_sokbo').textContent = '에러 발생.'
+            }
+            if(sokbo_loaded.response.header.resultCode = '00'){
+                var sokbo_main = sokbo_loaded.body.items.item
+                var yyyymmdd = String(sokbo_main[0].tmFc);
+                var year = yyyymmdd.slice(0, 4);
+                var month = yyyymmdd.slice(4, 6);
+                var date = yyyymmdd.slice(6, 8);
+                var hour = yyyymmdd.slice(8, 10);
+                var minute = yyyymmdd.slice(10, 12);
+                // console.log(month + date + hour + minute)
+                document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`
+                document.getElementById('weather_sokbo').textContent = sokbo_main[0].t1
+            }
+        }
+    };
     var mid_xhr = new XMLHttpRequest();
     var mid_url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst'; /*URL*/
     var mid_queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
@@ -2542,7 +2748,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     mid_xhr.open('GET', mid_url + mid_queryParams);
     mid_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            console.log(mid_url+mid_queryParams);
+            // console.log(mid_url+mid_queryParams);
             try {
                 var mid_loaded = JSON.parse(this.responseText);
             } catch (error) {
@@ -2623,7 +2829,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     mid_msg_xhr.open('GET', mid_msg_url + mid_msg_queryParams);
     mid_msg_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            console.log('이거임 : ' + mid_msg_url+mid_msg_queryParams);
+            // console.log('이거임 : ' + mid_msg_url+mid_msg_queryParams);
             try {
                 var mid_msg_loaded = JSON.parse(this.responseText);
             } catch (error) {
@@ -2640,6 +2846,158 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             }
         }
     };
+
+    var warning_xhr = new XMLHttpRequest();
+    var warning_url = 'http://apis.data.go.kr/1360000/WthrWrnInfoService/getPwnCd'; /*URL*/
+    var warning_queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
+    warning_queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+    warning_queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+    warning_queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
+    var cd = new Date();
+    var year = cd.getFullYear();
+    cd = new Date();
+    cd.setDate(cd.getDate() - 1);
+    cd = cd.toLocaleString()
+    console.log(cd.slice(6,8)+cd.slice(10,12))
+    cd = cd.slice(6,8)+cd.slice(10,12)
+    console.log(cd)
+    var arr = [...cd]
+    if(arr[3] == '.'){
+        arr.splice(2,0,'0')
+        arr.pop()
+    }
+    console.log(arr)
+    cd = arr.join("");
+    console.log(cd)
+    warning_queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(year + cd); /**/
+    warning_queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
+    warning_queryParams += '&' + encodeURIComponent('areaCode') + '=' + encodeURIComponent(warn_area); /**/
+    warning_xhr.open('GET', warning_url + warning_queryParams);
+    warning_xhr.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            console.log('이거임 : ' + warning_url+warning_queryParams);
+            try {
+                var warning_loaded = JSON.parse(this.responseText);
+            } catch (error) {
+            }
+            document.getElementById('gangpung').style = 'display : none;'
+            document.getElementById('hou').style = 'display : none;'
+            document.getElementById('hanpa').style = 'display : none;'
+            document.getElementById('geonjo').style = 'display : none;'
+            document.getElementById('pokpung').style = 'display : none;'
+            document.getElementById('pungrang').style = 'display : none;'
+            document.getElementById('taepong').style = 'display : none;'
+            document.getElementById('daeseol').style = 'display : none;'
+            document.getElementById('hwangsa').style = 'display : none;'
+            document.getElementById('pokyeom').style = 'display : none;'
+            if (warning_loaded.response.header.resultCode = "00") {
+                warning = warning_loaded.response.body.items.item;
+                warnName = [];
+                warnVar = []
+                warnStr = [];
+                for(i=0; i < warning.length;i++){
+                    if(warning[i].endTime == 0 || warning[i].endTime > getToday()+hours){
+                        warnName.push(warning[i].areaName);
+                        warnStr.push(warning[i].warnStress);
+                        if (warning[i].warnVar == 1){
+                            warnVar.push('강풍');
+                        }else if(warning[i].warnVar == 2){
+                            warnVar.push('호우');
+                        }else if(warning[i].warnVar == 3){
+                            warnVar.push('한파');
+                        }else if(warning[i].warnVar == 4){
+                            warnVar.push('건조');
+                        }else if(warning[i].warnVar == 5){
+                            warnVar.push('폭풍해일');
+                        }else if(warning[i].warnVar == 6){
+                            warnVar.push('풍랑');
+                        }else if(warning[i].warnVar == 7){
+                            warnVar.push('태풍');
+                        }else if(warning[i].warnVar == 8){
+                            warnVar.push('대설');
+                        }else if(warning[i].warnVar == 9){
+                            warnVar.push('황사');
+                        }else if(warning[i].warnVar == 12){
+                            warnVar.push('폭염');
+                        }
+                    }
+                }
+                console.log(getToday()+hours)
+                // warnName = ['가','가','가','가','가','가','가','가','가','가'];
+                // warnVar = ['강풍', '호우', '한파', '건조', '폭풍해일', '풍랑', '태풍', '대설', '황사', '폭염']
+                // warnStr = [0,0,0,0,0,0,0,0,0,0];
+                for(i=0;i<warnName.length;i++){
+                    console.log(warnVar[i])
+                    if(warnVar[i]=='강풍'){
+                        if(warnStr[i]==0){
+                            document.getElementById('gangpung').style='border: #0dde1f solid 1px; background-color:#0dde1f; display:block; background-image: linear-gradient(-45deg,#66fa73 25%,transparent 25%,transparent 50%,#66fa73 50%,#66fa73 75%,transparent 75%,transparent);'
+                        }else{
+                            document.getElementById('gangpung').style='border: #0dde1f solid 1px; background-color:#0dde1f; display:block;'
+                        }
+                    }else if(warnVar[i]=='호우'){
+                        if(warnStr[i]==0){
+                            document.getElementById('hou').style='border: #070bf7 solid 1px; background-color:#070bf7; display:block; background-image: linear-gradient(-45deg,#696bff 25%,transparent 25%,transparent 50%,#696bff 50%,#696bff 75%,transparent 75%,transparent); color:white;'
+                        }else{
+                            document.getElementById('hou').style='border: #070bf7 solid 1px; background-color:#070bf7; display:block; color:white;'
+                        }
+                    }else if(warnVar[i]=='한파'){
+                        if(warnStr[i]==0){
+                            document.getElementById('hanpa').style='border: #079ff7 solid 1px; background-color:#079ff7; display:block; background-image: linear-gradient(-45deg,#62c4fc 25%,transparent 25%,transparent 50%,#62c4fc 50%,#62c4fc 75%,transparent 75%,transparent);'
+                        }else{
+                            document.getElementById('hanpa').style='border: #079ff7 solid 1px; background-color:#079ff7; display:block;'
+                        }
+                    }else if(warnVar[i]=='건조'){
+                        if(warnStr[i]==0){
+                            document.getElementById('geonjo').style='border:#f09102 solid 1px; background-color:#f09102; display:block;background-image: linear-gradient(-45deg,#fab957 25%,transparent 25%,transparent 50%,#fab957 50%,#fab957 75%,transparent 75%,transparent);'
+                        }else{
+                            document.getElementById('geonjo').style='border:#f09102 solid 1px; background-color:#f09102; display:block;'
+                        }
+                    }else if(warnVar[i]=='폭풍해일'){
+                        if(warnStr[i]==0){
+                            document.getElementById('pokpung').style='border: #a39d93 solid 1px; background-color:#a39d93; display:block;background-image: linear-gradient(-45deg,#b8b3ab 25%,transparent 25%,transparent 50%,#b8b3ab 50%,#b8b3ab 75%,transparent 75%,transparent)'
+                        }else{
+                            document.getElementById('pokpung').style='border: #a39d93 solid 1px; background-color:#a39d93; display:block;'
+                        }
+                    }else if(warnVar[i]=='풍랑'){
+                        if(warnStr[i]==0){
+                            document.getElementById('pungrang').style='border: #12dfe3 solid 1px; background-color:#12dfe3; display:block;background-image: linear-gradient(-45deg,#96f8fa 25%,transparent 25%,transparent 50%,#96f8fa 50%,#96f8fa 75%,transparent 75%,transparent)'
+                        }else{
+                            document.getElementById('pungrang').style='border: #12dfe3 solid 1px; background-color:#12dfe3; display:block;'
+                        }
+                    }else if(warnVar[i]=='태풍'){
+                        if(warnStr[i]==0){
+                            document.getElementById('taepong').style='border: #ff0000 solid 1px; background-color:#ff0000; display:block;background-image: linear-gradient(-45deg,#ff6161    25%,transparent 25%,transparent 50%,#ff6161    50%,#ff6161    75%,transparent 75%,transparent); color:white;'
+                        }else{
+                            document.getElementById('taepong').style='border: #ff0000 solid 1px; background-color:#ff0000; display:block; color:white;'
+                        }
+                    }else if(warnVar[i]=='대설'){
+                        if(warnStr[i]==0){
+                            document.getElementById('daeseol').style='border: #fc17e9 solid 1px; background-color:#fc17e9; display:block;background-image: linear-gradient(-45deg,#fc79f2 25%,transparent 25%,transparent 50%,#fc79f2 50%,#fc79f2 75%,transparent 75%,transparent)'
+                        }else{
+                            document.getElementById('daeseol').style='border: #fc17e9 solid 1px; background-color:#fc17e9; display:block;'
+                        }
+                    }else if(warnVar[i]=='황사'){
+                        if(warnStr[i]==0){
+                            document.getElementById('hwangsa').style='border: #c9c959 solid 1px; background-color:#c9c959; display:block;background-image: linear-gradient(-45deg,#eded00 25%,transparent 25%,transparent 50%,#eded00 50%,#eded00 75%,transparent 75%,transparent)'
+                        }else{
+                            document.getElementById('hwangsa').style='border: #c9c959 solid 1px; background-color:#c9c959; display:block;'
+                        }
+                    }else if(warnVar[i]=='폭염'){
+                        if(warnStr[i]==0){
+                            document.getElementById('pokyeom').style='border: #c500e3 solid 1px; background-color:#c500e3; display:block;background-image: linear-gradient(-45deg,#e56ff7 25%,transparent 25%,transparent 50%,#e56ff7 50%,#e56ff7 75%,transparent 75%,transparent);color:white'
+                        }else{
+                            document.getElementById('pokyeom').style='border: #c500e3 solid 1px; background-color:#c500e3; display:block;color:white;'
+                        }
+                    }
+                }
+                console.log(warnName)
+                console.log(warnVar)
+                console.log(warnStr)
+                // console.log(warning[0].allEndTime)
+            }
+        }
+    };
+
     ultra_now_xhr.send('');
     ultra_fore_xhr.send('');
     fore_xhr.send('');
@@ -2648,6 +3006,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     mid_xhr.send('');
     mid_temp_xhr.send('')
     mid_msg_xhr.send('')
+    warning_xhr.send('')
 })
 document.getElementById('ultra_time1').textContent = `${today.getHours()}시`
 let date = new Date();
