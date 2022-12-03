@@ -24,7 +24,22 @@ table {
     transform: scale(1.05);
     transition: .5s;
 }
-
+.weather_warning_box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.weather_warning{
+    border: 1px solid;
+    width:100px;
+    text-align: center;
+    border-radius: 15px;
+    padding:5px 0px;
+    font-weight: 900;
+    margin:2px 4px;
+}
+#gangpung, #hou, #hanpa, #geonjo, #pokpung, #pungrang, #taepong, #daeseol, #hwangsa, #pokyeom{
+    display: none;
+}
 #tts img {
     width: 35px;
     height: 35px;
@@ -363,11 +378,11 @@ input {
 #ultra_time5,
 #ultra_time6 {
     border-bottom: 1px black solid;
-    padding-bottom: 9px;
+    padding-bottom: 7px;
 }
 .time{
     border-bottom: 1px black solid;
-    padding-bottom: 9px;
+    padding-bottom: 7px;
 }
 #ultra_wind_dir1,
 #ultra_wind_dir2,

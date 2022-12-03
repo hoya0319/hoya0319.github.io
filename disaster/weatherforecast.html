@@ -57,12 +57,9 @@
         <div class="content_left">
             <div class="disaster_title">
                 <h1 style="text-align:left">날씨예보</h1>
-                <p id="info">선택하신 지역의 현재 날씨 혹은 날씨 예보를 확인하실 수 있습니다.<br>자세한 날씨는 <a style="color: #05c" target="_blank" href="https://www.weather.go.kr/">기상청 날씨누리</a>를 확인해 주시기 바랍니다.</p>
+                <p id="info">선택하신 지역의 현재 날씨 혹은 날씨 예보를 확인하실 수 있습니다.<br>자세한 날씨는 <a style="color: #05c" target="_blank" href="https://www.weather.go.kr/">기상청 날씨누리</a>를 확인해 주시기 바랍니다.<br>기상특보는 최근 2일간 발표된 기상특보만 제공합니다.</p>
             </div>
             <div class="main_box">
-                <h2 id="typhoon_title"></h2>
-                <h4 id="typhoon_clock"></h4>
-                
                 <select name="addressRegion" id="addressRegion1"></select>
                 <select name="addressDo" id="addressDo1"></select>
                 <select name="addressSiGunGu" id="addressSiGunGu1"></select>
@@ -71,6 +68,18 @@
                     <div class="now_weather">
                         <div class="now_weather_num">
                             <h3 id="location">지금 어디에 있나요?</h3>
+                            <div class="weather_warning_box">
+                                <div class="weather_warning" id="gangpung">강  풍</div>
+                                <div class="weather_warning" id="hou">호  우</div>
+                                <div class="weather_warning" id="hanpa">한  파</div>
+                                <div class="weather_warning" id="geonjo">건  조</div>
+                                <div class="weather_warning" id="pokpung">폭 풍 해 일</div>
+                                <div class="weather_warning" id="pungrang">풍  랑</div>
+                                <div class="weather_warning" id="taepong">태  풍</div>
+                                <div class="weather_warning" id="daeseol">대  설</div>
+                                <div class="weather_warning" id="hwangsa">황  사</div>
+                                <div class="weather_warning" id="pokyeom">폭  염</div>
+                            </div>
                             <div class="now_weather_etc" style="padding:0px;">
                                 <div class="now_weather_etc_cont" style="display: flex;align-items: center; flex-direction: column; justify-content: center;">
                                     <span>현재기온</span>
@@ -110,6 +119,7 @@
 	                        <canvas id="now_weather_Chart" style="height:300px; width:350px;"></canvas>
                         </div>
                     </div>
+                    <p id="info">※제공되는 기상특보는 평지를 기준으로 합니다. (예) 평창군산간 X, 평창군평지)</p>
                     <h4 style="text-align:left;">초단기예보</h4>
                     <div class="ultra_weather_fore">
                         <div class="category">
@@ -1174,7 +1184,7 @@
                 </a>
             </div>
             <div class="footer_link">
-                <a href="https://www.youtube.com/c/호야지진방송"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.youtube.com/@hoyadb"><i class="fa-brands fa-youtube"></i></a>
                 <a href="https://discord.gg/wAUxJsU9aK"><i class="fa-brands fa-discord"></i></a>
             </div>
         </div>
