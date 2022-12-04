@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ko">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -18,19 +18,35 @@
     <meta name="description" content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
     <meta name="author" content="호야">
     <meta property="robots" content="index, follow">
-    <title>호야-재난방송 - 하천홍수</title>
+    <title>호야-재난방송 - 지진</title>
     <link rel="stylesheet" href="../HDS.css">
 <link rel="stylesheet" href="../prepare/prepare-content-style.css">
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="../main.js" defer></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="../api.js"></script>
     <link rel="icon" href="../호야.png">
 </head>
 <body>
     <script>
         AOS.init();
     </script>
+    <script>
+        var xhr = new XMLHttpRequest();
+        var url = 'http://apis.data.go.kr/1741000/EmergencyAssemblyArea_Earthquake2/getArea1List'; /*URL*/
+        var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'서비스키'; /*Service Key*/
+        queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+        queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+        queryParams += '&' + encodeURIComponent('type') + '=' + encodeURIComponent('xml'); /**/
+        xhr.open('GET', url + queryParams);
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+            }
+        };
+        
+        xhr.send('');</script>
     <nav class="navbar">
         <div class="navbar_logo">
             <a href="../index.html">
@@ -51,51 +67,18 @@
         </a>
     </nav>
     <div class="prepare_title">
-        <h1>하천홍수</h1>
+        <h1>지진</h1>
     </div>
     <div class="content">
         <div class="intro">
-            <h2>하천홍수 발생 ~ 피난 ~ 지식과 대비</h2>
-            <p>하천의 홍수와 범람의 전조는 폭우와 긴 비입니다.<br>기상경보나 주의보가 발표되면 하천에 접근하지 않도록 합시다.</p>
+            <h2>지진 발생 ~ 피난 ~ 지식과 대비</h2>
+            <p>여기에서는 지진 발생 순간과 그 직후에 어떻게 행동하면 좋을지, 또 피난의 판단 방법이나 지진의 지식과 대비에 대해 게재되어 있습니다.<br>취해야 할 행동을 미리 생각해 두는 것이 중요합니다.</p>
         </div>
     </div>
     <div class="content">
-        <h2 id="down-border-small">!하천홍수 발생!</h2>
-        <div class="order_table">
-            <ul>
-                <a href="./riverflood/occur-caution.html">
-                    <li>발생과 주의점</li>
-                </a>
-                <a href="./riverflood/ng.html">
-                    <li>발생 시 NG 행동</li>
-                </a>
-                <a href="./riverflood/atcar.html">
-                    <li>차에서 재해를 당하면</li>
-                </a>
-            </ul>
-        </div>
-        <h2 id="down-border-small">~피난~</h2>
-        <div class="order_table">
-            <ul>
-                <a href="./riverflood/eva-caution.html">
-                    <li>피난 주의사항과 피난소에 갈 수 없을 때</li>
-                </a>
-            </ul>
-        </div>
-        <h2 id="down-border-small">지식·준비</h2>
-        <div class="order_table">
-            <ul style="padding-bottom:5px;">
-                <a href="./riverflood/skyscraper.html">
-                    <li>고층 아파트에서의 대비</li>
-                </a>
-                <a href="./riverflood/prevent-disease.html">
-                    <li>수해 후 감염 예방</li>
-                </a>
-            </ul>
-        </div>
     </div>
     <div class="homeButton_area">
-        <a href="../index.html" class="homeButton">홈</a>
+        <a href="/index.html" class="homeButton">홈</a>
     </div>
     <div class="footer">
         <div class="footer_up">
@@ -141,4 +124,4 @@
         <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
     </div>
 </body>
-</html>
+</html> -->

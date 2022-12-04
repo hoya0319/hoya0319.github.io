@@ -258,7 +258,17 @@ table{
     width:45%;
     background-color: white;
 }
-@media screen and (max-width : 893px) {
+#width350img{
+    width:350px;
+}
+.left-right{
+    display: flex;  
+    justify-content: space-between;
+}
+.left-right div{
+    width:45%;
+}
+@media screen and (max-width : 900px) {
     .content{
         width:100%;
     }
@@ -298,5 +308,21 @@ table{
     }
     .typhoon_typhoon_img div{
         width:100%;
+    }
+    .left-right{
+        display: flex;  
+        justify-content: space-between;
+    }
+    .left-right{
+        display: flex;  
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .left-right div{
+        width:100%;
+    }
+    #width350img{
+        width:100%;
+        margin-left:-20px;
     }
 }
