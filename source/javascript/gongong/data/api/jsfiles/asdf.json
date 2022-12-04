@@ -10,8 +10,8 @@
                 "item": [
                     {
                         "allEndTime": 202212011000,
-                        "areaCode": "L1072400",
-                        "areaName": "포항시",
+                        "areaCode": "L1072200",
+                        "areaName": "영덕군",
                         "cancel": "0",
                         "command": "2",
                         "endTime": 202212011000,
@@ -21,12 +21,54 @@
                         "warnVar": 3,
                         "warnStress": 0,
                         "startTime": 0
+                    },
+                    {
+                        "allEndTime": 0,
+                        "areaCode": "L1072200",
+                        "areaName": "영덕군",
+                        "cancel": "0",
+                        "command": "7",
+                        "endTime": 0,
+                        "stnId": "108",
+                        "tmFc": 202211301000,
+                        "tmSeq": 122,
+                        "warnVar": 3,
+                        "warnStress": 0,
+                        "startTime": 202211301000
+                    },
+                    {
+                        "allEndTime": 0,
+                        "areaCode": "L1072200",
+                        "areaName": "영덕군",
+                        "cancel": "0",
+                        "command": "1",
+                        "endTime": 0,
+                        "stnId": "108",
+                        "tmFc": 202211301000,
+                        "tmSeq": 122,
+                        "warnVar": 4,
+                        "warnStress": 0,
+                        "startTime": 202211301000
+                    },
+                    {
+                        "allEndTime": 0,
+                        "areaCode": "L1072200",
+                        "areaName": "영덕군",
+                        "cancel": "0",
+                        "command": "1",
+                        "endTime": 0,
+                        "stnId": "108",
+                        "tmFc": 202211291000,
+                        "tmSeq": 114,
+                        "warnVar": 3,
+                        "warnStress": 1,
+                        "startTime": 202211292100
                     }
                 ]
             },
             "pageNo": 1,
             "numOfRows": 10,
-            "totalCount": 1
+            "totalCount": 4
         }
     }
 }

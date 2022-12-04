@@ -110,13 +110,23 @@ var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKd
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
-var date = new Date();
-var year = date.getFullYear();
-date = new Date();
-date.setDate(date.getDate() - 3);
-date = date.toLocaleString()
-console.log(date)
-queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(year + date.slice(6, 8) + date.slice(10, 12)); /**/
+var cd = new Date();
+var year = cd.getFullYear();
+cd = new Date();
+cd.setDate(cd.getDate() - 1);
+cd = cd.toLocaleString()
+console.log(cd.slice(6,8)+cd.slice(10,12))
+cd = cd.slice(6,8)+cd.slice(10,12)
+console.log(cd)
+var arr = [...cd]
+if(arr[3] == '.'){
+    arr.splice(2,0,'0')
+    arr.pop()
+}
+console.log(arr)
+cd = arr.join("");
+console.log(cd)
+queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(year +cd); /**/
 queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {

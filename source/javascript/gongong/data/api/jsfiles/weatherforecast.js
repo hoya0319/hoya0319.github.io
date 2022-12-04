@@ -2925,7 +2925,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 console.log(getToday()+hours)
                 // warnName = ['가','가','가','가','가','가','가','가','가','가'];
                 // warnVar = ['강풍', '호우', '한파', '건조', '폭풍해일', '풍랑', '태풍', '대설', '황사', '폭염']
-                // warnStr = [0,0,0,0,0,0,0,0,0,0];
+                // warnStr = [1,1,1,1,1,1,1,1,1,1];
                 for(i=0;i<warnName.length;i++){
                     console.log(warnVar[i])
                     if(warnVar[i]=='강풍'){
@@ -2954,9 +2954,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                         }
                     }else if(warnVar[i]=='폭풍해일'){
                         if(warnStr[i]==0){
-                            document.getElementById('pokpung').style='border: #a39d93 solid 1px; background-color:#a39d93; display:block;background-image: linear-gradient(-45deg,#b8b3ab 25%,transparent 25%,transparent 50%,#b8b3ab 50%,#b8b3ab 75%,transparent 75%,transparent)'
+                            document.getElementById('pokpung').style='border: #a39d93 solid 1px; background-color:#a39d93; display:block;background-image: linear-gradient(-45deg,#b8b3ab 25%,transparent 25%,transparent 50%,#b8b3ab 50%,#b8b3ab 75%,transparent 75%,transparent); color:white;'
                         }else{
-                            document.getElementById('pokpung').style='border: #a39d93 solid 1px; background-color:#a39d93; display:block;'
+                            document.getElementById('pokpung').style='border: #a39d93 solid 1px; background-color:#a39d93; display:block; color:white;'
                         }
                     }else if(warnVar[i]=='풍랑'){
                         if(warnStr[i]==0){

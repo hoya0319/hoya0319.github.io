@@ -17,9 +17,10 @@
     <meta name="description" content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
     <meta name="author" content="호야">
     <meta property="robots" content="index, follow">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1715349444544368" crossorigin="anonymous"></script>
     <title>호야-재난방송 - 채널소개</title>
+    <link rel="stylesheet" href="./value_style.css">
     <link rel="stylesheet" href="../HDS.css">
-    <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="../main.js" defer></script>
     <script src="../notice.js" defer></script>
@@ -27,7 +28,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="icon" href="../호야.png">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <body>
     <script>
@@ -51,70 +51,40 @@
         <a href="javascript:return false;" class="navbarBtn">
             <i class="fa-solid fa-bars"></i>
         </a>
-    </nav>  
-    <div class="disaster_content" >
-        <div class="content_left">
-            <div class="disaster_title">
-                <h1 style="text-align:left">위성영상</h1>
-                <p id="info">제공되는 데이터의 범위는 오늘 기준으로 1일 전까지입니다. <br>위성영상은 장비의 수리 등의 사유로 인해 관측 주기 변경 또는 조회에 제한이 발생 할 수 있으며, 관련된 운영 정보는 국가기상위성센터 홈페이지를 참조 바랍니다.</p>
-            </div>
-            <div class="main_box">
-                <div class="select">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th class="table_title" colspan="2">위성영상 옵션 선택</th>
-                        </tr>
-                    </thead>
-                        <tbody>
-                            <tr>
-                                <td class="left_top">위성구분</td>
-                                <td class="right_top">
-                                    <input type="radio" name="satellite_select" checked="checked">천리안위성 2A호
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="left_top">영상종류</td>
-                                <td class="right_top">
-                                    <input type="radio" name="image_select" checked="checked"  value="ir105">적외영상
-                                    <input type="radio" name="image_select" value="vi006">가시영상
-                                    <input type="radio" name="image_select" value="wv069">수증기영상
-                                    <input type="radio" name="image_select" value="sw038">단파적외영상
-                                    <input type="radio" name="image_select" value="rgbt">RGB컬러영상
-                                    <input type="radio" name="image_select" value="rgbdn">RGB주야간합성영상
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="left_bottom">지역선택</td>
-                                <td class="right_bottom">
-                                    <input type="radio" name="area_select" value="fd">전구
-                                    <input type="radio" name="area_select" value="ea">동아시아
-                                    <input type="radio" name="area_select"  value='ko' checked="checked">한반도
-                            </tr>
-                        </tbody>
-                    </table>
-                    <input class="confirm_btn" type="button" id="confirm_btn" value="위성영상 보기">
+    </nav>
+    <div class="main" >
+        <h1 data-aos="zoom-in" data-aos-duration="2000" style="font-size:50px">우리의 가치관은 모든 사람을 위합니다.</h1>
+    </div>
+    <div class="value">
+        <div class="value_box" style="background-color: #027aff; color:white;">
+            <h1>우리가 향하는 길</h1>
+            <h2>미션・비전</h2>
+            <a href="./value/vision.html#to_next_gene">
+                <div class="value_box_1">
+                    <p style="text-align:left; padding: 0px; padding-left:30px; padding-top:20px;">우리의 후손에게 무엇을 남겨야 할까요?</p>
+                    <h1 style="text-align:left; padding: 0px; padding:10px 10px 10px 30px; line-height: 40px;">후손을 위한<br>진지한 고민</h1>
                 </div>
-                <div>
-                    <img id="satellite_img" src="">
+            </a>
+            <div style="display: flex;">
+            <a href="./value/vision.html#before_too_late">
+                <div class="value_box_2">
+                    <p style="text-align:left; padding: 0px; padding-left:30px; padding-top:20px;">우리의 후손에게 무엇을 남겨야 할까요?</p>
+                    <h1 style="text-align:left; padding: 0px; padding:10px 10px 10px 30px; line-height: 40px;">후손을 위한<br>진지한 고민</h1>
                 </div>
+            </a>
             </div>
-        </div>
-        <div class="content_right">
-            <div class="menu">
-                <a href="./quakeinfo.html">지진정보</a>
-                <a href="./typhooninfo.html">태풍정보</a>
-                <a href="./weatherforecast.html">날씨예보</a>
-                <a href="./weatherwarning.html">기상특보</a>
-                <a href="./weathermap.html">일기도</a>
-                <a href="./satellite.html">위성영상</a>
-            </div>
+            <br>
+            <a class="more_info" style="text-align: center;"href="./value/vision.html">
+            미션・비전 모두 보기 >
+            </a>
+            <br>
         </div>
     </div>
+
     <div class="homeButton_area">
         <a href="../index.html" class="homeButton">홈</a>
     </div>
-   <div class="footer">
+    <div class="footer">
         <div class="footer_up">
             <div class="footer_box">
                 <div class="footer_info">
@@ -158,5 +128,4 @@
         <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
     </div>
 </body>
-<script src="./satellite.js"></script>
 </html>
