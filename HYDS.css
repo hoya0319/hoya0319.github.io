@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+body{
+    margin:0px;
+    padding:0px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:rgb(12,0,12);
+    max-width:100%;
+    overflow-x: hidden;
+    background-color: #F0EFF5;
+}
+h1, h2, h3, h4, p{
+    margin:0px;
+}
+.your_navbar{
+    width:100%;
+    display: flex;
+    height: 70px;
+    background-color: rgb(111, 115, 229);
+    justify-content: space-between;
+}
+.your_navbar_logo img{
+    height:70px;
+}
+.your_navbar_go_home p{
+    margin: 23.5px 30px;
+    color:white;
+}
+.your_navbar_go_home a{
+    text-decoration: none;
+    color:white;
+}
+.your_navbar_go_home a:hover{
+    color:orange;
+}
+.top{
+    margin:auto;
+    width:1000px;
+}
+.content{
+    width:1000px;
+    margin:auto;
+    display: flex;
+}
+.main_content{
+    height:1000px;
+    background-color: white;
+    width:70%;
+    margin:15px 5px 15px 15px;
+}
+.content_menu{
+    margin:15px 15px 15px 5px;
+    width:30%;
+}
+.content_menu_menu{
+    width:100%;
+}
+.content_menu_menu table{
+    border-spacing:0;
+    width:100%;
+}
+.left_top{
+    border-color:black;
+    border-style:solid;
+    border-width:1px 1px 0px 1px;
+    font-size:14px;
+    overflow:hidden;
+    padding: 8px 4px;
+    word-break:normal;
+    width:50%;
+    background-color: white;
+}
+.right_top{
+    border-color:black;
+    border-style:solid;
+    border-width:1px 1px 0px 0px;
+    font-size:14px;
+    overflow:hidden;
+    padding: 8px 4px;
+    word-break:normal;
+    width:50%;
+    background-color: white;
+}
+.left_bottom{
+    border-color:black;
+    border-style:solid;
+    border-width:1px 1px 1px 1px;
+    font-size:14px;
+    overflow:hidden;
+    padding: 8px 4px;
+    word-break:normal;
+    width:50%;
+    background-color: white;
+}
+.right_bottom{
+    border-color:black;
+    border-style:solid;
+    border-width:1px 1px 1px 0px;
+    font-size:14px;
+    overflow:hidden;
+    padding: 8px 4px;
+    word-break:normal;
+    width:50%;
+    background-color: white;
+}
+.table_title{
+    border-color:black;
+    border-style:solid;
+    border-width:1px 1px 0px 1px;
+    font-size:20px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:5px;
+    background-color: #e3e3e3;
+}

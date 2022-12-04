@@ -12,6 +12,16 @@
     0%{-webkit-transform:rotate(0);transform:rotate(0)}
     100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg)}
     }
+.public{
+    display: flex;
+}
+.public img{
+    width:192px;
+    height: 71px;
+}
+.public p{
+    padding: 0px 10px;
+}
 .eva-disease {
     display: table;
     border: 2px solid #55ad70;  
@@ -119,6 +129,7 @@
 }
 .bosai_box:hover{
     transform: scale(1.03);
+    transition: .3s;
     background-color: rgba(255, 231, 186);
 }
 .go_to_your{
@@ -148,6 +159,18 @@
     position: relative;
     animation: fadeInUp 1s;
     border-radius: 20px;
+}
+.box_link{
+    border: 2px black solid;
+    width:300px;
+    padding:10px 20px;
+    border-radius: 20px;
+    transition:0.5s;
+}
+.box_link:hover{
+    transform: scale(1.02);
+    transition:0.5s;
+    text-decoration: none;
 }
 .emergency .box{
     width:700px;
@@ -417,6 +440,11 @@
     }
     .eva-disease_text{
         padding-left:50px;
+    }
+    .public {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 @media screen and (max-width : 377px) {

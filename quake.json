@@ -1,0 +1,66 @@
+{
+    "response": {
+        "header": {
+            "resultCode": "00",
+            "resultMsg": "NORMAL_SERVICE"
+        },
+        "body": {
+            "dataType": "JSON",
+            "items": {
+                "item": [
+                    {
+                        "cnt": 1,
+                        "fcTp": 2,
+                        "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_2_20221010013804.png",
+                        "inT": "",
+                        "lat": -1.4,
+                        "loc": "대서양 중앙 해령 ",
+                        "lon": -23.88,
+                        "mt": 6.2,
+                        "rem": "국내영향없음. 위 자료는 미지질조사소(USGS) 분석결과임.",
+                        "stnId": 108,
+                        "tmEqk": 20221010013804,
+                        "tmFc": 202210100213,
+                        "tmSeq": 1000,
+                        "dep": 10
+                    },
+                    {
+                        "cnt": 1,
+                        "fcTp": 3,
+                        "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_3_20221008143334.png",
+                        "inT": "최대진도 Ⅰ",
+                        "lat": 41.29,
+                        "loc": "북한 함경북도 길주 북북서쪽 39km 지역",
+                        "lon": 129.21,
+                        "mt": 2.4,
+                        "rem": "자연지진으로 분석됨",
+                        "stnId": 108,
+                        "tmEqk": 20221008143334,
+                        "tmFc": 202210081536,
+                        "tmSeq": 994,
+                        "dep": 14
+                    },
+                    {
+                        "cnt": 1,
+                        "fcTp": 3,
+                        "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_3_20221008025449.png",
+                        "inT": "최대진도 Ⅰ",
+                        "lat": 41.3,
+                        "loc": "북한 함경북도 길주 북북서쪽 42km 지역",
+                        "lon": 129.13,
+                        "mt": 2.5,
+                        "rem": "자연지진으로 분석됨",
+                        "stnId": 108,
+                        "tmEqk": 20221008025449,
+                        "tmFc": 202210080416,
+                        "tmSeq": 992,
+                        "dep": 23
+                    }
+                ]
+            },
+            "pageNo": 1,
+            "numOfRows": 10,
+            "totalCount": 3
+        }
+    }
+}
