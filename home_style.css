@@ -18,7 +18,7 @@
     width:50%;
     left:25%;
     position: absolute;
-    top:35%;
+    top:30%;
     /* background-color: rgba(0, 0, 0, 0.561); */
     color:orange;
     -webkit-text-stroke-width: 1px;
@@ -82,11 +82,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border-radius: 25px;
+    transition: .5s;
 }
 .choose_box:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
     border-style: solid;
     border-width: 1px;
+    border-radius: 25px;
+    transition: .5s;
 }
 .choose_box img{
     width:80%;
