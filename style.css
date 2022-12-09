@@ -1,9 +1,9 @@
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 60%, 0);
     }
-    to {
+    100%{
         opacity: 1;
         transform: translateZ(0);
     }
@@ -97,6 +97,7 @@
     animation: fadeInUp 1s;
     flex-direction: column;
     border-radius: 20px;
+    transition: .3s;
 }
 .bosai_box h4{
     padding:0px;
@@ -377,12 +378,13 @@
 }
 .your_bosai p{
     text-align : center;
+    width:80px;
 }
 .your_bosai_box{
     border : 2px solid black;
-    width:100px;
     margin:10px 0px;
     border-radius: 20px;
+    width:80px
 }
 @keyframes appLinkTyphoon{
     0%{-webkit-transform:rotate(0);transform:rotate(0)}
@@ -415,6 +417,26 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.sitemap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sitemap_in{
+    width:200px;
+}
+.sitemap ul{
+    margin:0px;
+    padding-left:20px;
+}
+.sitemap h4{
+    text-align: left;
+}
+.vertical-line{
+    border: solid black;
+    border-width: 0px 1px 0px 0px;
+    margin:5px 20px;
+}
 @media screen and (max-width : 800px) {
     .emergency .box{
         width:300px;
@@ -445,6 +467,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .sitemap_in{
+        width:150px;
     }
 }
 @media screen and (max-width : 377px) {

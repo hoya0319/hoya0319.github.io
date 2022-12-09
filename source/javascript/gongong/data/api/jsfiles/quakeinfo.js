@@ -53,7 +53,7 @@ var earthquake_json = {
                         "cnt": 1,
                         "fcTp": 14,
                         "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_14_20221029082749.png",
-                        "inT": "최대진도 Ⅴ(충북),Ⅳ(강원,경북),Ⅲ(경기,대전,서울,세종,충남)",
+                        "inT": "최대진도 Ⅷ(충북),Ⅳ(강원,경북),Ⅲ(경기,대전,서울,세종,충남)",
                         "lat": 36.88,
                         "loc": "충북 괴산군 북동쪽 12km 지역",
                         "lon": 127.89,
@@ -113,7 +113,7 @@ queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('
 var cd = new Date();
 var year = cd.getFullYear();
 cd = new Date();
-cd.setDate(cd.getDate() - 1);
+cd.setDate(cd.getDate() - 3);
 cd = cd.toLocaleString()
 console.log(cd.slice(6,8)+cd.slice(10,12))
 cd = cd.slice(6,8)+cd.slice(10,12)
