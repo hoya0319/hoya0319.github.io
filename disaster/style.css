@@ -433,10 +433,10 @@ input {
     padding:10px 15px;
     margin: 10px 0px;
 }
-.message_box div{
+.message_bottom{
     display: flex;
 }
-.message_box div p{
+.message_bottom p{
     width:50%;
 }
 #down-border{
@@ -450,6 +450,10 @@ input {
     width:30px;
     height: 30px;
     border-radius: 100%;
+}
+.message_icon_box{
+    display: flex;
+    align-items: center;
 }
 @media screen and (max-width : 1020px) {
     .disaster_content {
@@ -486,7 +490,17 @@ input {
         overflow-x: auto;
         margin-top: 15px;
     }
-
+    .message_bottom{
+        display: flex;
+        flex-direction: column;
+    }
+    .message_bottom p{
+        width:100%;
+        padding:5px 0px 0px 0px;
+    }
+    #time1,#time2,#time3,#time4,#time5,#time6,#time7,#time8,#time9,#time10,#time11,#time12,#time13,#time14,#time15,#time16,#time17,#time18,#time19,#time20{
+        border:0px;
+    }
     .menu a {
         text-align: center;
         padding: 5px 10px;
