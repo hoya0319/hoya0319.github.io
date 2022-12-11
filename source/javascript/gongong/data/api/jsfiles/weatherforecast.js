@@ -2732,6 +2732,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 var hour = yyyymmdd.slice(8, 10);
                 var minute = yyyymmdd.slice(10, 12);
                 // console.log(month + date + hour + minute)
+                document.getElementById('weather_sokbo_box').style='display:block'
                 document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`
                 document.getElementById('weather_sokbo').textContent = sokbo_main[0].t1
             }
@@ -2988,6 +2989,8 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                         }else{
                             document.getElementById('pokyeom').style='border: #c500e3 solid 1px; background-color:#c500e3; display:block;color:white;'
                         }
+                    }else if(warning_loaded.response.header.resultCode == '03'){
+                        console.log('발표된 기상특보 없음')
                     }
                 }
                 console.log(warnName)

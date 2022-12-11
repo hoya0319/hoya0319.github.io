@@ -115,8 +115,8 @@ function typhoon() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             try{    
-                var myObj = JSON.parse(this.responseText);   
-                // var myObj = typhoon_json
+                // var myObj = JSON.parse(this.responseText);   
+                var myObj = typhoon_json
             }catch (error){
                 document.getElementById("typhoon_title").textContent = "기상청 태풍정보를 불러오는데 실패했습니다."
                 document.getElementById("typhoon_img").alt = "태풍정보 이미지를 불러오는데 실패했습니다."
@@ -185,8 +185,8 @@ function typhoon() {
 
                 }
                 try{
-                // document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + typ_par_main.tmSeq + "호]"
-                document.getElementById("typhoon_title").textContent = "음성 합성 기능 테스트를 위한 가상의 태풍정보입니다."
+                document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + typ_par_main.tmSeq + "호]"
+                // document.getElementById("typhoon_title").textContent = "음성 합성 기능 테스트를 위한 가상의 태풍정보입니다."
                 }catch(error){
 
                 }

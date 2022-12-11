@@ -432,6 +432,7 @@ input {
     border-radius: 20px;
     padding:10px 15px;
     margin: 10px 0px;
+    background-color: #f3f3f3;
 }
 .message_bottom{
     display: flex;
@@ -506,7 +507,6 @@ input {
         padding: 5px 10px;
         border: solid 1px black;
         background-color: white;
-        overflow-x: auto;
     }
 
     .content_left {
