@@ -21,13 +21,13 @@ var typhoon_json = {
                     {
                         "other": "제24호 태풍 야마네코(YAMANEKO)는 일본에서 제출한 이름으로 살쾡이자리(별자리)를 의미함.",
                         "img": "http://www.weather.go.kr/w/repositary/image/typ/img/RTKO63_202211141600]24_ko.png",
-                        "rem": "이 태풍은 오늘(14일) 15시경 열대저압부로 약화되었으며, 이것으로 제24호 태풍 야마네코(YAMANEKO)에 대한 정보를 종료함.|",
+                        "rem": "이 태풍은 24시간 이내에 온대저기압으로 변질될 것으로 예상됨.|다음 정보는 오늘(14일) 16시경에 발표될 예정임.|",
                         "tmFc": "202211141600",
                         "tmSeq": 8,
-                        "typ15": 0,
+                        "typ15": 250,
                         "typ15ed": "-",
                         "typ15er": 0,
-                        "typ25": 0,
+                        "typ25": 70,
                         "typ25ed": "-",
                         "typ25er": 0,
                         "typDir": "NNE",
@@ -36,7 +36,7 @@ var typhoon_json = {
                         "typLoc": "일본 도쿄 동남동쪽 약 2780 km 부근 해상",
                         "typLon": 165.9,
                         "typName": "야마네코",
-                        "typPs": 1004,
+                        "typPs": 910,
                         "typSeq": 24,
                         "typSp": 21,
                         "typTm": 202211141500,
@@ -45,7 +45,7 @@ var typhoon_json = {
                     {
                         "other": "제24호 태풍 야마네코(YAMANEKO)는 일본에서 제출한 이름으로 살쾡이자리(별자리)를 의미함.",
                         "img": "http://www.weather.go.kr/w/repositary/image/typ/img/RTKO63_202211141000]24_ko.png",
-                        "rem": "이 태풍은 24시간 이내에 온대저기압으로 변질될 것으로 예상됨.|다음 정보는 오늘(14일) 16시경에 발표될 예정임.|",
+                        "rem": "이 태풍은 오늘(14일) 15시경 열대저압부로 약화되었으며, 이것으로 제24호 태풍 야마네코(YAMANEKO)에 대한 정보를 종료함.|",
                         "tmFc": "202211141000",
                         "tmSeq": 7,
                         "typ15": 250,
@@ -180,12 +180,13 @@ function typhoon() {
                 var hour = yyyymmdd.slice(8, 10);
                 var minute = yyyymmdd.slice(10, 12);
                 try{
-                document.getElementById("typhoon_info_text").textContent = "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
+                    document.getElementById("typhoon_info_text").textContent =  "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
                 }catch(error){
 
                 }
                 try{
                 document.getElementById("typhoon_title").textContent = "[제 " + typ_num + "호 태풍 " + typ_name + "에 관한 기상청 태풍정보 제 " + typ_par_main.tmSeq + "호]"
+                // document.getElementById("typhoon_title").textContent = "음성 합성 기능 테스트를 위한 가상의 태풍정보입니다."
                 }catch(error){
 
                 }
@@ -270,6 +271,55 @@ function typhoon() {
                 }catch(error){
                     console.log("이 페이지가 아닌가보오.")
                 }
+                function setVoiceList(){
+                    voices = window.speechSynthesis.getVoices();
+                }
+
+                setVoiceList();
+                window.speechSynthesis.onvoiceschanged = setVoiceList;
+
+                function speak(text, opt_prop){
+                    if(typeof SpeechSynthesisUtterance == 'undefined' || typeof window.speechSynthesis == 'undefined'){
+                        alert('이 브라우저는 음성 합성을 지원하지 않습니다.');
+                        return;
+                    }
+
+                    window.speechSynthesis.cancel()
+
+                    const prop = opt_prop || {}
+
+                    const speechMsg = new SpeechSynthesisUtterance()
+                    speechMsg.rate = prop.rate || 1;
+                    speechMsg.pitch = prop.pitch || 1;
+                    speechMsg.lang = prop.lang || 'ko-KR';
+                    speechMsg.text = text
+
+                    window.speechSynthesis.speak(speechMsg)
+                }
+                var text
+                var gae =  "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 시속" + typ_par_main.typSp + "킬로미터의 속도로 이동중입니다";
+                if(strength == '--'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }else if(strength == '중'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 중 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }else if(strength == '강'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 강 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }else if(strength == '매우강'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 매우강 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }else if(strength == '초강력'){
+                    text = `초강력 태풍에 대한 정보입니다. ${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 초강력 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }
+
+                const btnread = document.getElementById('tts')
+                "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
+                btnread.addEventListener("click", e =>{
+                    speak(text, {
+                        rate : 1.2,
+                        pitch: 1.2,
+                        lang: 'ko-KR'
+                    })
+                })
+
             }else if(myObj.response.header.resultCode == "01"){
                 document.getElementById('quake_title').textContent = "[01] 어플리케이션 에러 발생(APPLICATION_ERROR)"
             }else if(myObj.response.header.resultCode == "02"){
