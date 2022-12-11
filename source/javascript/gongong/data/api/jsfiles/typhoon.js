@@ -115,8 +115,8 @@ function typhoon() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             try{    
-                // var myObj = JSON.parse(this.responseText);   
-                var myObj = typhoon_json
+                var myObj = JSON.parse(this.responseText);   
+                // var myObj = typhoon_json
             }catch (error){
                 document.getElementById("typhoon_title").textContent = "기상청 태풍정보를 불러오는데 실패했습니다."
                 document.getElementById("typhoon_img").alt = "태풍정보 이미지를 불러오는데 실패했습니다."
