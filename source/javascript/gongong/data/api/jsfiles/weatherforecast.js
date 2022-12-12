@@ -2924,9 +2924,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                     }
                 }
                 console.log(getToday()+hours)
-                warnName = ['가','가','가','가','가','가','가','가','가','가'];
-                warnVar = ['강풍', '호우', '한파', '건조', '폭풍해일', '풍랑', '태풍', '대설', '황사', '폭염']
-                warnStr = [1,1,1,1,1,1,1,1,1,1];
+                // warnName = ['가','가','가','가','가','가','가','가','가','가'];
+                // warnVar = ['강풍', '호우', '한파', '건조', '폭풍해일', '풍랑', '태풍', '대설', '황사', '폭염']
+                // warnStr = [1,1,1,1,1,1,1,1,1,1];
                 for(i=0;i<warnName.length;i++){
                     console.log(warnVar[i])
                     if(warnVar[i]=='강풍'){
