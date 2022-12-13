@@ -2712,7 +2712,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
     queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
     queryParams += '&' + encodeURIComponent('stnId') + '=' + encodeURIComponent(108); /**/
-    queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 1); /**/
+    queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()); /**/
     queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
     sokbo_xhr.open('GET', sokbo_url + queryParams);
     console.log(sokbo_url+queryParams)
@@ -2724,8 +2724,8 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 document.getElementById('weather_sokbo').textContent = '에러 발생.'
             }
             if(sokbo_loaded.response.header.resultCode = '00'){
-                var sokbo_main = sokbo_loaded.body.items.item
-                var yyyymmdd = String(sokbo_main[0].tmFc);
+                var sokbo_main = sokbo_loaded.response.body.items.item[0]
+                var yyyymmdd = String(sokbo_main.tmFc);
                 var year = yyyymmdd.slice(0, 4);
                 var month = yyyymmdd.slice(4, 6);
                 var date = yyyymmdd.slice(6, 8);
@@ -2733,8 +2733,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 var minute = yyyymmdd.slice(10, 12);
                 // console.log(month + date + hour + minute)
                 document.getElementById('weather_sokbo_box').style='display:block'
+                document.getElementById('sokbo_btn').style='display:block'
                 document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`
-                document.getElementById('weather_sokbo').textContent = sokbo_main[0].t1
+                document.getElementById('weather_sokbo').textContent = sokbo_main.ann
             }
         }
     };
@@ -3005,7 +3006,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     ultra_fore_xhr.send('');
     fore_xhr.send('');
     info_xhr.send('')
-    // sokbo_xhr.send('');
+    sokbo_xhr.send('');
     mid_xhr.send('');
     mid_temp_xhr.send('')
     mid_msg_xhr.send('')

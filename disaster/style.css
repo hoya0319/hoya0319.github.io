@@ -414,8 +414,23 @@ input {
     color: rgba(0, 0, 0, 0);
 }
 
+#sokbo_btn{
+    display: none;
+    background-color: red; 
+    border-radius: 5px; 
+    padding:2px 4px; 
+    color: white; 
+    border:1px black solid;
+    text-align: center;
+    margin-bottom:5px;
+}
 #weather_sokbo_box {
     display: none;
+    border: red 2px solid;
+    border-radius: 10px;
+    background-color: rgb(255, 195, 195);
+    margin: 10px 0px;
+    padding: 0px 5px;
 }
 
 .wind_dir {
@@ -456,6 +471,20 @@ input {
     display: flex;
     align-items: center;
 }
+
+.loc{
+    display: flex;
+    align-items: center;
+    margin:10px 0px;
+}
+
+.loc div{
+    margin-left: 30px;
+}
+.loc div p{
+    padding:0px;
+}
+
 @media screen and (max-width : 1020px) {
     .disaster_content {
         width: 750px;
@@ -565,6 +594,6 @@ input {
     .weather_warning_box {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: flex-start;
     }
 }
