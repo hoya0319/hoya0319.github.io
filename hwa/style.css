@@ -40,6 +40,9 @@ section{
     width:90%;
     background-color:blue;
 }
+#choose{
+    margin: 10px 20px;
+}
 @media screen and (max-width : 660px) {
     #choose{
         display: flex;
@@ -49,5 +52,8 @@ section{
     #choose > *{
         width:200px;
         margin:5px 3px;
+    }
+    .img{
+        width:100%;
     }
 }

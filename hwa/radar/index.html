@@ -10,23 +10,24 @@
 </head>
 <body>
     <nav>
-        <h1><a href="../index.html" style="color:white">HWA</a></h1>
+        <h1><a href="../" style="color:white">HWA</a></h1>
     </nav>
     <div class="in_title">
         <h1>
             레이더
         </h1>
         <hr>
+        <div>
+            <a href="#radar">레이더</a> | <a href="#rainarea">실황 강수영역</a>
+        </div>
     </div>
     <div class="main">
         <div id="choose">
-            <h2>레이더</h2>
+            <h2 id="radar">레이더</h2>
             날짜 선택: 
             <input id="date" type="date"
-            id="date"
             max="2077-06-20"
-            min="2000-01-01"
-            value="2023-02-08">
+            min="2000-01-01">
             시간 선택:
             <select id="hour">
                 <option value="00">0시</option>
@@ -63,6 +64,7 @@
                 <option value="50">50분</option>
                 <option value="60">60분</option>
             </select>
+            cmp: 
             <select id="cmp">
                 <option value="HSP">HSP</option>
                 <option value="HSR">HSR</option>
@@ -70,18 +72,28 @@
                 <option value="PPI">PPI</option>
                 <option value="CPP">CPP</option>
                 <option value="CMX">CMX</option>
+                <option value="HAIL">HAIL</option>
+                <option value="LNG">LNG</option>
+                <option value="NUM">NUM</option>
+                <option value="PCPH">PCPH</option>
+                <option value="PCPP">PCPP</option>
             </select>
+            qcd: 
             <select id="qcd">
                 <option value="HSLP">HSLP</option>
+                <option value="KMA">KMA</option>
                 <option value="NQC">NQC</option>
                 <option value="QCD">QCD</option>
                 <option value="EXT">EXT</option>
+                <option value="EXT">MSK</option>
             </select>
+            obs: 
             <select id="obs">
                 <option value="ECHD">ECHD</option>
                 <option value="ECHO">ECHO</option>
                 <option value="EBH">EBH</option>
                 <option value="STN">STN</option>
+                <option value="RNEX">RNEX</option>
             </select>
             <select id="aws">
                 <option value="0">지점표출없음</option>
@@ -93,7 +105,88 @@
             <button id="confirm">이미지 보기</button>
         </div> 
         <div style="width:100vw; display:flex; justify-content: center; padding: 20px 0px">
-        <img id='radarimg' src="../noimg.gif" alt="이미지가 아직 없어요.">
+            <img class="img" id='radarimg' src="../noimg.gif" alt="이미지가 아직 없어요.">
+        </div>
+        <div id="choose">
+            <h2 id="rainarea">실황 강수영역</h2>
+            날짜 선택: 
+            <input id="rainarea_date" type="date"
+            max="2077-06-20"
+            min="2000-01-01">
+            시간 선택:
+            <select id="rainarea_hour">
+                <option value="00">0시</option>
+                <option value="01">1시</option>
+                <option value="02">2시</option>
+                <option value="03">3시</option>
+                <option value="04">4시</option>
+                <option value="05">5시</option>
+                <option value="06">6시</option>
+                <option value="07">8시</option>
+                <option value="09">9시</option>
+                <option value="10">10시</option>
+                <option value="11">11시</option>
+                <option value="12">12시</option>
+                <option value="13">13시</option>
+                <option value="14">14시</option>
+                <option value="15">15시</option>
+                <option value="16">16시</option>
+                <option value="17">17시</option>
+                <option value="18">18시</option>
+                <option value="19">19시</option>
+                <option value="20">20시</option>
+                <option value="21">21시</option>
+                <option value="22">22시</option>
+                <option value="23">23시</option>
+                <option value="24">24시</option>
+            </select>
+            <select id="rainarea_min">
+                <option value="00">00분</option>
+                <option value="10">10분</option>
+                <option value="20">20분</option>
+                <option value="30">30분</option>
+                <option value="40">40분</option>
+                <option value="50">50분</option>
+                <option value="60">60분</option>
+            </select>
+            obs: 
+            <select id="rainarea_obs">
+                <option value="RNEX">RNEX</option>
+                <option value="ECHD">ECHD</option>
+                <option value="ECHO">ECHO</option>
+                <option value="EBH">EBH</option>
+                <option value="STN">STN</option>
+            </select>
+            cmp: 
+            <select id="rainarea_cmp">
+                <option value="SFC">SFC</option>
+                <option value="HSP">HSP</option>
+                <option value="HSR">HSR</option>
+                <option value="HCI">HCI</option>
+                <option value="PPI">PPI</option>
+                <option value="CPP">CPP</option>
+                <option value="CMX">CMX</option>
+                <option value="HAIL">HAIL</option>
+                <option value="LNG">LNG</option>
+                <option value="NUM">NUM</option>
+                <option value="PCPH">PCPH</option>
+                <option value="PCPP">PCPP</option>
+            </select>
+            <select id="rainarea_griddisp">
+                <option value="0">격자 없음</option>
+                <option value="1">격자 내삽</option>
+            </select>
+            <select id="rainarea_aws">
+                <option value="0">지점표출없음</option>
+                <option value="1">지점명</option>
+                <option value="2">지점번호</option>
+                <option value="3">관측값</option>
+            </select>
+            인증키 입력 : <input id="rainarea_key" value="">
+            <button id="rainarea_confirm">이미지 보기</button>
+        </div> 
+        <div style="width:100vw; display:flex; justify-content: center; padding: 20px 0px">
+            <img class="img" id='rainarea_img' src="../noimg.gif" alt="이미지가 아직 없어요.">
         </div>
     </div>
 </body>
