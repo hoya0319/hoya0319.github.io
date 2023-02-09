@@ -43,6 +43,14 @@ section{
 #choose{
     margin: 10px 20px;
 }
+.copyright_main{
+    margin: 2px 20px;
+}
+.goco{
+    text-align: center;
+    width:100%;
+    color: gray;
+}
 @media screen and (max-width : 660px) {
     #choose{
         display: flex;
