@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HWA</title>
+    <link href="../style.css" rel="stylesheet">
+    <link href="../main.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1><a href="../" style="color:white">HWA</a></h1>
+    </nav>
+    <div class="in_title">
+        <h1>
+            AWS
+        </h1>
+        <hr>
+        <div>
+            <a href="#aws">aws 분포도</a> | <a href="#rainarea"></a>
+        </div>
+    </div>
+    <div class="main">
+        <p style='text-align: center;'>인증키 입력 : <input id="key" value=""></p>
+        <div id="choose">
+            <h2 id="aws">aws 분포도</h2>
+            날짜 선택: 
+            <input id="date" type="date"
+            max="2077-06-20"
+            min="2000-01-01">
+            시간 선택:
+            <select id="hour">
+                <option value="00">0시</option>
+                <option value="01">1시</option>
+                <option value="02">2시</option>
+                <option value="03">3시</option>
+                <option value="04">4시</option>
+                <option value="05">5시</option>
+                <option value="06">6시</option>
+                <option value="07">8시</option>
+                <option value="09">9시</option>
+                <option value="10">10시</option>
+                <option value="11">11시</option>
+                <option value="12">12시</option>
+                <option value="13">13시</option>
+                <option value="14">14시</option>
+                <option value="15">15시</option>
+                <option value="16">16시</option>
+                <option value="17">17시</option>
+                <option value="18">18시</option>
+                <option value="19">19시</option>
+                <option value="20">20시</option>
+                <option value="21">21시</option>
+                <option value="22">22시</option>
+                <option value="23">23시</option>
+            </select>
+            <select id="min">
+                <option value="00">00분</option>
+                <option value="10">10분</option>
+                <option value="20">20분</option>
+                <option value="30">30분</option>
+                <option value="40">40분</option>
+                <option value="50">50분</option>
+            </select>
+            <select id="obs">
+                <option value="rn_ex">강수유무</option>
+                <option value="ta">기온</option>
+                <option value="td">이슬점온도</option>
+                <option value="hm">습도</option>
+                <option value="ts">지면온도</option>
+            </select>
+            지점정보포함:
+            <select id="stn">
+                <option value="0">최대최소값만</option>
+                <option value="1">영역내 지점값 포함</option>
+                <option value="2">지점값만</option>
+            </select>
+            객관분석 방식:
+            <select id="obj">
+                <option value="mq">multi-quadric</option>
+                <option value="bn">barnes</option>
+            </select>
+            지도:
+            <select id="map">
+                <option value="HR">기본</option>
+                <option value="D2">남한(D2)</option>
+                <option value="D3">남한(D3)</option>
+                <option value="R">레이더</option>
+                <option value="B">한반도(B)</option>
+                <option value="H1">한반도(H1)</option>
+            </select>
+            zoom_level:
+            <input type="text" name="" id="level" value="0" style="width:50px;">
+            zoom_x: 
+            <input type="text" name="" id="zoomx" value="0000000" style="width:100px;">
+            zoom_y:
+            <input type="text" name="" id="zoomy" value="0000000" style="width:100px;">
+            </select>
+            <button id="confirm">이미지 보기</button>
+        </div> 
+        <div style="width:100vw; display:flex; justify-content: center; padding: 20px 0px">
+            <img class="img" id='img' src="../noimg.gif" alt="이미지가 아직 없어요.">
+        </div>
+    </div>
+</body>
+<script src="./aws.js"></script>
+</html>

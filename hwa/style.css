@@ -51,6 +51,9 @@ section{
     width:100%;
     color: gray;
 }
+section a{
+    margin:2px 20px;
+}
 @media screen and (max-width : 660px) {
     #choose{
         display: flex;
