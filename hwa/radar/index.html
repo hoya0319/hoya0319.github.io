@@ -18,7 +18,7 @@
         </h1>
         <hr>
         <div>
-            <a href="#radar">레이더</a> | <a href="#rainarea">실황 강수영역</a> | <a href="#wind">바람벡터</a>
+            <a href="#radar">레이더</a> | <a href="#rainarea">실황 강수영역</a> | <a href="#wind">바람벡터</a> | <a href="#thunder">낙뢰</a>
         </div>
     </div>
     <div class="main">
@@ -239,6 +239,61 @@
         </div> 
         <div style="width:100vw; display:flex; justify-content: center; padding: 20px 0px">
             <img class="img" id='wind_img' src="../noimg.gif" alt="이미지가 아직 없어요.">
+        </div>
+        <div id="choose">
+            <h2 id="thunder">낙뢰</h2>
+            날짜 선택: 
+            <input id="thunder_date" type="date"
+            max="2077-06-20"
+            min="2000-01-01">
+            시간 선택:
+            <select id="thunder_hour">
+                <option value="00">0시</option>
+                <option value="01">1시</option>
+                <option value="02">2시</option>
+                <option value="03">3시</option>
+                <option value="04">4시</option>
+                <option value="05">5시</option>
+                <option value="06">6시</option>
+                <option value="07">8시</option>
+                <option value="09">9시</option>
+                <option value="10">10시</option>
+                <option value="11">11시</option>
+                <option value="12">12시</option>
+                <option value="13">13시</option>
+                <option value="14">14시</option>
+                <option value="15">15시</option>
+                <option value="16">16시</option>
+                <option value="17">17시</option>
+                <option value="18">18시</option>
+                <option value="19">19시</option>
+                <option value="20">20시</option>
+                <option value="21">21시</option>
+                <option value="22">22시</option>
+                <option value="23">23시</option>
+            </select>
+            <select id="thunder_min">
+                <option value="00">00분</option>
+                <option value="10">10분</option>
+                <option value="20">20분</option>
+                <option value="30">30분</option>
+                <option value="40">40분</option>
+                <option value="50">50분</option>
+            </select>
+            경계 표시 :
+            <select id="zoom_level">
+                <option value="0">숨기기</option>
+                <option value="1">보이기</option>
+            </select>
+            zoom_x: 
+            <input type="text" name="" id="thunder_zoomx" value="0000000" style="width:100px;">
+            zoom_y:
+            <input type="text" name="" id="thunder_zoomy" value="0000000" style="width:100px;">
+            </select>
+            <button id="thunder_confirm">이미지 보기</button>
+        </div> 
+        <div style="width:100vw; display:flex; justify-content: center; padding: 20px 0px">
+            <img class="img" id='thunder_img' src="../noimg.gif" alt="이미지가 아직 없어요.">
         </div>
     </div>
 </body>

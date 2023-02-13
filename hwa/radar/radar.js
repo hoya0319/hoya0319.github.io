@@ -1,6 +1,7 @@
 document.getElementById('date').value = new Date().toISOString().substring(0, 10);
 document.getElementById('rainarea_date').value = new Date().toISOString().substring(0, 10);
 document.getElementById('wind_date').value = new Date().toISOString().substring(0, 10);
+document.getElementById('thunder_date').value = new Date().toISOString().substring(0, 10);
 
 document.getElementById('confirm').addEventListener("click", function(){
     var date = document.getElementById('date').value
@@ -63,4 +64,23 @@ document.getElementById('wind_confirm').addEventListener("click", function(){
     //     document.getElementById('rainarea_img').alt= '이미지를 불러오는데 실패했어요'
     // }
 })
-//https://apihub.kma.go.kr/api/typ03/cgi/rdr/nph-rdr_wis_ana_img?tm=202212221025&obs=wv&wv=0&ht=800&map=HR&grid=2&legend=3&size=600&itv=5&zoom_level=0&zoom_x=0000000&zoom_y=0000000&gov=&authKey=ZyUOenzST3ylDnp80s988Q
+document.getElementById('thunder_confirm').addEventListener("click", function(){
+    var date = document.getElementById('thunder_date').value
+    key=document.getElementById('key').value;
+    date = date.replace('-','')
+    date = date.replace('-','')
+    var hour = document.getElementById('thunder_hour').value
+    var min = document.getElementById('thunder_min').value
+    var zoom_level = document.getElementById('zoom_level').value
+    var zoomx = document.getElementById('thunder_zoomx').value;
+    var zoomy = document.getElementById('thunder_zoomy').value;
+    var url = `https://apihub.kma.go.kr/api/typ03/cgi/lgt/nph-lgt_dst_img?obs=lgt_dst&tm=${date}${hour}${min}&val=1&stn=1&obj=mq&map=HR&grid=2&legend=1&size=600&itv=10&zoom_level=${zoom_level}&zoom_x=${zoomx}&zoom_y=${zoomy}&authKey=${key}`
+    // try{
+        document.getElementById('thunder_img').src= url
+        document.getElementById('thunder_img').alt= '레이더가 불러와졌어요'
+    // }catch(error){
+    //     alert('이미지를 불러오는데 실패했어요. 변수를 다시 한번 확인해주세요!')
+    //     document.getElementById('rainarea_img').alt= '이미지를 불러오는데 실패했어요'
+    // }
+})
+//https://apihub.kma.go.kr/api/typ03/cgi/lgt/nph-lgt_dst_img?obs=lgt_dst&tm=202212221025&val=1&stn=1&obj=mq&map=HR&grid=2&legend=1&size=600&itv=30&zoom_level=0&zoom_x=0000000&zoom_y=0000000&gov=&authKey=86OQsBWCRC-jkLAVgtQvUw
