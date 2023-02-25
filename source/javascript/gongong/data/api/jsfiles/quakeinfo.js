@@ -4,6 +4,7 @@ function getToday() {
     var year = date.getFullYear();
     var month = ("0" + (1 + date.getMonth())).slice(-2);
     var day = ("0" + date.getDate()).slice(-2);
+
     return year + month + day;
 }
 var url = 'http://apis.data.go.kr/1360000/EqkInfoService/getEqkMsg';
@@ -110,23 +111,12 @@ var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKd
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
-var cd = new Date();
-var year = cd.getFullYear();
-cd = new Date();
-cd.setDate(cd.getDate() - 3);
-cd = cd.toLocaleString()
-console.log(cd.slice(6,8)+cd.slice(10,12))
-cd = cd.slice(6,8)+cd.slice(10,12)
-console.log(cd)
-var arr = [...cd]
-if(arr[3] == '.'){
-    arr.splice(2,0,'0')
-    arr.pop()
-}
-console.log(arr)
-cd = arr.join("");
-console.log(cd)
-queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(year +cd); /**/
+let today = new Date();
+let year = today.getFullYear(); // 년도
+let month = today.getMonth() + 1;  // 월 => +1 하는 이유는 월이 0부터 시작하기 때문
+let date = today.getDate();  // 일
+
+queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()-2); /**/
 queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
@@ -384,6 +374,7 @@ xhr.onreadystatechange = function () {
             console.log(int_info)
             const text = `${month}월 ${date}일 ${hour}시 ${minute}분 경, ${quakeinfo.loc}에서 지진이 발생했습니다. 지진의 규모는 ${quakeinfo.mt}, 진원의 깊이는 ${dept} 입니다. 진도정보입니다. ${int}. 참고사항입니다. ${quakeinfo.rem}`
             const btnread = document.getElementById('tts')
+            document.getElementById('ttsr').textContent=text    
 
             btnread.addEventListener("click", e => {
                 speak(text, {

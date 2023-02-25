@@ -2735,7 +2735,15 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 document.getElementById('weather_sokbo_box').style='display:block'
                 document.getElementById('sokbo_btn').style='display:block'
                 document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`
-                document.getElementById('weather_sokbo').textContent = sokbo_main.ann
+                bf = sokbo_main.ann;
+                af = bf.split('\n')
+                console.log(af)
+                var textaf
+                for(i = 0; i<af.length; i++){
+                    textaf += af[i] + '\n'
+                }
+                
+                document.getElementById('weather_sokbo').textContent = textaf
             }
         }
     };
@@ -2855,23 +2863,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     warning_queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
     warning_queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
     warning_queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
-    var cd = new Date();
-    var year = cd.getFullYear();
-    cd = new Date();
-    cd.setDate(cd.getDate() - 1);
-    cd = cd.toLocaleString()
-    console.log(cd.slice(6,8)+cd.slice(10,12))
-    cd = cd.slice(6,8)+cd.slice(10,12)
-    console.log(cd)
-    var arr = [...cd]
-    if(arr[3] == '.'){
-        arr.splice(2,0,'0')
-        arr.pop()
-    }
-    console.log(arr)
-    cd = arr.join("");
-    console.log(cd)
-    warning_queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(year + cd); /**/
+    warning_queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()-1); /**/
     warning_queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
     warning_queryParams += '&' + encodeURIComponent('areaCode') + '=' + encodeURIComponent(warn_area); /**/
     warning_xhr.open('GET', warning_url + warning_queryParams);
