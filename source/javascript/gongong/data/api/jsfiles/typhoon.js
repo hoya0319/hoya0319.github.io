@@ -103,7 +103,42 @@ var queryParams = '?' + encodeURIComponent('serviceKey') + '=' +'cl5s8i4yp76CKdN
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호 조회*/
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('30'); /*행 수*/
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /*데이터 타입 - JSON*/
-queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()-1); /*조회 시작 날짜 - 오늘*/
+var now=new Date();
+var twoago = new Date(now.setDate(now.getDate()-3));
+// console.log(twoago)
+twoago = twoago.toString()
+twoago_month = twoago.slice(4, 7)
+if(twoago_month == 'Jan'){
+    twoago_month = '01'
+}else if(twoago_month == 'Feb'){
+    twoago_month = '02'
+}else if(twoago_month == 'Mar'){
+    twoago_month = '03'
+}else if(twoago_month == 'Apr'){
+    twoago_month = '04'
+}else if(twoago_month == 'May'){
+    twoago_month = '05'
+}else if(twoago_month == 'Jun'){
+    twoago_month = '06'
+}else if(twoago_month == 'Jul'){
+    twoago_month = '07'
+}else if(twoago_month == 'Aug'){
+    twoago_month = '08'
+}else if(twoago_month == 'Sep'){
+    twoago_month = '09'
+}else if(twoago_month == 'Oct'){
+    twoago_month = '10'
+}else if(twoago_month == 'Nov'){
+    twoago_month = '11'
+}else if(twoago_month == 'Dec'){
+    twoago_month = '12'
+}
+twoago_date = twoago.slice(8,10)
+twoago_year = twoago.slice(11,15)
+// console.log(twoago_month)
+// console.log(twoago_date)
+// console.log(twoago_year)
+queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(twoago_year + twoago_month + twoago_date); /*조회 시작 날짜 - 오늘*/
 queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /*조회 끝 날짜 - 오늘*/
 xhr.open('GET', url + queryParams);
 var api_url = url + queryParams;
@@ -115,8 +150,8 @@ function typhoon() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             try{    
-                var myObj = JSON.parse(this.responseText);   
-                // var myObj = typhoon_json
+                // var myObj = JSON.parse(this.responseText);   
+                var myObj = typhoon_json
             }catch (error){
                 document.getElementById("typhoon_title").textContent = "기상청 태풍정보를 불러오는데 실패했습니다."
                 document.getElementById("typhoon_img").alt = "태풍정보 이미지를 불러오는데 실패했습니다."

@@ -111,12 +111,42 @@ var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKd
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
-let today = new Date();
-let year = today.getFullYear(); // 년도
-let month = today.getMonth() + 1;  // 월 => +1 하는 이유는 월이 0부터 시작하기 때문
-let date = today.getDate();  // 일
-
-queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()-2); /**/
+var now=new Date();
+var twoago = new Date(now.setDate(now.getDate()-3));
+// console.log(twoago)
+twoago = twoago.toString()
+twoago_month = twoago.slice(4, 7)
+if(twoago_month == 'Jan'){
+    twoago_month = '01'
+}else if(twoago_month == 'Feb'){
+    twoago_month = '02'
+}else if(twoago_month == 'Mar'){
+    twoago_month = '03'
+}else if(twoago_month == 'Apr'){
+    twoago_month = '04'
+}else if(twoago_month == 'May'){
+    twoago_month = '05'
+}else if(twoago_month == 'Jun'){
+    twoago_month = '06'
+}else if(twoago_month == 'Jul'){
+    twoago_month = '07'
+}else if(twoago_month == 'Aug'){
+    twoago_month = '08'
+}else if(twoago_month == 'Sep'){
+    twoago_month = '09'
+}else if(twoago_month == 'Oct'){
+    twoago_month = '10'
+}else if(twoago_month == 'Nov'){
+    twoago_month = '11'
+}else if(twoago_month == 'Dec'){
+    twoago_month = '12'
+}
+twoago_date = twoago.slice(8,10)
+twoago_year = twoago.slice(11,15)
+// console.log(twoago_month)
+// console.log(twoago_date)
+// console.log(twoago_year)
+queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(twoago_year + twoago_month + twoago_date); /**/
 queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
@@ -371,10 +401,9 @@ xhr.onreadystatechange = function () {
             }else{
                 dept = quakeinfo.dep + "km"
             }
-            console.log(int_info)
-            // const text = `${month}월 ${date}일 ${hour}시 ${minute}분 경, ${quakeinfo.loc}에서 지진이 발생했습니다. 지진의 규모는 ${quakeinfo.mt}, 진원의 깊이는 ${dept} 입니다. 진도정보입니다. ${int}. 참고사항입니다. ${quakeinfo.rem}`
+            // console.log(int_info)
+            const text = `${month}월 ${date}일 ${hour}시 ${minute}분 경, ${quakeinfo.loc}에서 지진이 발생했습니다. 지진의 규모는 ${quakeinfo.mt}, 진원의 깊이는 ${dept} 입니다. 진도정보입니다. ${int}. 참고사항입니다. ${quakeinfo.rem}`
             const btnread = document.getElementById('tts')
-            document.getElementById('ttsr').textContent=text    
 
             btnread.addEventListener("click", e => {
                 speak(text, {
@@ -424,4 +453,4 @@ xhr.onreadystatechange = function () {
     }
 };
 xhr.send('');
-console.log(url + queryParams)
+// console.log(url + queryParams)

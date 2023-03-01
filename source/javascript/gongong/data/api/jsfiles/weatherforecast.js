@@ -17,9 +17,9 @@ if (hours.length == 1) {
 }
 
 blabla = today.getTime();
-if (blabla <6&&blabla>=18){
+if (blabla < 6 && blabla >= 18) {
     blabla = '1800'
-}else{
+} else {
     blabla = '0600'
 }
 var now_chart = new Chart(document.getElementById("now_weather_Chart"), {
@@ -270,8 +270,8 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     } else if (document.getElementById('addressDo1').value == '부산광역시') {
         area_code = 159
         warn_area = 'L1080100'
-        ma = '11H20201' 
-        yuksang=  '11H20000'
+        ma = '11H20201'
+        yuksang = '11H20000'
         switch (address) {
             case '중구':
             case '서구':
@@ -502,7 +502,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 break;
         }
     } else if (document.getElementById('addressDo1').value == '울산광역시') {
-        yuksang=  '11H20000'
+        yuksang = '11H20000'
         warn_area = 'L1080300'
         ma = '11H20101'
         area_code = 159
@@ -530,9 +530,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             case '삼척시':
                 warn_area = 'L1052200'
                 ma = '11D20602'
-                x=98;
-                y=125;
-                yuksang ='11D20000' 
+                x = 98;
+                y = 125;
+                yuksang = '11D20000'
             default:
                 x = 102;
                 y = 84;
@@ -806,7 +806,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
         }
     } else if (document.getElementById('addressDo1').value == '강원도') {
         area_code = 105
-        yuksang='11D10000'
+        yuksang = '11D10000'
         switch (address) {
             case '춘천시':
                 warn_area = 'L1021600'
@@ -823,21 +823,21 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             case '강릉시':
                 warn_area = 'L1020110'
                 ma = '11D20501'
-                yuksang ='11D20000'
+                yuksang = '11D20000'
                 x = 92;
                 y = 131;
                 break;
             case '동해시':
                 warn_area = 'L1020210'
                 ma = '11D20601'
-                yuksang ='11D20000'
+                yuksang = '11D20000'
                 x = 97;
                 y = 127;
                 break;
             case '태백시':
                 warn_area = 'L1020300'
                 ma = '11D20301'
-                yuksang ='11D20000'
+                yuksang = '11D20000'
                 x = 95;
                 y = 119;
                 break;
@@ -846,7 +846,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 warn_area = 'L1020510'
                 x = 87;
                 y = 141;
-                yuksang ='11D20000'
+                yuksang = '11D20000'
                 break;
             case '홍천군':
                 warn_area = 'L1021510'
@@ -907,12 +907,12 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 ma = '11D20402'
                 x = 85;
                 y = 145;
-                yuksang ='11D20000'
+                yuksang = '11D20000'
                 break;
             case '양양군':
                 ma = '11D20403'
                 warn_area = 'L1020710'
-                yuksang ='11D20000'
+                yuksang = '11D20000'
                 x = 88;
                 y = 138;
                 break;
@@ -1179,7 +1179,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             case '무주군':
                 warn_area = 'L1060700'
                 ma = '11F10302'
-                x = 72;                
+                x = 72;
                 y = 93;
                 break;
             case '장수군':
@@ -1201,7 +1201,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 y = 79;
                 break;
             case '고창군':
-                ma = '11F10601'                
+                ma = '11F10601'
                 warn_area = 'L1060100'
                 x = 56;
                 y = 80;
@@ -1517,133 +1517,133 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 y = 91;
         }
     } else if (document.getElementById('addressDo1').value == '경상남도') {
-        yuksang=  '11H20000'
+        yuksang = '11H20000'
         area_code = 159
         switch (address) {
             case '창원시 의창구':
                 warn_area = 'L1080600'
-                ma = '11H20301' 
-                x = 90; 
+                ma = '11H20301'
+                x = 90;
                 y = 77;
                 break;
             case '창원시 성산구':
                 warn_area = 'L1080600'
-                ma = '11H20301' 
+                ma = '11H20301'
                 x = 91;
                 y = 76;
                 break;
             case '창원시 마산합포구':
             case '창원시 마산회원구':
                 warn_area = 'L1080600'
-                ma = '11H20301' 
+                ma = '11H20301'
                 x = 89;
                 y = 76;
                 break;
             case '창원시 진해구':
                 warn_area = 'L1080600'
-                ma = '11H20301' 
+                ma = '11H20301'
                 x = 91;
                 y = 75;
                 break;
             case '진주시':
                 warn_area = 'L1081400'
-                ma = '11H20701' 
+                ma = '11H20701'
                 x = 81;
                 y = 75;
                 break;
             case '통영시':
                 warn_area = 'L1082000'
-                ma = '11H20401' 
+                ma = '11H20401'
                 x = 87;
                 y = 68;
                 break;
             case '사천시':
                 warn_area = 'L1082100'
-                ma = '11H20402' 
+                ma = '11H20402'
                 x = 80;
                 y = 71;
                 break;
             case '김해시':
                 warn_area = 'L1080900'
-                ma = '11H20304' 
+                ma = '11H20304'
                 x = 95;
                 y = 77;
                 break;
             case '밀양시':
                 warn_area = 'L1081000'
-                ma = '11H20601' 
+                ma = '11H20601'
                 x = 92;
                 y = 83;
                 break;
             case '거제시':
                 warn_area = 'L1082200'
-                ma = '11H20403' 
+                ma = '11H20403'
                 x = 90;
                 y = 69;
                 break;
             case '양산시':
                 warn_area = 'L1080500'
-                ma = '11H20102' 
+                ma = '11H20102'
                 x = 97;
                 y = 79;
                 break;
             case '의령군':
                 warn_area = 'L1081100'
-                ma = '11H20602' 
+                ma = '11H20602'
                 x = 83;
                 y = 78;
                 break;
             case '함안군':
                 warn_area = 'L1081200'
-                ma = '11H20603' 
+                ma = '11H20603'
                 x = 86;
                 y = 77;
                 break;
             case '창녕군':
                 warn_area = 'L1081300'
-                ma = '11H20604' 
+                ma = '11H20604'
                 x = 87;
                 y = 83;
                 break;
             case '고성군':
                 warn_area = 'L1082300'
-                ma = '11H20404' 
+                ma = '11H20404'
                 x = 85;
                 y = 71;
                 break;
             case '남해군':
                 warn_area = 'L1082400'
-                ma = '11H20405' 
+                ma = '11H20405'
                 x = 77;
                 y = 68;
                 break;
             case '하동군':
                 warn_area = 'L1081500'
-                ma = '11H20704' 
+                ma = '11H20704'
                 x = 74;
                 y = 73;
                 break;
             case '산청군':
                 warn_area = 'L1081600'
-                ma = '11H20703' 
+                ma = '11H20703'
                 x = 76;
                 y = 80;
                 break;
             case '함양군':
                 warn_area = 'L1081700'
-                ma = '11H20501' 
+                ma = '11H20501'
                 x = 74;
                 y = 82;
                 break;
             case '거창군':
                 warn_area = 'L1081800'
-                ma = '11H20502' 
+                ma = '11H20502'
                 x = 77;
                 y = 86;
                 break;
             case '합천군':
                 warn_area = 'L1081900'
-                ma = '11H20503' 
+                ma = '11H20503'
                 x = 81;
                 y = 84;
                 break;
@@ -1901,16 +1901,16 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 var per = []
                 var form = []
                 var snow = [];
-                for (i = 0; i< fore_main.length; i++){
-                    if(fore_main[i].category == 'TMP'){
+                for (i = 0; i < fore_main.length; i++) {
+                    if (fore_main[i].category == 'TMP') {
                         temp.push(fore_main[i].fcstValue)
-                    }else if (fore_main[i].category == 'VEC'){
+                    } else if (fore_main[i].category == 'VEC') {
                         wind.push(fore_main[i].fcstValue)
-                    }else if(fore_main[i].category == 'WSD'){
+                    } else if (fore_main[i].category == 'WSD') {
                         wind_spd.push(fore_main[i].fcstValue)
-                    }else if(fore_main[i].category == 'REH'){
+                    } else if (fore_main[i].category == 'REH') {
                         humid.push(fore_main[i].fcstValue)
-                    }else if(fore_main[i].category == 'SKY'){
+                    } else if (fore_main[i].category == 'SKY') {
                         if (fore_main[i].fcstValue == '1') {
                             sky.push('맑음')
                         } else if (fore_main[i].fcstValue == '3') {
@@ -1918,15 +1918,15 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                         } else if (fore_main[i].fcstValue == '4') {
                             sky.push('흐림')
                         }
-                    }else if(fore_main[i].category == 'PCP'){
+                    } else if (fore_main[i].category == 'PCP') {
                         if (fore_main[i].fcstValue == '강수없음') {
                             rain.push('--')
                         } else {
                             rain.push(fore_main[i].fcstValue)
                         }
-                    }else if(fore_main[i].category == 'POP'){
+                    } else if (fore_main[i].category == 'POP') {
                         per.push(fore_main[i].fcstValue)
-                    }else if(fore_main[i].category == 'PTY'){
+                    } else if (fore_main[i].category == 'PTY') {
                         if (fore_main[i].fcstValue == '0') {
                             form.push('-')
                         } else if (fore_main[i].fcstValue == '1') {
@@ -1942,15 +1942,15 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                         } else if (fore_main[i].fcstValue == '7') {
                             form.push('눈날림')
                         }
-                    }else if(fore_main[i].category == 'SNO'){
-                        if (fore_main[i].fcstValue == '적설없음'){
+                    } else if (fore_main[i].category == 'SNO') {
+                        if (fore_main[i].fcstValue == '적설없음') {
                             snow.push('-')
-                        }else{
+                        } else {
                             snow.push(fore_main[i].fcstValue)
                         }
                     }
                 }
-                if(1==1){ //기온
+                if (1 == 1) { //기온
                     document.getElementById('sh_temp1_3').textContent = `${temp[0]}℃`
                     document.getElementById('sh_temp1_4').textContent = `${temp[1]}℃`
                     document.getElementById('sh_temp1_5').textContent = `${temp[2]}℃`
@@ -2022,7 +2022,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                     document.getElementById('sh_temp3_23').textContent = `${temp[68]}℃`
                     document.getElementById('sh_temp4_0').textContent = `${temp[69]}℃`
                 }
-                if(1==1){ //풍향
+                if (1 == 1) { //풍향
                     document.getElementById('sh_wind_dir1_3').textContent = `${wind[0]}°`
                     document.getElementById('sh_wind_dir1_4').textContent = `${wind[1]}°`
                     document.getElementById('sh_wind_dir1_5').textContent = `${wind[2]}°`
@@ -2093,78 +2093,78 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                     document.getElementById('sh_wind_dir3_22').textContent = `${wind[67]}°`
                     document.getElementById('sh_wind_dir3_23').textContent = `${wind[68]}°`
                     document.getElementById('sh_wind_dir4_0').textContent = `${wind[69]}°`
-                    document.getElementById('sh_wind_dir1_3').style = 'transform: rotate(' + wind[0]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_4').style = 'transform: rotate(' + wind[1]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_5').style = 'transform: rotate(' + wind[2]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_6').style = 'transform: rotate(' + wind[3]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_7').style = 'transform: rotate(' + wind[4]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_8').style = 'transform: rotate(' + wind[5]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_9').style = 'transform: rotate(' + wind[6]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_10').style = 'transform: rotate(' + wind[7]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_11').style = 'transform: rotate(' + wind[8]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_12').style = 'transform: rotate(' + wind[9]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_13').style = 'transform: rotate(' + wind[10]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_14').style = 'transform: rotate(' + wind[11]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_15').style = 'transform: rotate(' + wind[12]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_16').style = 'transform: rotate(' + wind[13]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_17').style = 'transform: rotate(' + wind[14]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_18').style = 'transform: rotate(' + wind[15]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_19').style = 'transform: rotate(' + wind[16]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_20').style = 'transform: rotate(' + wind[17]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_21').style = 'transform: rotate(' + wind[18]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_22').style = 'transform: rotate(' + wind[19]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir1_23').style = 'transform: rotate(' + wind[20]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_0').style = 'transform: rotate(' + wind[21]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_1').style = 'transform: rotate(' + wind[22]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_2').style = 'transform: rotate(' + wind[23]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_3').style = 'transform: rotate(' + wind[24]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_4').style = 'transform: rotate(' + wind[25]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_5').style = 'transform: rotate(' + wind[26]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_6').style = 'transform: rotate(' + wind[27]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_7').style = 'transform: rotate(' + wind[28]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_8').style = 'transform: rotate(' + wind[29]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_9').style = 'transform: rotate(' + wind[30]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_10').style = 'transform: rotate(' + wind[31]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_11').style = 'transform: rotate(' + wind[32]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_12').style = 'transform: rotate(' + wind[33]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_13').style = 'transform: rotate(' + wind[34]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_14').style = 'transform: rotate(' + wind[35]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_15').style = 'transform: rotate(' + wind[36]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_16').style = 'transform: rotate(' + wind[37]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_17').style = 'transform: rotate(' + wind[38]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_18').style = 'transform: rotate(' + wind[39]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_19').style = 'transform: rotate(' + wind[40]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_20').style = 'transform: rotate(' + wind[41]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_21').style = 'transform: rotate(' + wind[42]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_22').style = 'transform: rotate(' + wind[43]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir2_23').style = 'transform: rotate(' + wind[44]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_0').style = 'transform: rotate(' + wind[45]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_1').style = 'transform: rotate(' + wind[46]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_2').style = 'transform: rotate(' + wind[47]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_3').style = 'transform: rotate(' + wind[48]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_4').style = 'transform: rotate(' + wind[49]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_5').style = 'transform: rotate(' + wind[50]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_6').style = 'transform: rotate(' + wind[51]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_7').style = 'transform: rotate(' + wind[52]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_8').style = 'transform: rotate(' + wind[53]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_9').style = 'transform: rotate(' + wind[54]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_10').style = 'transform: rotate(' + wind[55]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_11').style = 'transform: rotate(' + wind[56]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_12').style = 'transform: rotate(' + wind[57]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_13').style = 'transform: rotate(' + wind[58]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_14').style = 'transform: rotate(' + wind[59]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_15').style = 'transform: rotate(' + wind[60]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_16').style = 'transform: rotate(' + wind[61]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_17').style = 'transform: rotate(' + wind[62]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_18').style = 'transform: rotate(' + wind[63]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_19').style = 'transform: rotate(' + wind[64]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_20').style = 'transform: rotate(' + wind[65]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_21').style = 'transform: rotate(' + wind[66]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_22').style = 'transform: rotate(' + wind[67]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir3_23').style = 'transform: rotate(' + wind[68]+ 'deg); display: block'
-                    document.getElementById('sh_wind_dir4_0').style = 'transform: rotate(' + wind[69]+ 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_3').style = 'transform: rotate(' + wind[0] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_4').style = 'transform: rotate(' + wind[1] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_5').style = 'transform: rotate(' + wind[2] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_6').style = 'transform: rotate(' + wind[3] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_7').style = 'transform: rotate(' + wind[4] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_8').style = 'transform: rotate(' + wind[5] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_9').style = 'transform: rotate(' + wind[6] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_10').style = 'transform: rotate(' + wind[7] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_11').style = 'transform: rotate(' + wind[8] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_12').style = 'transform: rotate(' + wind[9] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_13').style = 'transform: rotate(' + wind[10] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_14').style = 'transform: rotate(' + wind[11] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_15').style = 'transform: rotate(' + wind[12] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_16').style = 'transform: rotate(' + wind[13] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_17').style = 'transform: rotate(' + wind[14] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_18').style = 'transform: rotate(' + wind[15] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_19').style = 'transform: rotate(' + wind[16] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_20').style = 'transform: rotate(' + wind[17] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_21').style = 'transform: rotate(' + wind[18] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_22').style = 'transform: rotate(' + wind[19] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir1_23').style = 'transform: rotate(' + wind[20] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_0').style = 'transform: rotate(' + wind[21] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_1').style = 'transform: rotate(' + wind[22] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_2').style = 'transform: rotate(' + wind[23] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_3').style = 'transform: rotate(' + wind[24] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_4').style = 'transform: rotate(' + wind[25] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_5').style = 'transform: rotate(' + wind[26] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_6').style = 'transform: rotate(' + wind[27] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_7').style = 'transform: rotate(' + wind[28] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_8').style = 'transform: rotate(' + wind[29] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_9').style = 'transform: rotate(' + wind[30] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_10').style = 'transform: rotate(' + wind[31] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_11').style = 'transform: rotate(' + wind[32] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_12').style = 'transform: rotate(' + wind[33] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_13').style = 'transform: rotate(' + wind[34] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_14').style = 'transform: rotate(' + wind[35] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_15').style = 'transform: rotate(' + wind[36] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_16').style = 'transform: rotate(' + wind[37] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_17').style = 'transform: rotate(' + wind[38] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_18').style = 'transform: rotate(' + wind[39] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_19').style = 'transform: rotate(' + wind[40] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_20').style = 'transform: rotate(' + wind[41] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_21').style = 'transform: rotate(' + wind[42] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_22').style = 'transform: rotate(' + wind[43] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir2_23').style = 'transform: rotate(' + wind[44] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_0').style = 'transform: rotate(' + wind[45] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_1').style = 'transform: rotate(' + wind[46] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_2').style = 'transform: rotate(' + wind[47] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_3').style = 'transform: rotate(' + wind[48] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_4').style = 'transform: rotate(' + wind[49] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_5').style = 'transform: rotate(' + wind[50] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_6').style = 'transform: rotate(' + wind[51] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_7').style = 'transform: rotate(' + wind[52] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_8').style = 'transform: rotate(' + wind[53] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_9').style = 'transform: rotate(' + wind[54] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_10').style = 'transform: rotate(' + wind[55] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_11').style = 'transform: rotate(' + wind[56] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_12').style = 'transform: rotate(' + wind[57] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_13').style = 'transform: rotate(' + wind[58] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_14').style = 'transform: rotate(' + wind[59] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_15').style = 'transform: rotate(' + wind[60] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_16').style = 'transform: rotate(' + wind[61] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_17').style = 'transform: rotate(' + wind[62] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_18').style = 'transform: rotate(' + wind[63] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_19').style = 'transform: rotate(' + wind[64] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_20').style = 'transform: rotate(' + wind[65] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_21').style = 'transform: rotate(' + wind[66] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_22').style = 'transform: rotate(' + wind[67] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir3_23').style = 'transform: rotate(' + wind[68] + 'deg); display: block'
+                    document.getElementById('sh_wind_dir4_0').style = 'transform: rotate(' + wind[69] + 'deg); display: block'
                 }
-                if(1==1){ //풍속
+                if (1 == 1) { //풍속
                     document.getElementById('sh_wind1_3').textContent = `${wind_spd[0]}m/s`
                     document.getElementById('sh_wind1_4').textContent = `${wind_spd[1]}m/s`
                     document.getElementById('sh_wind1_5').textContent = `${wind_spd[2]}m/s`
@@ -2236,7 +2236,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                     document.getElementById('sh_wind3_23').textContent = `${wind_spd[68]}m/s`
                     document.getElementById('sh_wind4_0').textContent = `${wind_spd[69]}m/s`
                 }
-                if (1==1){ //습도
+                if (1 == 1) { //습도
                     document.getElementById('sh_humid1_3').textContent = `${humid[0]}%`
                     document.getElementById('sh_humid1_4').textContent = `${humid[1]}%`
                     document.getElementById('sh_humid1_5').textContent = `${humid[2]}%`
@@ -2308,7 +2308,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                     document.getElementById('sh_humid3_23').textContent = `${humid[68]}%`
                     document.getElementById('sh_humid4_0').textContent = `${humid[69]}%`
                 }
-                if(1==1){ //하늘
+                if (1 == 1) { //하늘
                     document.getElementById('sh_sky1_3').textContent = `${sky[0]}`
                     document.getElementById('sh_sky1_4').textContent = `${sky[1]}`
                     document.getElementById('sh_sky1_5').textContent = `${sky[2]}`
@@ -2380,7 +2380,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                     document.getElementById('sh_sky3_23').textContent = `${sky[68]}`
                     document.getElementById('sh_sky4_0').textContent = `${sky[69]}`
                 }
-                if(1==1){ //1시간 강수량
+                if (1 == 1) { //1시간 강수량
                     document.getElementById('sh_rain1_3').textContent = `${rain[0]}`
                     document.getElementById('sh_rain1_4').textContent = `${rain[1]}`
                     document.getElementById('sh_rain1_5').textContent = `${rain[2]}`
@@ -2452,7 +2452,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                     document.getElementById('sh_rain3_23').textContent = `${rain[68]}`
                     document.getElementById('sh_rain4_0').textContent = `${rain[69]}`
                 }
-                if(1==1){ //확률
+                if (1 == 1) { //확률
                     document.getElementById('sh_rain_per1_3').textContent = `${per[0]}%`
                     document.getElementById('sh_rain_per1_4').textContent = `${per[1]}%`
                     document.getElementById('sh_rain_per1_5').textContent = `${per[2]}%`
@@ -2524,7 +2524,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                     document.getElementById('sh_rain_per3_23').textContent = `${per[68]}%`
                     document.getElementById('sh_rain_per4_0').textContent = `${per[69]}%`
                 }
-                if(1==1){ //형태
+                if (1 == 1) { //형태
                     document.getElementById('sh_rain_form1_3').textContent = `${form[0]}`
                     document.getElementById('sh_rain_form1_4').textContent = `${form[1]}`
                     document.getElementById('sh_rain_form1_5').textContent = `${form[2]}`
@@ -2596,7 +2596,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                     document.getElementById('sh_rain_form3_23').textContent = `${form[68]}`
                     document.getElementById('sh_rain_form4_0').textContent = `${form[69]}`
                 }
-                if(1==1){ //형태
+                if (1 == 1) { //형태
                     document.getElementById('sh_new_snow1_3').textContent = `${snow[0]}`
                     document.getElementById('sh_new_snow1_4').textContent = `${snow[1]}`
                     document.getElementById('sh_new_snow1_5').textContent = `${snow[2]}`
@@ -2682,7 +2682,42 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
     queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
     queryParams += '&' + encodeURIComponent('stnId') + '=' + encodeURIComponent(area_code); /**/
-    queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 1); /**/
+    var now = new Date();
+    var twoago = new Date(now.setDate(now.getDate() - 3));
+    // console.log(twoago)
+    twoago = twoago.toString()
+    twoago_month = twoago.slice(4, 7)
+    if (twoago_month == 'Jan') {
+        twoago_month = '01'
+    } else if (twoago_month == 'Feb') {
+        twoago_month = '02'
+    } else if (twoago_month == 'Mar') {
+        twoago_month = '03'
+    } else if (twoago_month == 'Apr') {
+        twoago_month = '04'
+    } else if (twoago_month == 'May') {
+        twoago_month = '05'
+    } else if (twoago_month == 'Jun') {
+        twoago_month = '06'
+    } else if (twoago_month == 'Jul') {
+        twoago_month = '07'
+    } else if (twoago_month == 'Aug') {
+        twoago_month = '08'
+    } else if (twoago_month == 'Sep') {
+        twoago_month = '09'
+    } else if (twoago_month == 'Oct') {
+        twoago_month = '10'
+    } else if (twoago_month == 'Nov') {
+        twoago_month = '11'
+    } else if (twoago_month == 'Dec') {
+        twoago_month = '12'
+    }
+    twoago_date = twoago.slice(8, 10)
+    twoago_year = twoago.slice(11, 15)
+    // console.log(twoago_month)
+    // console.log(twoago_date)
+    // console.log(twoago_year)
+    queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(twoago_year + twoago_month + twoago_date); /**/
     queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
     info_xhr.open('GET', info_url + queryParams);
     info_xhr.onreadystatechange = function () {
@@ -2715,7 +2750,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()); /**/
     queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
     sokbo_xhr.open('GET', sokbo_url + queryParams);
-    console.log(sokbo_url+queryParams)
+    console.log(sokbo_url + queryParams)
     sokbo_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
             try {
@@ -2723,7 +2758,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             } catch (error) {
                 document.getElementById('weather_sokbo').textContent = '에러 발생.'
             }
-            if(sokbo_loaded.response.header.resultCode = '00'){
+            if (sokbo_loaded.response.header.resultCode = '00') {
                 var sokbo_main = sokbo_loaded.response.body.items.item[0]
                 var yyyymmdd = String(sokbo_main.tmFc);
                 var year = yyyymmdd.slice(0, 4);
@@ -2732,29 +2767,29 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 var hour = yyyymmdd.slice(8, 10);
                 var minute = yyyymmdd.slice(10, 12);
                 // console.log(month + date + hour + minute)
-                document.getElementById('weather_sokbo_box').style='display:block'
-                document.getElementById('sokbo_btn').style='display:block'
+                document.getElementById('weather_sokbo_box').style = 'display:block'
+                document.getElementById('sokbo_btn').style = 'display:block'
                 document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`
                 bf = sokbo_main.ann;
                 af = bf.split('\n')
                 console.log(af)
                 var textaf
-                for(i = 0; i<af.length; i++){
+                for (i = 0; i < af.length; i++) {
                     textaf += af[i] + '\n'
                 }
-                
+
                 document.getElementById('weather_sokbo').textContent = textaf
             }
         }
     };
     var mid_xhr = new XMLHttpRequest();
     var mid_url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst'; /*URL*/
-    var mid_queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
+    var mid_queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
     mid_queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
     mid_queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
     mid_queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
     mid_queryParams += '&' + encodeURIComponent('regId') + '=' + encodeURIComponent(yuksang); /**/
-    mid_queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent(getToday()+blabla); /**/
+    mid_queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent(getToday() + blabla); /**/
     mid_xhr.open('GET', mid_url + mid_queryParams);
     mid_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
@@ -2789,12 +2824,12 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     };
     var mid_temp_xhr = new XMLHttpRequest();
     var mid_temp_url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa'; /*URL*/
-    var mid_temp_queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
+    var mid_temp_queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
     mid_temp_queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
     mid_temp_queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
     mid_temp_queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
     mid_temp_queryParams += '&' + encodeURIComponent('regId') + '=' + encodeURIComponent(ma); /**/
-    mid_temp_queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent(getToday()+blabla); /**/
+    mid_temp_queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent(getToday() + blabla); /**/
     mid_temp_xhr.open('GET', mid_temp_url + mid_temp_queryParams);
     mid_temp_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
@@ -2827,15 +2862,15 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             }
         }
     };
-    
+
     var mid_msg_xhr = new XMLHttpRequest();
     var mid_msg_url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst'; /*URL*/
-    var mid_msg_queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
+    var mid_msg_queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
     mid_msg_queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
     mid_msg_queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
     mid_msg_queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
     mid_msg_queryParams += '&' + encodeURIComponent('stnId') + '=' + encodeURIComponent(area_code); /**/
-    mid_msg_queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent(getToday()+blabla); /**/
+    mid_msg_queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent(getToday() + blabla); /**/
     mid_msg_xhr.open('GET', mid_msg_url + mid_msg_queryParams);
     mid_msg_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
@@ -2851,7 +2886,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 var yyyymmdd = getToday()
                 var month = yyyymmdd.slice(4, 6);
                 var date = yyyymmdd.slice(6, 8);
-                var hour =blabla.slice(0, 2);
+                var hour = blabla.slice(0, 2);
                 document.getElementById('mid_info_time').textContent = `${month}월 ${date}일 ${hour}시 00분 발표`
             }
         }
@@ -2859,17 +2894,17 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
 
     var warning_xhr = new XMLHttpRequest();
     var warning_url = 'http://apis.data.go.kr/1360000/WthrWrnInfoService/getPwnCd'; /*URL*/
-    var warning_queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
+    var warning_queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
     warning_queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
     warning_queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
     warning_queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
-    warning_queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday()-1); /**/
+    warning_queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 1); /**/
     warning_queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
     warning_queryParams += '&' + encodeURIComponent('areaCode') + '=' + encodeURIComponent(warn_area); /**/
     warning_xhr.open('GET', warning_url + warning_queryParams);
     warning_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            console.log('이거임 : ' + warning_url+warning_queryParams);
+            console.log('이거임 : ' + warning_url + warning_queryParams);
             try {
                 var warning_loaded = JSON.parse(this.responseText);
             } catch (error) {
@@ -2889,100 +2924,100 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 warnName = [];
                 warnVar = []
                 warnStr = [];
-                for(i=0; i < warning.length;i++){
-                    if(warning[i].endTime == 0 || warning[i].endTime > getToday()+hours){
+                for (i = 0; i < warning.length; i++) {
+                    if (warning[i].endTime == 0 || warning[i].endTime > getToday() + hours) {
                         warnName.push(warning[i].areaName);
                         warnStr.push(warning[i].warnStress);
-                        if (warning[i].warnVar == 1){
+                        if (warning[i].warnVar == 1) {
                             warnVar.push('강풍');
-                        }else if(warning[i].warnVar == 2){
+                        } else if (warning[i].warnVar == 2) {
                             warnVar.push('호우');
-                        }else if(warning[i].warnVar == 3){
+                        } else if (warning[i].warnVar == 3) {
                             warnVar.push('한파');
-                        }else if(warning[i].warnVar == 4){
+                        } else if (warning[i].warnVar == 4) {
                             warnVar.push('건조');
-                        }else if(warning[i].warnVar == 5){
+                        } else if (warning[i].warnVar == 5) {
                             warnVar.push('폭풍해일');
-                        }else if(warning[i].warnVar == 6){
+                        } else if (warning[i].warnVar == 6) {
                             warnVar.push('풍랑');
-                        }else if(warning[i].warnVar == 7){
+                        } else if (warning[i].warnVar == 7) {
                             warnVar.push('태풍');
-                        }else if(warning[i].warnVar == 8){
+                        } else if (warning[i].warnVar == 8) {
                             warnVar.push('대설');
-                        }else if(warning[i].warnVar == 9){
+                        } else if (warning[i].warnVar == 9) {
                             warnVar.push('황사');
-                        }else if(warning[i].warnVar == 12){
+                        } else if (warning[i].warnVar == 12) {
                             warnVar.push('폭염');
                         }
                     }
                 }
-                console.log(getToday()+hours)
+                console.log(getToday() + hours)
                 // warnName = ['가','가','가','가','가','가','가','가','가','가'];
                 // warnVar = ['강풍', '호우', '한파', '건조', '폭풍해일', '풍랑', '태풍', '대설', '황사', '폭염']
                 // warnStr = [1,1,1,1,1,1,1,1,1,1];
-                for(i=0;i<warnName.length;i++){
+                for (i = 0; i < warnName.length; i++) {
                     console.log(warnVar[i])
-                    if(warnVar[i]=='강풍'){
-                        if(warnStr[i]==0){
-                            document.getElementById('gangpung').style='border: #0dde1f solid 1px; background-color:#0dde1f; display:block; background-image: linear-gradient(-45deg,#66fa73 25%,transparent 25%,transparent 50%,#66fa73 50%,#66fa73 75%,transparent 75%,transparent);'
-                        }else{
-                            document.getElementById('gangpung').style='border: #0dde1f solid 1px; background-color:#0dde1f; display:block;'
+                    if (warnVar[i] == '강풍') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('gangpung').style = 'border: #0dde1f solid 1px; background-color:#0dde1f; display:block; background-image: linear-gradient(-45deg,#66fa73 25%,transparent 25%,transparent 50%,#66fa73 50%,#66fa73 75%,transparent 75%,transparent);'
+                        } else {
+                            document.getElementById('gangpung').style = 'border: #0dde1f solid 1px; background-color:#0dde1f; display:block;'
                         }
-                    }else if(warnVar[i]=='호우'){
-                        if(warnStr[i]==0){
-                            document.getElementById('hou').style='border: #070bf7 solid 1px; background-color:#070bf7; display:block; background-image: linear-gradient(-45deg,#696bff 25%,transparent 25%,transparent 50%,#696bff 50%,#696bff 75%,transparent 75%,transparent); color:white;'
-                        }else{
-                            document.getElementById('hou').style='border: #070bf7 solid 1px; background-color:#070bf7; display:block; color:white;'
+                    } else if (warnVar[i] == '호우') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('hou').style = 'border: #070bf7 solid 1px; background-color:#070bf7; display:block; background-image: linear-gradient(-45deg,#696bff 25%,transparent 25%,transparent 50%,#696bff 50%,#696bff 75%,transparent 75%,transparent); color:white;'
+                        } else {
+                            document.getElementById('hou').style = 'border: #070bf7 solid 1px; background-color:#070bf7; display:block; color:white;'
                         }
-                    }else if(warnVar[i]=='한파'){
-                        if(warnStr[i]==0){
-                            document.getElementById('hanpa').style='border: #079ff7 solid 1px; background-color:#079ff7; display:block; background-image: linear-gradient(-45deg,#62c4fc 25%,transparent 25%,transparent 50%,#62c4fc 50%,#62c4fc 75%,transparent 75%,transparent);'
-                        }else{
-                            document.getElementById('hanpa').style='border: #079ff7 solid 1px; background-color:#079ff7; display:block;'
+                    } else if (warnVar[i] == '한파') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('hanpa').style = 'border: #079ff7 solid 1px; background-color:#079ff7; display:block; background-image: linear-gradient(-45deg,#62c4fc 25%,transparent 25%,transparent 50%,#62c4fc 50%,#62c4fc 75%,transparent 75%,transparent);'
+                        } else {
+                            document.getElementById('hanpa').style = 'border: #079ff7 solid 1px; background-color:#079ff7; display:block;'
                         }
-                    }else if(warnVar[i]=='건조'){
-                        if(warnStr[i]==0){
-                            document.getElementById('geonjo').style='border:#f09102 solid 1px; background-color:#f09102; display:block;background-image: linear-gradient(-45deg,#fab957 25%,transparent 25%,transparent 50%,#fab957 50%,#fab957 75%,transparent 75%,transparent);'
-                        }else{
-                            document.getElementById('geonjo').style='border:#f09102 solid 1px; background-color:#f09102; display:block;'
+                    } else if (warnVar[i] == '건조') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('geonjo').style = 'border:#f09102 solid 1px; background-color:#f09102; display:block;background-image: linear-gradient(-45deg,#fab957 25%,transparent 25%,transparent 50%,#fab957 50%,#fab957 75%,transparent 75%,transparent);'
+                        } else {
+                            document.getElementById('geonjo').style = 'border:#f09102 solid 1px; background-color:#f09102; display:block;'
                         }
-                    }else if(warnVar[i]=='폭풍해일'){
-                        if(warnStr[i]==0){
-                            document.getElementById('pokpung').style='border: #a39d93 solid 1px; background-color:#a39d93; display:block;background-image: linear-gradient(-45deg,#b8b3ab 25%,transparent 25%,transparent 50%,#b8b3ab 50%,#b8b3ab 75%,transparent 75%,transparent); color:white;'
-                        }else{
-                            document.getElementById('pokpung').style='border: #a39d93 solid 1px; background-color:#a39d93; display:block; color:white;'
+                    } else if (warnVar[i] == '폭풍해일') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('pokpung').style = 'border: #a39d93 solid 1px; background-color:#a39d93; display:block;background-image: linear-gradient(-45deg,#b8b3ab 25%,transparent 25%,transparent 50%,#b8b3ab 50%,#b8b3ab 75%,transparent 75%,transparent); color:white;'
+                        } else {
+                            document.getElementById('pokpung').style = 'border: #a39d93 solid 1px; background-color:#a39d93; display:block; color:white;'
                         }
-                    }else if(warnVar[i]=='풍랑'){
-                        if(warnStr[i]==0){
-                            document.getElementById('pungrang').style='border: #12dfe3 solid 1px; background-color:#12dfe3; display:block;background-image: linear-gradient(-45deg,#96f8fa 25%,transparent 25%,transparent 50%,#96f8fa 50%,#96f8fa 75%,transparent 75%,transparent)'
-                        }else{
-                            document.getElementById('pungrang').style='border: #12dfe3 solid 1px; background-color:#12dfe3; display:block;'
+                    } else if (warnVar[i] == '풍랑') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('pungrang').style = 'border: #12dfe3 solid 1px; background-color:#12dfe3; display:block;background-image: linear-gradient(-45deg,#96f8fa 25%,transparent 25%,transparent 50%,#96f8fa 50%,#96f8fa 75%,transparent 75%,transparent)'
+                        } else {
+                            document.getElementById('pungrang').style = 'border: #12dfe3 solid 1px; background-color:#12dfe3; display:block;'
                         }
-                    }else if(warnVar[i]=='태풍'){
-                        if(warnStr[i]==0){
-                            document.getElementById('taepong').style='border: #ff0000 solid 1px; background-color:#ff0000; display:block;background-image: linear-gradient(-45deg,#ff6161    25%,transparent 25%,transparent 50%,#ff6161    50%,#ff6161    75%,transparent 75%,transparent); color:white;'
-                        }else{
-                            document.getElementById('taepong').style='border: #ff0000 solid 1px; background-color:#ff0000; display:block; color:white;'
+                    } else if (warnVar[i] == '태풍') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('taepong').style = 'border: #ff0000 solid 1px; background-color:#ff0000; display:block;background-image: linear-gradient(-45deg,#ff6161    25%,transparent 25%,transparent 50%,#ff6161    50%,#ff6161    75%,transparent 75%,transparent); color:white;'
+                        } else {
+                            document.getElementById('taepong').style = 'border: #ff0000 solid 1px; background-color:#ff0000; display:block; color:white;'
                         }
-                    }else if(warnVar[i]=='대설'){
-                        if(warnStr[i]==0){
-                            document.getElementById('daeseol').style='border: #fc17e9 solid 1px; background-color:#fc17e9; display:block;background-image: linear-gradient(-45deg,#fc79f2 25%,transparent 25%,transparent 50%,#fc79f2 50%,#fc79f2 75%,transparent 75%,transparent)'
-                        }else{
-                            document.getElementById('daeseol').style='border: #fc17e9 solid 1px; background-color:#fc17e9; display:block;'
+                    } else if (warnVar[i] == '대설') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('daeseol').style = 'border: #fc17e9 solid 1px; background-color:#fc17e9; display:block;background-image: linear-gradient(-45deg,#fc79f2 25%,transparent 25%,transparent 50%,#fc79f2 50%,#fc79f2 75%,transparent 75%,transparent)'
+                        } else {
+                            document.getElementById('daeseol').style = 'border: #fc17e9 solid 1px; background-color:#fc17e9; display:block;'
                         }
-                    }else if(warnVar[i]=='황사'){
-                        if(warnStr[i]==0){
-                            document.getElementById('hwangsa').style='border: #c9c959 solid 1px; background-color:#c9c959; display:block;background-image: linear-gradient(-45deg,#eded00 25%,transparent 25%,transparent 50%,#eded00 50%,#eded00 75%,transparent 75%,transparent)'
-                        }else{
-                            document.getElementById('hwangsa').style='border: #c9c959 solid 1px; background-color:#c9c959; display:block;'
+                    } else if (warnVar[i] == '황사') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('hwangsa').style = 'border: #c9c959 solid 1px; background-color:#c9c959; display:block;background-image: linear-gradient(-45deg,#eded00 25%,transparent 25%,transparent 50%,#eded00 50%,#eded00 75%,transparent 75%,transparent)'
+                        } else {
+                            document.getElementById('hwangsa').style = 'border: #c9c959 solid 1px; background-color:#c9c959; display:block;'
                         }
-                    }else if(warnVar[i]=='폭염'){
-                        if(warnStr[i]==0){
-                            document.getElementById('pokyeom').style='border: #c500e3 solid 1px; background-color:#c500e3; display:block;background-image: linear-gradient(-45deg,#e56ff7 25%,transparent 25%,transparent 50%,#e56ff7 50%,#e56ff7 75%,transparent 75%,transparent);color:white'
-                        }else{
-                            document.getElementById('pokyeom').style='border: #c500e3 solid 1px; background-color:#c500e3; display:block;color:white;'
+                    } else if (warnVar[i] == '폭염') {
+                        if (warnStr[i] == 0) {
+                            document.getElementById('pokyeom').style = 'border: #c500e3 solid 1px; background-color:#c500e3; display:block;background-image: linear-gradient(-45deg,#e56ff7 25%,transparent 25%,transparent 50%,#e56ff7 50%,#e56ff7 75%,transparent 75%,transparent);color:white'
+                        } else {
+                            document.getElementById('pokyeom').style = 'border: #c500e3 solid 1px; background-color:#c500e3; display:block;color:white;'
                         }
-                    }else if(warning_loaded.response.header.resultCode == '03'){
+                    } else if (warning_loaded.response.header.resultCode == '03') {
                         console.log('발표된 기상특보 없음')
                     }
                 }
@@ -3018,7 +3053,7 @@ date.setHours(date.getHours() + 1)
 document.getElementById('ultra_time6').textContent = `${String(date).slice(16, 18)}시`;
 
 let sh_day = new Date();
-document.getElementById('sh_time1_3').textContent = `${String(sh_day).slice(8,10)}일 03시`
+document.getElementById('sh_time1_3').textContent = `${String(sh_day).slice(8, 10)}일 03시`
 document.getElementById('sh_time1_4').textContent = `04시`
 document.getElementById('sh_time1_5').textContent = `05시`
 document.getElementById('sh_time1_6').textContent = `06시`
@@ -3039,8 +3074,8 @@ document.getElementById('sh_time1_20').textContent = `20시`
 document.getElementById('sh_time1_21').textContent = `21시`
 document.getElementById('sh_time1_22').textContent = `23시`
 document.getElementById('sh_time1_23').textContent = `23시`
-sh_day.setDate(sh_day.getDate()+1)
-document.getElementById('sh_time2_0').textContent = `${String(sh_day).slice(8,10)}일 00시`
+sh_day.setDate(sh_day.getDate() + 1)
+document.getElementById('sh_time2_0').textContent = `${String(sh_day).slice(8, 10)}일 00시`
 document.getElementById('sh_time2_1').textContent = `01시`
 document.getElementById('sh_time2_2').textContent = `02시`
 document.getElementById('sh_time2_3').textContent = `03시`
@@ -3064,8 +3099,8 @@ document.getElementById('sh_time2_20').textContent = `20시`
 document.getElementById('sh_time2_21').textContent = `21시`
 document.getElementById('sh_time2_22').textContent = `23시`
 document.getElementById('sh_time2_23').textContent = `23시`
-sh_day.setDate(sh_day.getDate()+1)
-document.getElementById('sh_time3_0').textContent = `${String(sh_day).slice(8,10)}일 00시`
+sh_day.setDate(sh_day.getDate() + 1)
+document.getElementById('sh_time3_0').textContent = `${String(sh_day).slice(8, 10)}일 00시`
 document.getElementById('sh_time3_1').textContent = `01시`
 document.getElementById('sh_time3_2').textContent = `02시`
 document.getElementById('sh_time3_3').textContent = `03시`
@@ -3089,24 +3124,24 @@ document.getElementById('sh_time3_20').textContent = `20시`
 document.getElementById('sh_time3_21').textContent = `21시`
 document.getElementById('sh_time3_22').textContent = `23시`
 document.getElementById('sh_time3_23').textContent = `23시`
-sh_day.setDate(sh_day.getDate()+1)
-document.getElementById('sh_time4_0').textContent = `${String(sh_day).slice(8,10)}일 00시`
+sh_day.setDate(sh_day.getDate() + 1)
+document.getElementById('sh_time4_0').textContent = `${String(sh_day).slice(8, 10)}일 00시`
 
 
 let day = new Date();
-day.setDate(day.getDate()+2);
-document.getElementById('mid_day1').textContent = `${String(day).slice(8,10)}일 오전/오후`
-day.setDate(day.getDate()+1);
-document.getElementById('mid_day2').textContent = `${String(day).slice(8,10)}일 오전/오후`
-day.setDate(day.getDate()+1);
-document.getElementById('mid_day3').textContent = `${String(day).slice(8,10)}일 오전/오후`
-day.setDate(day.getDate()+1);
-document.getElementById('mid_day4').textContent = `${String(day).slice(8,10)}일 오전/오후`
-day.setDate(day.getDate()+1);
-document.getElementById('mid_day5').textContent = `${String(day).slice(8,10)}일 오전/오후`
-day.setDate(day.getDate()+1);
-document.getElementById('mid_day6').textContent = `${String(day).slice(8,10)}일`
-day.setDate(day.getDate()+1);
-document.getElementById('mid_day7').textContent = `${String(day).slice(8,10)}일`
-day.setDate(day.getDate()+1);
-document.getElementById('mid_day8').textContent = `${String(day).slice(8,10)}일`
+day.setDate(day.getDate() + 2);
+document.getElementById('mid_day1').textContent = `${String(day).slice(8, 10)}일 오전/오후`
+day.setDate(day.getDate() + 1);
+document.getElementById('mid_day2').textContent = `${String(day).slice(8, 10)}일 오전/오후`
+day.setDate(day.getDate() + 1);
+document.getElementById('mid_day3').textContent = `${String(day).slice(8, 10)}일 오전/오후`
+day.setDate(day.getDate() + 1);
+document.getElementById('mid_day4').textContent = `${String(day).slice(8, 10)}일 오전/오후`
+day.setDate(day.getDate() + 1);
+document.getElementById('mid_day5').textContent = `${String(day).slice(8, 10)}일 오전/오후`
+day.setDate(day.getDate() + 1);
+document.getElementById('mid_day6').textContent = `${String(day).slice(8, 10)}일`
+day.setDate(day.getDate() + 1);
+document.getElementById('mid_day7').textContent = `${String(day).slice(8, 10)}일`
+day.setDate(day.getDate() + 1);
+document.getElementById('mid_day8').textContent = `${String(day).slice(8, 10)}일`
