@@ -433,13 +433,13 @@ input {
     padding: 0px 5px;
 }
 
-#weather_sokbo{
+/* #weather_sokbo{
     white-space: pre-wrap;
     word-break:break-all;
     width:746px;
-}
+} */
 
-#weather_info, #mid_info{
+#weather_info, #mid_info, #weather_sokbo{
     white-space: pre-wrap;
     word-break:break-all;
 }

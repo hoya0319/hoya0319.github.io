@@ -54,7 +54,7 @@ var earthquake_json = {
                         "cnt": 1,
                         "fcTp": 14,
                         "img": "http://www.weather.go.kr/w/repositary/image/eqk/img/eqk_img_14_20221029082749.png",
-                        "inT": "최대진도 Ⅷ(충북),Ⅳ(강원,경북),Ⅲ(경기,대전,서울,세종,충남)",
+                        "inT": "최대진도 Ⅴ(충북),Ⅳ(강원,경북),Ⅲ(경기,대전,서울,세종,충남)",
                         "lat": 36.88,
                         "loc": "충북 괴산군 북동쪽 12km 지역",
                         "lon": 127.89,
@@ -200,6 +200,7 @@ xhr.onreadystatechange = function () {
                         document.getElementById('quake_img').src = quakeinfo.img
                         document.getElementById('mag-m').textContent = 'M'
                         document.getElementById('mag-l').textContent = 'w'
+                        document.getElementById('info_kind').textContent = '기상청 국외지진정보'
                     } catch (error) {
                         document.getElementById('quake_img').src = quakeinfo.img
 
@@ -224,21 +225,30 @@ xhr.onreadystatechange = function () {
                     document.getElementById('intensity').textContent = int_info
                     var tongbo = '/i_'
                     int_info = quakeinfo.inT
-
+                    try{
+                        document.getElementById('info_kind').textContent = '기상청 지진정보'
+                    }catch(error){
+                    }
                 } else if (quakeinfo.fcTp == 14) {
                     document.getElementById('quake_title').textContent = '지진속보 발표. 흔들림에 대비.';
                     document.getElementById('quake_title').style = 'background-color: yellow; color:black; text-align:center;';
                     int_info = (quakeinfo.inT).slice(5,)
                     document.getElementById('intensity').textContent = int_info
                     int_info = quakeinfo.inT
-
+                    try{
+                        document.getElementById('info_kind').textContent = '기상청 지진속보'
+                    }catch(error){
+                    }
                 } else if (quakeinfo.fcTp == 11 || quakeinfo.fcTp == 13 || quakeinfo.fcTp == 12) {
                     document.getElementById('quake_title').textContent = '지진조기경보 발표. 흔들림에 경계.';
                     document.getElementById('quake_title').style = 'background-color: red; color:yellow; text-align:center;';
                     int_info = (quakeinfo.inT).slice(5,)
                     document.getElementById('intensity').textContent = int_info
                     int_info = quakeinfo.inT
-
+                    try{
+                        document.getElementById('info_kind').textContent = '기상청 지진조기경보'
+                    }catch(error){
+                    }
                 }
                 if (quakeinfo.fcTp == 11 || quakeinfo.fcTp == 13 || quakeinfo.fcTp == 12 || quakeinfo.fcTp == 14) {
                     document.getElementById('kma').textContent = '기상청 실시간 지진감시'
@@ -274,7 +284,11 @@ xhr.onreadystatechange = function () {
                         } else {
                             document.getElementById('int').style = 'background-color:#fff'
                         }
-                        var img = 'https://www.weather.go.kr/w/repositary/DATA/EQK/INTENSITY/' + year + month + '/' + date + tongbo + quakeinfo.fcTp + '_' + yyyymmdd + '.png'
+                        if (intensity_color == 'Ⅰ') {
+                            var img= quakeinfo.img
+                        }else{
+                            var img = 'https://www.weather.go.kr/w/repositary/DATA/EQK/INTENSITY/' + year + month + '/' + date + tongbo + quakeinfo.fcTp + '_' + yyyymmdd + '.png'
+                        }
                         document.getElementById('quake_img').src = img
                         document.getElementById('mag-m').textContent = 'M'
                         document.getElementById('mag-l').textContent = 'L'

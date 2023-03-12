@@ -1871,6 +1871,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     fore_queryParams += '&' + encodeURIComponent('nx') + '=' + encodeURIComponent(x); /**/
     fore_queryParams += '&' + encodeURIComponent('ny') + '=' + encodeURIComponent(y); /**/
     fore_xhr.open('GET', fore_url + fore_queryParams);
+    // console.log(fore_url+fore_queryParams)
     fore_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
             // console.log(fore_url + fore_queryParams);
@@ -1884,6 +1885,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 for (i = 0; i < fore_main.length; i++) {
                     if (fore_main[i].category == "TMX") {
                         max_temp = fore_main[i].fcstValue;
+                        break;
                     }
                     if (fore_main[i].category == "TMN") {
                         min_temp = fore_main[i].fcstValue;
@@ -2770,15 +2772,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 document.getElementById('weather_sokbo_box').style = 'display:block'
                 document.getElementById('sokbo_btn').style = 'display:block'
                 document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`
-                bf = sokbo_main.ann;
-                af = bf.split('\n')
-                console.log(af)
-                var textaf
-                for (i = 0; i < af.length; i++) {
-                    textaf += af[i] + '\n'
-                }
-
-                document.getElementById('weather_sokbo').textContent = textaf
+                document.getElementById('weather_sokbo').textContent = sokbo_main.ann
             }
         }
     };
@@ -2904,7 +2898,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     warning_xhr.open('GET', warning_url + warning_queryParams);
     warning_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            console.log('이거임 : ' + warning_url + warning_queryParams);
+            // console.log('이거임 : ' + warning_url + warning_queryParams);
             try {
                 var warning_loaded = JSON.parse(this.responseText);
             } catch (error) {
@@ -2930,24 +2924,34 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                         warnStr.push(warning[i].warnStress);
                         if (warning[i].warnVar == 1) {
                             warnVar.push('강풍');
+                            break;
                         } else if (warning[i].warnVar == 2) {
                             warnVar.push('호우');
+                            break;
                         } else if (warning[i].warnVar == 3) {
                             warnVar.push('한파');
+                            break;
                         } else if (warning[i].warnVar == 4) {
                             warnVar.push('건조');
+                            break;
                         } else if (warning[i].warnVar == 5) {
                             warnVar.push('폭풍해일');
+                            break;
                         } else if (warning[i].warnVar == 6) {
                             warnVar.push('풍랑');
+                            break;
                         } else if (warning[i].warnVar == 7) {
                             warnVar.push('태풍');
+                            break;
                         } else if (warning[i].warnVar == 8) {
                             warnVar.push('대설');
+                            break;
                         } else if (warning[i].warnVar == 9) {
                             warnVar.push('황사');
+                            break;
                         } else if (warning[i].warnVar == 12) {
                             warnVar.push('폭염');
+                            break;
                         }
                     }
                 }
