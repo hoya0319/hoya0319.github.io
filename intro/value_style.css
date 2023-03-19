@@ -1,0 +1,42 @@
+.main{    
+    padding-top:61px;
+    height: 90vh;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+/* .value{
+    display: flex;
+} */
+.value_box{
+    margin: auto;
+    border-radius: 10px;
+    width:90%;
+    padding: 50px 10px;
+}
+.value a:hover{
+    text-decoration: none;
+}
+.value_box_1{
+    background-color: white;
+    color:rgb(12,0,12);
+    width:98%;
+    margin: auto;
+    border-radius: 10px;
+}
+.more_info{
+    text-align:center;
+    padding:10px;
+    margin:auto;
+    width:200px;
+    border:white 3px solid;
+    border-radius: 40px;
+    background-color:#1581fd;
+    color:white;
+    display: flex;
+    justify-content: center;
+}
+.more_info:hover{
+    background-color:#2b8eff;
+}
