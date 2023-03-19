@@ -90,7 +90,7 @@ var earthquake_json = {
                         "lat": 40.84, 
                         "loc": "터키 아다파자리 동쪽 48km 지역", 
                         "lon": 30.97, 
-                        "mt": 6.1, 
+                        "mt": 8.2, 
                         "rem": "국내영향없음. 위 자료는 미지질조사소(USGS) 분석결과임.", 
                         "stnId": 108, 
                         "tmEqk": 20221123100814, 
@@ -152,8 +152,8 @@ xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
         try {
-            var myObj = JSON.parse(this.responseText);
-            // var myObj = earthquake_json;
+            // var myObj = JSON.parse(this.responseText);
+            var myObj = earthquake_json;
         } catch (error) {
             document.getElementById('quake_title').textContent = "예상치 못한 오류가 발생했습니다."
         }
@@ -164,7 +164,7 @@ xhr.onreadystatechange = function () {
             } catch (error) {
 
             }
-            var quakeinfo = myObj.response.body.items.item[0];
+            var quakeinfo = myObj.response.body.items.item[4];
             //발생 시각 구하기
             var yyyymmdd = String(quakeinfo.tmEqk);
             var year = yyyymmdd.slice(0, 4);

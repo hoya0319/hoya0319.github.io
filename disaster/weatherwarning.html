@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNGCQ3FBZ1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QNGCQ3FBZ1');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword"
+        content="호야, 지진, 재난, 재난방송, 지진방송, 일본지진, 호야 재난방송, 호야 지진방송, 일본, 태풍, 정전, 수도, 응급, 재해 지식, 해일, 쓰나미, 화산, 분화, 화산폭발, 열사병, 일사병, 열중증, 폭설, 내수범람, 하천홍수, 홍수, 폭염, 수해, 침수, 지진동, 진도, 규모, 기압, 풍속, 태풍, 기상, 기상특보, 기상경보, 경보, 주의보, 난카이트로프, 난카이 트로프, 거대지진, 거대 지진, 특설 페이지, M 스케일, mscale, 토사재해, 산사태, 기상, 날씨, 기상특보, 피난, 코로나, 감염, 대피, 피난소, 태풍정보, 정보, 레이더, 비, 산사태, 하천 수위, 수위">
+    <meta name="description"
+        content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
+    <meta name="author" content="호야">
+    <meta property="robots" content="index, follow">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>호야-재난방송 - 기상특보</title>
+    <link rel="stylesheet" href="../HDS.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
+    <script src="../main.js" defer></script>
+    <script src="../notice.js" defer></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="icon" href="../호야.png">
+</head>
+
+<body>
+    <script>
+        AOS.init();
+    </script>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="../index.html">
+                <img src="../logo.png" alt="로고">
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <a href="../index.html">
+                <li>홈</li>
+            </a>
+            <a href="../intro.html">
+                <li>채널소개</li>
+            </a>
+            <a href="../broadcast.html">
+                <li>방송안내</li>
+            </a>
+            <a href="../resource.html">
+                <li>자료실</li>
+            </a>
+            <a href="../prepare.html">
+                <li>방재</li>
+            </a>
+            <a href="../special.html">
+                <li>스페셜</li>
+            </a>
+            <a href="../emergency.html">
+                <li>특설페이지</li>
+            </a>
+        </ul>
+        <a href="javascript:return false;" class="navbarBtn">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+    <div class="disaster_content">
+        <div class="content_left">
+            <div class="disaster_title">
+                <h1 style="text-align:left">기상특보</h1>
+                <p id="info">최신 기상특보 발효현황을 확인할 수 있습니다.</p>
+            </div>
+            <div class="main_box">
+                <div class="warning">
+                    <div class="warning_img">
+                        <img class="weather_warning_img" id="now_issuing" src="./empty.png" alt="현재 발효중인 기상특보입니다.">
+                    </div>
+                    <div class="issuing_area_box">
+                        <h4 id='issuing_warning_title'>기상특보 발효현황</h4>
+                        <p id="issuing_date"></p>
+                        <div class="warn_content">
+                            <p id="issuing_area"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="warning">
+                    <div class="warning_img">
+                        <img class="weather_warning_img" id="bal_img" src="./empty.png" alt="현재 발효중인 기상특보입니다.">
+                    </div>
+                    <div class="issuing_area_box">
+                        <h4 id='bal_title' ></h4>
+                        <p id="bal_date"></p>
+                        <div class="warn_content">
+                            <p id="bal_area"></p>
+                            <p id="bal_time"></p>
+                            <p id="bal_can"></p>
+                            <p id="bal_other"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="warning">
+                    <div class="warning_img">
+                        <img class="weather_warning_img" id="yebi_img" src="./empty.png" alt="현재 발효중인 기상특보입니다.">
+                    </div>
+                    <div class="issuing_area_box">
+                        <h4 id='yebi_title'>예비특보 발효현황</h4>
+                        <p id="yebi_date"></p>
+                        <div class="warn_content">
+                            <p id="yebi_area"></p>
+                            <p id="yebi_rem"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="menu">
+                <a href="./quakeinfo.html">지진정보</a>
+                <a href="./typhooninfo.html">태풍정보</a>
+                <a href="./weatherforecast.html">날씨예보</a>
+                <a href="./weatherwarning.html">기상특보</a>
+                <a href="./weathermap.html">일기도</a>
+                <a href="./satellite.html">위성영상</a>
+                <a href="./message.html">재난문자</a>
+            </div>
+        </div>
+    </div>
+    <div class="homeButton_area">
+        <a href="../index.html" class="homeButton">홈</a>
+    </div>
+    <div class="footer">
+        <div class="footer_up">
+            <div class="footer_box">
+                <div class="footer_info">
+                    <p><span class="name">호야-재난방송</span></p>
+                </div>
+                <div class="footer_sitemap">
+                    <a href="../index.html">
+                        <p>홈</p>
+                    </a>
+                    <a href="../intro.html">
+                        <p>채널소개</p>
+                    </a>
+                    <a href="../broadcast.html">
+                        <p>방송안내</p>
+                    </a>
+                    <a href="../resource.html">
+                        <p>자료실</p>
+                    </a>
+                    <a href="../prepare.html">
+                        <p>방재</p>
+                    </a>
+                    <a href="../special.html">
+                        <p>스페셜</p>
+                    </a>
+                    <a href="../emergency.html">
+                        <p>특설페이지</p>
+                    </a>
+                    <a href="../sitemap.html">
+                        <p>사이트맵</p>
+                    </a>
+                </div>
+                <br>
+                <a style="padding:7px" class="out_link" traget="_black" href="../copyright.html">저작권 명시 및 저작권보호정책</a>
+            </div>
+            <div class="footer_link">
+                <a  target="_blank"  href="https://www.youtube.com/@hoyadb"><i class="fa-brands fa-youtube"></i></a>
+                <a  target="_blank" href="https://discord.gg/wAUxJsU9aK"><i class="fa-brands fa-discord"></i></a>
+                <a  target="_blank" href="https://twitter.com/hoya_0319"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
+    </div>
+    <!-- <p id="ttsr"></p> -->
+</body>
+<script src="../source/javascript/gongong/data/api/jsfiles/weatherwarning.js"></script>
+</html>

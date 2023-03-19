@@ -2,7 +2,7 @@ var xhr = new XMLHttpRequest();
 var url = 'http://apis.data.go.kr/1741000/DisasterMsg3/getDisasterMsg1List'; /*URL*/
 var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
-queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('40'); /**/
+queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('20'); /**/
 queryParams += '&' + encodeURIComponent('type') + '=' + encodeURIComponent('json'); /**/
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
@@ -17,14 +17,17 @@ xhr.onreadystatechange = function () {
         var name = []
         var message = []
         var msg = myObj.DisasterMsg[1].row;
-        for(i=0; i<40; i++){
+        for(i=0; i<20; i++){
             date.push(msg[i].create_date)
             name.push(msg[i].location_name)
             message.push(msg[i].msg)
         }
         for(i=0; i<20; i++){
-            name[i] = name[i].toString()
+            if(name[i].length == 144){
+                name[i] = '대한민국 전역'
+            }
         }
+        console.log([name])
 
         document.getElementById('msg1').textContent = message[0]
         document.getElementById('name1').textContent = `송출지역 : ${name[0]}`

@@ -495,7 +495,36 @@ input {
 .loc div p{
     padding:0px;
 }
-
+.warning{
+    display: flex;
+    justify-content: space-between;
+}
+.issuing_area_box{
+    width:60%;
+}
+#issuing_date, #bal_date, #yebi_date{
+    font-size: 15px;
+    padding:0px;
+    border-bottom: 1px solid black;
+}
+#issuing_warning_title, #bal_title, #yebi_title{
+    text-align: left;
+    padding: 0px;
+}
+#issuing_area, #bal_area, #bal_time, #bal_can, #bal_other, #yebi_area, #yebi_rem{
+    white-space: pre-wrap;
+    padding:5px 0px 0px 0px;
+}
+.warning_img{
+    width:40%;
+}
+.warn_content{
+    max-height: 250px;
+    overflow-y: auto;
+}
+.warning{
+    margin:5px 0px 10px 0px;
+}
 @media screen and (max-width : 1020px) {
     .disaster_content {
         width: 750px;
@@ -514,6 +543,22 @@ input {
 
     .ultra_fore_content {
         overflow-x: auto;
+    }
+    .warning_img{
+        width:40%;
+    }
+    .weather_warning_img{
+        width:100%;
+    }
+    .issuing_area_box{
+        padding: 0px 0px 0px 5px;
+    }
+    .warning{
+        margin:0px 0px 20px 0px;
+    }
+    .warn_content{
+        max-height: 170px;
+        overflow-y: auto;
     }
 }
 
@@ -606,5 +651,18 @@ input {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
+    }
+    .warning{
+        flex-direction: column;
+    }
+    .warning_img{
+        width:100%;
+    }
+    .issuing_area_box{
+        width:100%;
+    }
+    .warn_content{
+        max-height: 250px;
+        overflow-y: auto;
     }
 }

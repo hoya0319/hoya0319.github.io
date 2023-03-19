@@ -1702,7 +1702,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             } catch (error) {
                 document.getElementById('location').textContent = '에러 발생.'
             }
-            if (loaded.response.header.resultCode = "00") {
+            if (loaded.response.header.resultCode == "00") {
                 main = loaded.response.body.items.item;
 
                 //현재 기온
@@ -1751,7 +1751,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             } catch (error) {
                 document.getElementById('location').textContent = '에러 발생.'
             }
-            if (ultra_fore_loaded.response.header.resultCode = "00") {
+            if (ultra_fore_loaded.response.header.resultCode == "00") {
                 var ultra_fore_main = ultra_fore_loaded.response.body.items.item;
                 var ultra_temp = []
                 var ultra_wind = []
@@ -1880,7 +1880,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             } catch (error) {
                 document.getElementById('location').textContent = '에러 발생.'
             }
-            if (fore_loaded.response.header.resultCode = "00") {
+            if (fore_loaded.response.header.resultCode == "00") {
                 var fore_main = fore_loaded.response.body.items.item;
                 for (i = 0; i < fore_main.length; i++) {
                     if (fore_main[i].category == "TMX") {
@@ -2722,6 +2722,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(twoago_year + twoago_month + twoago_date); /**/
     queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
     info_xhr.open('GET', info_url + queryParams);
+    console.log(info_url + queryParams)
     info_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
             try {
@@ -2729,7 +2730,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             } catch (error) {
                 document.getElementById('weather_info').textContent = '에러 발생.'
             }
-            if (info_loaded.response.header.resultCode = "00") {
+            if (info_loaded.response.header.resultCode == "00") {
                 var info_main = info_loaded.response.body.items.item;
                 var yyyymmdd = String(info_main[0].tmFc);
                 var year = yyyymmdd.slice(0, 4);
@@ -2760,7 +2761,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             } catch (error) {
                 document.getElementById('weather_sokbo').textContent = '에러 발생.'
             }
-            if (sokbo_loaded.response.header.resultCode = '00') {
+            if (sokbo_loaded.response.header.resultCode == '00') {
                 var sokbo_main = sokbo_loaded.response.body.items.item[0]
                 var yyyymmdd = String(sokbo_main.tmFc);
                 var year = yyyymmdd.slice(0, 4);
@@ -2787,13 +2788,13 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     mid_xhr.open('GET', mid_url + mid_queryParams);
     mid_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            // console.log(mid_url+mid_queryParams);
+            console.log(mid_url+mid_queryParams);
             try {
                 var mid_loaded = JSON.parse(this.responseText);
             } catch (error) {
                 // document.getElementById('weather_info').textContent = '에러 발생.'
             }
-            if (mid_loaded.response.header.resultCode = "00") {
+            if (mid_loaded.response.header.resultCode == "00") {
                 var mid_main = mid_loaded.response.body.items.item[0];
                 document.getElementById('mid_rain1').textContent = `${mid_main.rnSt3Am}%→${mid_main.rnSt3Pm}%`
                 document.getElementById('mid_rain2').textContent = `${mid_main.rnSt4Am}%→${mid_main.rnSt4Pm}%`
@@ -2833,7 +2834,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             } catch (error) {
                 // document.getElementById('weather_info').textContent = '에러 발생.'
             }
-            if (mid_temp_loaded.response.header.resultCode = "00") {
+            if (mid_temp_loaded.response.header.resultCode == "00") {
                 var mid_temp_main = mid_temp_loaded.response.body.items.item[0];
                 document.getElementById('mid_max1').textContent = `${mid_temp_main.taMax3}℃`
                 document.getElementById('mid_max2').textContent = `${mid_temp_main.taMax4}℃`
@@ -2874,7 +2875,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             } catch (error) {
                 // document.getElementById('weather_info').textContent = '에러 발생.'
             }
-            if (mid_msg_loaded.response.header.resultCode = "00") {
+            if (mid_msg_loaded.response.header.resultCode == "00") {
                 document.getElementById('mid_info').textContent = mid_msg_loaded.response.body.items.item[0].wfSv
 
                 var yyyymmdd = getToday()
@@ -2891,14 +2892,45 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
     var warning_queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
     warning_queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
     warning_queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
-    warning_queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
-    warning_queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(getToday() - 1); /**/
+    warning_queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/var now=new Date();
+    var twoago = new Date(now.setDate(now.getDate()-6));
+    // console.log(twoago)
+    twoago = twoago.toString()
+    twoago_month = twoago.slice(4, 7)
+    if(twoago_month == 'Jan'){
+        twoago_month = '01'
+    }else if(twoago_month == 'Feb'){
+        twoago_month = '02'
+    }else if(twoago_month == 'Mar'){
+        twoago_month = '03'
+    }else if(twoago_month == 'Apr'){
+        twoago_month = '04'
+    }else if(twoago_month == 'May'){
+        twoago_month = '05'
+    }else if(twoago_month == 'Jun'){
+        twoago_month = '06'
+    }else if(twoago_month == 'Jul'){
+        twoago_month = '07'
+    }else if(twoago_month == 'Aug'){
+        twoago_month = '08'
+    }else if(twoago_month == 'Sep'){
+        twoago_month = '09'
+    }else if(twoago_month == 'Oct'){
+        twoago_month = '10'
+    }else if(twoago_month == 'Nov'){
+        twoago_month = '11'
+    }else if(twoago_month == 'Dec'){
+        twoago_month = '12'
+    }
+    twoago_date = twoago.slice(8,10)
+    twoago_year = twoago.slice(11,15)
+    warning_queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(twoago_year + twoago_month + twoago_date); /**/
     warning_queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
     warning_queryParams += '&' + encodeURIComponent('areaCode') + '=' + encodeURIComponent(warn_area); /**/
     warning_xhr.open('GET', warning_url + warning_queryParams);
     warning_xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            // console.log('이거임 : ' + warning_url + warning_queryParams);
+            console.log('이거임 : ' + warning_url + warning_queryParams);
             try {
                 var warning_loaded = JSON.parse(this.responseText);
             } catch (error) {
@@ -2913,54 +2945,184 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             document.getElementById('daeseol').style = 'display : none;'
             document.getElementById('hwangsa').style = 'display : none;'
             document.getElementById('pokyeom').style = 'display : none;'
-            if (warning_loaded.response.header.resultCode = "00") {
+            if (warning_loaded.response.header.resultCode == "00") {
                 warning = warning_loaded.response.body.items.item;
+                warning.reverse()
                 warnName = [];
                 warnVar = []
                 warnStr = [];
+                console.log([warning])
+                var indexToRemove = []
+
                 for (i = 0; i < warning.length; i++) {
-                    if (warning[i].endTime == 0 || warning[i].endTime > getToday() + hours) {
-                        warnName.push(warning[i].areaName);
-                        warnStr.push(warning[i].warnStress);
-                        if (warning[i].warnVar == 1) {
-                            warnVar.push('강풍');
-                            break;
-                        } else if (warning[i].warnVar == 2) {
-                            warnVar.push('호우');
-                            break;
-                        } else if (warning[i].warnVar == 3) {
-                            warnVar.push('한파');
-                            break;
-                        } else if (warning[i].warnVar == 4) {
-                            warnVar.push('건조');
-                            break;
-                        } else if (warning[i].warnVar == 5) {
-                            warnVar.push('폭풍해일');
-                            break;
-                        } else if (warning[i].warnVar == 6) {
-                            warnVar.push('풍랑');
-                            break;
-                        } else if (warning[i].warnVar == 7) {
-                            warnVar.push('태풍');
-                            break;
-                        } else if (warning[i].warnVar == 8) {
-                            warnVar.push('대설');
-                            break;
-                        } else if (warning[i].warnVar == 9) {
-                            warnVar.push('황사');
-                            break;
-                        } else if (warning[i].warnVar == 12) {
-                            warnVar.push('폭염');
-                            break;
+                    warnName.push(warning[i].areaName);
+                    warnStr.push(warning[i].warnStress);
+                    if (warning[i].warnVar == 1) {
+                        warnVar.push('강풍');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '강풍'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
+                        }
+                    } else if (warning[i].warnVar == 2) {
+                        warnVar.push('호우');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '호우'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
+                        }
+                    } else if (warning[i].warnVar == 3) {
+                        warnVar.push('한파');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '한파'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
+                        }
+                    } else if (warning[i].warnVar == 4) {
+                        warnVar.push('건조');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '건조'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
+                        }
+                    } else if (warning[i].warnVar == 5) {
+                        warnVar.push('폭풍해일');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '폭풍해일'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
+                        }
+                    } else if (warning[i].warnVar == 6) {
+                        warnVar.push('풍랑');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '풍랑'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
+                        }
+                    } else if (warning[i].warnVar == 7) {
+                        warnVar.push('태풍');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '태풍'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
+                        }
+                    } else if (warning[i].warnVar == 8) {
+                        warnVar.push('대설');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '대설'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
+                        }
+                    } else if (warning[i].warnVar == 9) {
+                        warnVar.push('황사');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '황사'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
+                        }
+                    } else if (warning[i].warnVar == 12) {
+                        warnVar.push('폭염');
+                        if(warning[i].command == "2"){
+                            warnVar = warnVar.filter((element, index) => {
+                                if (element == '폭염'){
+                                    indexToRemove.push(index);
+                                    return false
+                                }
+                                return true
+                            })
+                            console.log([indexToRemove])
+                            for(j=indexToRemove.length - 1; j>=0; j--){
+                                warnStr.splice(indexToRemove[j],1)
+                                warnName.splice(indexToRemove[j],1)
+                            }
                         }
                     }
                 }
-                console.log(getToday() + hours)
                 // warnName = ['가','가','가','가','가','가','가','가','가','가'];
                 // warnVar = ['강풍', '호우', '한파', '건조', '폭풍해일', '풍랑', '태풍', '대설', '황사', '폭염']
-                // warnStr = [1,1,1,1,1,1,1,1,1,1];
+                // warnStr = [0,0,0,0,0,0,0,0,0,0];
                 for (i = 0; i < warnName.length; i++) {
-                    console.log(warnVar[i])
                     if (warnVar[i] == '강풍') {
                         if (warnStr[i] == 0) {
                             document.getElementById('gangpung').style = 'border: #0dde1f solid 1px; background-color:#0dde1f; display:block; background-image: linear-gradient(-45deg,#66fa73 25%,transparent 25%,transparent 50%,#66fa73 50%,#66fa73 75%,transparent 75%,transparent);'
@@ -3025,6 +3187,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                         console.log('발표된 기상특보 없음')
                     }
                 }
+
                 console.log(warnName)
                 console.log(warnVar)
                 console.log(warnStr)
