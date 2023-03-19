@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ko">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -18,13 +18,15 @@
     <meta name="description" content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
     <meta name="author" content="호야">
     <meta property="robots" content="index, follow">
-    <title>호야-재난방송 - 긴급연락처</title>
+    <title>호야-재난방송 - 지진 옥외대피장소</title>
     <link rel="stylesheet" href="../HDS.css">
-<link rel="stylesheet" href="../prepare/prepare-content-style.css">
+    <link rel="stylesheet" href="../prepare/prepare-content-style.css">
+    <link rel="stylesheet" href="./shelter.css">
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="../main.js" defer></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="../api.js"></script>
     <link rel="icon" href="../호야.png">
 </head>
 <body>
@@ -51,27 +53,22 @@
         </a>
     </nav>
     <div class="prepare_title">
-        <h1>긴급연락처</h1>
+        <h1>지진 옥외대피장소</h1>
     </div>
-    <div class="content" style="padding-bottom:10px;">
-        <h2>소방・구급・경찰</h2>
-        <div class="call">
-            <h4 style="margin-bottom : -10px; 
-            padding-bottom:0px;">소방, 병원기관에 대한 긴급신고 : 119</h4>
-            <p id="down-border-small">소방차・구급차를 부를 때 혹은 응급의료상담·병원 안내</p>
-            <h4 style="margin-bottom:-10px; 
-            padding-bottom:0px;">경찰기관에 대한 긴급신고 : 112</h4>
-            <p id="down-border-small">경찰을 부를 때</p>
+    <div class="select_shelter">
+        <a href="./earthquake_shelter.html" style="border:1px solid blue; background-color: blue; color:white;border-radius: 10px 0px 0px 10px;">지진 옥외대피장소</a>
+        <a href="./tsunami_shelter.html" style="border: solid black; border-width: 1px 1px 1px 0px; border-radius: 0px 10px 10px 0px; background-color: white;">지진해일 긴급대피장소</a>
+    </div>
+    <div class="content">
+        <div class="intro">
+            <h2>지진 발생 ~ 피난 ~ 지식과 대비</h2>
+            <p>여기에서는 지진 발생 순간과 그 직후에 어떻게 행동하면 좋을지, 또 피난의 판단 방법이나 지진의 지식과 대비에 대해 게재되어 있습니다.<br>취해야 할 행동을 미리 생각해 두는 것이 중요합니다.</p>
         </div>
     </div>
-    <div class="content" style="padding-bottom:10px; margin-top:16px;">
-        <h2 id="down-border-small">해양에서의 사고</h2>
-        <div class="call">
-            <h4>해양경찰청 구조번호 : 122</h4>
-        </div>
+    <div class="content">
     </div>
     <div class="homeButton_area">
-        <a href="../index.html" class="homeButton">홈</a>
+        <a href="/index.html" class="homeButton">홈</a>
     </div>
     <div class="footer">
         <div class="footer_up">

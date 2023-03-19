@@ -1,0 +1,219 @@
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNGCQ3FBZ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QNGCQ3FBZ1');
+</script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="호야, 지진, 재난, 재난방송, 지진방송, 일본지진, 호야 재난방송, 호야 지진방송, 일본, 태풍, 정전, 수도, 응급, 재해 지식, 해일, 쓰나미, 화산, 분화, 화산폭발, 열사병, 일사병, 열중증, 폭설, 내수범람, 하천홍수, 홍수, 폭염, 수해, 침수, 지진동, 진도, 규모, 기압, 풍속, 태풍, 기상, 기상특보, 기상경보, 경보, 주의보, 난카이트로프, 난카이 트로프, 거대지진, 거대 지진, 특설 페이지, M 스케일, mscale, 토사재해, 산사태, 기상, 날씨, 기상특보, 피난, 코로나, 감염, 대피, 피난소, 태풍정보, 정보, 레이더, 비, 산사태, 하천 수위, 수위">
+    <meta name="description" content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
+    <meta name="author" content="호야">
+    <meta property="robots" content="index, follow">
+    <title>호야-재난방송 - 지진해일 긴급대피장소</title>
+    <link rel="stylesheet" href="../HDS.css">
+    <link rel="stylesheet" href="./shelter.css">
+    <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
+    <script src="../main.js" defer></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="icon" href="../호야.png">
+</head>
+<body>
+    <script>
+        AOS.init();
+    </script>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="../index.html">
+                <img src="../logo.png" alt="로고">
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <a href="../index.html"><li>홈</li></a>
+            <a href="../intro.html"><li>채널소개</li></a>
+            <a href="../broadcast.html"><li>방송안내</li></a>
+            <a href="../resource.html"><li>자료실</li></a>
+            <a href="../prepare.html"><li>방재</li></a>
+            <a href="../special.html"><li>스페셜</li></a>
+            <a href="../emergency.html"><li>특설페이지</li></a>
+        </ul>
+        <a href="javascript:return false;" class="navbarBtn">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+    <div class="prepare_title">
+        <h1>지진해일 긴급대피장소</h1>
+    </div>
+    <div class="select_shelter">
+        <a href="./earthquake_shelter.html" style="border: solid black; border-width: 1px 0px 1px 1px; background-color: white; border-radius: 10px 0px 0px 10px;">지진 옥외대피장소</a>
+        <a href="./tsunami_shelter.html" style="border: 1px solid blue;  border-radius: 0px 10px 10px 0px; background-color: blue; color:white">지진해일 긴급대피장소</a>
+    </div>
+    <div id="content1">
+        <div class="search_box">
+            <p>검색할 지역: </p>
+            <input type="text" id="search" value="경상북도 포항시남구">
+            <input class="search_btn" type="button" id="search_btn" value="확인">
+        </div>
+        <p id="info">상위 10개 항목만 검색됩니다.</p>
+    </div>
+    <div id="content2">
+        <div class="table">
+            <div class="table_top">
+                <p class="table_number">번호</p>
+                <p class="table_add">위치</p>
+                <p class="table_height">해발</p>
+                <p class="table_type">타입</p>
+                <p class="table_people">수용인원</p>
+                <p class="table_dis">해변까지 거리</p>
+                <p class="table_map">지도</p>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">1</p>
+                <p class="table_add" id="table_add_1"></p>
+                <p class="table_height" id="table_height_1"></p>
+                <p class="table_type" id="table_type_1"></p>
+                <p class="table_people" id="table_people_1"></p>
+                <p class="table_dis" id="table_dis_1"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_1" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">2</p>
+                <p class="table_add" id="table_add_2"></p>
+                <p class="table_height" id="table_height_2"></p>
+                <p class="table_type" id="table_type_2"></p>
+                <p class="table_people" id="table_people_2"></p>
+                <p class="table_dis" id="table_dis_2"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_2" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">3</p>
+                <p class="table_add" id="table_add_3"></p>
+                <p class="table_height" id="table_height_3"></p>
+                <p class="table_type" id="table_type_3"></p>
+                <p class="table_people" id="table_people_3"></p>
+                <p class="table_dis" id="table_dis_3"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_3" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">4</p>
+                <p class="table_add" id="table_add_4"></p>
+                <p class="table_height" id="table_height_4"></p>
+                <p class="table_type" id="table_type_4"></p>
+                <p class="table_people" id="table_people_4"></p>
+                <p class="table_dis" id="table_dis_4"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_4" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">5</p>
+                <p class="table_add" id="table_add_5"></p>
+                <p class="table_height" id="table_height_5"></p>
+                <p class="table_type" id="table_type_5"></p>
+                <p class="table_people" id="table_people_5"></p>
+                <p class="table_dis" id="table_dis_5"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_5" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">6</p>
+                <p class="table_add" id="table_add_6"></p>
+                <p class="table_height" id="table_height_6"></p>
+                <p class="table_type" id="table_type_6"></p>
+                <p class="table_people" id="table_people_6"></p>
+                <p class="table_dis" id="table_dis_6"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_6" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">7</p>
+                <p class="table_add" id="table_add_7"></p>
+                <p class="table_height" id="table_height_7"></p>
+                <p class="table_type" id="table_type_7"></p>
+                <p class="table_people" id="table_people_7"></p>
+                <p class="table_dis" id="table_dis_7"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_7" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">8</p>
+                <p class="table_add" id="table_add_8"></p>
+                <p class="table_height" id="table_height_8"></p>
+                <p class="table_type" id="table_type_8"></p>
+                <p class="table_people" id="table_people_8"></p>
+                <p class="table_dis" id="table_dis_8"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_8" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">9</p>
+                <p class="table_add" id="table_add_9"></p>
+                <p class="table_height" id="table_height_9"></p>
+                <p class="table_type" id="table_type_9"></p>
+                <p class="table_people" id="table_people_9"></p>
+                <p class="table_dis" id="table_dis_9"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_9" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">10</p>
+                <p class="table_add" id="table_add_10"></p>
+                <p class="table_height" id="table_height_10"></p>
+                <p class="table_type" id="table_type_10"></p>
+                <p class="table_people" id="table_people_10"></p>
+                <p class="table_dis" id="table_dis_10"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_10" style="padding: 5px 0px;"></a>
+            </div>
+        </div>
+    </div>
+    <div class="homeButton_area">
+        <a href="/index.html" class="homeButton">홈</a>
+    </div>
+    <div class="footer">
+        <div class="footer_up">
+            <div class="footer_box">
+                <div class="footer_info">
+                    <p><span class="name">호야-재난방송</span></p>
+                </div>
+                <div class="footer_sitemap">
+                    <a href="../index.html">
+                        <p>홈</p>
+                    </a>
+                    <a href="../intro.html">
+                        <p>채널소개</p>
+                    </a>
+                    <a href="../broadcast.html">
+                        <p>방송안내</p>
+                    </a>
+                    <a href="../resource.html">
+                        <p>자료실</p>
+                    </a>
+                    <a href="../prepare.html">
+                        <p>방재</p>
+                    </a>
+                    <a href="../special.html">
+                        <p>스페셜</p>
+                    </a>
+                    <a href="../emergency.html">
+                        <p>특설페이지</p>
+                    </a>
+                    <a href="../sitemap.html">
+                        <p>사이트맵</p>
+                    </a>
+                </div>
+                <br>
+                <a style="padding:7px" class="out_link" traget="_black" href="../copyright.html">저작권 명시 및 저작권보호정책</a>
+            </div>
+            <div class="footer_link">
+                <a  target="_blank"  href="https://www.youtube.com/@safe_hoya"><i class="fa-brands fa-youtube"></i></a>
+                <a  target="_blank" href="https://discord.gg/wAUxJsU9aK"><i class="fa-brands fa-discord"></i></a>
+                <a  target="_blank" href="https://twitter.com/hoya_0319"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
+    </div>
+</body>
+<script src="./tsunami_shelter.js"></script>
+</html>
