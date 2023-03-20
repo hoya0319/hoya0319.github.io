@@ -26,7 +26,7 @@ xhr.onreadystatechange = function () {
         if(issued.response.header.resultCode == '00'){
             issued = issued.response.body.items.item[0]
             issued_date = issued.tmEf
-            document.getElementById('issuing_date').textContent = `발효시각: ${issued_date.slice(4,6)}월 ${issued_date.slice(6,8)}일 ${issued_date.slice(8,10)}시 ${issued_date.slice(10,12)}분`
+            document.getElementById('issuing_date').textContent = `발효시각: ${issued_date.slice(4,6)}월 ${issued_date.slice(6,8)}일 ${issued_date.slice(8,10)}시 ${issued_date.slice(10,12)}분 이후`
             issued_content_bf = issued.t6
             var issued_content = ''
             for(i=1; i < issued_content_bf.length; i++){
@@ -86,7 +86,7 @@ bal_queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent
 bal_xhr.open('GET', bal_url + bal_queryParams);
 bal_xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
-        // console.log(bal_url+bal_queryParams)
+        //console.log(bal_url+bal_queryParams)
         try {
             var bal = JSON.parse(this.responseText);
         }catch(error){
@@ -95,7 +95,7 @@ bal_xhr.onreadystatechange = function () {
         if(bal.response.header.resultCode == '00'){
             bal = bal.response.body.items.item[0]
             document.getElementById('bal_title').textContent = `[특보] 제${twoago_month}-${bal.tmSeq}호 : ${bal.t1}`
-            bal_date = (bal.t5).toString()
+            bal_date = (bal.tmFc).toString()
             document.getElementById('bal_date').textContent = `발표시각: ${bal_date.slice(4,6)}월 ${bal_date.slice(6,8)}일 ${bal_date.slice(8,10)}시 ${bal_date.slice(10,12)}분`
             document.getElementById('bal_area').textContent = `발표지역\n${bal.t2}`
             document.getElementById('bal_time').textContent = `발효시각\n${bal.t3}`
@@ -155,7 +155,7 @@ yebi_queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponen
 yebi_xhr.open('GET', yebi_url + yebi_queryParams);
 yebi_xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
-        console.log(yebi_url+yebi_queryParams)
+        // console.log(yebi_url+yebi_queryParams)
         try {
             var yebi = JSON.parse(this.responseText);
         }catch(error){
@@ -175,5 +175,3 @@ yebi_xhr.onreadystatechange = function () {
 xhr.send('');
 bal_xhr.send('');
 yebi_xhr.send('');
-
-//http://apis.data.go.kr/1360000/WthrWrnInfoService/getWthrWrnMsg?serviceKey=&numOfRows=10&pageNo=1&dataType=JSON&stnld=108&fromTmFc=20230313&toTmFc=20230319
