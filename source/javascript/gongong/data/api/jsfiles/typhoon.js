@@ -318,7 +318,10 @@ function typhoon() {
                         alert('이 브라우저는 음성 합성을 지원하지 않습니다.');
                         return;
                     }
-
+                    var voices = window.speechSynthesis.getVoices();
+                    var selectedVoice = voices.find(function(voice) {
+                        return voice.name === 'Microsoft InJoon Online (Natural) - Korean (Korea)' && voice.lang === 'ko-KR';
+                    });
                     window.speechSynthesis.cancel()
 
                     const prop = opt_prop || {}
@@ -328,6 +331,7 @@ function typhoon() {
                     speechMsg.pitch = prop.pitch || 1;
                     speechMsg.lang = prop.lang || 'ko-KR';
                     speechMsg.text = text
+                    speechMsg.voice = selectedVoice
 
                     window.speechSynthesis.speak(speechMsg)
                 }
@@ -342,17 +346,21 @@ function typhoon() {
                 }else if(strength == '매우강'){
                     text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 매우강 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
                 }else if(strength == '초강력'){
-                    text = `초강력 태풍에 대한 정보입니다. ${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 초강력 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                    text = `초강력 태풍 ${typ_name}에 대한 정보입니다. ${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 초강력 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
                 }
 
                 const btnread = document.getElementById('tts')
                 "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
                 btnread.addEventListener("click", e =>{
                     speak(text, {
-                        rate : 1.2,
-                        pitch: 1.2,
+                        rate : 1.0,
+                        pitch: 1.0,
                         lang: 'ko-KR'
                     })
+                })
+                document.getElementById('tts').addEventListener("click", function(){
+                    alert('Microsoft Edge 브라우저로 접속하면 더욱 좋은 TTS를 이용하실 수 있습니다.')
+                    alert(text)
                 })
 
             }else if(myObj.response.header.resultCode == "01"){

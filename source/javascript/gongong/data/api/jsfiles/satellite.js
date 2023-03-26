@@ -37,7 +37,6 @@ document.getElementById('confirm_btn').addEventListener("click", function (){
     xhr.open('GET', url + queryParams);
     xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            var wait = 3000
             var myObj = JSON.parse(this.responseText);
             console.log(url+queryParams);
             console.log(myObj.response.body.items.item[0]["satImgC-file"]);
@@ -52,17 +51,12 @@ document.getElementById('confirm_btn').addEventListener("click", function (){
             }else{
                 test=test.slice(1,99)
                 document.getElementById('satellite_img').src = test
-                // for(i=0; i<long.length; i++){
-                //     if(i %100 == 0) {
-                //         test= test.slice(i,i+99)
-                //         console.log(test)
-                //     }
-                // }
+                for(i=0; i<long.length; i++){
+                    if(i %100 == 0) {
+                        test= test.slice(i,i+99)
+                    }
+                }
             }
-            console.log(long.length)
-            // for(i=0; i<long.length; i++){
-
-            // }
         }
     };
 

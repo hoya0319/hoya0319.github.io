@@ -424,6 +424,7 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 y = 130;
                 break;
             case '옹진군':
+                warn_area = 'L1014100'
                 x = 50;
                 y = 120;
                 break;
@@ -1704,23 +1705,36 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
             }
             if (loaded.response.header.resultCode == "00") {
                 main = loaded.response.body.items.item;
-
+                now_temp = parseFloat(loaded.response.body.items.item[3].obsrValue)
+                if ( now_temp < -900){
+                    now_temp = '자료없음'
+                }
+                var one_rain = loaded.response.body.items.item[2].obsrValue
+                var one_humid = loaded.response.body.items.item[1].obsrValue
+                var one_wind = loaded.response.body.items.item[7].obsrValue;
+                if (one_rain< -990){
+                    one_rain = '-'
+                }
+                if (one_humid< -990){
+                    one_humid = '-'
+                }
+                if (one_wind< -990){
+                    one_wind = '-'
+                }
                 //현재 기온
-                document.getElementById('now_temp').textContent = loaded.response.body.items.item[3].obsrValue;
+                document.getElementById('now_temp').textContent = now_temp;
                 //1시간 강수량
-                document.getElementById('now_rain').textContent = loaded.response.body.items.item[2].obsrValue;
+                document.getElementById('now_rain').textContent = one_rain;
                 //습도
-                document.getElementById('now_humid').textContent = loaded.response.body.items.item[1].obsrValue;
+                document.getElementById('now_humid').textContent = one_humid;
                 // 바람
                 var wind_dir = loaded.response.body.items.item[5].obsrValue
                 document.getElementById('now_wind_dir').style = 'transform: rotate(' + wind_dir + 'deg)';
 
-                document.getElementById('now_wind_str').textContent = loaded.response.body.items.item[7].obsrValue;
+                document.getElementById('now_wind_str').textContent = one_wind;
 
                 //그래프
-                now_temp = parseFloat(loaded.response.body.items.item[3].obsrValue)
-                now_temp = Number(now_temp)
-                wind = Number(loaded.response.body.items.item[7].obsrValue) * 3.6
+                wind = Number(one_wind) * 3.6
                 //체감기온
                 // console.log(wind)
                 var body_temp = 13.12 + 0.6215 * now_temp
@@ -1728,6 +1742,31 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 body_temp = body_temp + 0.3965 * Math.pow(wind, 0.16) * now_temp;
                 body_temp = Math.ceil(body_temp * 10) / 10
                 document.getElementById('body_temp').textContent = body_temp;
+                var bul
+                bul = now_temp / 5 * 9
+                bul = bul - 0.55*(1- one_humid/100)*(now_temp / 5 * 9 - 26) + 32
+                document.getElementById('dl_num').textContent = '불쾌지수: ' +  Math.ceil(bul * 10) / 10
+                var bul_name
+                if(bul<=68){
+                    bul_name = '전원 쾌적'
+                    document.getElementById('dl').style = 'background-color:rgb(49, 145, 255); color:white;'
+                }else if(68<bul && bul<=70){
+                    bul_name = '불쾌감이 나타남'
+                    document.getElementById('dl').style = 'background-color:rgb(165, 152, 0); color:white;'
+                }else if(70<bul && bul<=75){
+                    bul_name = '10% 정도 불쾌'
+                    document.getElementById('dl').style = 'background-color:rgb(255, 160, 160); color:white;'
+                }else if(75<bul && bul<=80){
+                    bul_name = '50% 정도 불쾌'
+                    document.getElementById('dl').style = 'background-color:rgb(255,0,0); color:white;'
+                }else if(80<bul && bul<=85){
+                    bul_name = '전원 불쾌'
+                    document.getElementById('dl').style = 'background-color:rgb(147,0,0); color:white;'
+                }else if(85<bul){
+                    bul_name = '매우 불쾌'
+                    document.getElementById('dl').style = 'background-color:rgb(63, 0, 0); color:white;'
+                }
+                document.getElementById('dl_name').textContent = bul_name
             }
         }
     };

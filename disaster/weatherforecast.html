@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="../main.js" defer></script>
-    <script src="../notice.js" defer></script>
+    <script src="../" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -70,16 +70,16 @@
                             <h3 id="location">지금 어디에 있나요?</h3>
                             <a id="sokbo_btn" href="#weather_sokbo_box">기상 속보가 발표되었습니다!</a>
                             <div class="weather_warning_box">
-                                <div class="weather_warning" id="taepong">태  풍</div>
-                                <div class="weather_warning" id="pokpung">폭 풍 해 일</div>
-                                <div class="weather_warning" id="daeseol">대  설</div>
-                                <div class="weather_warning" id="hou">호  우</div>
-                                <div class="weather_warning" id="hanpa">한  파</div>
-                                <div class="weather_warning" id="pokyeom">폭  염</div>
-                                <div class="weather_warning" id="gangpung">강  풍</div>
-                                <div class="weather_warning" id="pungrang">풍  랑</div>
-                                <div class="weather_warning" id="geonjo">건  조</div>
-                                <div class="weather_warning" id="hwangsa">황  사</div>
+                                <a href="./weatherwarning.html" class="weather_warning" id="taepong">태  풍</a>
+                                <a href="./weatherwarning.html" class="weather_warning" id="pokpung">폭 풍 해 일</a>
+                                <a href="./weatherwarning.html" class="weather_warning" id="daeseol">대  설</a>
+                                <a href="./weatherwarning.html" class="weather_warning" id="hou">호  우</a>
+                                <a href="./weatherwarning.html" class="weather_warning" id="hanpa">한  파</a>
+                                <a href="./weatherwarning.html" class="weather_warning" id="pokyeom">폭  염</a>
+                                <a href="./weatherwarning.html" class="weather_warning" id="gangpung">강  풍</a>
+                                <a href="./weatherwarning.html" class="weather_warning" id="pungrang">풍  랑</a>
+                                <a href="./weatherwarning.html" class="weather_warning" id="geonjo">건  조</a>
+                                <a href="./weatherwarning.html" class="weather_warning" id="hwangsa">황  사</a>
                             </div>
                             <div class="now_weather_etc" style="padding:0px;">
                                 <div class="now_weather_etc_cont" style="display: flex;align-items: center; flex-direction: column; justify-content: center;">
@@ -117,10 +117,11 @@
                             </div>
                         </div>
                         <div class="now_weather_graph" id="now_weather_graph">
-	                        <canvas id="now_weather_Chart" style="height:300px; width:350px;"></canvas>
+                            <canvas id="now_weather_Chart" style="height:300px; width:350px;"></canvas>
                         </div>
                     </div>
                     <p id="info">※제공되는 기상특보는 평지를 기준으로 합니다. (예) 평창군산간 X, 평창군평지)</p>
+                    <div class="life_num" id="dl"><p id='dl_name'>-</p><p id="dl_num">-</p></div>
                     <div id="weather_sokbo_box">
                         <h4 style="text-align: left; padding-bottom:0px; color:red">기상속보</h4>
                         <p id="sokbo_time" style="padding:0px; font-size:15px; color:blue"></p>

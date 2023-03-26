@@ -525,6 +525,22 @@ input {
 .warning{
     margin:5px 0px 10px 0px;
 }
+.life_num{
+    width:150px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+#dl_name{
+    padding: 2px 0px 0px 0px;
+    text-align: center;
+    font-size:16px;
+}
+#dl_num{
+    padding:0px;
+    text-align: center;
+    font-size:13px;
+    margin-top: -5px;
+}
 @media screen and (max-width : 1020px) {
     .disaster_content {
         width: 750px;

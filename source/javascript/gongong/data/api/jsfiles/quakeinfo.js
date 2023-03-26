@@ -366,7 +366,8 @@ xhr.onreadystatechange = function () {
                 document.getElementById('quake_img').src = quakeinfo.img
 
             }
-
+            var userAgent = navigator.userAgent;
+            
             function setVoiceList() {
                 voices = window.speechSynthesis.getVoices();
             }
@@ -379,7 +380,10 @@ xhr.onreadystatechange = function () {
                     alert('이 브라우저는 음성 합성을 지원하지 않습니다.');
                     return;
                 }
-
+                var voices = window.speechSynthesis.getVoices();
+                var selectedVoice = voices.find(function(voice) {
+                    return voice.name === 'Microsoft InJoon Online (Natural) - Korean (Korea)' && voice.lang === 'ko-KR';
+                });
                 window.speechSynthesis.cancel()
 
                 const prop = opt_prop || {}
@@ -389,6 +393,7 @@ xhr.onreadystatechange = function () {
                 speechMsg.pitch = prop.pitch || 1;
                 speechMsg.lang = prop.lang || 'ko-KR'
                 speechMsg.text = text
+                speechMsg.voice = selectedVoice
 
                 window.speechSynthesis.speak(speechMsg)
             }
@@ -418,13 +423,16 @@ xhr.onreadystatechange = function () {
             // console.log(int_info)
             const text = `${month}월 ${date}일 ${hour}시 ${minute}분 경, ${quakeinfo.loc}에서 지진이 발생했습니다. 지진의 규모는 ${quakeinfo.mt}, 진원의 깊이는 ${dept} 입니다. 진도정보입니다. ${int}. 참고사항입니다. ${quakeinfo.rem}`
             const btnread = document.getElementById('tts')
-
             btnread.addEventListener("click", e => {
                 speak(text, {
-                    rate: 1.2,
-                    pitch: 1.2,
+                    rate: 1.0,
+                    pitch: 1.0,
                     lang: 'ko-KR'
                 })
+            })
+            document.getElementById('tts').addEventListener("click", function(){
+                alert('Microsoft Edge 브라우저로 접속하면 더욱 좋은 TTS를 이용하실 수 있습니다.')
+                alert(text)
             })
         } else if (myObj.response.header.resultCode == "01") {
             document.getElementById('quake_title').textContent = "[01] 어플리케이션 에러 발생(APPLICATION_ERROR)"

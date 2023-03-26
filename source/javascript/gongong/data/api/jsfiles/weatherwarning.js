@@ -86,7 +86,7 @@ bal_queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent
 bal_xhr.open('GET', bal_url + bal_queryParams);
 bal_xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
-        //console.log(bal_url+bal_queryParams)
+        console.log(bal_url+bal_queryParams)
         try {
             var bal = JSON.parse(this.responseText);
         }catch(error){
