@@ -1346,7 +1346,7 @@ var shelter = {
                     "sigungu_name": "해운대구",
                     "remarks": "해운대해수욕장지구",
                     "shel_nm": "해운대구관광시설관리사업소",
-                    "address": "부산광역시 해운대구 우1동 1415-48 ",
+                    "address": "부산 해운대구 중동 1415-20 ",
                     "lon": 129.16038700,
                     "lat": 35.15926600,
                     "shel_av": 100,
@@ -9789,108 +9789,218 @@ var shelter = {
         }
     ]
 }
-document.getElementById('search_btn').addEventListener("click", function(){
+document.getElementById('search').addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("search_btn").click();
+    }
+})
+document.getElementById('search_btn').addEventListener("click", function () {
+    mainFunction()
+})
+
+function mainFunction() {
     search = document.getElementById('search').value;
     console.log(search);
     shelter_array = shelter.TsunamiShelter[1].row;
-    var shelterAdd =['-','-','-','-','-','-','-','-','-','-']
-    var shelterHeight =['-','-','-','-','-','-','-','-','-','-']
-    var shelterType = ['-','-','-','-','-','-','-','-','-','-']
-    var shelterPeo = ['-','-','-','-','-','-','-','-','-','-']
-    var shelterDis = ['-','-','-','-','-','-','-','-','-','-']
+    var shelterAdd = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+    var shelterName = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+    var shelterHeight = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+    var shelterType = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+    var shelterPeo = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+    var shelterDis = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
     console.log(shelter_array.length)
     var num = 0
-    for(i=0 ; i < shelter_array.length; i++){
+    for (i = 0; i < shelter_array.length; i++) {
         asdf = shelter_array[i].address
-        if(asdf.includes(search)){
+        if (asdf.includes(search)) {
             shelterAdd[num] = shelter_array[i].address
+            shelterName[num] = shelter_array[i].shel_nm
             shelterHeight[num] = shelter_array[i].height
             shelterType[num] = shelter_array[i].shel_div_type
             shelterPeo[num] = shelter_array[i].shel_av
             shelterDis[num] = shelter_array[i].lenth
-            console.log('됨')
-            num = num+1
+            num = num + 1
         }
     }
     console.log([shelterAdd])
     document.getElementById('table_add_1').textContent = shelterAdd[0]
+    document.getElementById('table_name_1').textContent = shelterName[0]
     document.getElementById('table_height_1').textContent = shelterHeight[0] + 'm'
     document.getElementById('table_type_1').textContent = shelterType[0]
     document.getElementById('table_people_1').textContent = shelterPeo[0] + '명'
     document.getElementById('table_dis_1').textContent = shelterDis[0] + 'm'
     document.getElementById('table_map_1').textContent = '지도'
     document.getElementById('table_map_1').href = 'https://map.naver.com/v5/search/' + shelterAdd[0]
-    
+
     document.getElementById('table_add_2').textContent = shelterAdd[1]
+    document.getElementById('table_name_2').textContent = shelterName[1]
     document.getElementById('table_height_2').textContent = shelterHeight[1] + 'm'
     document.getElementById('table_type_2').textContent = shelterType[1]
     document.getElementById('table_people_2').textContent = shelterPeo[1] + '명'
     document.getElementById('table_dis_2').textContent = shelterDis[1] + 'm'
     document.getElementById('table_map_2').textContent = '지도'
     document.getElementById('table_map_2').href = 'https://map.naver.com/v5/search/' + shelterAdd[1]
-    
+
     document.getElementById('table_add_3').textContent = shelterAdd[2]
+    document.getElementById('table_name_3').textContent = shelterName[2]
     document.getElementById('table_height_3').textContent = shelterHeight[2] + 'm'
     document.getElementById('table_type_3').textContent = shelterType[2]
     document.getElementById('table_people_3').textContent = shelterPeo[2] + '명'
     document.getElementById('table_dis_3').textContent = shelterDis[2] + 'm'
     document.getElementById('table_map_3').textContent = '지도'
     document.getElementById('table_map_3').href = 'https://map.naver.com/v5/search/' + shelterAdd[2]
-    
+
     document.getElementById('table_add_4').textContent = shelterAdd[3]
+    document.getElementById('table_name_4').textContent = shelterName[3]
     document.getElementById('table_height_4').textContent = shelterHeight[3] + 'm'
     document.getElementById('table_type_4').textContent = shelterType[3]
     document.getElementById('table_people_4').textContent = shelterPeo[3] + '명'
     document.getElementById('table_dis_4').textContent = shelterDis[3] + 'm'
     document.getElementById('table_map_4').textContent = '지도'
     document.getElementById('table_map_4').href = 'https://map.naver.com/v5/search/' + shelterAdd[3]
-    
+
     document.getElementById('table_add_5').textContent = shelterAdd[4]
+    document.getElementById('table_name_5').textContent = shelterName[4]
     document.getElementById('table_height_5').textContent = shelterHeight[4] + 'm'
     document.getElementById('table_type_5').textContent = shelterType[4]
     document.getElementById('table_people_5').textContent = shelterPeo[4] + '명'
     document.getElementById('table_dis_5').textContent = shelterDis[4] + 'm'
     document.getElementById('table_map_5').textContent = '지도'
     document.getElementById('table_map_5').href = 'https://map.naver.com/v5/search/' + shelterAdd[4]
-    
+
     document.getElementById('table_add_6').textContent = shelterAdd[5]
+    document.getElementById('table_name_6').textContent = shelterName[5]
     document.getElementById('table_height_6').textContent = shelterHeight[5] + 'm'
     document.getElementById('table_type_6').textContent = shelterType[5]
     document.getElementById('table_people_6').textContent = shelterPeo[5] + '명'
     document.getElementById('table_dis_6').textContent = shelterDis[5] + 'm'
     document.getElementById('table_map_6').textContent = '지도'
     document.getElementById('table_map_6').href = 'https://map.naver.com/v5/search/' + shelterAdd[5]
-    
+
     document.getElementById('table_add_7').textContent = shelterAdd[6]
+    document.getElementById('table_name_7').textContent = shelterName[6]
     document.getElementById('table_height_7').textContent = shelterHeight[6] + 'm'
     document.getElementById('table_type_7').textContent = shelterType[6]
     document.getElementById('table_people_7').textContent = shelterPeo[6] + '명'
     document.getElementById('table_dis_7').textContent = shelterDis[6] + 'm'
     document.getElementById('table_map_7').textContent = '지도'
     document.getElementById('table_map_7').href = 'https://map.naver.com/v5/search/' + shelterAdd[6]
-    
+
     document.getElementById('table_add_8').textContent = shelterAdd[7]
+    document.getElementById('table_name_8').textContent = shelterName[7]
     document.getElementById('table_height_8').textContent = shelterHeight[7] + 'm'
     document.getElementById('table_type_8').textContent = shelterType[7]
     document.getElementById('table_people_8').textContent = shelterPeo[7] + '명'
     document.getElementById('table_dis_8').textContent = shelterDis[7] + 'm'
     document.getElementById('table_map_8').textContent = '지도'
     document.getElementById('table_map_8').href = 'https://map.naver.com/v5/search/' + shelterAdd[7]
-    
+
     document.getElementById('table_add_9').textContent = shelterAdd[8]
+    document.getElementById('table_name_9').textContent = shelterName[8]
     document.getElementById('table_height_9').textContent = shelterHeight[8] + 'm'
     document.getElementById('table_type_9').textContent = shelterType[8]
     document.getElementById('table_people_9').textContent = shelterPeo[8] + '명'
     document.getElementById('table_dis_9').textContent = shelterDis[8] + 'm'
     document.getElementById('table_map_9').textContent = '지도'
     document.getElementById('table_map_9').href = 'https://map.naver.com/v5/search/' + shelterAdd[8]
-    
+
     document.getElementById('table_add_10').textContent = shelterAdd[9]
+    document.getElementById('table_name_10').textContent = shelterName[9]
     document.getElementById('table_height_10').textContent = shelterHeight[9] + 'm'
     document.getElementById('table_type_10').textContent = shelterType[9]
     document.getElementById('table_people_10').textContent = shelterPeo[9] + '명'
     document.getElementById('table_dis_10').textContent = shelterDis[9] + 'm'
     document.getElementById('table_map_10').textContent = '지도'
     document.getElementById('table_map_10').href = 'https://map.naver.com/v5/search/' + shelterAdd[9]
-    
-})
+
+    document.getElementById('table_add_11').textContent = shelterAdd[10]
+    document.getElementById('table_name_11').textContent = shelterName[10]
+    document.getElementById('table_height_11').textContent = shelterHeight[10] + 'm'
+    document.getElementById('table_type_11').textContent = shelterType[10]
+    document.getElementById('table_people_11').textContent = shelterPeo[10] + '명'
+    document.getElementById('table_dis_11').textContent = shelterDis[10] + 'm'
+    document.getElementById('table_map_11').textContent = '지도'
+    document.getElementById('table_map_11').href = 'https://map.naver.com/v5/search/' + shelterAdd[10]
+
+    document.getElementById('table_add_12').textContent = shelterAdd[11]
+    document.getElementById('table_name_12').textContent = shelterName[11]
+    document.getElementById('table_height_12').textContent = shelterHeight[11] + 'm'
+    document.getElementById('table_type_12').textContent = shelterType[11]
+    document.getElementById('table_people_12').textContent = shelterPeo[11] + '명'
+    document.getElementById('table_dis_12').textContent = shelterDis[11] + 'm'
+    document.getElementById('table_map_12').textContent = '지도'
+    document.getElementById('table_map_12').href = 'https://map.naver.com/v5/search/' + shelterAdd[11]
+
+    document.getElementById('table_add_13').textContent = shelterAdd[12]
+    document.getElementById('table_name_13').textContent = shelterName[12]
+    document.getElementById('table_height_13').textContent = shelterHeight[12] + 'm'
+    document.getElementById('table_type_13').textContent = shelterType[12]
+    document.getElementById('table_people_13').textContent = shelterPeo[12] + '명'
+    document.getElementById('table_dis_13').textContent = shelterDis[12] + 'm'
+    document.getElementById('table_map_13').textContent = '지도'
+    document.getElementById('table_map_13').href = 'https://map.naver.com/v5/search/' + shelterAdd[12]
+
+    document.getElementById('table_add_14').textContent = shelterAdd[13]
+    document.getElementById('table_name_14').textContent = shelterName[13]
+    document.getElementById('table_height_14').textContent = shelterHeight[13] + 'm'
+    document.getElementById('table_type_14').textContent = shelterType[13]
+    document.getElementById('table_people_14').textContent = shelterPeo[13] + '명'
+    document.getElementById('table_dis_14').textContent = shelterDis[13] + 'm'
+    document.getElementById('table_map_14').textContent = '지도'
+    document.getElementById('table_map_14').href = 'https://map.naver.com/v5/search/' + shelterAdd[13]
+
+    document.getElementById('table_add_15').textContent = shelterAdd[14]
+    document.getElementById('table_name_15').textContent = shelterName[14]
+    document.getElementById('table_height_15').textContent = shelterHeight[14] + 'm'
+    document.getElementById('table_type_15').textContent = shelterType[14]
+    document.getElementById('table_people_15').textContent = shelterPeo[14] + '명'
+    document.getElementById('table_dis_15').textContent = shelterDis[14] + 'm'
+    document.getElementById('table_map_15').textContent = '지도'
+    document.getElementById('table_map_15').href = 'https://map.naver.com/v5/search/' + shelterAdd[14]
+
+    document.getElementById('table_add_16').textContent = shelterAdd[15]
+    document.getElementById('table_name_16').textContent = shelterName[15]
+    document.getElementById('table_height_16').textContent = shelterHeight[15] + 'm'
+    document.getElementById('table_type_16').textContent = shelterType[15]
+    document.getElementById('table_people_16').textContent = shelterPeo[15] + '명'
+    document.getElementById('table_dis_16').textContent = shelterDis[15] + 'm'
+    document.getElementById('table_map_16').textContent = '지도'
+    document.getElementById('table_map_16').href = 'https://map.naver.com/v5/search/' + shelterAdd[15]
+
+    document.getElementById('table_add_17').textContent = shelterAdd[16]
+    document.getElementById('table_name_17').textContent = shelterName[16]
+    document.getElementById('table_height_17').textContent = shelterHeight[16] + 'm'
+    document.getElementById('table_type_17').textContent = shelterType[16]
+    document.getElementById('table_people_17').textContent = shelterPeo[16] + '명'
+    document.getElementById('table_dis_17').textContent = shelterDis[16] + 'm'
+    document.getElementById('table_map_17').textContent = '지도'
+    document.getElementById('table_map_17').href = 'https://map.naver.com/v5/search/' + shelterAdd[16]
+
+    document.getElementById('table_add_18').textContent = shelterAdd[17]
+    document.getElementById('table_name_18').textContent = shelterName[17]
+    document.getElementById('table_height_18').textContent = shelterHeight[17] + 'm'
+    document.getElementById('table_type_18').textContent = shelterType[17]
+    document.getElementById('table_people_18').textContent = shelterPeo[17] + '명'
+    document.getElementById('table_dis_18').textContent = shelterDis[17] + 'm'
+    document.getElementById('table_map_18').textContent = '지도'
+    document.getElementById('table_map_18').href = 'https://map.naver.com/v5/search/' + shelterAdd[17]
+
+    document.getElementById('table_add_19').textContent = shelterAdd[18]
+    document.getElementById('table_name_19').textContent = shelterName[18]
+    document.getElementById('table_height_19').textContent = shelterHeight[18] + 'm'
+    document.getElementById('table_type_19').textContent = shelterType[18]
+    document.getElementById('table_people_19').textContent = shelterPeo[18] + '명'
+    document.getElementById('table_dis_19').textContent = shelterDis[18] + 'm'
+    document.getElementById('table_map_19').textContent = '지도'
+    document.getElementById('table_map_19').href = 'https://map.naver.com/v5/search/' + shelterAdd[18]
+
+    document.getElementById('table_add_20').textContent = shelterAdd[19]
+    document.getElementById('table_name_20').textContent = shelterName[19]
+    document.getElementById('table_height_20').textContent = shelterHeight[19] + 'm'
+    document.getElementById('table_type_20').textContent = shelterType[19]
+    document.getElementById('table_people_20').textContent = shelterPeo[19] + '명'
+    document.getElementById('table_dis_20').textContent = shelterDis[19] + 'm'
+    document.getElementById('table_map_20').textContent = '지도'
+    document.getElementById('table_map_20').href = 'https://map.naver.com/v5/search/' + shelterAdd[19]
+}

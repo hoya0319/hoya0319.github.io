@@ -61,24 +61,26 @@
         <div class="search_box">
             <p>검색할 지역: </p>
             <input type="text" id="search" value="경상북도 포항시남구">
-            <input class="search_btn" type="button" id="search_btn" value="확인">
+            <input class="search_btn" type="button" id="search_btn" value="검색">
         </div>
-        <p id="info">상위 10개 항목만 검색됩니다.</p>
+        <p id="info">상위 20개 항목만 검색됩니다.</p>
     </div>
     <div id="content2">
         <div class="table">
             <div class="table_top">
                 <p class="table_number">번호</p>
                 <p class="table_add">위치</p>
+                <p class="table_name">이름</p>
                 <p class="table_height">해발</p>
                 <p class="table_type">타입</p>
                 <p class="table_people">수용인원</p>
-                <p class="table_dis">해변까지 거리</p>
+                <p class="table_dis">해변에서</p>
                 <p class="table_map">지도</p>
             </div>
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">1</p>
                 <p class="table_add" id="table_add_1"></p>
+                <p class="table_name" id="table_name_1"></p>
                 <p class="table_height" id="table_height_1"></p>
                 <p class="table_type" id="table_type_1"></p>
                 <p class="table_people" id="table_people_1"></p>
@@ -88,6 +90,7 @@
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">2</p>
                 <p class="table_add" id="table_add_2"></p>
+                <p class="table_name" id="table_name_2"></p>
                 <p class="table_height" id="table_height_2"></p>
                 <p class="table_type" id="table_type_2"></p>
                 <p class="table_people" id="table_people_2"></p>
@@ -97,6 +100,7 @@
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">3</p>
                 <p class="table_add" id="table_add_3"></p>
+                <p class="table_name" id="table_name_3"></p>
                 <p class="table_height" id="table_height_3"></p>
                 <p class="table_type" id="table_type_3"></p>
                 <p class="table_people" id="table_people_3"></p>
@@ -106,6 +110,7 @@
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">4</p>
                 <p class="table_add" id="table_add_4"></p>
+                <p class="table_name" id="table_name_4"></p>
                 <p class="table_height" id="table_height_4"></p>
                 <p class="table_type" id="table_type_4"></p>
                 <p class="table_people" id="table_people_4"></p>
@@ -115,6 +120,7 @@
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">5</p>
                 <p class="table_add" id="table_add_5"></p>
+                <p class="table_name" id="table_name_5"></p>
                 <p class="table_height" id="table_height_5"></p>
                 <p class="table_type" id="table_type_5"></p>
                 <p class="table_people" id="table_people_5"></p>
@@ -124,6 +130,7 @@
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">6</p>
                 <p class="table_add" id="table_add_6"></p>
+                <p class="table_name" id="table_name_6"></p>
                 <p class="table_height" id="table_height_6"></p>
                 <p class="table_type" id="table_type_6"></p>
                 <p class="table_people" id="table_people_6"></p>
@@ -133,6 +140,7 @@
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">7</p>
                 <p class="table_add" id="table_add_7"></p>
+                <p class="table_name" id="table_name_7"></p>
                 <p class="table_height" id="table_height_7"></p>
                 <p class="table_type" id="table_type_7"></p>
                 <p class="table_people" id="table_people_7"></p>
@@ -142,6 +150,7 @@
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">8</p>
                 <p class="table_add" id="table_add_8"></p>
+                <p class="table_name" id="table_name_8"></p>
                 <p class="table_height" id="table_height_8"></p>
                 <p class="table_type" id="table_type_8"></p>
                 <p class="table_people" id="table_people_8"></p>
@@ -151,6 +160,7 @@
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">9</p>
                 <p class="table_add" id="table_add_9"></p>
+                <p class="table_name" id="table_name_9"></p>
                 <p class="table_height" id="table_height_9"></p>
                 <p class="table_type" id="table_type_9"></p>
                 <p class="table_people" id="table_people_9"></p>
@@ -160,11 +170,112 @@
             <div class="table_mid" style="border-top:1px black double ">
                 <p class="table_number">10</p>
                 <p class="table_add" id="table_add_10"></p>
+                <p class="table_name" id="table_name_10"></p>
                 <p class="table_height" id="table_height_10"></p>
                 <p class="table_type" id="table_type_10"></p>
                 <p class="table_people" id="table_people_10"></p>
                 <p class="table_dis" id="table_dis_10"></p>
                 <a target="_blank" href="#"class="table_map" id="table_map_10" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">11</p>
+                <p class="table_add" id="table_add_11"></p>
+                <p class="table_name" id="table_name_11"></p>
+                <p class="table_height" id="table_height_11"></p>
+                <p class="table_type" id="table_type_11"></p>
+                <p class="table_people" id="table_people_11"></p>
+                <p class="table_dis" id="table_dis_11"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_11" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">12</p>
+                <p class="table_add" id="table_add_12"></p>
+                <p class="table_name" id="table_name_12"></p>
+                <p class="table_height" id="table_height_12"></p>
+                <p class="table_type" id="table_type_12"></p>
+                <p class="table_people" id="table_people_12"></p>
+                <p class="table_dis" id="table_dis_12"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_12" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">13</p>
+                <p class="table_add" id="table_add_13"></p>
+                <p class="table_name" id="table_name_13"></p>
+                <p class="table_height" id="table_height_13"></p>
+                <p class="table_type" id="table_type_13"></p>
+                <p class="table_people" id="table_people_13"></p>
+                <p class="table_dis" id="table_dis_13"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_13" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">14</p>
+                <p class="table_add" id="table_add_14"></p>
+                <p class="table_name" id="table_name_14"></p>
+                <p class="table_height" id="table_height_14"></p>
+                <p class="table_type" id="table_type_14"></p>
+                <p class="table_people" id="table_people_14"></p>
+                <p class="table_dis" id="table_dis_14"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_14" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">15</p>
+                <p class="table_add" id="table_add_15"></p>
+                <p class="table_name" id="table_name_15"></p>
+                <p class="table_height" id="table_height_15"></p>
+                <p class="table_type" id="table_type_15"></p>
+                <p class="table_people" id="table_people_15"></p>
+                <p class="table_dis" id="table_dis_15"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_15" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">16</p>
+                <p class="table_add" id="table_add_16"></p>
+                <p class="table_name" id="table_name_16"></p>
+                <p class="table_height" id="table_height_16"></p>
+                <p class="table_type" id="table_type_16"></p>
+                <p class="table_people" id="table_people_16"></p>
+                <p class="table_dis" id="table_dis_16"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_16" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">17</p>
+                <p class="table_add" id="table_add_17"></p>
+                <p class="table_name" id="table_name_17"></p>
+                <p class="table_height" id="table_height_17"></p>
+                <p class="table_type" id="table_type_17"></p>
+                <p class="table_people" id="table_people_17"></p>
+                <p class="table_dis" id="table_dis_17"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_17" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">18</p>
+                <p class="table_add" id="table_add_18"></p>
+                <p class="table_name" id="table_name_18"></p>
+                <p class="table_height" id="table_height_18"></p>
+                <p class="table_type" id="table_type_18"></p>
+                <p class="table_people" id="table_people_18"></p>
+                <p class="table_dis" id="table_dis_18"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_18" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">19</p>
+                <p class="table_add" id="table_add_19"></p>
+                <p class="table_name" id="table_name_19"></p>
+                <p class="table_height" id="table_height_19"></p>
+                <p class="table_type" id="table_type_19"></p>
+                <p class="table_people" id="table_people_19"></p>
+                <p class="table_dis" id="table_dis_19"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_19" style="padding: 5px 0px;"></a>
+            </div>
+            <div class="table_mid" style="border-top:1px black double ">
+                <p class="table_number">20</p>
+                <p class="table_add" id="table_add_20"></p>
+                <p class="table_name" id="table_name_20"></p>
+                <p class="table_height" id="table_height_20"></p>
+                <p class="table_type" id="table_type_20"></p>
+                <p class="table_people" id="table_people_20"></p>
+                <p class="table_dis" id="table_dis_20"></p>
+                <a target="_blank" href="#"class="table_map" id="table_map_20" style="padding: 5px 0px;"></a>
             </div>
         </div>
     </div>
