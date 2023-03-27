@@ -91,11 +91,15 @@ p {
     border-right : 1px solid black;
 }
 .table_add{
-    width:57%;
+    width:40%;
+    border-right : 1px solid black;
+}
+.table_name{
+    width:23%;
     border-right : 1px solid black;
 }
 .table_height{
-    width:10%;
+    width:7%;
     border-right : 1px solid black;
 }
 .table_type{
@@ -107,7 +111,7 @@ p {
     border-right : 1px solid black;
 }
 .table_dis{
-    width:13%;
+    width:10%;
     border-right : 1px solid black;
 }
 .table_map{
@@ -128,19 +132,22 @@ p {
         min-width: 40.54px;
     }
     .table_add{
-        min-width: 453.15px;
+        min-width: 317.94px;
+    }
+    .table_name{
+        min-width: 183.2px;
     }
     .table_height{
-        min-width: 80.24px;
+        min-width: 56.38px;
     }
     .table_type{
-        min-width: 80.24px;
+        min-width: 80.17px;
     }
     .table_people{
-        min-width: 80.24px;
+        min-width: 80.17px;
     }
     .table_dis{
-        min-width: 104.05px;
+        min-width: 80.17px;
     }
     .table_map{
         min-width: 39.67px;
