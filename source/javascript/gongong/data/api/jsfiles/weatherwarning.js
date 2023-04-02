@@ -7,7 +7,15 @@ function getToday() {
 
     return year + month + day;
 }
+function getMonth(){
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = ("0" + (1 + date.getMonth())).slice(-2);
+    var day = ("0" + date.getDate()).slice(-2);
 
+    return  month 
+
+}
 var xhr = new XMLHttpRequest();
 var url = 'http://apis.data.go.kr/1360000/WthrWrnInfoService/getPwnStatus'; /*URL*/
 var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
@@ -94,7 +102,7 @@ bal_xhr.onreadystatechange = function () {
         }
         if(bal.response.header.resultCode == '00'){
             bal = bal.response.body.items.item[0]
-            document.getElementById('bal_title').textContent = `[특보] 제${twoago_month}-${bal.tmSeq}호 : ${bal.t1}`
+            document.getElementById('bal_title').textContent = `[특보] 제${getMonth()}-${bal.tmSeq}호 : ${bal.t1}`
             bal_date = (bal.tmFc).toString()
             document.getElementById('bal_date').textContent = `발표시각: ${bal_date.slice(4,6)}월 ${bal_date.slice(6,8)}일 ${bal_date.slice(8,10)}시 ${bal_date.slice(10,12)}분`
             document.getElementById('bal_area').textContent = `발표지역\n${bal.t2}`
