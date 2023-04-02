@@ -390,6 +390,7 @@ xhr.onreadystatechange = function () {
                     document.getElementById('quake_img').style='display:none'
                     document.getElementById('map2').style='background-color: #cbcbcb;'
                     document.getElementById('map1').style='background-color: #ffffff;'
+                    document.getElementById('googlemap').src= `https://www.google.com/maps/embed/v1/place?q=${g_lat},${g_lon}&zoom=8&key=AIzaSyBQgB3o1gm_rKSDffaobjw4fgGxiGrx39I`
                 })
             }catch(error){
 
