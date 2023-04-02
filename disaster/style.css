@@ -602,6 +602,11 @@ input {
         max-height: 170px;
         overflow-y: auto;
     }
+    #googlemap{
+        width:96.7%;
+        margin-left:3px;
+        height:250px;
+    }
 }
 
 @media screen and (max-width : 800px) {
@@ -706,5 +711,20 @@ input {
     .warn_content{
         max-height: 250px;
         overflow-y: auto;
+    }
+    #googlemap{
+        width:95.3%;
+        height:250px;
+    }
+    .quakemap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #map1, #map2{
+        width:100%;
+    }
+    .map_choose{
+        width:95%;
     }
 }
