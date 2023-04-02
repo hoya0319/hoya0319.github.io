@@ -567,6 +567,23 @@ input {
     padding:2px;
     width:47%;
 }
+.int_exp_box{
+    display: flex;
+}
+#int_exp_title{
+    padding:0px;
+}
+#int_exp_int, #int_exp_exp{
+    padding:0px;
+    font-size:14px;
+}
+#int_exp_int{
+    width:30px;
+    text-align: center;
+}
+#int_exp_exp{
+    width:350px;
+}
 @media screen and (max-width : 1020px) {
     .disaster_content {
         width: 750px;
@@ -606,6 +623,9 @@ input {
         width:96.7%;
         margin-left:3px;
         height:250px;
+    }
+    #int_exp_exp{
+        width:247px;
     }
 }
 
@@ -726,5 +746,8 @@ input {
     }
     .map_choose{
         width:95%;
+    }
+    #int_exp_exp{
+        width:90%;
     }
 }

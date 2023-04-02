@@ -265,33 +265,54 @@ xhr.onreadystatechange = function () {
                 }
                 if (quakeinfo.fcTp == 11 || quakeinfo.fcTp == 13 || quakeinfo.fcTp == 12 || quakeinfo.fcTp == 14 || quakeinfo.fcTp == 3 || quakeinfo.fcTp == 5) {
                     try {
+                        document.getElementById('int_exp_title').textContent = '진도 등급별 현상'
                         if (intensity_color == 'Ⅰ') {
-                            document.getElementById('int').style = 'background-color:#fff'
+                            document.getElementById('int').style = 'background-color:#fff';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '대부분 사람들은 느낄 수 없으나, 지진계에는 기록된다.'
                         } else if (intensity_color == 'Ⅱ') {
-                            document.getElementById('int').style = 'background-color:#a0e6ff'
+                            document.getElementById('int').style = 'background-color:#a0e6ff';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '조용한 상태나 건물 위층에 있는 소수의 사람만 느낀다.'
                         } else if (intensity_color == 'Ⅲ') {
-                            document.getElementById('int').style = 'background-color:#92d050'
+                            document.getElementById('int').style = 'background-color:#92d050';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '실내, 특히 건물 위층에 있는 사람이 현저하게 느끼며, 정지하고 있는 차가 약간 흔들린다.'
                         } else if (intensity_color == 'Ⅳ') {
-                            document.getElementById('int').style = 'background-color:#ffff00'
+                            document.getElementById('int').style = 'background-color:#ffff00';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '실내에서 많은 사람이 느끼고, 밤에는 잠에서 깨기도 하며, 그릇과 창문 등이 흔들린다.'
                         } else if (intensity_color == 'Ⅴ') {
-                            document.getElementById('int').style = 'background-color:#ffc000'
+                            document.getElementById('int').style = 'background-color:#ffc000';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '거의 모든 사람이 진동을 느끼고, 그릇, 창문 등이 깨지기도 하며, 불안정한 물체는 넘어진다.'
                         } else if (intensity_color == 'Ⅵ') {
-                            document.getElementById('int').style = 'background-color:#ff0000; color:white;'
+                            document.getElementById('int').style = 'background-color:#ff0000; color:white;';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '모든 사람이 느끼고, 일부 무거운 가구가 움직이며, 벽의 석회가 떨어지기도 한다.'
                         } else if (intensity_color == 'Ⅶ') {
-                            document.getElementById('int').style = 'background-color:#a32777; color:white;'
+                            document.getElementById('int').style = 'background-color:#a32777; color:white;';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '일반 건물에 약간의 피해가 발생하며, 부실한 건물에는 상당한 피해가 발생한다.'
                         } else if (intensity_color == 'Ⅷ') {
-                            document.getElementById('int').style = 'background-color:#632523; color:white;'
+                            document.getElementById('int').style = 'background-color:#632523; color:white;';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '일반 건물에 부분적 붕괴 등 상당한 피해가 발생하며, 부실한 건물에는 심각한 피해가 발생한다.'
                         } else if (intensity_color == 'Ⅸ') {
-                            document.getElementById('int').style = 'background-color:#4c2600; color:white'
+                            document.getElementById('int').style = 'background-color:#4c2600; color:white';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '잘 설계된 건물에도 상당한 피해가 발생하며, 일반 건축물에는 붕괴 등 큰 피해가 발생한다.'
                         } else if (intensity_color == 'Ⅹ') {
-                            document.getElementById('int').style = 'background-color:#000; color:white;'
-                            document.getElementById('max_int').style = 'color:#fff'
-                            document.getElementById('intensity').style = 'color:#fff'
+                            document.getElementById('int').style = 'background-color:#000; color:white;';
+                            document.getElementById('max_int').style = 'color:#fff';
+                            document.getElementById('intensity').style = 'color:#fff';
+                            document.getElementById('int_exp_int').textContent = intensity_color;
+                            document.getElementById('int_exp_exp').textContent = '대부분의 석조 및 골조 건물이 파괴되고, 기차선로가 휘어진다.'
                         } else {
                             document.getElementById('int').style = 'background-color:#fff'
                         }
                         if (intensity_color == 'Ⅰ') {
-                            var img= quakeinfo.img
+                            var img= quakeinfo.img;
                         }else{
                             var img = 'https://www.weather.go.kr/w/repositary/DATA/EQK/INTENSITY/' + year + month + '/' + date + tongbo + quakeinfo.fcTp + '_' + yyyymmdd + '.png'
                         }
