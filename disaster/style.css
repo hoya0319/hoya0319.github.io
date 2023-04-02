@@ -541,6 +541,32 @@ input {
     font-size:13px;
     margin-top: -5px;
 }
+.map_choose{
+    display: flex;
+    justify-content: center;
+}
+#map1:hover, #map2:hover{
+    cursor: pointer;
+}
+#googlemap{
+    width:96%;
+    margin-left:6px;
+    height:300px;
+}
+#map1{
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    padding:2px;
+    width:47%;
+}
+#map2{
+    border-width: 1px 1px 1px 0px;
+    border-color: black;
+    border-style: solid;
+    padding:2px;
+    width:47%;
+}
 @media screen and (max-width : 1020px) {
     .disaster_content {
         width: 750px;

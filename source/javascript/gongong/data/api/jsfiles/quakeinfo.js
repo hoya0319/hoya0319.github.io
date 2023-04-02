@@ -199,7 +199,13 @@ xhr.onreadystatechange = function () {
                         document.getElementById('int').style = 'background-color:white;'
                         document.getElementById('quake_img').src = quakeinfo.img
                         document.getElementById('mag-m').textContent = 'M'
-                        document.getElementById('mag-l').textContent = 'w'
+                        if((quakeinfo.loc).includes('일본')){
+                            document.getElementById('mag-l').textContent = 'j'
+                        }else if((quakeinfo.loc).includes('대만')){
+                            document.getElementById('mag-l').textContent = 'L'
+                        }else{
+                            document.getElementById('mag-l').textContent = 'w'
+                        }
                         document.getElementById('info_kind').textContent = '기상청 국외지진정보'
                     } catch (error) {
                         document.getElementById('quake_img').src = quakeinfo.img
@@ -301,25 +307,31 @@ xhr.onreadystatechange = function () {
                 } catch (error) { }
                 //
                 document.getElementById('quake_location').textContent = quakeinfo.loc;
+                var g_lat, g_lon = '0'
                 try {
                     if (quakeinfo.lat < 0) {
                         lat = String(quakeinfo.lat)
                         lat = lat.slice(1,)
                         document.getElementById('lat').textContent = '남위 ' + lat + '도'
+                        g_lat = '-'+lat
                     } else if (quakeinfo.lat > 0) {
                         lat = quakeinfo.lat
                         document.getElementById('lat').textContent = '북위 ' + lat + '도'
+                        g_lat = lat
                     }
                     if (quakeinfo.lon < 0) {
                         lon = String(quakeinfo.lon)
                         lon = lon.slice(1,)
                         document.getElementById('lon').textContent = '서경 ' + lon + '도'
+                        g_lon = '-' + lon
                     } else if (quakeinfo.lon > 0) {
                         lon = quakeinfo.lon
                         document.getElementById('lon').textContent = '동경 ' + lon + '도'
+                        g_lon = lon
                     }
+                    document.getElementById('googlemap').src= `https://www.google.com/maps/embed/v1/place?q=${g_lat},${g_lon}&zoom=8&key=AIzaSyBQgB3o1gm_rKSDffaobjw4fgGxiGrx39I`
                 } catch (error) {
-
+                    console.log(error)
                 }
 
                 //규모 처리
@@ -366,6 +378,19 @@ xhr.onreadystatechange = function () {
                 document.getElementById('quake_img').src = quakeinfo.img
 
             }
+            try{
+                document.getElementById('map1').addEventListener("click",function(){
+                    document.getElementById('quake_img').style='; margin:0px;'
+                    document.getElementById('googlemap').style='display:none'
+                })
+                document.getElementById('map2').addEventListener("click",function(){
+                    document.getElementById('googlemap').style='display:block; margin-bottom: 4px;'
+                    document.getElementById('quake_img').style='display:none'
+                })
+            }catch(error){
+
+            }
+
             var userAgent = navigator.userAgent;
             
             function setVoiceList() {
