@@ -502,16 +502,16 @@ input {
 .issuing_area_box{
     width:60%;
 }
-#issuing_date, #bal_date, #yebi_date{
+#issuing_date, #bal_date, #yebi_date, #jong_date{
     font-size: 15px;
     padding:0px;
     border-bottom: 1px solid black;
 }
-#issuing_warning_title, #bal_title, #yebi_title{
+#issuing_warning_title, #bal_title, #yebi_title, #jong_title{
     text-align: left;
     padding: 0px;
 }
-#issuing_area, #bal_area, #bal_time, #bal_can, #bal_other, #yebi_area, #yebi_rem{
+#issuing_area, #bal_area, #bal_time, #bal_can, #bal_other, #yebi_area, #yebi_rem, #jong{
     white-space: pre-wrap;
     padding:5px 0px 0px 0px;
 }

@@ -180,6 +180,66 @@ yebi_xhr.onreadystatechange = function () {
     }
 };
 
+var jong_xhr = new XMLHttpRequest();
+var jong_url = 'https://apis.data.go.kr/1360000/WthrWrnInfoService/getWthrInfo'; /*URL*/
+var jong_queryParams = '?' + encodeURIComponent('serviceKey') + '='+'cl5s8i4yp76CKdNIDbn0RZDOYdzjAgzPaTtbVMDqnKWHomjjBtq%2BmajQpYggkXVlfj4FY2x304%2FuTVIm1DilIw%3D%3D'; /*Service Key*/
+jong_queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+jong_queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+jong_queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
+jong_queryParams += '&' + encodeURIComponent('stnId') + '=' + encodeURIComponent('108'); /**/
+var now=new Date();
+var twoago = new Date(now.setDate(now.getDate()-6));
+twoago = twoago.toString()
+twoago_month = twoago.slice(4, 7)
+if(twoago_month == 'Jan'){
+    twoago_month = '01'
+}else if(twoago_month == 'Feb'){
+    twoago_month = '02'
+}else if(twoago_month == 'Mar'){
+    twoago_month = '03'
+}else if(twoago_month == 'Apr'){
+    twoago_month = '04'
+}else if(twoago_month == 'May'){
+    twoago_month = '05'
+}else if(twoago_month == 'Jun'){
+    twoago_month = '06'
+}else if(twoago_month == 'Jul'){
+    twoago_month = '07'
+}else if(twoago_month == 'Aug'){
+    twoago_month = '08'
+}else if(twoago_month == 'Sep'){
+    twoago_month = '09'
+}else if(twoago_month == 'Oct'){
+    twoago_month = '10'
+}else if(twoago_month == 'Nov'){
+    twoago_month = '11'
+}else if(twoago_month == 'Dec'){
+    twoago_month = '12'
+}
+twoago_date = twoago.slice(8,10)
+twoago_year = twoago.slice(11,15)
+jong_queryParams += '&' + encodeURIComponent('fromTmFc') + '=' + encodeURIComponent(twoago_year + twoago_month + twoago_date); /**/
+jong_queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent(getToday()); /**/
+jong_xhr.open('GET', jong_url + jong_queryParams);
+jong_xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        console.log(jong_url+jong_queryParams)
+        try {
+            var jong = JSON.parse(this.responseText);
+        }catch(error){
+
+        }
+        if(jong.response.header.resultCode == '00'){
+            jong = jong.response.body.items.item[0]
+            jong_time = (jong.tmFc).toString()
+            document.getElementById('jong_title').textContent = `기상정보 | [정보] 제${getMonth()}-${jong.tmSeq}호 : ${jong_time.slice(0,4)}.${jong_time.slice(4,6)}.${jong_time.slice(6,8)}.${jong_time.slice(8,10)}:${jong_time.slice(10,12)}`
+            document.getElementById('jong_date').textContent = `발표시각: ${jong_time.slice(4,6)}월 ${jong_time.slice(6,8)}일 ${jong_time.slice(8,10)}시 ${jong_time.slice(10,12)}분`
+            document.getElementById('jong').textContent = (jong.t1).slice(0,-4)
+        }
+    }
+};
+
 xhr.send('');
 bal_xhr.send('');
 yebi_xhr.send('');
+jong_xhr.send('');
