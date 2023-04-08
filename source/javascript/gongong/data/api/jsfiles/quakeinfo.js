@@ -432,6 +432,7 @@ xhr.onreadystatechange = function () {
                     return;
                 }
                 var voices = window.speechSynthesis.getVoices();
+                console.log(voices)
                 var selectedVoice = voices.find(function(voice) {
                     return voice.name === 'Microsoft InJoon Online (Natural) - Korean (Korea)' && voice.lang === 'ko-KR';
                 });

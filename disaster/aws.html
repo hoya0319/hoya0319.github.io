@@ -20,7 +20,7 @@
         content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
     <meta name="author" content="호야">
     <meta property="robots" content="index, follow">
-    <title>호야-재난방송 - 태풍정보</title>
+    <title>호야-재난방송 - AWS</title>
     <link rel="stylesheet" href="../HDS.css">
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
@@ -73,72 +73,94 @@
     <div class="disaster_content">
         <div class="content_left">
             <div class="disaster_title">
-                <h1 style="text-align:left">태풍정보</h1>
-                <p id="info">최근 2일간 발표된 태풍정보를 시간순으로 찾아볼 수 있습니다.</p>
+                <h1 style="text-align:left">AWS</h1>
+                <p id="info">국내 AWS 정보를 확인하실 수 있습니다 </p>
             </div>
             <div class="main_box">
-                <h3 id="typhoon_title"></h3>
-                <div class="map">
-                    <img id="typhoon_img" src="">
-                </div>
-                <div class="typhoon_forecast_btn">
-                    <input class="forecast_btn" type="button" id="before" value="< 다음 발표">
-                    <input class="forecast_btn" type="button" id="next" value="이전 발표 >">
-                </div>
-                <div>
-                    <div class="info_top" style="border-bottom:black 1px solid; padding-bottom:10px;">
-                        <h3 style="text-align:left; padding:0px;"><span id="number" style="font-size:17px;"></span><span
-                                id="typhoon_name"></span></h3>
-                        <p style="padding:0px; font-size:15px;"><span id="typhoon_clock"></span><span id='hou'></span>
-                        </p>
-                        <p id="strength"></p>
-                    </div>
-                    <div class="info_mid">
-                        <p id="typhoon_info_text"></p>
-                        <div class="now_jyou">
-                            <div class="press">
-                                <p style="font-size:35px"><span style="font-size:15px;">중심기압 </span><span
-                                        id="pressure" style="font-size:35px"></span><span style="font-size:15px;">hPa</span></p>
-                            </div>
-                            <div class="wind">
-                                <p ><span style="font-size:15px;">최대풍속 </span><span
-                                        id=wind_speed style="font-size:35px"></span><span style="font-size:15px;">m/s</span></p>
-                            </div>
-                        </div>
-                        <div class="loc">
-                            <h4>중심위치</h4>
-                            <div>
-                                <p id="location" style="font-size:20px;"></p>
-                                <p id="lat" style="font-size:15px;"></p>
-                            </div>
-                        </div>
-                        <div class="magdep" style="text-align:center">
-                            <p style="width:50%;" id="magbox"><span id="dir-scale"></span><span id="movement"
-                                    style="font-size:30px"></span></p>
-                            <p style="width:50%;" id="dep"><span id="speed-scale"></span><span id="speed"
-                                    style="font-size:30px"></span><span id=speed-scale2></span></p>
-                        </div>
-                        <div class="magdep" style="text-align:center">
-                            <p style="width:50%;" id="magbox"><span id="strong-scale"></span><span id="strong"
-                                    style="font-size:30px"></span><span id=strong-scale2></span></p>
-                            <p style="width:50%;" id="dep"><span id="boufu-scale"></span><span id="boufu"
-                                    style="font-size:30px"></span><span id=boufu-scale2></span></p>
-                        </div>
-                    </div>
-                    <div class="info_bottom">
-                        <p id="rem"></p>
-                        <p id="other"></p>
-                    </div>
-                    <p style="text-align:center; margin-top:20px;"><a
-                            href="https://www.weather.go.kr/w/typhoon/report.do" target="_blank"
-                            style="background-color: #0055CC; padding:5px 10px; border:1px black solid; border-radius: 5px; color:white;"
-                            id="kma">기상청 태풍 통보문</a></p>
-                    <p style="text-align:center;"><a href="/prepare/typhoon.html" class="out_link">태풍에 대비하기</a></p>
-                </div>
-                <div class="tts-box">
-                    <button id="tts">
-                        <img src="./tts.png" alt="읽어주기">
-                    </button>
+                <div id="choose">
+                    <h2 id="aws">aws 분포도</h2>
+                    날짜 선택: 
+                    <input id="date" type="date"
+                    max="2077-06-20"
+                    min="2000-01-01">
+                    시간 선택:
+                    <select id="hour">
+                        <option value="00">0시</option>
+                        <option value="01">1시</option>
+                        <option value="02">2시</option>
+                        <option value="03">3시</option>
+                        <option value="04">4시</option>
+                        <option value="05">5시</option>
+                        <option value="06">6시</option>
+                        <option value="07">7시</option>
+                        <option value="08">8시</option>
+                        <option value="09">9시</option>
+                        <option value="10">10시</option>
+                        <option value="11">11시</option>
+                        <option value="12">12시</option>
+                        <option value="13">13시</option>
+                        <option value="14">14시</option>
+                        <option value="15">15시</option>
+                        <option value="16">16시</option>
+                        <option value="17">17시</option>
+                        <option value="18">18시</option>
+                        <option value="19">19시</option>
+                        <option value="20">20시</option>
+                        <option value="21">21시</option>
+                        <option value="22">22시</option>
+                        <option value="23">23시</option>
+                    </select>
+                    <select id="min">
+                        <option value="00">00분</option>
+                        <option value="10">10분</option>
+                        <option value="20">20분</option>
+                        <option value="30">30분</option>
+                        <option value="40">40분</option>
+                        <option value="50">50분</option>
+                    </select>
+                    <select id="obs">
+                        <option value="rn_day">일강수량</option>
+                        <option value="rn_ex">강수유무</option>
+                        <option value="ta">기온</option>
+                        <option value="ts">지면온도</option>
+                        <option value="tw">습구온도</option>
+                        <option value="tw_win">습구온도(1.2도)</option>
+                        <option value="td">이슬점온도</option>
+                        <option value="hm">습도</option>
+                    </select>
+                    <br>
+                    지점정보포함:
+                    <select id="stn">
+                        <option value="0">최대최소값만</option>
+                        <option value="1">영역내 지점값 포함</option>
+                        <option value="2">지점값만</option>
+                    </select>
+                    객관분석 방식:
+                    <select id="obj">
+                        <option value="mq">multi-quadric</option>
+                        <option value="bn">barnes</option>
+                    </select>
+                    <br>
+                    지도:
+                    <select id="map">
+                        <option value="HR">기본</option>
+                        <option value="D2">남한(D2)</option>
+                        <option value="D3">남한(D3)</option>
+                        <option value="R">레이더</option>
+                        <option value="B">한반도(B)</option>
+                        <option value="H1">한반도(H1)</option>
+                    </select>
+                    zoom_level:
+                    <input type="text" name="" id="level" value="0" style="width:50px;">
+                    zoom_x: 
+                    <input type="text" name="" id="zoomx" value="0000000" style="width:100px;">
+                    zoom_y:
+                    <input type="text" name="" id="zoomy" value="0000000" style="width:100px;">
+                    </select>
+                    <button id="confirm">이미지 보기</button>
+                </div> 
+                <div style="width:100%;">
+                    <img class="img" id='img' src="../hwa/noimg.gif" alt="이미지가 아직 없어요." style="width:100%;">
                 </div>
             </div>
         </div>
@@ -194,13 +216,14 @@
                 <a style="padding:7px" class="out_link" traget="_black" href="../copyright.html">저작권 명시 및 저작권보호정책</a>
             </div>
             <div class="footer_link">
-                <a  target="_blank"  href="https://www.youtube.com/@safe_hoya"><i class="fa-brands fa-youtube"></i></a>
-                <a  target="_blank" href="https://discord.gg/wAUxJsU9aK"><i class="fa-brands fa-discord"></i></a>
-                <a  target="_blank" href="https://twitter.com/hoya_0319"><i class="fa-brands fa-twitter"></i></a>
+                <a target="_blank" href="https://www.youtube.com/@safe_hoya"><i class="fa-brands fa-youtube"></i></a>
+                <a target="_blank" href="https://discord.gg/wAUxJsU9aK"><i class="fa-brands fa-discord"></i></a>
+                <a target="_blank" href="https://twitter.com/hoya_0319"><i class="fa-brands fa-twitter"></i></a>
             </div>
         </div>
         <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
     </div>
 </body>
-<script src="../source/javascript/gongong/data/api/jsfiles/typhoon.js"></script>
+<script src="../source/javascript/gongong/data/api/jsfiles/aws.js"></script>
+
 </html>
