@@ -25,7 +25,7 @@ queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
-        // console.log(url+queryParams)
+        console.log(url+queryParams)
         try {
             var issued = JSON.parse(this.responseText);
         }catch(error){
@@ -94,7 +94,7 @@ bal_queryParams += '&' + encodeURIComponent('toTmFc') + '=' + encodeURIComponent
 bal_xhr.open('GET', bal_url + bal_queryParams);
 bal_xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
-        console.log(bal_url+bal_queryParams)
+        // console.log(bal_url+bal_queryParams)
         try {
             var bal = JSON.parse(this.responseText);
         }catch(error){
@@ -105,8 +105,8 @@ bal_xhr.onreadystatechange = function () {
             document.getElementById('bal_title').textContent = `[특보] 제${getMonth()}-${bal.tmSeq}호 : ${bal.t1}`
             bal_date = (bal.tmFc).toString()
             document.getElementById('bal_date').textContent = `발표시각: ${bal_date.slice(4,6)}월 ${bal_date.slice(6,8)}일 ${bal_date.slice(8,10)}시 ${bal_date.slice(10,12)}분`
-            document.getElementById('bal_area').textContent = `발표지역\n${bal.t2}`
-            document.getElementById('bal_time').textContent = `발효시각\n${bal.t3}`
+            document.getElementById('bal_area').textContent = `< 발표지역 >\n${bal.t2}`
+            document.getElementById('bal_time').textContent = `< 발효시각 >\n${bal.t3}`
             document.getElementById('bal_img').src = `https://www.weather.go.kr/w/repositary/image/wrn/img/KTKO50_${bal.tmFc}_108_${bal.tmSeq}a.png`
             can = bal.t4
             if(can==""){
@@ -114,8 +114,8 @@ bal_xhr.onreadystatechange = function () {
             }else{
                 can = can
             }
-            document.getElementById('bal_can').textContent = `해제예고\n${can}`
-            document.getElementById('bal_other').textContent = `참고사항\n${bal.other}`
+            document.getElementById('bal_can').textContent = `< 해제예고 >\n${can}`
+            document.getElementById('bal_other').textContent = `< 참고사항 >\n${bal.other}`
         }
     }
 };
@@ -173,8 +173,8 @@ yebi_xhr.onreadystatechange = function () {
             yebi = yebi.response.body.items.item[0]
             yebi_date = (yebi.tmFc).toString()
             document.getElementById('yebi_date').textContent = `발표시각: ${yebi_date.slice(4,6)}월 ${yebi_date.slice(6,8)}일 ${yebi_date.slice(8,10)}시 ${yebi_date.slice(10,12)}분`
-            document.getElementById('yebi_area').textContent = `발표현황\n${yebi.pwn}`
-            document.getElementById('yebi_rem').textContent = `참고사항\n${yebi.rem}`
+            document.getElementById('yebi_area').textContent = `< 발표현황 >\n${yebi.pwn}`
+            document.getElementById('yebi_rem').textContent = `< 참고사항 >\n${yebi.rem}`
             document.getElementById('yebi_img').src = `https://www.weather.go.kr/w/repositary/image/wrn/img/KTKO52_${yebi.tmFc}_108_${yebi.tmSeq}.png`
         }
     }

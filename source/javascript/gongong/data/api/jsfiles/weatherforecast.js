@@ -2801,18 +2801,17 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 document.getElementById('weather_sokbo').textContent = '에러 발생.'
             }
             if (sokbo_loaded.response.header.resultCode == '00') {
-                var sokbo_main = sokbo_loaded.response.body.items.item[0]
+                var sokbo_main = sokbo_loaded.response.body.items.item[0];
                 var yyyymmdd = String(sokbo_main.tmFc);
                 var year = yyyymmdd.slice(0, 4);
                 var month = yyyymmdd.slice(4, 6);
                 var date = yyyymmdd.slice(6, 8);
                 var hour = yyyymmdd.slice(8, 10);
                 var minute = yyyymmdd.slice(10, 12);
-                // console.log(month + date + hour + minute)
-                document.getElementById('weather_sokbo_box').style = 'display:block'
-                document.getElementById('sokbo_btn').style = 'display:block'
-                document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`
-                document.getElementById('weather_sokbo').textContent = sokbo_main.ann
+                document.getElementById('weather_sokbo_box').style.display = 'block';
+                document.getElementById('sokbo_btn').style.display = 'block';
+                document.getElementById('sokbo_time').textContent = `${month}월 ${date}일 ${hour}시 ${minute}분 발표`;
+                document.getElementById('weather_sokbo').textContent = sokbo_main.ann;
             }
         }
     };
@@ -3023,9 +3022,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                                 return true
                             })
                             console.log([indexToRemove])
-                            for(j=indexToRemove.length - 1; j>=0; j--){
-                                warnStr.splice(indexToRemove[j],1)
-                                warnName.splice(indexToRemove[j],1)
+                            for(k=indexToRemove.length - 1; k>=0; k--){
+                                warnStr.splice(indexToRemove[k],1)
+                                warnName.splice(indexToRemove[k],1)
                             }
                         }
                     } else if (warning[i].warnVar == 3) {
@@ -3039,9 +3038,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                                 return true
                             })
                             console.log([indexToRemove])
-                            for(j=indexToRemove.length - 1; j>=0; j--){
-                                warnStr.splice(indexToRemove[j],1)
-                                warnName.splice(indexToRemove[j],1)
+                            for(l=indexToRemove.length - 1; l>=0; l--){
+                                warnStr.splice(indexToRemove[l],1)
+                                warnName.splice(indexToRemove[l],1)
                             }
                         }
                     } else if (warning[i].warnVar == 4) {
@@ -3055,9 +3054,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                                 return true
                             })
                             console.log([indexToRemove])
-                            for(j=indexToRemove.length - 1; j>=0; j--){
-                                warnStr.splice(indexToRemove[j],1)
-                                warnName.splice(indexToRemove[j],1)
+                            for(n=indexToRemove.length - 1; n>=0; n--){
+                                warnStr.splice(indexToRemove[n],1)
+                                warnName.splice(indexToRemove[n],1)
                             }
                         }
                     } else if (warning[i].warnVar == 5) {
@@ -3071,9 +3070,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                                 return true
                             })
                             console.log([indexToRemove])
-                            for(j=indexToRemove.length - 1; j>=0; j--){
-                                warnStr.splice(indexToRemove[j],1)
-                                warnName.splice(indexToRemove[j],1)
+                            for(m=indexToRemove.length - 1; m>=0; m--){
+                                warnStr.splice(indexToRemove[m],1)
+                                warnName.splice(indexToRemove[m],1)
                             }
                         }
                     } else if (warning[i].warnVar == 6) {
@@ -3087,9 +3086,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                                 return true
                             })
                             console.log([indexToRemove])
-                            for(j=indexToRemove.length - 1; j>=0; j--){
-                                warnStr.splice(indexToRemove[j],1)
-                                warnName.splice(indexToRemove[j],1)
+                            for(o=indexToRemove.length - 1; o>=0; o--){
+                                warnStr.splice(indexToRemove[o],1)
+                                warnName.splice(indexToRemove[o],1)
                             }
                         }
                     } else if (warning[i].warnVar == 7) {
@@ -3103,9 +3102,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                                 return true
                             })
                             console.log([indexToRemove])
-                            for(j=indexToRemove.length - 1; j>=0; j--){
-                                warnStr.splice(indexToRemove[j],1)
-                                warnName.splice(indexToRemove[j],1)
+                            for(p=indexToRemove.length - 1; p>=0; p--){
+                                warnStr.splice(indexToRemove[p],1)
+                                warnName.splice(indexToRemove[p],1)
                             }
                         }
                     } else if (warning[i].warnVar == 8) {
@@ -3119,9 +3118,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                                 return true
                             })
                             console.log([indexToRemove])
-                            for(j=indexToRemove.length - 1; j>=0; j--){
-                                warnStr.splice(indexToRemove[j],1)
-                                warnName.splice(indexToRemove[j],1)
+                            for(q=indexToRemove.length - 1; q>=0; q--){
+                                warnStr.splice(indexToRemove[q],1)
+                                warnName.splice(indexToRemove[q],1)
                             }
                         }
                     } else if (warning[i].warnVar == 9) {
@@ -3135,9 +3134,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                                 return true
                             })
                             console.log([indexToRemove])
-                            for(j=indexToRemove.length - 1; j>=0; j--){
-                                warnStr.splice(indexToRemove[j],1)
-                                warnName.splice(indexToRemove[j],1)
+                            for(r=indexToRemove.length - 1; r>=0; r--){
+                                warnStr.splice(indexToRemove[r],1)
+                                warnName.splice(indexToRemove[r],1)
                             }
                         }
                     } else if (warning[i].warnVar == 12) {
@@ -3151,9 +3150,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                                 return true
                             })
                             console.log([indexToRemove])
-                            for(j=indexToRemove.length - 1; j>=0; j--){
-                                warnStr.splice(indexToRemove[j],1)
-                                warnName.splice(indexToRemove[j],1)
+                            for(s=indexToRemove.length - 1; s>=0; s--){
+                                warnStr.splice(indexToRemove[s],1)
+                                warnName.splice(indexToRemove[s],1)
                             }
                         }
                     }
@@ -3161,6 +3160,9 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 // warnName = ['가','가','가','가','가','가','가','가','가','가'];
                 // warnVar = ['강풍', '호우', '한파', '건조', '폭풍해일', '풍랑', '태풍', '대설', '황사', '폭염']
                 // warnStr = [0,0,0,0,0,0,0,0,0,0];
+                // warnName = ['가','가','가'];
+                // warnVar = ['강풍', '건조', '황사',]
+                // warnStr = [0,0,1];
                 for (i = 0; i < warnName.length; i++) {
                     if (warnVar[i] == '강풍') {
                         if (warnStr[i] == 0) {

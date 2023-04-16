@@ -750,4 +750,7 @@ input {
     #int_exp_exp{
         width:90%;
     }
+    .loc div{
+        margin-left: 10px;
+    }
 }

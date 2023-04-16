@@ -8,6 +8,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
+
         gtag('config', 'G-QNGCQ3FBZ1');
     </script>
     <meta charset="UTF-8">
@@ -19,10 +20,10 @@
         content="호야-재난방송의 목표는 전 세계의 재난 정보를 보다 쉽게, 유용하게 이용할 수 있도록 하는 것입니다. 호야-재난방송은 우리의 세상이 좀 더 안전해지는 것을 추구하고 있어요.">
     <meta name="author" content="호야">
     <meta property="robots" content="index, follow">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>호야-재난방송 - 기상특보</title>
+    <title>호야-재난방송 - 공항기상정보</title>
     <link rel="stylesheet" href="../HDS.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./airport_style.css">
     <script src="https://kit.fontawesome.com/03e1d1f3c9.js" crossorigin="anonymous"></script>
     <script src="../main.js" defer></script>
     <script src="../" defer></script>
@@ -30,6 +31,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="icon" href="../호야.png">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 
 <body>
@@ -72,54 +74,39 @@
     <div class="disaster_content">
         <div class="content_left">
             <div class="disaster_title">
-                <h1 style="text-align:left">기상특보</h1>
-                <p id="info">최신 기상특보 발효현황을 확인할 수 있습니다.</p>
+                <h1 style="text-align:left">공항기상정보</h1>
+                <p id="info">국내공항의 날씨(요약, 일기개황, 최저/최고기온, 낮 최고 체감온도, 예상 강수량, 예상 적설량, 위험 기상예보, 경보현황)을 조회하실 수 있습니다</p>
             </div>
             <div class="main_box">
-                <div class="warning">
-                    <div class="warning_img">
-                        <img class="weather_warning_img" id="now_issuing" src="./empty.png" alt="현재 발효중인 기상특보입니다.">
-                    </div>
-                    <div class="issuing_area_box">
-                        <h4 id='issuing_warning_title'>기상특보 발효현황</h4>
-                        <p id="issuing_date"></p>
-                        <div class="warn_content">
-                            <p id="issuing_area"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="warning">
-                    <div class="warning_img">
-                        <img class="weather_warning_img" id="bal_img" src="./empty.png" alt="발표된 기상특보입니다.">
-                    </div>
-                    <div class="issuing_area_box">
-                        <h4 id='bal_title' ></h4>
-                        <p id="bal_date"></p>
-                        <div class="warn_content">
-                            <p id="bal_area"></p>
-                            <p id="bal_time"></p>
-                            <p id="bal_can"></p>
-                            <p id="bal_other"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="warning">
-                    <div class="warning_img">
-                        <img class="weather_warning_img" id="yebi_img" src="./empty.png" alt="현재 발표중인 예비기상특보입니다.">
-                    </div>
-                    <div class="issuing_area_box">
-                        <h4 id='yebi_title'>예비특보 발표현황</h4>
-                        <p id="yebi_date"></p>
-                        <div class="warn_content">
-                            <p id="yebi_area"></p>
-                            <p id="yebi_rem"></p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h4 id='jong_title'></h4>
-                    <p id="jong_date"></p>
-                    <p id="jong"></p>
+                <span>공항이름: </span>
+                <select id="airport">
+                    <option value="RKSI">인천국제공항</option>
+                    <option value="RKSS">김포국제공항</option>
+                    <option value="RKPC">제주국제공항</option>
+                    <option value="RKPK">김해국제공항</option>
+                    <option value="RKNY">양양국제공항</option>
+                    <option value="RKJB">무안국제공항</option>
+                    <option value="RKTN">대구국제공항</option>
+                    <option value="RKTU">청주국제공항</option>
+                    <option value="RKPU">울산공항</option>
+                    <option value="RKYJ">여수공항</option>
+                    <option value="RKJJ">광주공항</option>
+                    <option value="RKJK">군산공항</option>
+                    <option value="RKNW">원주공항</option>
+                    <option value="RKTH">포항경주공항</option>
+                    <option value="RKPS">사천공항</option>
+                </select>
+                <button id="confirm">확인</button>
+                <div class="airport_weather">
+                    <h3 id="title"></h3>
+                    <p id="issuing_time"></p>
+                    <p id="valid_time"></p>
+                    <h4 id="summary"></h4>
+                    <p id="warn"></p>
+                    <p id="outlook_t"></p>
+                    <p id="outlook"></p>
+                    <p id="forecast_t"></p>
+                    <p id="forecast"></p>
                 </div>
             </div>
         </div>
@@ -176,13 +163,14 @@
                 <a style="padding:7px" class="out_link" traget="_black" href="../copyright.html">저작권 명시 및 저작권보호정책</a>
             </div>
             <div class="footer_link">
-                <a  target="_blank"  href="https://www.youtube.com/@safe_hoya"><i class="fa-brands fa-youtube"></i></a>
-                <a  target="_blank" href="https://discord.gg/wAUxJsU9aK"><i class="fa-brands fa-discord"></i></a>
-                <a  target="_blank" href="https://twitter.com/hoya_0319"><i class="fa-brands fa-twitter"></i></a>
+                <a target="_blank" href="https://www.youtube.com/@safe_hoya"><i class="fa-brands fa-youtube"></i></a>
+                <a target="_blank" href="https://discord.gg/wAUxJsU9aK"><i class="fa-brands fa-discord"></i></a>
+                <a target="_blank" href="https://twitter.com/hoya_0319"><i class="fa-brands fa-twitter"></i></a>
             </div>
         </div>
         <div class="copyright">Copyright 2022. 호야 All rights reserved.</div>
     </div>
 </body>
-<script src="../source/javascript/gongong/data/api/jsfiles/weatherwarning.js"></script>
+<script src="../source/javascript/gongong/data/api/jsfiles/airport.js"></script>
+
 </html>
