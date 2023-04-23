@@ -206,7 +206,7 @@ xhr.onreadystatechange = function () {
                         }else{
                             document.getElementById('mag-l').textContent = 'w'
                         }
-                        document.getElementById('info_kind').textContent = '기상청 국외지진정보'
+                        document.getElementById('info_kind').textContent = '지진정보 | 국외지진정보'
                     } catch (error) {
                         document.getElementById('quake_img').src = quakeinfo.img
 
@@ -232,7 +232,7 @@ xhr.onreadystatechange = function () {
                     var tongbo = '/i_'
                     int_info = quakeinfo.inT
                     try{
-                        document.getElementById('info_kind').textContent = '기상청 지진정보'
+                        document.getElementById('info_kind').textContent = '지진정보 | 지진정보'
                     }catch(error){
                     }
                 } else if (quakeinfo.fcTp == 14) {
@@ -242,7 +242,7 @@ xhr.onreadystatechange = function () {
                     document.getElementById('intensity').textContent = int_info
                     int_info = quakeinfo.inT
                     try{
-                        document.getElementById('info_kind').textContent = '기상청 지진속보'
+                        document.getElementById('info_kind').textContent = '지진속보 |  지진속보'
                     }catch(error){
                     }
                 } else if (quakeinfo.fcTp == 11 || quakeinfo.fcTp == 13 || quakeinfo.fcTp == 12) {
@@ -252,7 +252,7 @@ xhr.onreadystatechange = function () {
                     document.getElementById('intensity').textContent = int_info
                     int_info = quakeinfo.inT
                     try{
-                        document.getElementById('info_kind').textContent = '기상청 지진조기경보'
+                        document.getElementById('info_kind').textContent = '지진속보 | 지진조기경보'
                     }catch(error){
                     }
                 }
