@@ -365,9 +365,11 @@ xhr.onreadystatechange = function () {
 
                 //깊이 처리
                 if (quakeinfo.dep == 0) {
-                    document.getElementById('depth').textContent = "-km"
+                    document.getElementById('depth').textContent = "5"
+                    document.getElementById('dep-asdf').textContent = 'km 미만';
                 } else {
-                    document.getElementById('depth').textContent = quakeinfo.dep + "km"
+                    document.getElementById('depth').textContent = quakeinfo.dep;
+                    document.getElementById('dep-asdf').textContent = 'km';
                 }
                 try {
                     document.getElementById('dep-scale').textContent = '깊이 '
@@ -468,7 +470,7 @@ xhr.onreadystatechange = function () {
             }
             var dept
             if (quakeinfo.dep == 0) {
-                dept = "불명"
+                dept = "5km 미만"
             }else{
                 dept = quakeinfo.dep + "km"
             }
