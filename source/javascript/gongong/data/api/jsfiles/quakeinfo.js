@@ -405,14 +405,14 @@ xhr.onreadystatechange = function () {
                 document.getElementById('map1').addEventListener("click",function(){
                     document.getElementById('quake_img').style='; margin:0px; '
                     document.getElementById('googlemap').style='display:none'
-                    document.getElementById('map1').style='background-color: #cbcbcb;'
-                    document.getElementById('map2').style='background-color: #ffffff;'
+                    document.getElementById('map2').style='background-color: #cbcbcb;'
+                    document.getElementById('map1').style='background-color: #ffffff;'
                 })
                 document.getElementById('map2').addEventListener("click",function(){
                     document.getElementById('googlemap').style='display:block; margin-bottom: 4px;'
                     document.getElementById('quake_img').style='display:none'
-                    document.getElementById('map2').style='background-color: #cbcbcb;'
-                    document.getElementById('map1').style='background-color: #ffffff;'
+                    document.getElementById('map1').style='background-color: #cbcbcb;'
+                    document.getElementById('map2').style='background-color: #ffffff;'
                     document.getElementById('googlemap').src= `https://www.google.com/maps/embed/v1/place?q=${g_lat},${g_lon}&zoom=8&key=AIzaSyBQgB3o1gm_rKSDffaobjw4fgGxiGrx39I`
                 })
             }catch(error){
