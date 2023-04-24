@@ -193,7 +193,7 @@ xhr.onreadystatechange = function () {
                         document.getElementById('quake_title').textContent = '해외에서 지진이 발생했습니다.'
                     }
                     //진도 예외 처리
-                    int_info = "국외지진정보는 최대진도 정보가 제공되지 않습니다."
+                    int_info = "국외지진정보는 최대진도 정보가 제공되지 않습니다"
                     document.getElementById('intensity').textContent = int_info
                     try {
                         document.getElementById('int').style = 'background-color:white;'
@@ -529,4 +529,4 @@ xhr.onreadystatechange = function () {
     }
 };
 xhr.send('');
-// console.log(url + queryParams)
+console.log(url + queryParams)
