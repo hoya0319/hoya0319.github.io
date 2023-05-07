@@ -31,7 +31,33 @@ document.getElementById('file-input').addEventListener('change', function (e) {
         document.getElementById('occurtime').textContent = `${occurtime.slice(0, 4)}년 ${occurtime.slice(5, 7)}월 ${occurtime.slice(8, 10)}일 ${occurtime.slice(11, 13)}시 ${occurtime.slice(14, 16)}분 경 발생 | ${office}(${status})`
 
         //깊이
-        document.getElementById('depth').textContent = '깊이 '+jsonData.body.earthquake.hypocenter.depth.value + 'km'
+        var depth = jsonData.body.earthquake.hypocenter.depth.value;
+        document.getElementById('depth').textContent = depth;
+        var depth_box = document.getElementById('depth_box')
+        if (depth == '0'){
+            depth_box.style = 'background-color: rgb(128, 0, 0)'
+        }else if(depth == '10'){
+            depth_box.style = 'background-color: rgb(255, 0, 0)'
+        }else if(depth == '20'){
+            depth_box.style = 'background-color: rgb(255, 102, 0)'
+        }else if(depth == '30'){
+            depth_box.style = 'background-color: rgb(255, 204, 0)'
+        }else if(depth == '40'){
+            depth_box.style = 'background-color: rgb(255, 255, 0)'
+        }else if(depth == '50'){
+            depth_box.style = 'background-color: rgb(255, 230, 0)'
+        }else if(depth == '60' || depth == '70' || depth=='80'){
+            depth_box.style = 'background-color: rgb(46, 184, 46)'
+        }else if(depth >= '90' && depth <= '150'){
+            depth_box.style = 'background-color: rgb(20, 82, 20)'
+        }else if(depth >= '160' && depth <= '230'){
+            depth_box.style = 'background-color: rgb(51, 102, 255)'
+        }else if(depth >= '240' && depth <= '500'){
+            depth_box.style = 'background-color: rgb(0, 0, 230)'
+        }else{
+            depth_box.style = 'background-color: rgb(0, 0, 102); color:white;'
+        }
+        
 
         //긴급지진속보
         var hou = jsonData.serialNo
