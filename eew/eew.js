@@ -17,8 +17,21 @@ document.getElementById('file-input').addEventListener('change', function (e) {
         document.getElementById('warning_area').textContent = '';
         document.getElementById('warning').textContent = ''
         //발생시각
+        var office = jsonData.editorialOffice
+        if (office = '気象庁本庁'){
+            office = '기상청 본청 발표'
+        }else{
+            office = '오사카관구기상대 발표'
+        }
+        var status = jsonData.status
+        if(status == '通常'){
+            status = '통상'
+        }
         var occurtime = jsonData.body.earthquake.originTime;
-        document.getElementById('occurtime').textContent = `${occurtime.slice(0, 4)}년 ${occurtime.slice(5, 7)}월 ${occurtime.slice(8, 10)}일 ${occurtime.slice(11, 13)}시 ${occurtime.slice(14, 16)}분 경 발생`
+        document.getElementById('occurtime').textContent = `${occurtime.slice(0, 4)}년 ${occurtime.slice(5, 7)}월 ${occurtime.slice(8, 10)}일 ${occurtime.slice(11, 13)}시 ${occurtime.slice(14, 16)}분 경 발생 | ${office}(${status})`
+
+        //깊이
+        document.getElementById('depth').textContent = '깊이 '+jsonData.body.earthquake.hypocenter.depth.value + 'km'
 
         //긴급지진속보
         var hou = jsonData.serialNo
@@ -465,7 +478,7 @@ document.getElementById('file-input').addEventListener('change', function (e) {
 
         try {
             if (jsonData.body.intensity.appendix.maxIntChange == '0') {
-                document.getElementById('maxIntChange').textContent = '변화 없음'
+                document.getElementById('maxIntChange').textContent = '거의 변화 없음'
             } else if (jsonData.body.intensity.appendix.maxIntChange == '1') {
                 document.getElementById('maxIntChange').textContent = '1.0 이상 상승'
             } else if (jsonData.body.intensity.appendix.maxIntChange == '2') {
@@ -476,7 +489,7 @@ document.getElementById('file-input').addEventListener('change', function (e) {
         }
         try {
             if (jsonData.body.intensity.appendix.maxLgIntChange == '0') {
-                document.getElementById('maxLgIntChange').textContent = '변화 없음'
+                document.getElementById('maxLgIntChange').textContent = '거의 변화 없음'
             } else if (jsonData.body.intensity.appendix.maxLgIntChange == '1') {
                 document.getElementById('maxLgIntChange').textContent = '1 이상 상승'
             } else if (jsonData.body.intensity.appendix.maxLgIntChange == '2') {
@@ -487,7 +500,7 @@ document.getElementById('file-input').addEventListener('change', function (e) {
         }
         try {
             if (jsonData.body.intensity.appendix.maxIntChangeReason == '0') {
-                document.getElementById('maxIntChangeReason').textContent = '변화 없음'
+                document.getElementById('maxIntChangeReason').textContent = '거의 변화 없음'
             } else if (jsonData.body.intensity.appendix.maxIntChangeReason == '1') {
                 document.getElementById('maxIntChangeReason').textContent = '주로 규모가 변화했기 때문 (1.0 이상)'
             } else if (jsonData.body.intensity.appendix.maxIntChangeReason == '2') {
