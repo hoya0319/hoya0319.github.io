@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+</head>
+<body>
+    <input type="file" id="file-input">
+    <h1 id="title"></h1>
+    <div id="warning_box">
+        <h2 id="warning_title" style="color:yellow"></h2>
+        <h2 id="warning_zone" style="color:white"></h2>
+        <h2 id="warning_prefecture" style="color:white; margin-top: 5px"></h2>
+        <h2 id="warning_area" style="color:white; margin-top: 5px"></h2>
+    </div>
+    <h2 id="occurtime"></h2>
+    <span>
+        <a href='' target="_blank" id="hypocenter"></a>
+        <span style="font-weight: bold;" id="landOrSea"></span>
+    </span>
+    <h2 id="is_plum"></h2>
+    <div style="
+    display: flex;
+    justify-content: space-around;
+    align-items: center; margin:10px 20px; flex-grow: 1;">
+        <h2 id="mag_box">규모 <span id="magnitude"></span></h2>
+        <h2 id="max_int_box">최대진도 <span id="max_intensity"></span></h2>
+        <h2 id="max_long_int_box">최대장주기지진동계급 <span id="max_long_intensity"></span></h2>
+    </div>
+    <div style="display: flex; margin:0px 20px;">
+        <div id="accuracy">
+            <h3>정확성</h3>
+            <h4>진원: <span id='epicenters_1'></span> | <span id='epicenters_2'></span></h4>
+            <h4>깊이: <span id='accuracy_depth'></span></h4>
+            <h4>규모 계산 방법: <span id='magnitudeCalculation'></span></h4>
+            <h4>규모 계산에 사용된 관측점 수: <span id='numberOfMagnitudeCalculation'></span></h4>
+        </div>
+        <div id="max_int_change">
+            <h3>예측진도 변화</h3>
+            <h4>최대예측진도 변화: <span id='maxIntChange'></span></h4>
+            <h4>최대예측장주기지진동 변화: <span id='maxLgIntChange'></span></h4>
+            <h4>최대예측진도 변화 이유: <span id='maxIntChangeReason'></span></h4>
+        </div>
+    </div>
+    <h3 id="yosou">지역별 예상 보기</h3>
+    <div id='yosou_box'>
+        <p id="warning"></p>
+    </div>
+</body>
+</html>
+<script src="eew.js"></script>
