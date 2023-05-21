@@ -150,8 +150,8 @@ function typhoon() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             try{    
-                var myObj = JSON.parse(this.responseText);   
-                // var myObj = typhoon_json
+                // var myObj = JSON.parse(this.responseText);   
+                var myObj = typhoon_json
             }catch (error){
                 document.getElementById("typhoon_title").textContent = "기상청 태풍정보를 불러오는데 실패했습니다."
                 document.getElementById("typhoon_img").alt = "태풍정보 이미지를 불러오는데 실패했습니다."
@@ -338,32 +338,31 @@ function typhoon() {
                 var text = ''
                 console.log(strength)
                 var gae =  "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 시속" + typ_par_main.typSp + "킬로미터의 속도로 이동중입니다";
-                // if(strength == '--'){
-                //     text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
-                // }else if(strength == '중'){
-                //     text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 중 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
-                // }else if(strength == '강'){
-                //     text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 강 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
-                // }else if(strength == '매우강'){
-                //     text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 매우강 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
-                // }else if(strength == '초강력'){
-                //     text = `초강력 태풍 ${typ_name}에 대한 정보입니다. ${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 초강력 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
-                // }
-                text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 ${strength} 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                if(strength == '--'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }else if(strength == '중'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 중 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }else if(strength == '강'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 강 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }else if(strength == '매우강'){
+                    text = `${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 매우강 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }else if(strength == '초강력'){
+                    text = `초강력 태풍 ${typ_name}에 대한 정보입니다. ${gae}. 태풍의 중심기압은 ${typ_par_main.typPs} 헥토파스칼이며, 중심 부근의 최대 풍속은 ${typ_par_main.typWs}미터 퍼 세컨드로 강도는 초강력 입니다. 강풍반경은 ${typ_par_main.typ15}km, 폭풍반경은 ${typ_par_main.typ25}km입니다. 참고사항입니다. ${beforerem}. `
+                }
 
                 const btnread = document.getElementById('tts')
                 "제 " + typ_num + "호 태풍 '" + typ_name + "'은(는) " + typ_par_main.typLoc + "에서 " + dir + "쪽을 향해 " + typ_par_main.typSp + "km/h의 속도로 이동중.";
-                // btnread.addEventListener("click", e =>{
-                //     speak(text, {
-                //         rate : 1.0,
-                //         pitch: 1.0,
-                //         lang: 'ko-KR'
-                //     })
-                // })
+                btnread.addEventListener("click", e =>{
+                    speak(text, {
+                        rate : 1.0,
+                        pitch: 1.0,
+                        lang: 'ko-KR'
+                    })
+                })
                 document.getElementById('tts').addEventListener("click", function(){
-                    // alert('Microsoft Edge 브라우저로 접속하면 더욱 좋은 TTS를 이용하실 수 있습니다.')
-                    // alert(text)
-                    // text = ''
+                    alert('Microsoft Edge 브라우저로 접속하면 더욱 좋은 TTS를 이용하실 수 있습니다.')
+                    alert(text)
+                    text = ''
                     alert('TTS 기능에 오류가 생겨 수정중에 있습니다. 양해 바랍니다.')
                 })
 

@@ -152,8 +152,8 @@ xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
         try {
-            var myObj = JSON.parse(this.responseText);
-            // var myObj = earthquake_json;
+            // var myObj = JSON.parse(this.responseText);
+            var myObj = earthquake_json;
         } catch (error) {
             document.getElementById('quake_title').textContent = "예상치 못한 오류가 발생했습니다."
         }
@@ -164,7 +164,7 @@ xhr.onreadystatechange = function () {
             } catch (error) {
 
             }
-            var quakeinfo = myObj.response.body.items.item[0];
+            var quakeinfo = myObj.response.body.items.item[2];
             //발생 시각 구하기
             var yyyymmdd = String(quakeinfo.tmEqk);
             var year = yyyymmdd.slice(0, 4);
@@ -206,7 +206,7 @@ xhr.onreadystatechange = function () {
                         }else{
                             document.getElementById('mag-l').textContent = 'w'
                         }
-                        document.getElementById('info_kind').textContent = '지진정보 | 국외지진정보'
+                        document.getElementById('info_kind').textContent = '지진정보 > 국외지진정보'
                     } catch (error) {
                         document.getElementById('quake_img').src = quakeinfo.img
 
@@ -232,7 +232,7 @@ xhr.onreadystatechange = function () {
                     var tongbo = '/i_'
                     int_info = quakeinfo.inT
                     try{
-                        document.getElementById('info_kind').textContent = '지진정보 | 지진정보'
+                        document.getElementById('info_kind').textContent = '지진정보 > 지진정보'
                     }catch(error){
                     }
                 } else if (quakeinfo.fcTp == 14) {
@@ -242,7 +242,7 @@ xhr.onreadystatechange = function () {
                     document.getElementById('intensity').textContent = int_info
                     int_info = quakeinfo.inT
                     try{
-                        document.getElementById('info_kind').textContent = '지진속보 |  지진속보'
+                        document.getElementById('info_kind').textContent = '지진속보 > 지진속보'
                     }catch(error){
                     }
                 } else if (quakeinfo.fcTp == 11 || quakeinfo.fcTp == 13 || quakeinfo.fcTp == 12) {
@@ -252,7 +252,7 @@ xhr.onreadystatechange = function () {
                     document.getElementById('intensity').textContent = int_info
                     int_info = quakeinfo.inT
                     try{
-                        document.getElementById('info_kind').textContent = '지진속보 | 지진조기경보'
+                        document.getElementById('info_kind').textContent = '지진속보 > 지진조기경보'
                     }catch(error){
                     }
                 }

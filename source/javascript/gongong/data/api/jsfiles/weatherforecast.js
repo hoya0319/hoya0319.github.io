@@ -5,6 +5,13 @@ function getToday() {
     var day = ("0" + date.getDate()).slice(-2);
     return year + month + day;
 }
+function getMonth() {
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = ("0" + (1 + date.getMonth())).slice(-2);
+    var day = ("0" + date.getDate()).slice(-2);
+    return month;
+}
 let today = new Date();
 hours = today.getHours();
 hours = hours - 1;
@@ -1737,10 +1744,21 @@ document.getElementById('confirm_btn').addEventListener("click", function () {
                 wind = Number(one_wind) * 3.6
                 //체감기온
                 // console.log(wind)
-                var body_temp = 13.12 + 0.6215 * now_temp
-                body_temp = body_temp - 11.37 * Math.pow(wind, 0.16)
-                body_temp = body_temp + 0.3965 * Math.pow(wind, 0.16) * now_temp;
-                body_temp = Math.ceil(body_temp * 10) / 10
+                var body_temp
+                console.log(getMonth())
+                if(getMonth()>0 && getMonth()<5){
+                    body_temp = 13.12 + 0.6215 * now_temp
+                    body_temp = body_temp - 11.37 * Math.pow(wind, 0.16)
+                    body_temp = body_temp + 0.3965 * Math.pow(wind, 0.16) * now_temp;
+                    body_temp = Math.ceil(body_temp * 10) / 10
+                }else if(getMonth()>9){
+                    body_temp = 13.12 + 0.6215 * now_temp
+                    body_temp = body_temp - 11.37 * Math.pow(wind, 0.16)
+                    body_temp = body_temp + 0.3965 * Math.pow(wind, 0.16) * now_temp;
+                    body_temp = Math.ceil(body_temp * 10) / 10
+                }else{
+                    body_temp = '여름'
+                }
                 document.getElementById('body_temp').textContent = body_temp;
                 var bul
                 bul = now_temp / 5 * 9
