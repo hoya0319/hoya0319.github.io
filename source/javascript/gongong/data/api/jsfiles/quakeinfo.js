@@ -152,8 +152,8 @@ xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
         try {
-            // var myObj = JSON.parse(this.responseText);
-            var myObj = earthquake_json;
+            var myObj = JSON.parse(this.responseText);
+            // var myObj = earthquake_json;
         } catch (error) {
             document.getElementById('quake_title').textContent = "예상치 못한 오류가 발생했습니다."
         }
