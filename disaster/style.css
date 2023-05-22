@@ -230,8 +230,13 @@ input {
     border-color: rgb(106, 106, 255);
     border-radius: 5px;
     margin: 10px -20px;
+    width:100px;
+    text-align: center;
 }
-
+.forecast_btn:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
 .typhoon_forecast_btn {
     margin: auto;
     display: flex;
@@ -752,5 +757,10 @@ input {
     }
     .loc div{
         margin-left: 10px;
+    }
+    .forecast_btn{
+        margin: 0px;
+        width: 90px;
+        padding: 10px 5px;
     }
 }
