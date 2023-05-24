@@ -164,7 +164,7 @@ xhr.onreadystatechange = function () {
             } catch (error) {
 
             }
-            var quakeinfo = myObj.response.body.items.item[2];
+            var quakeinfo = myObj.response.body.items.item[0];
             //발생 시각 구하기
             var yyyymmdd = String(quakeinfo.tmEqk);
             var year = yyyymmdd.slice(0, 4);
