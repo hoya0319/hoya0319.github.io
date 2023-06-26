@@ -23,7 +23,7 @@ xhr.onreadystatechange = function () {
             message.push(msg[i].msg)
         }
         for(i=0; i<20; i++){
-            if(name[i].length == 144){
+            if(name[i].length == 148){
                 name[i] = '대한민국 전역'
             }
         }
