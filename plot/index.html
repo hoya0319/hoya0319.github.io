@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenStreetMap with Markers</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <style>
+        #map {
+            height: 100vh;
+        }
+        body{
+            margin:0px;
+        }
+        .img{
+            position:fixed;
+            z-index: 1000;
+            width:35px;
+            right: 20px;
+            top: 20px;
+            background-color: white;
+            padding:5px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+        #setting_box{
+            position:fixed;
+            z-index: 1100;
+            width:100%;
+            top:0px;
+            right: 0px;
+            background-color: white;
+            display: none;
+        }
+        #close_set{
+            position:fixed;
+            cursor: pointer;
+            right: 20px;
+            top:20px;
+            font-size: 30px;
+        }
+        #go{
+            cursor: pointer;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px 10px;
+            width:100px;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        #alert{
+            position: fixed;
+            width:50%;
+            right:25%;
+            top:45%;
+            z-index: 9999;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 20px;
+            display: none;
+        }
+        #alert_text{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./3884429.png" alt="설정" id="setting" class="img">
+    <div id="map"></div>
+    <div id="setting_box">
+        <span id="close_set">❌</span>
+        <p style="margin:100px 50px 10px"><a href='https://www.data.jma.go.jp/svd/eqev/data/daily_map/index.html' target="_blank">이곳</a>의 데이터를 붙여넣어주세요.</p>
+        <textarea style='width:93%; margin:10px; min-height: 100px;' id="data"></textarea>
+        <p id="go">실행</p>
+    </div>
+    <div id="alert">
+        <h2 id="alert_text"></h2>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
