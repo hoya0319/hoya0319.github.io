@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JMA 태풍 경로</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="input-id" placeholder="태풍전문 ID 입력">
+        <button id="fetch-data-btn">불러오기</button>
+    </div>
+    <div class="main">
+        <div id="map"></div>
+        <div id="right">
+            <div id="now">
+                <div class="name_time">
+                    <h1 id='typ_serial'></h1>
+                    <h3 id='publish_time'></h3>
+                </div>
+                <div class="typ_now">
+                    <p id="now_class"></p>
+                    <p id="now_time"></p>
+                    <p id="remark"></p>
+                    <div id="typ_prop">
+                        <span id="now_size"></span>
+                        <span id="now_strength"></span>
+                    </div>
+                    <div class="typ_now_box">
+                        <div>
+                            <h3>중심기압</h3> <span id="center_hpa"></span> <h3>hPa</h3>
+                        </div>
+                        <div>
+                            <h3>최대풍속</h3> <span id="center_max_wind_speed"></span> <h3>m/s</h3>
+                        </div>
+                    </div>
+                    <div class="under">
+                        <div class="under_box">
+                            <h3>중심위치 정확도</h3>
+                            <h2 id="acc"></h2>
+                        </div>
+                        <div class="under_box">
+                            <h3>최대순간풍속</h3>
+                            <div>
+                                <h2 id="center_max_shun_wind_speed"></h2><p>&nbsp;m/s</p>
+                            </div>
+                        </div>
+                        <div class="under_box">
+                            <h3>이동방향</h3>
+                            <h2 id="mov_dir"></h2>
+                        </div>
+                        <div class="under_box">
+                            <h3>이동속도</h3>
+                            <div>
+                                <h2 id="mov_spd"></h2><p id="mov_tan">&nbsp;km/h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="yoho_title">예보</h2>
+            </div>
+            <div id="yoho_container">
+
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
